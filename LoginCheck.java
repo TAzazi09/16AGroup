@@ -21,7 +21,7 @@ public class LoginCheck {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/testing?user=***&password=***");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/testing?user=et365&password=legome12");
             statement = connection.createStatement();
             resultSet = statement.executeQuery("select * from test where username = '" + username + "' and password = '"
                     + password + "'");
