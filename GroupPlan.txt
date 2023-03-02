@@ -1,3 +1,5 @@
 Group Plan:
 
 Ethan - lead main code, assist in database / interface creation.;
+
+Nikola - Login page GUI
