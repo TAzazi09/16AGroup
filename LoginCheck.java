@@ -4,15 +4,15 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class LoginCheck {
-    private Connection connection;
-    private Statement statement;
-    private ResultSet resultSet;
+    private static Connection connection;
+    private static Statement statement;
+    private static ResultSet resultSet;
 
     public static void main(String user, String password) {
         LoginCheck db = new LoginCheck();
         String u = user;
         String p = password;
-        db.testFunction(u, p);
+        db.testFunction(u,p);
         System.out.println("username is " + user);
         System.out.println("password is " + password);
     }
@@ -21,7 +21,7 @@ public class LoginCheck {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/testing?user=et365&password=legome12");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/testing?user=***&password=***");
             statement = connection.createStatement();
             resultSet = statement.executeQuery("select * from test where username = '" + username + "' and password = '"
                     + password + "'");
