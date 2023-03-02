@@ -1,13 +1,13 @@
 import javax.swing.*;
 
-public class application {
-    private static JLabel l;
-    private static JTextField username;
-    private static JTextField password;
-    private static JButton submit;
-
-    public static void main(String[] args) {
-        // Ethan's code:
+public class Application {
+    // Ethan's code:
+ 
+    // private static JLabel l;
+    // private static JTextField username;
+    // private static JTextField password;
+    // private static JButton submit;
+    // public static void main(String[] args) {
         // JFrame f = new JFrame("login");
         // username = new JTextField(5);
         // password = new JTextField(5);
@@ -22,13 +22,15 @@ public class application {
         // f.add(p);
         // f.setSize(100,100);
         // f.setVisible(true);
+    // }
 
+    // public static void setLabel() {
+    //     l.setText(username.getText() + " " + password.getText());
+    //     LoginCheck.main(username.getText(), password.getText());
+    // }
+
+    public static void main(String[] args) {
         login();
-    }
-
-    public static void setLabel() {
-            l.setText(username.getText() + " " + password.getText());
-            LoginCheck.main(username.getText(), password.getText());
     }
 
     public static void login() {
@@ -57,6 +59,17 @@ public class application {
         textPassword.setBounds(100, 50, 165, 25);
         panel.add(textPassword);
 
+        JButton button = new JButton("Log in");
+        button.setBounds(10, 80, 80, 25);
+        // button.addActionListener(new application());
+        panel.add(button);
+
+        JLabel success = new JLabel("");
+        success.setBounds(10, 110, 300, 25);
+        panel.add(success);
+
         frame.setVisible(true);
+
+        // success.setText("You logged in successfuly");
     }
 }
