@@ -28,7 +28,7 @@ public class application {
 
     public static void setLabel() {
             l.setText(username.getText() + " " + password.getText());
-            code.main(username.getText(), password.getText());
+            LoginCheck.main(username.getText(), password.getText());
     }
 
     public static void login() {

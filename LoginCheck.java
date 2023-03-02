@@ -3,13 +3,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class code {
+public class LoginCheck {
     private Connection connection;
     private Statement statement;
     private ResultSet resultSet;
 
     public static void main(String user, String password) {
-        code db = new code();
+        LoginCheck db = new LoginCheck();
         String u = user;
         String p = password;
         db.testFunction(u, p);
