@@ -10,3 +10,4 @@ PatientID int not null,
   DoctorChosen varchar(20),
   Details varchar(100)
 );
+SELECT * from patients
