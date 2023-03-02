@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class Application {
+public class application {
     // Ethan's code:
  
     // private static JLabel l;
