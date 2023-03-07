@@ -11,30 +11,30 @@ public class application extends javax.swing.JFrame {
 
     private void initComponents() {
         loginPanel = new javax.swing.JPanel();
-        usernameLabel = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel("Username: ");
         usernameText = new javax.swing.JTextField();
-        passwordLabel = new javax.swing.JLabel();
+        passwordLabel = new javax.swing.JLabel("Password: ");
         passwordText = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        loginPanel.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
-        usernameLabel.setText("Username: ");
-        passwordLabel.setText("Password: ");
-        usernameText.setText("username");
-        passwordText.setText("password");
+        usernameLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        passwordLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
 
-        // Password text field functionality
-        // Currently not in use
-        /*
-            passwordText.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    passwordTextActionPerformed(evt);
-                }
-            });
-        */
+        usernameText.setFont(new java.awt.Font("Monospaced", 0, 18));
+        usernameText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        passwordText.setFont(new java.awt.Font("Monospaced", 0, 18));
+        passwordText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         // Log-in button functionality
+        loginButton.setFont(new java.awt.Font("Monospaced", 0, 12));
+        loginButton.setBackground(new java.awt.Color(65, 175, 255, 1));
+        // couldn't make the button look exactly like I wanted
+        // loginButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         loginButton.setText("Log-in");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,10 +67,13 @@ public class application extends javax.swing.JFrame {
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
                                                                 false)
                                                         .addComponent(passwordText)
-                                                        .addComponent(usernameText)))
+                                                        .addComponent(usernameText,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, 176,
+                                                                Short.MAX_VALUE)))
                                         .addGroup(loginPanelLayout.createSequentialGroup()
-                                                .addGap(35, 35, 35)
-                                                .addComponent(loginButton)))
+                                                .addGap(67, 67, 67)
+                                                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 109,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(11, Short.MAX_VALUE)));
         loginPanelLayout.setVerticalGroup(
                 loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,17 +101,17 @@ public class application extends javax.swing.JFrame {
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(112, 112, 112)
+                                .addGap(63, 63, 63)
                                 .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(116, Short.MAX_VALUE)));
+                                .addContainerGap(120, Short.MAX_VALUE)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(100, 100, 100)
+                                .addGap(86, 86, 86)
                                 .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(100, Short.MAX_VALUE)));
+                                .addContainerGap(110, Short.MAX_VALUE)));
 
         pack();
     }
@@ -119,17 +122,9 @@ public class application extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String username = usernameText.getText();
         String password = passwordText.getText();
-        
+
         LoginCheck.testFunction(username, password);
     }
-
-    // Password text field functionality
-    // Currently not in use
-    /* 
-        private void passwordTextActionPerformed(java.awt.event.ActionEvent evt) {
-            // Add handling code here
-        }
-    */
 
     public static void main(String args[]) {
         // NetBeans' exception checks
