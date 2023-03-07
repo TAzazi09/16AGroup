@@ -8,6 +8,8 @@ Nikola:
     - Login page GUI
         - username and password fields
         - a functional log-in button (send info to LoginCheck.java)
+    - Code quality control
+    - Coherency between the different pages of our app/website
 
     I will create the login page GUI. There are going to be two text fields, one for username and one for password. The view will also
     have two labels to show which text field is for what. Finally, there will be a log-in button that will send the user's info to our
