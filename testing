@@ -7,4 +7,8 @@ Ethan, secondary test importing from eclipse
 Nikola, this is committed from VSCode, IntelliJ wouldn't allow me to open the project since it doesn't recognize it (it doesn't have the necessary files)
 
 Nikola, committing from IntelliJ -> if this works, then IntelliJ doesn't need the specific structure I thought it needed in order to work
+<<<<<<< HEAD
 Callum, commit test 
+=======
+Callum Lee, commit test 
+>>>>>>> 2339ddaac1776e36df3a886d8d7a7819716ff4f8

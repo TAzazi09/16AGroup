@@ -3,22 +3,19 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class code {
-    private Connection connection;
-    private Statement statement;
-    private ResultSet resultSet;
+public class LoginCheck {
+    private static Connection connection;
+    private static Statement statement;
+    private static ResultSet resultSet;
 
     public static void main(String user, String password) {
-        code db = new code();
-        String u = user;
-        String p = password;
-        db.testFunction(u, p);
+        testFunction(user, password);
+
         System.out.println("username is " + user);
         System.out.println("password is " + password);
     }
 
-    public void testFunction(String username, String password) {
-
+    public static void testFunction(String username, String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost/testing?user=***&password=***");
@@ -26,26 +23,25 @@ public class code {
             resultSet = statement.executeQuery("select * from test where username = '" + username + "' and password = '"
                     + password + "'");
             boolean stop = false;
+            
             while ((resultSet.next()) || (stop = false)) {
-
                 if ((username.equals(resultSet.getString("username")))
                         || (password.equals(resultSet.getString("password")))) {
                     stop = true;
                     nextStep();
                     break;
-
                 }
             }
+            
             if (!stop) {
                 System.out.println("Fails");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
-    public void nextStep() {
+    public static void nextStep() {
         System.out.println("this would be the next page");
     }
 }
