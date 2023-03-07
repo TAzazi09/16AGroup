@@ -3,3 +3,15 @@ Group Plan:
 Ethan - lead main code, assist in database / interface creation.;
 
 Nikola - Login page GUI
+    - also send info to LoginCheck.java
+
+Callum - Test cases (learn how to do it and then do it)
+    - for log in
+    - for registration
+
+Kristian - I will be .creating the registration UI and making sure that it inserts new information into the database, i will be doing
+test cases for making sure that no duplicate information is inserted and correct format is also followed with proper error messages
+I will also make a general UI to allow the patient to select wether to login or register and make the corrosponding buttons to open the
+correct UI.
+
+Tare - more test cases
