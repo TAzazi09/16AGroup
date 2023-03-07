@@ -22,12 +22,12 @@ public class LoginCheck {
             connection = DriverManager.getConnection("jdbc:mysql://localhost/sys?user=root&password=legome12");
             statement = connection.createStatement();
             //Lines below are used for creating tables
-            statement.execute("DROP TABLE IF EXISTS patients; "
-            + "CREATE TABLE patients (            PatientID int not null auto_increment,              FirstName VARCHAR(15) not null,              Surname varchar(15) NOT NULL,              PRIMARY KEY (patientID),              Gender varchar(10),              Age int (3),              PhoneNumber varchar(15),              DoctorChosen varchar(20),              Details varchar(100)            );");
-            statement.execute("insert into test values ('1', 't1'), ('2', 'otest')");
+            statement.executeUpdate("DROP TABLE IF EXISTS patients;");
+            statement.execute("CREATE TABLE patients (            PatientID int not null auto_increment,              FirstName VARCHAR(15) not null,              Surname varchar(15) NOT NULL,              PRIMARY KEY (patientID),              Gender varchar(10),              Age int (3),              PhoneNumber varchar(15),              DoctorChosen varchar(20),              Details varchar(100)            );");
+            statement.execute("INSERT INTO patients (FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details) VALUES ('John', 'ER', 'Male', 19, '11111 111111', 'Me', 'Not Known')");
             //
 
-            resultSet = statement.executeQuery("select * from test where username = '" + username + "' and password = '"
+            resultSet = statement.executeQuery("select * from patients WHERE PatientID = '" + username + "' and FirstName = '"
                     + password + "'");
             boolean stop = false;
             if(resultSet == null)
@@ -35,9 +35,12 @@ public class LoginCheck {
                 System.out.println("Fasddsil");
                 System.exit(1);
             }
-            while ((resultSet.next()) || (stop = false)) {
-                if ((username.equals(resultSet.getString("username")))
-                        || (password.equals(resultSet.getString("password")))) {
+
+            // while (resultSet.next())
+			// 	System.out.println(resultSet.getString("PatientID") + " - " + resultSet.getString("FirstName") + " - " + resultSet.getString("Surname"));
+            while (resultSet.next()) {
+                if ((username.equals(resultSet.getString("PatientID")))
+                        || (password.equals(resultSet.getString("FirstName")))) {
                     stop = true;
                     nextStep();
                     break;
