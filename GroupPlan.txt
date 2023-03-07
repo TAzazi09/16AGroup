@@ -1,18 +1,32 @@
-Group Plan:
+Group 16A - Plan
 
 Ethan - I will be creating the majority of the background code that communicates with the database. I also create sql statements that 
 are used to create and communicate with the database. 
 
-Nikola - Login page GUI
-    - also send info to LoginCheck.java
+_______________________________________________________________________________________________________________________________________
+Nikola:
+    - Login page GUI
+        - username and password fields
+        - a functional log-in button (send info to LoginCheck.java)
 
-Callum - Test cases (learn how to do it and then do it)
+    I will create the login page GUI. There are going to be two text fields, one for username and one for password. The view will also
+    have two labels to show which text field is for what. Finally, there will be a log-in button that will send the user's info to our
+    database for check. Iam going to use NetBeans' drag-and-drop tool to create the interface and it will generate the java swing code
+    for me. Then I will manually add the button functionality to extract and send the necessary info to LoginCheck.java.
+
+_______________________________________________________________________________________________________________________________________
+Callum
+    Test cases (learn how to do it and then do it)
     - for log in
     - for registration
 
-Kristian - I will be .creating the registration UI and making sure that it inserts new information into the database, i will be doing
-test cases for making sure that no duplicate information is inserted and correct format is also followed with proper error messages
-I will also make a general UI to allow the patient to select wether to login or register and make the corrosponding buttons to open the
-correct UI.
+_______________________________________________________________________________________________________________________________________
+Kristian:
+    I will be .creating the registration UI and making sure that it inserts new information into the database, i will be doing
+    test cases for making sure that no duplicate information is inserted and correct format is also followed with proper error messages
+    I will also make a general UI to allow the patient to select wether to login or register and make the corrosponding buttons to open the
+    correct UI.
 
-Tare - more test cases
+_______________________________________________________________________________________________________________________________________
+Tare:
+    - more test cases
