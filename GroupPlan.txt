@@ -1,6 +1,7 @@
 Group Plan:
 
-Ethan - lead main code, assist in database / interface creation.;
+Ethan - I will be creating the majority of the background code that communicates with the database. I also create sql statements that 
+are used to create and communicate with the database. 
 
 Nikola - Login page GUI
     - also send info to LoginCheck.java
