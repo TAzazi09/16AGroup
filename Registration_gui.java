@@ -39,7 +39,6 @@ public class Registration_gui extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-
         Register_title = new javax.swing.JLabel();
         Firstname_input = new javax.swing.JTextField();
         firstname_label = new javax.swing.JLabel();
