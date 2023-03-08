@@ -3,6 +3,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import javax.swing.JOptionPane;
+
 public class LoginCheck {
     private static Connection connection;
     private static Statement statement;
@@ -22,49 +24,25 @@ public class LoginCheck {
             
             connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=root&password=legome12");
             statement = connection.createStatement();
-            //Lines below are used for creating tables
-       //     statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
-         //   statement.executeUpdate("CREATE DATABASE NHS");
-            // statement.executeUpdate("use NHS");
-            // statement.executeUpdate("CREATE DATABASE NHS");
-        //    statement.executeUpdate("DROP TABLE IF EXISTS patients;");
-        //    statement.execute("CREATE TABLE patients (            PatientID int not null auto_increment,              FirstName VARCHAR(15) not null,              Surname varchar(15) NOT NULL,              PRIMARY KEY (patientID),              Gender varchar(10),              Age int (3),              PhoneNumber varchar(15),              DoctorChosen varchar(20),              Details varchar(100)            );");
-            statement.execute("INSERT INTO patients (FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details) VALUES ('John', 'ER', 'Male', 19, '11111 111111', 'Me', 'Not Known')");
-            //
 
-            resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'"
-            //  + "'
-            //  and FirstName = '"
-                    // + password + "'"
-                    );
-            boolean stop = false;
+            resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
             if(resultSet == null)
             {
                 System.out.println("Fasddsil");
                 System.exit(1);
             }
 
-            // while (resultSet.next())
-			// 	System.out.println(resultSet.getString("PatientID") + " - " + resultSet.getString("FirstName") + " - " + resultSet.getString("Surname"));
             while (resultSet.next()) {
                 if ((username.equals(resultSet.getString("FirstName")))
-                        || (password.equals((resultSet.getString("FirstName")) + (resultSet.getString("PatientID"))))) {
-                    stop = true;
-                    System.out.println("Y");
-                    nextStep();
+                        && (password.equals((resultSet.getString("Surname")) + (resultSet.getString("PatientID"))))) {
+                    JOptionPane.showMessageDialog(null, "Welcome to the End!");
                     break;
                 }
             }
-            
-            if (!stop) {
-                System.out.println("Fails");
-            }
+            System.out.println("fai");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void nextStep() {
-        System.out.println("this would be the next page");
-    }
 }
