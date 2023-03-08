@@ -10,6 +10,8 @@ public class application extends javax.swing.JFrame {
     }
 
     private void initComponents() {
+        
+
         loginPanel = new javax.swing.JPanel();
         usernameLabel = new javax.swing.JLabel("Username: ");
         usernameText = new javax.swing.JTextField();
