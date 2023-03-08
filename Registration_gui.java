@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package com.mycompany.gui;
 
 /**
  *
@@ -10,11 +5,18 @@ package com.mycompany.gui;
  */
 public class Registration_gui extends javax.swing.JFrame {
 
+    public static void main(String args[]) {
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new Registration_gui().setVisible(true);
+        });
+    }
+
     /**
      * Creates new form Registration
      * @return 
      */
-    public void Registration() {
+    public Registration_gui() {
         initComponents();
     }
 
@@ -37,7 +39,6 @@ public class Registration_gui extends javax.swing.JFrame {
         gender_female_check = new javax.swing.JCheckBox();
         gender_other_check = new javax.swing.JCheckBox();
         gender_pnts_check = new javax.swing.JCheckBox();
-        DOB_picker = new com.toedter.calendar.JCalendar();
         DOB_label = new javax.swing.JLabel();
         Phone_label = new javax.swing.JLabel();
         Phone_input = new javax.swing.JTextField();
@@ -46,6 +47,9 @@ public class Registration_gui extends javax.swing.JFrame {
         Details_Label = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         detail_input = new javax.swing.JTextArea();
+        Back_button = new javax.swing.JButton();
+        Register_button = new javax.swing.JButton();
+        dob_field = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(900, 800));
@@ -53,8 +57,9 @@ public class Registration_gui extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(900, 800));
 
         Register_title.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        Register_title.setText("Register");
+        Register_title.setText("   Register");
         Register_title.setToolTipText("");
+        Register_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Firstname_input.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,8 +108,6 @@ public class Registration_gui extends javax.swing.JFrame {
             }
         });
 
-        DOB_picker.setDate(new java.util.Date(1678286232000L));
-
         DOB_label.setText("Date of Birth");
 
         Phone_label.setText("Phone Number");
@@ -134,21 +137,38 @@ public class Registration_gui extends javax.swing.JFrame {
         detail_input.setName(""); // NOI18N
         jScrollPane1.setViewportView(detail_input);
 
+        Back_button.setText("Back");
+        Back_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_buttonActionPerformed(evt);
+            }
+        });
+
+        Register_button.setText("Register");
+        Register_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Register_buttonActionPerformed(evt);
+            }
+        });
+
+        dob_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/YYYY"))));
+        dob_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dob_fieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(347, 347, 347)
-                .addComponent(Register_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(369, 369, 369))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(304, 304, 304)
+                .addGap(300, 300, 300)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Register_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Doctor_label)
                     .addComponent(Phone_label)
                     .addComponent(DOB_label)
-                    .addComponent(DOB_picker, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Gender_label)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(gender_male_check)
@@ -164,10 +184,17 @@ public class Registration_gui extends javax.swing.JFrame {
                     .addComponent(Firstname_input, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Details_Label)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Doctor_list, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Phone_input, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(dob_field, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Back_button, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54)
+                                .addComponent(Register_button, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Doctor_list, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Phone_input, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)))))
+                .addGap(328, 328, 328))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +220,7 @@ public class Registration_gui extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DOB_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DOB_picker, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dob_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Phone_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -206,7 +233,11 @@ public class Registration_gui extends javax.swing.JFrame {
                 .addComponent(Details_Label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Back_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Register_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleDescription("");
@@ -246,44 +277,21 @@ public class Registration_gui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Doctor_listActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void Back_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Back_buttonActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registration().setVisible(true);
-            }
-        });
-    }
+    private void Register_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Register_buttonActionPerformed
+
+    private void dob_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dob_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dob_fieldActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back_button;
     private javax.swing.JLabel DOB_label;
-    private com.toedter.calendar.JCalendar DOB_picker;
     private javax.swing.JLabel Details_Label;
     private javax.swing.JLabel Doctor_label;
     private javax.swing.JComboBox<String> Doctor_list;
@@ -292,8 +300,10 @@ public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JLabel Gender_label;
     private javax.swing.JTextField Phone_input;
     private javax.swing.JLabel Phone_label;
+    private javax.swing.JButton Register_button;
     private javax.swing.JLabel Register_title;
     public javax.swing.JTextArea detail_input;
+    private javax.swing.JFormattedTextField dob_field;
     private javax.swing.JLabel firstname_label;
     private javax.swing.JCheckBox gender_female_check;
     private javax.swing.JCheckBox gender_male_check;
