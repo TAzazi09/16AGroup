@@ -1,8 +1,15 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class GeneralPage extends javax.swing.JFrame {
     private javax.swing.JButton logButton;
     private javax.swing.JButton regButton;
     private javax.swing.JLabel helloLabel;
     private javax.swing.JPanel generalPanel;
+
+    
 
     public GeneralPage() {
         initComponents();
@@ -13,6 +20,18 @@ public class GeneralPage extends javax.swing.JFrame {
         helloLabel = new javax.swing.JLabel("Hello!");
         logButton = new javax.swing.JButton("Log-in");
         regButton = new javax.swing.JButton("Register");
+        
+        logButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        application.main(null);
+                }
+        });
+
+        regButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        Registration_gui.main(null);
+                }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,8 +88,28 @@ public class GeneralPage extends javax.swing.JFrame {
 
         pack();
     }                   
-
+    private static Connection connection;
+    private static Statement statement;
+    private static ResultSet resultSet;
     public static void main(String args[]) {
+
+        try {
+            
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                
+                connection = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=legome12");
+                statement = connection.createStatement();
+                //Lines below are used for creating tables
+                statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
+                statement.executeUpdate("CREATE DATABASE NHS");
+                statement.executeUpdate("use NHS");
+                // statement.executeUpdate("CREATE DATABASE NHS");
+                statement.executeUpdate("DROP TABLE IF EXISTS patients;");
+                statement.execute("CREATE TABLE patients (            PatientID int not null auto_increment,              FirstName VARCHAR(15) not null,              Surname varchar(15) NOT NULL,              PRIMARY KEY (patientID),              Gender varchar(10),              Age int (3),              PhoneNumber varchar(15),              DoctorChosen varchar(20),              Details varchar(100)            );");
+        } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         /* Set the Nimbus look and feel */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
