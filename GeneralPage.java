@@ -1,3 +1,8 @@
+/**
+ * @author nik
+ * @functional changes by ethan
+ */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

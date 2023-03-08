@@ -5,11 +5,12 @@ import javax.swing.JRadioButton;
 import java.util.Enumeration;
 import javax.swing.AbstractButton;
 // import javax.swing.ButtonGroup;
-
 /**
- *
  * @author krist
+ * @cosmetic changes by nik
+ * @functional changes by ethan
  */
+
 public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JButton Back_button;
     private javax.swing.JLabel DOB_label;
@@ -23,7 +24,7 @@ public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JLabel Phone_label;
     private javax.swing.JButton Register_button;
     private javax.swing.JLabel Register_title;
-    public javax.swing.JTextArea detail_input;
+    private javax.swing.JTextArea detail_input;
     private javax.swing.JFormattedTextField dob_field;
     private javax.swing.JLabel firstname_label;
     private javax.swing.JRadioButton gender_female_check;
@@ -72,7 +73,6 @@ public class Registration_gui extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-
         Register_title = new javax.swing.JLabel();
         Firstname_input = new javax.swing.JTextField();
         firstname_label = new javax.swing.JLabel();
@@ -98,11 +98,11 @@ public class Registration_gui extends javax.swing.JFrame {
         dob_field = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(900, 800));
-        setPreferredSize(new java.awt.Dimension(900, 800));
-        setSize(new java.awt.Dimension(900, 800));
+        setMinimumSize(new java.awt.Dimension(900, 900));
+        setPreferredSize(new java.awt.Dimension(900, 900));
+        setSize(new java.awt.Dimension(900, 900));
 
-        Register_title.setFont(new java.awt.Font("Monospaced", 0, 48)); // NOI18N
+        Register_title.setFont(new java.awt.Font("Monospaced", 0, 48));
         Register_title.setText("   Register");
         Register_title.setToolTipText("");
         Register_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -114,11 +114,11 @@ public class Registration_gui extends javax.swing.JFrame {
         });
 
         firstname_label.setText("First Name");
-        firstname_label.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        firstname_label.setFont(new java.awt.Font("Monospaced", 0, 18));
 
         surname_label.setText("Surname");
         surname_label.setToolTipText("");
-        surname_label.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        surname_label.setFont(new java.awt.Font("Monospaced", 0, 18));
 
         Surname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,7 +197,9 @@ public class Registration_gui extends javax.swing.JFrame {
         Doctor_label.setText("Doctor Choosen");
         Doctor_label.setFont(new java.awt.Font("Monospaced", 0, 18));
 
-        Doctor_list.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr Smith", "Dr Jason", "Dr Andrew" }));
+        Doctor_list
+                .setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr Smith", "Dr Jason", "Dr Andrew" }));
+        Doctor_list.setFont(new java.awt.Font("Monospaced", 0, 18));
         Doctor_list.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Doctor_listActionPerformed(evt);
@@ -212,7 +214,7 @@ public class Registration_gui extends javax.swing.JFrame {
         detail_input.setRows(5);
         detail_input.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         detail_input.setDragEnabled(true);
-        detail_input.setName(""); // NOI18N
+        detail_input.setName("");
         jScrollPane1.setViewportView(detail_input);
 
         Back_button.setText("Back");
@@ -231,7 +233,8 @@ public class Registration_gui extends javax.swing.JFrame {
             }
         });
 
-        dob_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/YYYY"))));
+        dob_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
+                new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/YYYY"))));
         dob_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dob_fieldActionPerformed(evt);
@@ -241,92 +244,118 @@ public class Registration_gui extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Register_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Doctor_label)
-                    .addComponent(Phone_label)
-                    .addComponent(DOB_label)
-                    .addComponent(Gender_label)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(gender_male_check)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(gender_female_check)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(gender_other_check)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(gender_pnts_check))
-                        .addComponent(firstname_label)
-                    .addComponent(Firstname_input, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(surname_label)
-                    .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(age_label)
-                    .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Details_Label)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(dob_field, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Back_button, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4)
-                                .addComponent(Register_button, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Doctor_list, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Phone_input, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)))))
-                .addGap(328, 328, 328))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(300, 300, 300)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(Register_title, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Doctor_label)
+                                        .addComponent(Phone_label)
+                                        .addComponent(DOB_label)
+                                        .addComponent(Gender_label)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(gender_male_check)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(gender_female_check)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(gender_other_check)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(gender_pnts_check))
+                                        .addComponent(surname_label)
+                                        .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE, 254,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(firstname_label)
+                                        .addComponent(Firstname_input, javax.swing.GroupLayout.PREFERRED_SIZE, 254,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Details_Label)
+                                        .addGroup(layout
+                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(dob_field, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(Back_button,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 125,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(4, 4, 4)
+                                                                .addComponent(Register_button,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 125,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout
+                                                                .createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                        false)
+                                                                .addComponent(jScrollPane1,
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(Doctor_list,
+                                                                        javax.swing.GroupLayout.Alignment.LEADING, 0,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        Short.MAX_VALUE)
+                                                                .addComponent(Phone_input,
+                                                                        javax.swing.GroupLayout.Alignment.LEADING,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE, 254,
+                                                                        Short.MAX_VALUE)))))
+                                .addGap(328, 328, 328)));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(Register_title)
-                .addGap(18, 18, 18)
-                .addComponent(firstname_label)
-                .addGap(1, 1, 1)
-                .addComponent(Firstname_input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(surname_label)
-                .addGap(1, 1, 1)
-                .addGap(1, 1, 1)
-                .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(age_label)
-                .addGap(10, 10, 10)
-                
-                .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
 
-                .addComponent(Gender_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(gender_male_check)
-                    .addComponent(gender_female_check)
-                    .addComponent(gender_other_check)
-                    .addComponent(gender_pnts_check))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DOB_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dob_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Phone_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Phone_input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Doctor_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Doctor_list, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Details_Label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Back_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Register_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(191, Short.MAX_VALUE))
-        );
+                                .addComponent(Register_title)
+                                .addGap(30, 30, 30)
+
+                                .addComponent(firstname_label)
+                                .addGap(1, 1, 1)
+                                .addComponent(Firstname_input, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+
+                                .addComponent(surname_label)
+                                .addGap(1, 1, 1)
+                                .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+
+                                .addComponent(Gender_label)
+                                .addGap(1, 1, 1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(gender_male_check)
+                                        .addComponent(gender_female_check)
+                                        .addComponent(gender_other_check)
+                                        .addComponent(gender_pnts_check))
+                                .addGap(20, 20, 20)
+
+                                .addComponent(DOB_label)
+                                .addGap(1, 1, 1)
+                                .addComponent(dob_field, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+
+                                .addComponent(Phone_label)
+                                .addGap(1, 1, 1)
+                                .addComponent(Phone_input, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+
+                                .addComponent(Doctor_label)
+                                .addGap(1, 1, 1)
+                                .addComponent(Doctor_list, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+
+                                .addComponent(Details_Label)
+                                .addGap(1, 1, 1)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(Back_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Register_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(191, Short.MAX_VALUE)));
 
         getAccessibleContext().setAccessibleDescription("");
 

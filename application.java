@@ -1,4 +1,6 @@
-import javax.swing.JPanel;
+/**
+ * @author nik
+ */
 
 public class application extends javax.swing.JFrame {
     private javax.swing.JPanel loginPanel;
@@ -156,7 +158,7 @@ public class application extends javax.swing.JFrame {
         return loginPanel;
     }
     public static void main(String args[]) {
-        // NetBeans' exception checks
+        // NetBeans' Nimbus feel exception checks
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
