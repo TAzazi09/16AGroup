@@ -1,3 +1,10 @@
+import javax.swing.ButtonGroup;
+import javax.swing.JRadioButton;
+
+import java.util.Enumeration;
+import javax.swing.AbstractButton;
+// import javax.swing.ButtonGroup;
+
 
 /**
  *
@@ -19,12 +26,15 @@ public class Registration_gui extends javax.swing.JFrame {
     public javax.swing.JTextArea detail_input;
     private javax.swing.JFormattedTextField dob_field;
     private javax.swing.JLabel firstname_label;
-    private javax.swing.JCheckBox gender_female_check;
-    private javax.swing.JCheckBox gender_male_check;
-    private javax.swing.JCheckBox gender_other_check;
-    private javax.swing.JCheckBox gender_pnts_check;
+    private javax.swing.JRadioButton gender_female_check;
+    private javax.swing.JRadioButton gender_male_check;
+    private javax.swing.JRadioButton gender_other_check;
+    private javax.swing.JRadioButton gender_pnts_check;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel surname_label;
+    private javax.swing.JLabel age_label;
+    private javax.swing.JTextField age_input;
+    public static ButtonGroup totalGroup;
 
     public static void main(String args[]) {
         /* Create and display the form */
@@ -37,18 +47,20 @@ public class Registration_gui extends javax.swing.JFrame {
         initComponents();
     }
 
-    private void initComponents() {
+    public void initComponents() {
 
         Register_title = new javax.swing.JLabel();
         Firstname_input = new javax.swing.JTextField();
         firstname_label = new javax.swing.JLabel();
         surname_label = new javax.swing.JLabel();
         Firstname_input1 = new javax.swing.JTextField();
-        gender_male_check = new javax.swing.JCheckBox();
+        age_label = new javax.swing.JLabel("Age");
+        age_input = new javax.swing.JTextField();
+        gender_male_check = new javax.swing.JRadioButton();
         Gender_label = new javax.swing.JLabel();
-        gender_female_check = new javax.swing.JCheckBox();
-        gender_other_check = new javax.swing.JCheckBox();
-        gender_pnts_check = new javax.swing.JCheckBox();
+        gender_female_check = new javax.swing.JRadioButton();
+        gender_other_check = new javax.swing.JRadioButton();
+        gender_pnts_check = new javax.swing.JRadioButton();
         DOB_label = new javax.swing.JLabel();
         Phone_label = new javax.swing.JLabel();
         Phone_input = new javax.swing.JTextField();
@@ -90,8 +102,19 @@ public class Registration_gui extends javax.swing.JFrame {
             }
         });
 
+        age_label.setText("Age");
+        age_label.setToolTipText("");
+        age_label.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+
+        age_input.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Firstname_input1ActionPerformed(evt);
+            }
+        });
+
         gender_male_check.setText("Male");
         gender_male_check.setFont(new java.awt.Font("Monospaced", 0, 18));
+        gender_male_check.setActionCommand("male");
         gender_male_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gender_male_checkActionPerformed(evt);
@@ -103,6 +126,7 @@ public class Registration_gui extends javax.swing.JFrame {
 
         gender_female_check.setText("Female");
         gender_female_check.setFont(new java.awt.Font("Monospaced", 0, 18));
+        gender_female_check.setActionCommand("female");
         gender_female_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gender_female_checkActionPerformed(evt);
@@ -111,6 +135,7 @@ public class Registration_gui extends javax.swing.JFrame {
 
         gender_other_check.setText("Other");
         gender_other_check.setFont(new java.awt.Font("Monospaced", 0, 18));
+        gender_other_check.setActionCommand("other");
         gender_other_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gender_other_checkActionPerformed(evt);
@@ -119,11 +144,19 @@ public class Registration_gui extends javax.swing.JFrame {
 
         gender_pnts_check.setText("Prefer not to say");
         gender_pnts_check.setFont(new java.awt.Font("Monospaced", 0, 18));
+        gender_pnts_check.setActionCommand("pnts");
         gender_pnts_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gender_pnts_checkActionPerformed(evt);
             }
         });
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(gender_female_check);
+        group.add(gender_male_check);
+        group.add(gender_other_check);
+        group.add(gender_pnts_check);
+        Registration_gui.totalGroup = group;
 
         DOB_label.setText("Date of Birth");
         DOB_label.setFont(new java.awt.Font("Monospaced", 0, 18));
@@ -231,6 +264,10 @@ public class Registration_gui extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(surname_label)
                 .addGap(1, 1, 1)
+                .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(age_label)
+                .addGap(1, 1, 1)
                 .addComponent(Firstname_input1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(Gender_label)
@@ -305,7 +342,12 @@ public class Registration_gui extends javax.swing.JFrame {
     }
 
     private void Register_buttonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // String selection = Registration_gui.totalGroup.getSelection().getActionCommand();
+        // // System.out.println(selection);
+        //     Registration.test(Firstname_input.getText(), Firstname_input1.getText(), selection, age)
+        //     String t = Firstname_input.getText();
+        //     System.out.println(t);
+
     }
 
     private void dob_fieldActionPerformed(java.awt.event.ActionEvent evt) {
