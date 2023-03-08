@@ -52,7 +52,8 @@ public class Registration {
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost/testing?user=***&password=***");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost?user=***&password=***");
+        statement.execute("create database NHS");
         statement = connection.createStatement();
         int n = statement.executeUpdate("insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details )"
         + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender  + "','" + Age + "','" + PhoneNumber + "','" + DoctorChosen + "','" + Details + "')");
