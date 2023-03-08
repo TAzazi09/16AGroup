@@ -3,6 +3,7 @@
  * @cosmetic changes by nik
  * @functional changes by ethan
  */
+
 public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JButton Back_button;
     private javax.swing.JLabel DOB_label;
