@@ -20,15 +20,15 @@ public class LoginCheck {
             
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=legome12");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=root&password=legome12");
             statement = connection.createStatement();
             //Lines below are used for creating tables
-            statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
-            statement.executeUpdate("CREATE DATABASE NHS");
-            statement.executeUpdate("use NHS");
+       //     statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
+         //   statement.executeUpdate("CREATE DATABASE NHS");
+            // statement.executeUpdate("use NHS");
             // statement.executeUpdate("CREATE DATABASE NHS");
-            statement.executeUpdate("DROP TABLE IF EXISTS patients;");
-            statement.execute("CREATE TABLE patients (            PatientID int not null auto_increment,              FirstName VARCHAR(15) not null,              Surname varchar(15) NOT NULL,              PRIMARY KEY (patientID),              Gender varchar(10),              Age int (3),              PhoneNumber varchar(15),              DoctorChosen varchar(20),              Details varchar(100)            );");
+        //    statement.executeUpdate("DROP TABLE IF EXISTS patients;");
+        //    statement.execute("CREATE TABLE patients (            PatientID int not null auto_increment,              FirstName VARCHAR(15) not null,              Surname varchar(15) NOT NULL,              PRIMARY KEY (patientID),              Gender varchar(10),              Age int (3),              PhoneNumber varchar(15),              DoctorChosen varchar(20),              Details varchar(100)            );");
             statement.execute("INSERT INTO patients (FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details) VALUES ('John', 'ER', 'Male', 19, '11111 111111', 'Me', 'Not Known')");
             //
 
