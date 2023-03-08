@@ -19,8 +19,13 @@ Nikola:
 _______________________________________________________________________________________________________________________________________
 Callum
     Test cases (learn how to do it and then do it)
-    - for log in
     - for registration
+	I will be testing inputs against desired outcomes, will check that details are tested correctly against registration creating 
+	test cases with JUNIT 5. Age will be checked to see if they accept the correct age: Cannot be under 18 and over 120. Phone number 
+	follows correct format and only one is accepted. First name and surname must also not exceed 15 characters. Lastly, details 
+	shouldn't exceed 100 chracters
+    - for log in Will 
+    
 
 _______________________________________________________________________________________________________________________________________
 Kristian:
