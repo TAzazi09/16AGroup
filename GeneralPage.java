@@ -22,14 +22,17 @@ public class GeneralPage extends javax.swing.JFrame {
         logButton.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                         application.main(null);
+                        dispose();
                 }
         });
 
         regButton.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        Registration_gui.main(null);
+                    Registration_gui.main(null);
+                    dispose(); // Close the current JFrame
                 }
-        });
+            });
+        
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,7 +104,6 @@ public class GeneralPage extends javax.swing.JFrame {
                 statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
                 statement.executeUpdate("CREATE DATABASE NHS");
                 statement.executeUpdate("use NHS");
-                // statement.executeUpdate("CREATE DATABASE NHS");
                 statement.executeUpdate("DROP TABLE IF EXISTS patients;");
                 statement.execute("CREATE TABLE patients (            PatientID int not null auto_increment,              FirstName VARCHAR(15) not null,              Surname varchar(15) NOT NULL,              PRIMARY KEY (patientID),              Gender varchar(10),              Age int (3),              PhoneNumber varchar(15),              DoctorChosen varchar(20),              Details varchar(100)            );");
         } catch (Exception e) {
