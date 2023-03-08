@@ -1,10 +1,10 @@
 import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 import java.util.Enumeration;
 import javax.swing.AbstractButton;
 // import javax.swing.ButtonGroup;
-
 
 /**
  *
@@ -17,7 +17,7 @@ public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JLabel Doctor_label;
     private javax.swing.JComboBox<String> Doctor_list;
     private javax.swing.JTextField Firstname_input;
-    private javax.swing.JTextField Firstname_input1;
+    private javax.swing.JTextField Surname;
     private javax.swing.JLabel Gender_label;
     private javax.swing.JTextField Phone_input;
     private javax.swing.JLabel Phone_label;
@@ -37,9 +37,33 @@ public class Registration_gui extends javax.swing.JFrame {
     public static ButtonGroup totalGroup;
 
     public static void main(String args[]) {
+        // NetBeans' exception checks
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(application.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(application.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(application.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(application.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
+        }
+
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Registration_gui().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Registration_gui().setVisible(true);
+            }
         });
     }
 
@@ -47,13 +71,13 @@ public class Registration_gui extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void initComponents() {
+    private void initComponents() {
 
         Register_title = new javax.swing.JLabel();
         Firstname_input = new javax.swing.JTextField();
         firstname_label = new javax.swing.JLabel();
         surname_label = new javax.swing.JLabel();
-        Firstname_input1 = new javax.swing.JTextField();
+        Surname = new javax.swing.JTextField();
         age_label = new javax.swing.JLabel("Age");
         age_input = new javax.swing.JTextField();
         gender_male_check = new javax.swing.JRadioButton();
@@ -61,7 +85,7 @@ public class Registration_gui extends javax.swing.JFrame {
         gender_female_check = new javax.swing.JRadioButton();
         gender_other_check = new javax.swing.JRadioButton();
         gender_pnts_check = new javax.swing.JRadioButton();
-        DOB_label = new javax.swing.JLabel();
+        DOB_label = new javax.swing.JLabel();   
         Phone_label = new javax.swing.JLabel();
         Phone_input = new javax.swing.JTextField();
         Doctor_label = new javax.swing.JLabel();
@@ -96,9 +120,9 @@ public class Registration_gui extends javax.swing.JFrame {
         surname_label.setToolTipText("");
         surname_label.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
 
-        Firstname_input1.addActionListener(new java.awt.event.ActionListener() {
+        Surname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Firstname_input1ActionPerformed(evt);
+                SurnameActionPerformed(evt);
             }
         });
 
@@ -108,7 +132,7 @@ public class Registration_gui extends javax.swing.JFrame {
 
         age_input.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Firstname_input1ActionPerformed(evt);
+                SurnameActionPerformed(evt);
             }
         });
 
@@ -234,10 +258,12 @@ public class Registration_gui extends javax.swing.JFrame {
                         .addComponent(gender_other_check)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(gender_pnts_check))
-                    .addComponent(surname_label)
-                    .addComponent(Firstname_input1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(firstname_label)
+                        .addComponent(firstname_label)
                     .addComponent(Firstname_input, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(surname_label)
+                    .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(age_label)
+                    .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Details_Label)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(dob_field, javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,12 +290,14 @@ public class Registration_gui extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(surname_label)
                 .addGap(1, 1, 1)
+                .addGap(1, 1, 1)
+                .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(age_label)
+                .addGap(10, 10, 10)
+                
                 .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(age_label)
-                .addGap(1, 1, 1)
-                .addComponent(Firstname_input1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+
                 .addComponent(Gender_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -309,7 +337,7 @@ public class Registration_gui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
-    private void Firstname_input1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void SurnameActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
@@ -338,16 +366,31 @@ public class Registration_gui extends javax.swing.JFrame {
     }
 
     private void Back_buttonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        {
+    }
     }
 
     private void Register_buttonActionPerformed(java.awt.event.ActionEvent evt) {
-        // String selection = Registration_gui.totalGroup.getSelection().getActionCommand();
-        // // System.out.println(selection);
-        //     Registration.test(Firstname_input.getText(), Firstname_input1.getText(), selection, age)
-        //     String t = Firstname_input.getText();
-        //     System.out.println(t);
+        if ((Firstname_input == null) || (Surname == null) || (Registration_gui.totalGroup.getSelection() == null) || 
+            (age_input.getText() == null) || (Doctor_list.getSelectedItem() == null)) {
+            JOptionPane.showMessageDialog(null, "Some fields are missing data!");
+        
+        }
+        else{
+        String selection = Registration_gui.totalGroup.getSelection().getActionCommand();
+        boolean outcome = Registration.test(Firstname_input.getText(), Surname.getText(), selection,
+        Integer.parseInt(age_input.getText()), Phone_input.getText(),
+        String.valueOf(Doctor_list.getSelectedItem()), detail_input.getText());
+        if(outcome == true) {
+            Registration.sendData(Firstname_input.getText(), Surname.getText(), selection,
+            Integer.parseInt(age_input.getText()), Phone_input.getText(),
+            String.valueOf(Doctor_list.getSelectedItem()), detail_input.getText());
+            dispose();
+        }
+        else {
 
+        }
+    }
     }
 
     private void dob_fieldActionPerformed(java.awt.event.ActionEvent evt) {
