@@ -14,6 +14,7 @@ public class Registration_gui extends javax.swing.JFrame {
 
     /**
      * Creates new form Registration
+     * @return 
      */
     public Registration_gui() {
         initComponents();
