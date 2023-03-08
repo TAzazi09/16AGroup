@@ -131,7 +131,7 @@ public class application extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-        // NetBeans' exception checks
+        // NetBeans' Nimbus feel exception checks
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
