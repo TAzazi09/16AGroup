@@ -1,4 +1,3 @@
- //!!!!!!!!!!!!!!!!!!
 public class application extends javax.swing.JFrame {
     private javax.swing.JPanel loginPanel;
     private javax.swing.JLabel usernameLabel, passwordLabel;
