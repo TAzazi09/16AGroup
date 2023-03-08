@@ -1,13 +1,18 @@
+/////////////////////////////
 public class application extends javax.swing.JFrame {
     private javax.swing.JPanel loginPanel;
     private javax.swing.JLabel usernameLabel, passwordLabel;
     private javax.swing.JTextField usernameText;
     private javax.swing.JPasswordField passwordText;
     private javax.swing.JButton loginButton;
-
+/////////////////////////////
     public application() {
         initComponents();
     }
+
+    /////////////////////////////
+    /////////////////////////////
+    
 
     private void initComponents() {
         loginPanel = new javax.swing.JPanel();
