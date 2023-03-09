@@ -13,7 +13,7 @@ import javax.swing.AbstractButton;
 
 public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JButton Back_button;
-    private javax.swing.JLabel DOB_label;
+    //private javax.swing.JLabel DOB_label;
     private javax.swing.JLabel Details_Label;
     private javax.swing.JLabel Doctor_label;
     private javax.swing.JComboBox<String> Doctor_list;
@@ -25,7 +25,7 @@ public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JButton Register_button;
     private javax.swing.JLabel Register_title;
     private javax.swing.JTextArea detail_input;
-    private javax.swing.JFormattedTextField dob_field;
+    //private javax.swing.JFormattedTextField dob_field;
     private javax.swing.JLabel firstname_label;
     private javax.swing.JRadioButton gender_female_check;
     private javax.swing.JRadioButton gender_male_check;
@@ -85,7 +85,7 @@ public class Registration_gui extends javax.swing.JFrame {
         gender_female_check = new javax.swing.JRadioButton();
         gender_other_check = new javax.swing.JRadioButton();
         gender_pnts_check = new javax.swing.JRadioButton();
-        DOB_label = new javax.swing.JLabel();   
+       // DOB_label = new javax.swing.JLabel();   
         Phone_label = new javax.swing.JLabel();
         Phone_input = new javax.swing.JTextField();
         Doctor_label = new javax.swing.JLabel();
@@ -95,7 +95,7 @@ public class Registration_gui extends javax.swing.JFrame {
         detail_input = new javax.swing.JTextArea();
         Back_button = new javax.swing.JButton();
         Register_button = new javax.swing.JButton();
-        dob_field = new javax.swing.JFormattedTextField();
+      //  dob_field = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(900, 900));
@@ -182,8 +182,8 @@ public class Registration_gui extends javax.swing.JFrame {
         group.add(gender_pnts_check);
         Registration_gui.totalGroup = group;
 
-        DOB_label.setText("Date of Birth");
-        DOB_label.setFont(new java.awt.Font("Monospaced", 0, 18));
+        // DOB_label.setText("Date of Birth");
+        // DOB_label.setFont(new java.awt.Font("Monospaced", 0, 18));
 
         Phone_label.setText("Phone Number");
         Phone_label.setFont(new java.awt.Font("Monospaced", 0, 18));
@@ -233,13 +233,13 @@ public class Registration_gui extends javax.swing.JFrame {
             }
         });
 
-        dob_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-                new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/YYYY"))));
-        dob_field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dob_fieldActionPerformed(evt);
-            }
-        });
+        // dob_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
+        //         new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/YYYY"))));
+        // dob_field.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         dob_fieldActionPerformed(evt);
+        //     }
+        // });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -252,7 +252,7 @@ public class Registration_gui extends javax.swing.JFrame {
                                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(Doctor_label)
                                         .addComponent(Phone_label)
-                                        .addComponent(DOB_label)
+                                        //.addComponent(DOB_label)
                                         .addComponent(Gender_label)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(gender_male_check)
@@ -274,7 +274,7 @@ public class Registration_gui extends javax.swing.JFrame {
                                         .addComponent(Details_Label)
                                         .addGroup(layout
                                                 .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(dob_field, javax.swing.GroupLayout.Alignment.LEADING)
+                                                //.addComponent(dob_field, javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                         .addGroup(layout.createSequentialGroup()
@@ -336,13 +336,13 @@ public class Registration_gui extends javax.swing.JFrame {
                                         .addComponent(gender_female_check)
                                         .addComponent(gender_other_check)
                                         .addComponent(gender_pnts_check))
-                                .addGap(20, 20, 20)
+                               // .addGap(20, 20, 20)
 
-                                .addComponent(DOB_label)
+                                //.addComponent(DOB_label)
                                 .addGap(1, 1, 1)
-                                .addComponent(dob_field, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
+                               // .addComponent(dob_field, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                   //     javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    //            .addGap(20, 20, 20)
 
                                 .addComponent(Phone_label)
                                 .addGap(1, 1, 1)
