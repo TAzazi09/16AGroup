@@ -36,6 +36,10 @@ public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JTextField ageInput;
     public static ButtonGroup totalGroup;
 
+    public Registration_gui() {
+        initComponents();
+    }
+
     public static void main(String args[]) {
         // NetBeans' exception checks
         try {
@@ -67,14 +71,9 @@ public class Registration_gui extends javax.swing.JFrame {
         });
     }
 
-    public Registration_gui() {
-        initComponents();
-    }
-
     private void initComponents() {
         regLabel = new javax.swing.JLabel("Register");
 
-        
         firstnameLabel = new javax.swing.JLabel("First Name");
         firstnameInput = new javax.swing.JTextField();
 
@@ -102,7 +101,6 @@ public class Registration_gui extends javax.swing.JFrame {
         detailsLabel = new javax.swing.JLabel("Details");
         detailsInput = new javax.swing.JTextArea();
 
-        
         jScrollPane1 = new javax.swing.JScrollPane();
         backButton = new javax.swing.JButton("Back");
         regButton = new javax.swing.JButton("Register");
@@ -123,7 +121,6 @@ public class Registration_gui extends javax.swing.JFrame {
         ageLabel.setToolTipText("");
         ageLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
 
-        
         genderLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
         maleCheck.setFont(new java.awt.Font("Monospaced", 0, 18));
         maleCheck.setActionCommand("male");
@@ -176,6 +173,8 @@ public class Registration_gui extends javax.swing.JFrame {
         dobField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
                 new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/YYYY"))));
 
+        // Panel layout code section below
+        // -----------------------------------------------------------------------------------------------------------------------------------
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -304,16 +303,17 @@ public class Registration_gui extends javax.swing.JFrame {
 
         pack();
     }
+    // -----------------------------------------------------------------------------------------------------------------------------------
 
+    // Button actions
     private void Back_buttonActionPerformed(java.awt.event.ActionEvent evt) {
-        {
-            new GeneralPage().setVisible(true);
-            dispose();
-        }
+        new GeneralPage().setVisible(true);
+        dispose();
     }
 
     private void Register_buttonActionPerformed(java.awt.event.ActionEvent evt) {
-        if ((firstnameInput == null) || (surnameInput == null) || (Registration_gui.totalGroup.getSelection() == null) ||
+        if ((firstnameInput == null) || (surnameInput == null) || (Registration_gui.totalGroup.getSelection() == null)
+                ||
                 (ageInput.getText() == null) || (doctorList.getSelectedItem() == null)) {
             JOptionPane.showMessageDialog(null, "Some fields are missing data!");
 

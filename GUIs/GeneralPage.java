@@ -14,102 +14,12 @@ public class GeneralPage extends javax.swing.JFrame {
     private javax.swing.JButton regButton;
     private javax.swing.JLabel helloLabel;
     private javax.swing.JPanel generalPanel;
+    private static Connection connection;
+    private static Statement statement;
 
     public GeneralPage() {
         initComponents();
     }
-
-    private void initComponents() {
-        generalPanel = new javax.swing.JPanel();
-        helloLabel = new javax.swing.JLabel("Hello!");
-        logButton = new javax.swing.JButton("Log-in");
-        regButton = new javax.swing.JButton("Register");
-
-        logButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                application.main(null);
-                dispose();
-            }
-        });
-
-        regButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Registration_gui.main(null);
-                dispose(); // Close the current JFrame
-            }
-        });
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        generalPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        helloLabel.setFont(new java.awt.Font("Monospaced", 0, 36));
-
-        logButton.setBackground(new java.awt.Color(65, 175, 255));
-        logButton.setFont(new java.awt.Font("Monospaced", 0, 18));
-
-        regButton.setBackground(new java.awt.Color(65, 175, 255));
-        regButton.setFont(new java.awt.Font("Monospaced", 0, 18));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(generalPanel);
-        generalPanel.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(
-                                        javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout
-                                                .createSequentialGroup()
-                                                .addGap(270, 270, 270)
-                                                .addComponent(logButton,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        135,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(20, 20, 20)
-                                                .addComponent(regButton,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        135,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout
-                                                .createSequentialGroup()
-                                                .addGap(350, 350, 350)
-                                                .addComponent(helloLabel)))
-                                .addContainerGap(320, Short.MAX_VALUE)));
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(300, 300, 300)
-                                .addComponent(helloLabel)
-                                .addPreferredGap(
-                                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(
-                                        javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(logButton,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(regButton,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                50,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(445, Short.MAX_VALUE)));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(generalPanel, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-        layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(generalPanel, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-
-        pack();
-    }
-
-    private static Connection connection;
-    private static Statement statement;
 
     public static void main(String args[]) {
         try {
@@ -172,5 +82,96 @@ public class GeneralPage extends javax.swing.JFrame {
                 new GeneralPage().setVisible(true);
             }
         });
+    }
+
+    private void initComponents() {
+        generalPanel = new javax.swing.JPanel();
+        helloLabel = new javax.swing.JLabel("Hello!");
+        logButton = new javax.swing.JButton("Log-in");
+        regButton = new javax.swing.JButton("Register");
+
+        logButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                application.main(null);
+                dispose();
+            }
+        });
+
+        regButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Registration_gui.main(null);
+                dispose(); // Close the current JFrame
+            }
+        });
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        generalPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        helloLabel.setFont(new java.awt.Font("Monospaced", 0, 36));
+
+        logButton.setBackground(new java.awt.Color(65, 175, 255));
+        logButton.setFont(new java.awt.Font("Monospaced", 0, 18));
+
+        regButton.setBackground(new java.awt.Color(65, 175, 255));
+        regButton.setFont(new java.awt.Font("Monospaced", 0, 18));
+
+        // Panel layout code section (below)
+        // -----------------------------------------------------------------------------------------------------------------------------------
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(generalPanel);
+        generalPanel.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(
+                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout
+                                                .createSequentialGroup()
+                                                .addGap(270, 270, 270)
+                                                .addComponent(logButton,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        135,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(20, 20, 20)
+                                                .addComponent(regButton,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        135,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout
+                                                .createSequentialGroup()
+                                                .addGap(350, 350, 350)
+                                                .addComponent(helloLabel)))
+                                .addContainerGap(320, Short.MAX_VALUE)));
+        jPanel1Layout.setVerticalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(300, 300, 300)
+                                .addComponent(helloLabel)
+                                .addPreferredGap(
+                                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(
+                                        javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(logButton,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                50,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(regButton,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                50,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(445, Short.MAX_VALUE)));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(generalPanel, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(generalPanel, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+        pack();
     }
 }

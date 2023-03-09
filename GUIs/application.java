@@ -18,6 +18,42 @@ public class application extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static void main(String args[]) {
+        // NetBeans' Nimbus feel exception checks
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
+                    .getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(application.class.getName()).log(
+                    java.util.logging.Level.SEVERE, null,
+                    ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(application.class.getName()).log(
+                    java.util.logging.Level.SEVERE, null,
+                    ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(application.class.getName()).log(
+                    java.util.logging.Level.SEVERE, null,
+                    ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(application.class.getName()).log(
+                    java.util.logging.Level.SEVERE, null,
+                    ex);
+        }
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new application().setVisible(true);
+            }
+        });
+    }
+
     private void initComponents() {
         loginPanel = new javax.swing.JPanel();
         usernameLabel = new javax.swing.JLabel("Username: ");
@@ -56,7 +92,7 @@ public class application extends javax.swing.JFrame {
             }
         });
 
-        // NetBeans' panel layout code section (below)
+        // Panel layout code section below
         // -----------------------------------------------------------------------------------------------------------------------------------
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
@@ -156,7 +192,7 @@ public class application extends javax.swing.JFrame {
     }
     // -----------------------------------------------------------------------------------------------------------------------------------
 
-    // Button functionality
+    // Button actions
     // When clicked, the username and password are extracted and sent for verification
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String username = usernameText.getText();
@@ -168,41 +204,5 @@ public class application extends javax.swing.JFrame {
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
         new GeneralPage().setVisible(true);
         dispose();
-    }
-
-    public static void main(String args[]) {
-        // NetBeans' Nimbus feel exception checks
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
-                    .getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(
-                    java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(
-                    java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(
-                    java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(
-                    java.util.logging.Level.SEVERE, null,
-                    ex);
-        }
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new application().setVisible(true);
-            }
-        });
     }
 }
