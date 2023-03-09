@@ -35,15 +35,20 @@ public class LoginCheck {
                 System.out.println("Fasddsil");
                 System.exit(1);
             }
-
+            boolean t = false;
             while (resultSet.next()) {
                 if ((username.equals(resultSet.getString("FirstName")))
                         && (password.equals((resultSet.getString("Surname")) + (resultSet.getString("PatientID"))))) {
                     JOptionPane.showMessageDialog(null, "Welcome to the End!");
+                    t = true;
                     break;
                 }
             }
-            System.out.println("fai");
+            if (t == false)
+            {
+                JOptionPane.showMessageDialog(null, "Incorect Credentials!");
+            }
+            //System.out.println("fai");
         } catch (Exception e) {
             e.printStackTrace();
         }
