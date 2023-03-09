@@ -408,6 +408,9 @@ public class Registration_gui extends javax.swing.JFrame {
 
     private void Back_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         {
+            new GeneralPage().setVisible(true);
+            dispose();
+
     }
     }
 
