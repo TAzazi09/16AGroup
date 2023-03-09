@@ -1,17 +1,14 @@
 package GUIs;
-import javax.swing.ButtonGroup;
-import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
-import Functionality.Registration;
 
-import java.util.Enumeration;
-import javax.swing.AbstractButton;
-// import javax.swing.ButtonGroup;
 /**
  * @author krist
  * @cosmetic changes by nik
  * @functional changes by ethan
  */
+
+import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
+import Functionality.Registration;
 
 public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JButton Back_button;
@@ -87,7 +84,7 @@ public class Registration_gui extends javax.swing.JFrame {
         gender_female_check = new javax.swing.JRadioButton();
         gender_other_check = new javax.swing.JRadioButton();
         gender_pnts_check = new javax.swing.JRadioButton();
-        DOB_label = new javax.swing.JLabel();   
+        DOB_label = new javax.swing.JLabel();
         Phone_label = new javax.swing.JLabel();
         Phone_input = new javax.swing.JTextField();
         Doctor_label = new javax.swing.JLabel();
@@ -109,12 +106,6 @@ public class Registration_gui extends javax.swing.JFrame {
         Register_title.setToolTipText("");
         Register_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        Firstname_input.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Firstname_inputActionPerformed(evt);
-            }
-        });
-
         firstname_label.setText("First Name");
         firstname_label.setFont(new java.awt.Font("Monospaced", 0, 18));
 
@@ -122,30 +113,13 @@ public class Registration_gui extends javax.swing.JFrame {
         surname_label.setToolTipText("");
         surname_label.setFont(new java.awt.Font("Monospaced", 0, 18));
 
-        Surname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SurnameActionPerformed(evt);
-            }
-        });
-
         age_label.setText("Age");
         age_label.setToolTipText("");
-        age_label.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
-
-        age_input.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SurnameActionPerformed(evt);
-            }
-        });
+        age_label.setFont(new java.awt.Font("Monospaced", 0, 18));
 
         gender_male_check.setText("Male");
         gender_male_check.setFont(new java.awt.Font("Monospaced", 0, 18));
         gender_male_check.setActionCommand("male");
-        gender_male_check.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gender_male_checkActionPerformed(evt);
-            }
-        });
 
         Gender_label.setText("Gender");
         Gender_label.setFont(new java.awt.Font("Monospaced", 0, 18));
@@ -153,29 +127,14 @@ public class Registration_gui extends javax.swing.JFrame {
         gender_female_check.setText("Female");
         gender_female_check.setFont(new java.awt.Font("Monospaced", 0, 18));
         gender_female_check.setActionCommand("female");
-        gender_female_check.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gender_female_checkActionPerformed(evt);
-            }
-        });
 
         gender_other_check.setText("Other");
         gender_other_check.setFont(new java.awt.Font("Monospaced", 0, 18));
         gender_other_check.setActionCommand("other");
-        gender_other_check.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gender_other_checkActionPerformed(evt);
-            }
-        });
 
         gender_pnts_check.setText("Prefer not to say");
         gender_pnts_check.setFont(new java.awt.Font("Monospaced", 0, 18));
         gender_pnts_check.setActionCommand("pnts");
-        gender_pnts_check.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gender_pnts_checkActionPerformed(evt);
-            }
-        });
 
         ButtonGroup group = new ButtonGroup();
         group.add(gender_female_check);
@@ -190,23 +149,12 @@ public class Registration_gui extends javax.swing.JFrame {
         Phone_label.setText("Phone Number");
         Phone_label.setFont(new java.awt.Font("Monospaced", 0, 18));
 
-        Phone_input.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Phone_inputActionPerformed(evt);
-            }
-        });
-
         Doctor_label.setText("Doctor Choosen");
         Doctor_label.setFont(new java.awt.Font("Monospaced", 0, 18));
 
         Doctor_list
                 .setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr Smith", "Dr Jason", "Dr Andrew" }));
         Doctor_list.setFont(new java.awt.Font("Monospaced", 0, 18));
-        Doctor_list.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Doctor_listActionPerformed(evt);
-            }
-        });
 
         Details_Label.setText("Details");
         Details_Label.setFont(new java.awt.Font("Monospaced", 0, 18));
@@ -237,11 +185,6 @@ public class Registration_gui extends javax.swing.JFrame {
 
         dob_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
                 new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/YYYY"))));
-        dob_field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dob_fieldActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -270,7 +213,7 @@ public class Registration_gui extends javax.swing.JFrame {
                                         .addComponent(firstname_label)
                                         .addComponent(Firstname_input, javax.swing.GroupLayout.PREFERRED_SIZE, 254,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(age_label)
+                                        .addComponent(age_label)
                                         .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE, 254,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Details_Label)
@@ -321,14 +264,10 @@ public class Registration_gui extends javax.swing.JFrame {
                                 .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 
-                                        .addComponent(age_label)
-                                        .addGap(1, 1, 1)
-                                        .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(20, 20, 20)
-        
-
-
+                                .addComponent(age_label)
+                                .addGap(1, 1, 1)
+                                .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(20, 20, 20)
 
                                 .addComponent(Gender_label)
@@ -376,70 +315,31 @@ public class Registration_gui extends javax.swing.JFrame {
         pack();
     }
 
-    private void Firstname_inputActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void SurnameActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void gender_male_checkActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void gender_female_checkActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void gender_other_checkActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void gender_pnts_checkActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void Phone_inputActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void Doctor_listActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
     private void Back_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         {
             new GeneralPage().setVisible(true);
             dispose();
-
-    }
+        }
     }
 
     private void Register_buttonActionPerformed(java.awt.event.ActionEvent evt) {
-        if ((Firstname_input == null) || (Surname == null) || (Registration_gui.totalGroup.getSelection() == null) || 
-            (age_input.getText() == null) || (Doctor_list.getSelectedItem() == null)) {
+        if ((Firstname_input == null) || (Surname == null) || (Registration_gui.totalGroup.getSelection() == null) ||
+                (age_input.getText() == null) || (Doctor_list.getSelectedItem() == null)) {
             JOptionPane.showMessageDialog(null, "Some fields are missing data!");
-        
-        }
-        else{
-        String selection = Registration_gui.totalGroup.getSelection().getActionCommand();
-        boolean outcome = Registration.test(Firstname_input.getText(), Surname.getText(), selection,
-        Integer.parseInt(age_input.getText()), Phone_input.getText(),
-        String.valueOf(Doctor_list.getSelectedItem()), detail_input.getText());
-        if(outcome == true) {
-            Registration.sendData(Firstname_input.getText(), Surname.getText(), selection,
-            Integer.parseInt(age_input.getText()), Phone_input.getText(),
-            String.valueOf(Doctor_list.getSelectedItem()), detail_input.getText());
-            dispose();
-        }
-        else {
 
-        }
-    }
-    }
+        } else {
+            String selection = Registration_gui.totalGroup.getSelection().getActionCommand();
+            boolean outcome = Registration.test(Firstname_input.getText(), Surname.getText(), selection,
+                    Integer.parseInt(age_input.getText()), Phone_input.getText(),
+                    String.valueOf(Doctor_list.getSelectedItem()), detail_input.getText());
+            if (outcome == true) {
+                Registration.sendData(Firstname_input.getText(), Surname.getText(), selection,
+                        Integer.parseInt(age_input.getText()), Phone_input.getText(),
+                        String.valueOf(Doctor_list.getSelectedItem()), detail_input.getText());
+                dispose();
+            } else {
 
-    private void dob_fieldActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+            }
+        }
     }
 }
