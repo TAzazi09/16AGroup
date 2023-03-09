@@ -60,25 +60,25 @@ public class GeneralPage extends javax.swing.JFrame {
                                         javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout
                                                 .createSequentialGroup()
-                                                .addGap(44, 44, 44)
+                                                .addGap(270, 270, 270)
                                                 .addComponent(logButton,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE,
                                                         135,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
+                                                .addGap(20, 20, 20)
                                                 .addComponent(regButton,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE,
                                                         135,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout
                                                 .createSequentialGroup()
-                                                .addGap(121, 121, 121)
+                                                .addGap(350, 350, 350)
                                                 .addComponent(helloLabel)))
-                                .addContainerGap(70, Short.MAX_VALUE)));
+                                .addContainerGap(320, Short.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(102, 102, 102)
+                                .addGap(300, 300, 300)
                                 .addComponent(helloLabel)
                                 .addPreferredGap(
                                         javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -86,13 +86,13 @@ public class GeneralPage extends javax.swing.JFrame {
                                         javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(logButton,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                46,
+                                                50,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(regButton,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                46,
+                                                50,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(92, Short.MAX_VALUE)));
+                                .addContainerGap(445, Short.MAX_VALUE)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
