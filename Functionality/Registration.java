@@ -1,3 +1,5 @@
+package Functionality;
+import GUIs.GeneralPage;
 /**
  * @author ethan
  */
@@ -10,6 +12,8 @@ import java.sql.*;
 import javax.print.Doc;
 import javax.swing.JOptionPane;
 import javax.xml.stream.events.StartElement;
+
+import GUIs.GeneralPage;
 
 public class Registration {
     private static Connection connection;

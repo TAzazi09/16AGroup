@@ -1,6 +1,8 @@
+package GUIs;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
+import Functionality.Registration;
 
 import java.util.Enumeration;
 import javax.swing.AbstractButton;

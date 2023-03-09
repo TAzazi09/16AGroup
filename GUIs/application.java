@@ -1,3 +1,5 @@
+package GUIs;
+import Functionality.LoginCheck;
 /**
  * @author nik
  */
