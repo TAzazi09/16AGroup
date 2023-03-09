@@ -49,7 +49,7 @@ public class Registration {
             String DoctorChosen, String Details) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=root&password=legome12");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=***&password=***");
             statement = connection.createStatement();
             int n = statement.executeUpdate(
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details )"

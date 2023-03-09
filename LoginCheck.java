@@ -26,7 +26,7 @@ public class LoginCheck {
             
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=root&password=legome12");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=***&password=***");
             statement = connection.createStatement();
 
             resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
