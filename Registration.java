@@ -47,6 +47,7 @@ public class Registration {
 
     public static void sendData(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorChosen, String Details) {
+                String RightID = "";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=***&password=***");
@@ -58,17 +59,19 @@ public class Registration {
             // boolean stop = false;
             resultSet = statement.executeQuery("select * from patients");
             int l = 0;
+            // /String RightID = "";
             while (resultSet.next()) {
                 l++;
                 System.out.println(resultSet.getString("PatientID") + " - " + resultSet.getString("FirstName") + " - "
                         + resultSet.getString("Surname"));
+                RightID = resultSet.getString("PatientID");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         JOptionPane.showMessageDialog(null,
-                "Congratulations " + FirstName + " " + Surname + ", and welcome to the NHS!");
+                (("Thank you for registering " + FirstName + " " + Surname + ", and welcome to the NHS! \nYour username is " + FirstName + " and your password is " + Surname + RightID +". \nPlease keep theses safe!")));
         new GeneralPage().setVisible(true);
     }
 }
