@@ -1,5 +1,5 @@
 package Functionality;
-import GUIs.GeneralPage;
+
 /**
  * @author ethan
  */
@@ -8,10 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.*;
-// import GeneralPage.java;
-import javax.print.Doc;
 import javax.swing.JOptionPane;
-import javax.xml.stream.events.StartElement;
 
 import GUIs.GeneralPage;
 
@@ -19,10 +16,6 @@ public class Registration {
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
-
-    public static void main(String[] args) {
-
-    }
 
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorChosen, String Details) {
@@ -51,31 +44,33 @@ public class Registration {
 
     public static void sendData(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorChosen, String Details) {
-                String RightID = "";
+        String RightID = "";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=root&password=*Niko1312");
             statement = connection.createStatement();
+
             int n = statement.executeUpdate(
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
                             + PhoneNumber + "','" + DoctorChosen + "','" + Details + "')");
-            // boolean stop = false;
             resultSet = statement.executeQuery("select * from patients");
+
             int l = 0;
-            // /String RightID = "";
             while (resultSet.next()) {
                 l++;
                 System.out.println(resultSet.getString("PatientID") + " - " + resultSet.getString("FirstName") + " - "
                         + resultSet.getString("Surname"));
                 RightID = resultSet.getString("PatientID");
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         JOptionPane.showMessageDialog(null,
-                (("Thank you for registering " + FirstName + " " + Surname + ", and welcome to the NHS! \nYour username is " + FirstName + " and your password is " + Surname + RightID +". \nPlease keep theses safe!")));
+                (("Thank you for registering " + FirstName + " " + Surname
+                        + ", and welcome to the NHS! \nYour username is " + FirstName + " and your password is "
+                        + Surname + RightID + ". \nPlease keep theses safe!")));
         new GeneralPage().setVisible(true);
     }
 }
