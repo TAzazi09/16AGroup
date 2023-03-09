@@ -154,9 +154,11 @@ public class application extends javax.swing.JFrame {
         dispose();
     }
 
-    public JPanel close() {
-        return loginPanel;
-    }
+
+
+//     public JPanel close() {
+//         return loginPanel;
+//     }
     public static void main(String args[]) {
         // NetBeans' Nimbus feel exception checks
         try {
@@ -186,13 +188,15 @@ public class application extends javax.swing.JFrame {
         new application().setVisible(true);
             }
         });
-    }
-}
+    
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new application().setVisible(true);
             }
-        });
+            });
+        
+    
     }
 }
