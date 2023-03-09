@@ -268,6 +268,9 @@ public class Registration_gui extends javax.swing.JFrame {
                                         .addComponent(firstname_label)
                                         .addComponent(Firstname_input, javax.swing.GroupLayout.PREFERRED_SIZE, 254,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(age_label)
+                                        .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE, 254,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Details_Label)
                                         .addGroup(layout
                                                 .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -315,6 +318,15 @@ public class Registration_gui extends javax.swing.JFrame {
                                 .addGap(1, 1, 1)
                                 .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+
+                                        .addComponent(age_label)
+                                        .addGap(1, 1, 1)
+                                        .addComponent(age_input, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(20, 20, 20)
+        
+
+
                                 .addGap(20, 20, 20)
 
                                 .addComponent(Gender_label)
