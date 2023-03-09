@@ -130,11 +130,11 @@ public class GeneralPage extends javax.swing.JFrame {
                                         "FirstName VARCHAR(15) not null, " +
                                         "Surname varchar(15) NOT NULL," +
                                         "PRIMARY KEY (patientID), " +
-                                        "Gender varchar(10)," +
-                                        "Age int (3)," +
-                                        "PhoneNumber varchar(15)," +
-                                        "DoctorChosen varchar(20),  " +
-                                        "Details varchar(100)" +
+                                        "Gender varchar(10) not null," +
+                                        "Age int (3) not null," +
+                                        "PhoneNumber varchar(15) ," +
+                                        "DoctorChosen varchar(20) not null,  " +
+                                        "Details varchar(100) " +
                                         ");");
                 } catch (Exception e) {
                         e.printStackTrace();
