@@ -1,7 +1,6 @@
 Group 16A - Plan
 
-Ethan - I will be creating the majority of the background code that communicates with the database. I also create sql statements that 
-are used to create and communicate with the database. 
+Ethan - I will be creating most of the background code that communicates with the database. I will also create all SQL statements that by the application to communicate with the database. 
 
 _______________________________________________________________________________________________________________________________________
 Nikola:
@@ -22,14 +21,14 @@ Nikola:
         - consistent font (including font size)
         - consistent color theme (white and a specific shade of blue)
 
-        I will create the login page GUI. There are going to be two text fields, one for username and one for password. The view will also
-    have two labels to show which text field is for what. Finally, there will be a log-in button that will send the user's info to our
-    database for check. Iam going to use NetBeans' drag-and-drop tool to create the interface and it will generate the java swing code
-    for me. Then I will manually add the button functionality to extract and send the necessary info to LoginCheck.java.
-        I will also create the general page GUI. There are going to be two buttons, one that sends the user to the login page and one 
-    that sends him to the register page. The view will also include a greeting label. I am going to use NetBeans' drag-and-drop tool to 
-    generate the majority of the code, again, and then will fine tune it manually to remove redundant comments and lines of code, add 
-    useful comments, play with the spacing, and do some basic code reformatting (like moving the variable declaration to the top).
+I will create the login page GUI. There are going to be two text fields, one for username and one for password. The view will also
+have two labels to show which text field is for what. Finally, there will be a log-in button that will send the user's info to our
+database for check. Iam going to use NetBeans' drag-and-drop tool to create the interface and it will generate the java swing code
+for me. Then I will manually add the button functionality to extract and send the necessary info to LoginCheck.java.
+I will also create the general page GUI. There are going to be two buttons, one that sends the user to the login page and one 
+that sends him to the register page. The view will also include a greeting label. I am going to use NetBeans' drag-and-drop tool to 
+generate the majority of the code, again, and then will fine tune it manually to remove redundant comments and lines of code, add 
+useful comments, play with the spacing, and do some basic code reformatting (like moving the variable declaration to the top).
 
 _______________________________________________________________________________________________________________________________________
 Callum
@@ -52,3 +51,18 @@ Kristian:
 _______________________________________________________________________________________________________________________________________
 Tare:
     - more test cases
+
+
+============================================================================================================================================
+Database Design:
+The database is a simple one table design, where the table holds the 
+details of registered patients. The details included a patientID that
+auto increments as more details are added (first patient to register is
+ 1, second is 2, etc). Other details are First Name, Surname, Age, Date
+ Of Birth, Gender, DoctorChosen, Phone Number, Details. The only fields
+ that allow null values are Phone Number and Details, since there is a
+ chance that the patient doesn’t have access to a phone and would need to
+ communicate with the doctors in a different way. No details may be
+ needed as well. The database is initialised when the app is launched, so
+ when a patient has finished using the app, they will be sent to the 
+general page but with the database still intact.
