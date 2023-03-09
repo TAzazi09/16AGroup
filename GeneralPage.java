@@ -118,7 +118,7 @@ public class GeneralPage extends javax.swing.JFrame {
 
                         Class.forName("com.mysql.cj.jdbc.Driver");
 
-                        connection = DriverManager.getConnection("jdbc:mysql://localhost/?user=***&password=***");
+                        connection = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=*Niko1312");
                         statement = connection.createStatement();
                         // Lines below are used for creating tables
                         statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
