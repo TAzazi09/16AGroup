@@ -1,34 +1,24 @@
-Group 16A - Plan
+Group 16A - Sprint 1 Plan
 
 Ethan - I will be creating most of the background code that communicates with the database. I will also create all SQL statements that by the application to communicate with the database. 
 
 _______________________________________________________________________________________________________________________________________
 Nikola:
     - Login page GUI
-        - username and password fields
-        - a functional log-in button (send info to LoginCheck.java)
+        - username and password fields and a functional log-in button (send info to LoginCheck.java)
+
     - GeneralPage GUI
-        - a 'Hello' message and two buttons
-            - the left button sends to the login page
-            - the right button sends to the register page
+        - a 'Hello' message and two buttons, the left button sends back to the login page, and the right button sends to the register page
+
     - Code quality control
         - author comments at the top of the different files
         - enforce variable declarations to be in the beginning of the code
         - comment monitoring (removing unnecessary auto-generated comments and adding useful ones)
         - impose basic indenting and whitespace practices
         - implement proper project structure (sql files in one folder, views in another, etc.)
-    - Coherency between the different pages of our app/website
-        - consistent font (including font size)
-        - consistent color theme (white and a specific shade of blue)
 
-I will create the login page GUI. There are going to be two text fields, one for username and one for password. The view will also
-have two labels to show which text field is for what. Finally, there will be a log-in button that will send the user's info to our
-database for check. Iam going to use NetBeans' drag-and-drop tool to create the interface and it will generate the java swing code
-for me. Then I will manually add the button functionality to extract and send the necessary info to LoginCheck.java.
-I will also create the general page GUI. There are going to be two buttons, one that sends the user to the login page and one 
-that sends him to the register page. The view will also include a greeting label. I am going to use NetBeans' drag-and-drop tool to 
-generate the majority of the code, again, and then will fine tune it manually to remove redundant comments and lines of code, add 
-useful comments, play with the spacing, and do some basic code reformatting (like moving the variable declaration to the top).
+    - Coherency between the different pages of our app/website
+        - consistent font (including font size), consistent color theme (white and a specific shade of blue), and sime sized windows
 
 _______________________________________________________________________________________________________________________________________
 Callum
@@ -61,7 +51,7 @@ auto increments as more details are added (first patient to register is
  1, second is 2, etc). Other details are First Name, Surname, Age, Date
  Of Birth, Gender, DoctorChosen, Phone Number, Details. The only fields
  that allow null values are Phone Number and Details, since there is a
- chance that the patient doesn’t have access to a phone and would need to
+ chance that the patient doesnï¿½t have access to a phone and would need to
  communicate with the doctors in a different way. No details may be
  needed as well. The database is initialised when the app is launched, so
  when a patient has finished using the app, they will be sent to the 
