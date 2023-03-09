@@ -150,7 +150,7 @@ public class application extends javax.swing.JFrame {
 
     private void backButtonActionPerformed (java.awt.event.ActionEvent evt) 
     {
-        GeneralPage.main(null);
+        new GeneralPage().setVisible(true);
         dispose();
     }
 
@@ -188,14 +188,6 @@ public class application extends javax.swing.JFrame {
         new application().setVisible(true);
             }
         });
-    
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new application().setVisible(true);
-            }
-            });
         
     
     }
