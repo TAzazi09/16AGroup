@@ -118,15 +118,13 @@ public class Registration {
             connection = DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=***&password=***");
             statement = connection.createStatement();
 
-            int n = statement.executeUpdate(
+            statement.executeUpdate(
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
                             + PhoneNumber + "','" + DoctorChosen + "','" + Details + "')");
             resultSet = statement.executeQuery("select * from patients");
 
-            int l = 0;
             while (resultSet.next()) {
-                l++;
                 System.out.println(resultSet.getString("PatientID") + " - " + resultSet.getString("FirstName") + " - "
                         + resultSet.getString("Surname"));
                 RightID = resultSet.getString("PatientID");
