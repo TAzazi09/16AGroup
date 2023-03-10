@@ -175,7 +175,7 @@ public class Registration_gui extends javax.swing.JFrame {
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(300, 300, 300)
+                                .addGap(300, 300, 300) // gap between left side of window and left side of panel
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(regLabel, javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -208,7 +208,7 @@ public class Registration_gui extends javax.swing.JFrame {
                                                                 .addComponent(backButton,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE, 125,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(4, 4, 4)
+                                                                .addGap(5, 5, 5) // gap between buttons
                                                                 .addComponent(regButton,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE, 125,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,65 +226,66 @@ public class Registration_gui extends javax.swing.JFrame {
                                                                         javax.swing.GroupLayout.Alignment.LEADING,
                                                                         javax.swing.GroupLayout.DEFAULT_SIZE, 254,
                                                                         Short.MAX_VALUE)))))
-                                .addGap(328, 328, 328)));
+                                .addGap(328, 328, 328))); // I don't know what this gap is for
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
+                                .addGap(50, 50, 50) // gap between top of window and top of panel
 
                                 .addComponent(regLabel)
-                                .addGap(30, 30, 30)
+                                .addGap(30, 30, 30) // gap between title and first input
 
                                 .addComponent(firstnameLabel)
-                                .addGap(1, 1, 1)
+                                .addGap(1, 1, 1) // gap between first name label and input
                                 .addComponent(firstnameInput, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
+                                .addGap(10, 10, 10) // gap between first name input and surname label
 
                                 .addComponent(surnameLabel)
-                                .addGap(1, 1, 1)
+                                .addGap(1, 1, 1) // gap between surname label and input
                                 .addComponent(surnameInput, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10) // gap between surname input and age label
 
                                 .addComponent(ageLabel)
-                                .addGap(1, 1, 1)
+                                .addGap(1, 1, 1) // gap between age label and input
                                 .addComponent(ageInput, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
+                                .addGap(10, 10, 10) // gap between age input and details label
 
                                 .addComponent(genderLabel)
-                                .addGap(1, 1, 1)
+                                .addGap(1, 1, 1) // gap between gender label and checkboxes
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(maleCheck)
                                         .addComponent(femaleCheck)
                                         .addComponent(otherCheck)
                                         .addComponent(pntsCheck))
-                                .addGap(20, 20, 20)
+                                .addGap(10, 10, 10) // gap between checkboxes and phone label
 
                                 .addComponent(phoneLabel)
-                                .addGap(1, 1, 1)
+                                .addGap(1, 1, 1) // gap between phone label and input
                                 .addComponent(phoneInput, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
+                                .addGap(10, 10, 10) // gap between phone input and doctor label
 
                                 .addComponent(doctorLabel)
-                                .addGap(1, 1, 1)
+                                .addGap(1, 1, 1) // gap between doctor label and list
                                 .addComponent(doctorList, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
+                                .addGap(10, 10, 10) // gap between doctor list and details label
 
                                 .addComponent(detailsLabel)
-                                .addGap(1, 1, 1)
+                                .addGap(1, 1, 1) // gap between details label and input
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
+                                .addGap(20, 20, 20) // gap between details input and buttons
 
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(regButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(191, Short.MAX_VALUE)));
+                                .addContainerGap(191, Short.MAX_VALUE))); // I don't know what this gap is for
 
         getAccessibleContext().setAccessibleDescription("");
 
@@ -317,7 +318,7 @@ public class Registration_gui extends javax.swing.JFrame {
                         String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());
                 dispose();
             } else {
-
+                // TODO: Add error message (I guess)
             }
         }
     }
