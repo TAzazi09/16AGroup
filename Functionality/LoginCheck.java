@@ -24,7 +24,7 @@ public class LoginCheck {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             //Connects to the database
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=root&password=legome12");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=root&password=***");
             statement = connection.createStatement();
             
             //Returns all tuples where the username matches
