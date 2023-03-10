@@ -156,7 +156,7 @@ public class application extends javax.swing.JFrame {
                                                         javax.swing.GroupLayout.PREFERRED_SIZE,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)
+                                .addGap(10, 10, 10) // gap between username and password
                                 .addGroup(
                                         loginPanelLayout.createParallelGroup(
                                                 javax.swing.GroupLayout.Alignment.BASELINE)
@@ -165,7 +165,7 @@ public class application extends javax.swing.JFrame {
                                                         javax.swing.GroupLayout.PREFERRED_SIZE,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)
+                                .addGap(10, 10, 10) // gap between password and buttons
                                 .addGroup(loginPanelLayout.createParallelGroup(
                                         javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(backButton)
@@ -176,12 +176,12 @@ public class application extends javax.swing.JFrame {
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(260, 260, 260)
+                                .addGap(260, 260, 260) // gap between left side of the screen and the panel
                                 .addComponent(loginPanel,
                                         javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(120, Short.MAX_VALUE)));
+                                .addContainerGap(120, Short.MAX_VALUE))); // gap between right side of the screen and the panel
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
