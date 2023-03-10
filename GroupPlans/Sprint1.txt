@@ -1,6 +1,6 @@
 Group 16A - Sprint 1 Plan
 
-Ethan - I will be creating most of the background code that communicates with the database. I will also create all SQL statements that by the application to communicate with the database. 
+Ethan - I will be creating most of the background code that communicates with the database. I will also create all SQL statements that by the application to communicate with the database.
 
 _______________________________________________________________________________________________________________________________________
 Nikola:
