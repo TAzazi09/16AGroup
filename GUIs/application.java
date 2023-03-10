@@ -8,12 +8,8 @@ import Functionality.LoginCheck;
 
 public class application extends javax.swing.JFrame {
     // Variables declaration
-    private javax.swing.JPanel loginPanel;
-    private javax.swing.JLabel usernameLabel, passwordLabel;
     private javax.swing.JTextField usernameText;
     private javax.swing.JPasswordField passwordText;
-    private javax.swing.JButton loginButton;
-    private javax.swing.JButton backButton;
 
     public application() {
         initComponents();
@@ -57,13 +53,13 @@ public class application extends javax.swing.JFrame {
 
     private void initComponents() {
         // Initialise the components
-        loginPanel = new javax.swing.JPanel();
-        usernameLabel = new javax.swing.JLabel("Username: ");
+        javax.swing.JPanel loginPanel = new javax.swing.JPanel();
+        javax.swing.JLabel usernameLabel = new javax.swing.JLabel("Username: ");
         usernameText = new javax.swing.JTextField();
-        passwordLabel = new javax.swing.JLabel("Password: ");
+        javax.swing.JTextField passwordLabel = new javax.swing.JLabel("Password: ");
         passwordText = new javax.swing.JPasswordField();
-        loginButton = new javax.swing.JButton("Log-in");
-        backButton = new javax.swing.JButton("Back");
+        javax.swing.JButton loginButton = new javax.swing.JButton("Log-in");
+        javax.swing.JButton backButton = new javax.swing.JButton("Back");
 
         // Set the layout of the components
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
