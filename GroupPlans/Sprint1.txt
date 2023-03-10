@@ -1,6 +1,9 @@
 Group 16A - Sprint 1 Plan
 
-Ethan - I will be creating most of the background code that communicates with the database. I will also create all SQL statements that by the application to communicate with the database.
+Ethan - I will be creating most of the background code that communicates with the database. This includes the validation used by the 
+registration interface to ensure the details the patient provides are valid for the databse to use. I will also create all SQL 
+statements that are used by the application to communicate with the database. This includes the satemetns that create both the 
+database and tables in GeneralPage, as well as statements that send and retrieve required data.
 
 _______________________________________________________________________________________________________________________________________
 Nikola:
@@ -45,14 +48,8 @@ Tare:
 
 ============================================================================================================================================
 Database Design:
-The database is a simple one table design, where the table holds the 
-details of registered patients. The details included a patientID that
-auto increments as more details are added (first patient to register is
- 1, second is 2, etc). Other details are First Name, Surname, Age, Date
- Of Birth, Gender, DoctorChosen, Phone Number, Details. The only fields
- that allow null values are Phone Number and Details, since there is a
- chance that the patient doesn�t have access to a phone and would need to
- communicate with the doctors in a different way. No details may be
- needed as well. The database is initialised when the app is launched, so
- when a patient has finished using the app, they will be sent to the 
-general page but with the database still intact.
+The database is a simple one table design, where the table holds the details of registered patients. The details included a patientID that
+auto increments as more details are added (first patient to register is 1, second is 2, etc). Other details are First Name, Surname, Age, 
+Gender, DoctorChosen, Phone Number, Details. The only fields that allow null values are Phone Number and Details, since there is a
+chance that the patient doesn't have access to a phone and would need to communicate with the doctors in a different way. No details may be
+needed as well. The database is initialised when the app is launched, and won't be reset unless GeneralPage is directly opened again.
