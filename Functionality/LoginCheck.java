@@ -1,3 +1,5 @@
+package Functionality;
+
 /**
  * @author ethan
  */
@@ -6,7 +8,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
 import javax.swing.JOptionPane;
 
 public class LoginCheck {
@@ -23,18 +24,17 @@ public class LoginCheck {
 
     public static void testFunction(String username, String password) {
         try {
-            
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=***&password=***");
             statement = connection.createStatement();
 
             resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
-            if(resultSet == null)
-            {
+            if (resultSet == null) {
                 System.out.println("Fasddsil");
                 System.exit(1);
             }
+
             boolean t = false;
             while (resultSet.next()) {
                 if ((username.equals(resultSet.getString("FirstName")))
@@ -44,14 +44,12 @@ public class LoginCheck {
                     break;
                 }
             }
-            if (t == false)
-            {
+
+            if (t == false) {
                 JOptionPane.showMessageDialog(null, "Incorect Credentials!");
             }
-            //System.out.println("fai");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 }
