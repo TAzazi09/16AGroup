@@ -1,4 +1,5 @@
-package Functionality;
+
+import Functionality.Registration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
