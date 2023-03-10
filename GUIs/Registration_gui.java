@@ -13,7 +13,6 @@ import Functionality.Registration;
 public class Registration_gui extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JButton backButton;
-    private javax.swing.JLabel dobLabel;
     private javax.swing.JLabel detailsLabel;
     private javax.swing.JLabel doctorLabel;
     private javax.swing.JComboBox<String> doctorList;
@@ -25,7 +24,6 @@ public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JButton regButton;
     private javax.swing.JLabel regLabel;
     private javax.swing.JTextArea detailsInput;
-    private javax.swing.JFormattedTextField dobField;
     private javax.swing.JLabel firstnameLabel;
     private javax.swing.JRadioButton femaleCheck;
     private javax.swing.JRadioButton maleCheck;
@@ -91,9 +89,6 @@ public class Registration_gui extends javax.swing.JFrame {
         otherCheck = new javax.swing.JRadioButton("Other");
         pntsCheck = new javax.swing.JRadioButton("Prefer not to say");
 
-        dobLabel = new javax.swing.JLabel("Date of Birth");
-        dobField = new javax.swing.JFormattedTextField();
-
         phoneLabel = new javax.swing.JLabel("Phone Number");
         phoneInput = new javax.swing.JTextField();
 
@@ -142,8 +137,6 @@ public class Registration_gui extends javax.swing.JFrame {
         group.add(pntsCheck);
         Registration_gui.totalGroup = group;
 
-        dobLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
-
         phoneLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
 
         doctorLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
@@ -175,9 +168,6 @@ public class Registration_gui extends javax.swing.JFrame {
             }
         });
 
-        dobField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-                new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/MM/YYYY"))));
-
         // Panel layout code section below
         // -----------------------------------------------------------------------------------------------------------------------------------
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,7 +181,6 @@ public class Registration_gui extends javax.swing.JFrame {
                                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(doctorLabel)
                                         .addComponent(phoneLabel)
-                                        .addComponent(dobLabel)
                                         .addComponent(genderLabel)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(maleCheck)
@@ -213,7 +202,6 @@ public class Registration_gui extends javax.swing.JFrame {
                                         .addComponent(detailsLabel)
                                         .addGroup(layout
                                                 .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(dobField, javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                         .addGroup(layout.createSequentialGroup()
@@ -271,12 +259,6 @@ public class Registration_gui extends javax.swing.JFrame {
                                         .addComponent(femaleCheck)
                                         .addComponent(otherCheck)
                                         .addComponent(pntsCheck))
-                                .addGap(20, 20, 20)
-
-                                .addComponent(dobLabel)
-                                .addGap(1, 1, 1)
-                                .addComponent(dobField, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(20, 20, 20)
 
                                 .addComponent(phoneLabel)
