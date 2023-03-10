@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import Functionality.Registration;
 
 public class Registration_gui extends javax.swing.JFrame {
+    // Variables declaration
     private javax.swing.JButton backButton;
     private javax.swing.JLabel dobLabel;
     private javax.swing.JLabel detailsLabel;
@@ -72,6 +73,7 @@ public class Registration_gui extends javax.swing.JFrame {
     }
 
     private void initComponents() {
+        // Initialise components
         regLabel = new javax.swing.JLabel("Register");
 
         firstnameLabel = new javax.swing.JLabel("First Name");
@@ -105,11 +107,13 @@ public class Registration_gui extends javax.swing.JFrame {
         backButton = new javax.swing.JButton("Back");
         regButton = new javax.swing.JButton("Register");
 
+        // Set up the form
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(900, 900));
         setPreferredSize(new java.awt.Dimension(900, 900));
         setSize(new java.awt.Dimension(900, 900));
 
+        // Set up the components
         regLabel.setFont(new java.awt.Font("Monospaced", 0, 48));
         regLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -156,6 +160,7 @@ public class Registration_gui extends javax.swing.JFrame {
         detailsInput.setName("");
         jScrollPane1.setViewportView(detailsInput);
 
+        // Set up the buttons
         backButton.setFont(new java.awt.Font("Monospaced", 0, 18));
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,11 +311,13 @@ public class Registration_gui extends javax.swing.JFrame {
     // -----------------------------------------------------------------------------------------------------------------------------------
 
     // Button actions
+    // Back button - returns to the general page
     private void Back_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         new GeneralPage().setVisible(true);
         dispose();
     }
 
+    // Register button - checks if all fields are filled in and sends the data to Registration class for further processing
     private void Register_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if ((firstnameInput == null) || (surnameInput == null) || (Registration_gui.totalGroup.getSelection() == null)
                 ||

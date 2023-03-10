@@ -18,6 +18,7 @@ public class Registration {
     private static Statement statement;
     private static ResultSet resultSet;
 
+    // Tests if the data is valid, and if it is, sends it to the database
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorChosen, String Details) {
         if (!firstNameCheck(FirstName))
@@ -134,6 +135,7 @@ public class Registration {
             e.printStackTrace();
         }
 
+        // Displays the username and password
         JOptionPane.showMessageDialog(null,
                 (("Thank you for registering " + FirstName + " " + Surname
                         + ", and welcome to the NHS! \nYour username is " + FirstName + " and your password is "
