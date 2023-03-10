@@ -27,7 +27,7 @@ public class GeneralPage extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             connection = DriverManager
-                    .getConnection("jdbc:mysql://localhost/?user=***&password=***");
+                    .getConnection("jdbc:mysql://localhost/?user=root&password=***");
             statement = connection.createStatement();
 
             // Lines below are used for creating tables
@@ -42,8 +42,8 @@ public class GeneralPage extends javax.swing.JFrame {
                     "PRIMARY KEY (patientID), " +
                     "Gender varchar(10) not null," +
                     "Age int (3) not null," +
-                    "PhoneNumber varchar(15) ," +
-                    "DoctorChosen varchar(20) not null,  " +
+                    "PhoneNumber varchar(12) ," +
+                    "DoctorChosen varchar(25) not null,  " +
                     "Details varchar(100) " +
                     ");");
         } catch (Exception e) {
