@@ -69,7 +69,7 @@ public class Registration {
         return true;
     }
 
-    // Checks if the age is valid (between 18 and 120)
+    // Checks if the age is valid (between 18 and 130)
     private static boolean ageCheck(int age) {
         if (age < 18) {
             JOptionPane.showMessageDialog(null, "You need to be 18 to register!");
