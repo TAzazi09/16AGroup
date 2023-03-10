@@ -200,7 +200,7 @@ public class application extends javax.swing.JFrame {
     // Login button - the username and password are extracted and sent for verification
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String username = usernameText.getText();
-        String password = passwordText.getText();
+        String password = new String(passwordText.getPassword());
 
         LoginCheck.testFunction(username, password);
     }
