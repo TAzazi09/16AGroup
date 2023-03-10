@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 public class GeneralPage extends javax.swing.JFrame {
+    // Variables declaration
     private javax.swing.JButton logButton;
     private javax.swing.JButton regButton;
     private javax.swing.JLabel helloLabel;
@@ -90,6 +91,7 @@ public class GeneralPage extends javax.swing.JFrame {
         logButton = new javax.swing.JButton("Log-in");
         regButton = new javax.swing.JButton("Register");
 
+        // Login button - opens the login page
         logButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 application.main(null);
@@ -97,6 +99,7 @@ public class GeneralPage extends javax.swing.JFrame {
             }
         });
 
+        // Registration button - opens the registration page
         regButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Registration_gui.main(null);

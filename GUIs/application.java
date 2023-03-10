@@ -7,6 +7,7 @@ package GUIs;
 import Functionality.LoginCheck;
 
 public class application extends javax.swing.JFrame {
+    // Variables declaration
     private javax.swing.JPanel loginPanel;
     private javax.swing.JLabel usernameLabel, passwordLabel;
     private javax.swing.JTextField usernameText;
@@ -55,6 +56,7 @@ public class application extends javax.swing.JFrame {
     }
 
     private void initComponents() {
+        // Initialise the components
         loginPanel = new javax.swing.JPanel();
         usernameLabel = new javax.swing.JLabel("Username: ");
         usernameText = new javax.swing.JTextField();
@@ -63,10 +65,12 @@ public class application extends javax.swing.JFrame {
         loginButton = new javax.swing.JButton("Log-in");
         backButton = new javax.swing.JButton("Back");
 
+        // Set the layout of the components
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         loginPanel.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
+        // Set the font and size of the components
         usernameLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
         passwordLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
 
@@ -181,7 +185,7 @@ public class application extends javax.swing.JFrame {
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(350, 350, 350)
+                                .addGap(350, 350, 350) // Vertical position of the panel
                                 .addComponent(loginPanel,
                                         javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE,
@@ -193,7 +197,7 @@ public class application extends javax.swing.JFrame {
     // -----------------------------------------------------------------------------------------------------------------------------------
 
     // Button actions
-    // When clicked, the username and password are extracted and sent for verification
+    // Login button - the username and password are extracted and sent for verification
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String username = usernameText.getText();
         String password = passwordText.getText();
@@ -201,6 +205,7 @@ public class application extends javax.swing.JFrame {
         LoginCheck.testFunction(username, password);
     }
 
+    // Back button - returns to the general page
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
         new GeneralPage().setVisible(true);
         dispose();
