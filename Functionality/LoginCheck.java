@@ -17,34 +17,35 @@ public class LoginCheck {
 
     public static void main(String user, String password) {
         testFunction(user, password);
-
-        System.out.println("username is " + user);
-        System.out.println("password is " + password);
     }
 
     public static void testFunction(String username, String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=***&password=***");
+            //Connects to the database
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=root&password=legome12");
             statement = connection.createStatement();
-
+            
+            //Returns all tuples where the username matches
             resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
             if (resultSet == null) {
-                System.out.println("Fasddsil");
+                JOptionPane.showMessageDialog(null, "No registerd accounts with that name! Please register first!");
                 System.exit(1);
             }
 
             boolean t = false;
+            //Checks each tuple returned and checks if a password matches. Because each ID is unique, there will be no duplicate matches.
             while (resultSet.next()) {
                 if ((username.equals(resultSet.getString("FirstName")))
                         && (password.equals((resultSet.getString("Surname")) + (resultSet.getString("PatientID"))))) {
-                    JOptionPane.showMessageDialog(null, "Welcome to the End!");
+                    JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
                     t = true;
                     break;
                 }
             }
 
+            //If no matches are found, the user has entered incorrect credentials, and can try to login again.
             if (t == false) {
                 JOptionPane.showMessageDialog(null, "Incorect Credentials!");
             }
