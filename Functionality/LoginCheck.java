@@ -46,7 +46,7 @@ public class LoginCheck {
             }
 
             //If no matches are found, the user has entered incorrect credentials, and can try to login again.
-            if (userFound == false) {
+            if (!userFound) {
                 JOptionPane.showMessageDialog(null, "Incorect Credentials!");
             }
         } catch (Exception e) {
