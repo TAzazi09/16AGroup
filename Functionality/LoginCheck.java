@@ -34,19 +34,19 @@ public class LoginCheck {
                 System.exit(1);
             }
 
-            boolean t = false;
+            boolean userFound = false;
             //Checks each tuple returned and checks if a password matches. Because each ID is unique, there will be no duplicate matches.
             while (resultSet.next()) {
                 if ((username.equals(resultSet.getString("FirstName")))
                         && (password.equals((resultSet.getString("Surname")) + (resultSet.getString("PatientID"))))) {
                     JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
-                    t = true;
+                    userFound = true;
                     break;
                 }
             }
 
             //If no matches are found, the user has entered incorrect credentials, and can try to login again.
-            if (t == false) {
+            if (userFound == false) {
                 JOptionPane.showMessageDialog(null, "Incorect Credentials!");
             }
         } catch (Exception e) {
