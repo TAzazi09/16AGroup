@@ -10,14 +10,6 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 public class GeneralPage extends javax.swing.JFrame {
-    // Variables declaration
-    private javax.swing.JButton logButton;
-    private javax.swing.JButton regButton;
-    private javax.swing.JLabel helloLabel;
-    private javax.swing.JPanel generalPanel;
-    private static Connection connection;
-    private static Statement statement;
-
     public GeneralPage() {
         initComponents();
     }
@@ -26,9 +18,9 @@ public class GeneralPage extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            connection = DriverManager
+            Connection connection = DriverManager
                     .getConnection("jdbc:mysql://localhost/?user=root&password=***");
-            statement = connection.createStatement();
+            Statement statement = connection.createStatement();
 
             // Lines below are used for creating tables
             statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
@@ -82,10 +74,10 @@ public class GeneralPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-        generalPanel = new javax.swing.JPanel();
-        helloLabel = new javax.swing.JLabel("Hello!");
-        logButton = new javax.swing.JButton("Log-in");
-        regButton = new javax.swing.JButton("Register");
+        javax.swing.JPanel generalPanel = new javax.swing.JPanel();
+        javax.swing.JLabel helloLabel = new javax.swing.JLabel("Hello!");
+        javax.swing.JButton logButton = new javax.swing.JButton("Log-in");
+        javax.swing.JButton regButton = new javax.swing.JButton("Register");
 
         // Login button - opens the login page
         logButton.addActionListener(new java.awt.event.ActionListener() {
