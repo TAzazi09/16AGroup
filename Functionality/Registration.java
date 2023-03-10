@@ -115,7 +115,7 @@ public class Registration {
         String RightID = "";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=***&password=***");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=root&password=***");
             statement = connection.createStatement();
 
             statement.executeUpdate(
@@ -124,11 +124,6 @@ public class Registration {
                             + PhoneNumber + "','" + DoctorChosen + "','" + Details + "')");
             resultSet = statement.executeQuery("select * from patients");
 
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString("PatientID") + " - " + resultSet.getString("FirstName") + " - "
-                        + resultSet.getString("Surname"));
-                RightID = resultSet.getString("PatientID");
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
