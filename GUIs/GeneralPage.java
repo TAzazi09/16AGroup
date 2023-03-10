@@ -1,5 +1,7 @@
 package GUIs;
 
+import java.awt.Font;
+
 /**
  * @author nik
  * @functional changes by ethan
@@ -14,7 +16,7 @@ public class GeneralPage extends javax.swing.JFrame {
         initComponents();
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -80,32 +82,28 @@ public class GeneralPage extends javax.swing.JFrame {
         javax.swing.JButton regButton = new javax.swing.JButton("Register");
 
         // Login button - opens the login page
-        logButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                application.main(null);
-                dispose();
-            }
+        logButton.addActionListener(evt -> {
+            application.main(null);
+            dispose();
         });
 
         // Registration button - opens the registration page
-        regButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Registration_gui.main(null);
-                dispose(); // Close the current JFrame
-            }
+        regButton.addActionListener(evt -> {
+            Registration_gui.main(null);
+            dispose(); // Close the current JFrame
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         generalPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        helloLabel.setFont(new java.awt.Font("Monospaced", 0, 36));
+        helloLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
 
         logButton.setBackground(new java.awt.Color(65, 175, 255));
-        logButton.setFont(new java.awt.Font("Monospaced", 0, 18));
+        logButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         regButton.setBackground(new java.awt.Color(65, 175, 255));
-        regButton.setFont(new java.awt.Font("Monospaced", 0, 18));
+        regButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         // Panel layout code section (below)
         // -----------------------------------------------------------------------------------------------------------------------------------
