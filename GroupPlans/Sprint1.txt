@@ -7,21 +7,16 @@ database and tables in GeneralPage, as well as statements that send and retrieve
 
 _______________________________________________________________________________________________________________________________________
 Nikola:
-    - Login page GUI
-        - username and password fields and a functional log-in button (send info to LoginCheck.java)
-
-    - GeneralPage GUI
-        - a 'Hello' message and two buttons, the left button sends back to the login page, and the right button sends to the register page
-
-    - Code quality control
-        - author comments at the top of the different files
-        - enforce variable declarations to be in the beginning of the code
-        - comment monitoring (removing unnecessary auto-generated comments and adding useful ones)
-        - impose basic indenting and whitespace practices
-        - implement proper project structure (sql files in one folder, views in another, etc.)
-
-    - Coherency between the different pages of our app/website
-        - consistent font (including font size), consistent color theme (white and a specific shade of blue), and sime sized windows
+    - Login page GUI - username and password fields and a functional log-in button (send info to LoginCheck.java)
+    - GeneralPage GUI - a 'Hello' message and two buttons, the left button sends back to the login page, and the right button sends to 
+        the register page
+    - Adding more checks for the registration checks (both in the Registration_gui.java and in the Registration.java)
+    - Code quality control - This includes adding author comments at the top of the different files and monitoring what everyone has done,
+        enforcing variable declarations to be in the beginning of the code, removing unnecessary auto-generated comments and adding useful
+        ones (to every relatively complex and importnt method and code segments), imposing basic indenting and whitespace practices, and
+        implementing proper project structure (e.g. having a separate folder for the functional files and a separate folder for the GUIs)
+    - Coherency between the different pages of our app/website - consistent font (including font size), color theme (white and a specific
+        shade of blue), spacing, and sime sized windows
 
 _______________________________________________________________________________________________________________________________________
 Callum
