@@ -2,7 +2,7 @@ package GUIs;
 
 /**
  * @author krist
- * @cosmetic changes by nik
+ * @cosmetic and functional changes by nik
  * @functional changes by ethan
  */
 
@@ -301,12 +301,34 @@ public class Registration_gui extends javax.swing.JFrame {
     }
 
     // Register button - checks if all fields are filled in and sends the data to Registration class for further processing
+    // Also checks if there are any errors in the data that may result in an SQL error due to our database constraints
     private void Register_buttonActionPerformed(java.awt.event.ActionEvent evt) {
-        if ((firstnameInput == null) || (surnameInput == null) || (Registration_gui.totalGroup.getSelection() == null)
-                ||
-                (ageInput.getText() == null) || (doctorList.getSelectedItem() == null)) {
-            JOptionPane.showMessageDialog(null, "Some fields are missing data!");
-
+        if (firstnameInput == null) {
+            JOptionPane.showMessageDialog(null, "First name is missing!");
+        } else if (surnameInput == null) {
+            JOptionPane.showMessageDialog(null, "Surname is missing!");
+        } else if (ageInput.getText() == null) {
+            JOptionPane.showMessageDialog(null, "Age is missing!");
+        } else if (Registration_gui.totalGroup.getSelection() == null) {
+            JOptionPane.showMessageDialog(null, "Gender is missing!");
+        } else if (phoneInput.getText() == null) {
+            JOptionPane.showMessageDialog(null, "Phone number is missing!");
+        } else if (doctorList.getSelectedItem() == null) {
+            JOptionPane.showMessageDialog(null, "Doctor is missing!");
+        } else if (ageInput.getText().matches("[0-9]+") == false) {
+            JOptionPane.showMessageDialog(null, "Age must be a number!");
+        } else if (detailsInput.getText().length() > 100) {
+            JOptionPane.showMessageDialog(null, "Details must be less than 100 characters!");
+        } else if (firstnameInput.getText().length() > 15) {
+            JOptionPane.showMessageDialog(null, "First name must be less than or equal to 15 characters!");
+        } else if (surnameInput.getText().length() > 15) {
+            JOptionPane.showMessageDialog(null, "Surname must be less than or equal to 15 characters!");
+        } else if (phoneInput.getText().length() > 12) {
+            JOptionPane.showMessageDialog(null, "Phone number must be less than or equal to 12 digits!");
+        } else if (Integer.parseInt(ageInput.getText()) > 999) {
+            JOptionPane.showMessageDialog(null, "Age can be at most a 3-digit number!");
+        } else if (Integer.parseInt(ageInput.getText()) < 0) {
+            JOptionPane.showMessageDialog(null, "Age must be greater than 0!");
         } else {
             String selection = Registration_gui.totalGroup.getSelection().getActionCommand();
             boolean outcome = Registration.test(firstnameInput.getText(), surnameInput.getText(), selection,
@@ -318,7 +340,7 @@ public class Registration_gui extends javax.swing.JFrame {
                         String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());
                 dispose();
             } else {
-                // TODO: Add error message (I guess)
+                JOptionPane.showMessageDialog(null, "Some error occured!");
             }
         }
     }
