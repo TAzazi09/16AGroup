@@ -15,7 +15,7 @@ public class application extends javax.swing.JFrame {
         initComponents();
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // NetBeans' Nimbus feel exception checks
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
@@ -44,11 +44,7 @@ public class application extends javax.swing.JFrame {
         }
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new application().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new application().setVisible(true));
     }
 
     private void initComponents() {
@@ -56,7 +52,7 @@ public class application extends javax.swing.JFrame {
         javax.swing.JPanel loginPanel = new javax.swing.JPanel();
         javax.swing.JLabel usernameLabel = new javax.swing.JLabel("Username: ");
         usernameText = new javax.swing.JTextField();
-        javax.swing.JTextField passwordLabel = new javax.swing.JLabel("Password: ");
+        javax.swing.JLabel passwordLabel = new javax.swing.JLabel("Password: ");
         passwordText = new javax.swing.JPasswordField();
         javax.swing.JButton loginButton = new javax.swing.JButton("Log-in");
         javax.swing.JButton backButton = new javax.swing.JButton("Back");
@@ -83,7 +79,7 @@ public class application extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
- 
+
         backButton.setFont(new java.awt.Font("Monospaced", 0, 12));
         backButton.setBackground(new java.awt.Color(65, 175, 255, 1));
         backButton.addActionListener(new java.awt.event.ActionListener() {
