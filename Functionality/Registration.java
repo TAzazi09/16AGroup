@@ -6,7 +6,6 @@ package Functionality;
  */
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.*;
 import javax.swing.JOptionPane;
@@ -112,18 +111,23 @@ public class Registration {
     // Sends the data to the database
     public static void sendData(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorChosen, String Details) {
-        String RightID = "";
+        int RightID = 0;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=root&password=***");
+            // connection =
+            // DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=root&password=***");
+            connection = DatabaseConnection.getConnection();
             statement = connection.createStatement();
 
             statement.executeUpdate(
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
                             + PhoneNumber + "','" + DoctorChosen + "','" + Details + "')");
-            resultSet = statement.executeQuery("select * from patients");
-
+            resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
+            if (resultSet.next()) {
+            RightID = resultSet.getInt("PatientID");
+            System.out.println(RightID);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
