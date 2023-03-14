@@ -2,16 +2,19 @@ package GUIs;
 
 import java.awt.Font;
 
+
 /**
  * @author nik
  * @functional changes by ethan
  */
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
 
+import Functionality.DatabaseConnection;
+
 public class GeneralPage extends javax.swing.JFrame {
+        public static Connection connection;
     public GeneralPage() {
         initComponents();
     }
@@ -20,8 +23,8 @@ public class GeneralPage extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection connection = DriverManager
-                    .getConnection("jdbc:mysql://localhost/?user=root&password=***");
+            DatabaseConnection.main(null);
+            connection = DatabaseConnection.getConnection();
             Statement statement = connection.createStatement();
 
             // Lines below are used for creating tables
