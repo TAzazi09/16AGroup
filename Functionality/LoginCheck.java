@@ -5,7 +5,6 @@ package Functionality;
  */
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -24,7 +23,8 @@ public class LoginCheck {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             //Connects to the database
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/NHS?user=root&password=***");
+            
+            connection = DatabaseConnection.getConnection();
             statement = connection.createStatement();
             
             //Returns all tuples where the username matches
