@@ -31,15 +31,11 @@ public class ArrangeBooking extends javax.swing.JFrame {
         backButton.setBackground(new java.awt.Color(65, 175, 255));
         backButton.setFont(new java.awt.Font("Monospaced", 0, 18));
         backButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        backButton.setMaximumSize(new java.awt.Dimension(68, 27));
-        backButton.setMinimumSize(new java.awt.Dimension(68, 27));
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
 
         arrangeButton.setBackground(new java.awt.Color(65, 175, 255));
         arrangeButton.setFont(new java.awt.Font("Monospaced", 0, 18));
         arrangeButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        arrangeButton.setMaximumSize(new java.awt.Dimension(68, 27));
-        arrangeButton.setMinimumSize(new java.awt.Dimension(68, 27));
         arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
         arrangeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
