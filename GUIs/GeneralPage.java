@@ -9,7 +9,6 @@ import java.awt.Font;
 
 import java.sql.Connection;
 import java.sql.Statement;
-
 import Functionality.DatabaseConnection;
 
 public class GeneralPage extends javax.swing.JFrame {
