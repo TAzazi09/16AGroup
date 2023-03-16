@@ -148,7 +148,7 @@ public class ArrangeBooking extends javax.swing.JFrame {
                                 .addGap(300, 300, 300)));
 
         pack();
-    }// </editor-fold>                        
+    }                       
 
     private void timeTextActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
@@ -159,8 +159,6 @@ public class ArrangeBooking extends javax.swing.JFrame {
     }
 
     /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -187,7 +185,6 @@ public class ArrangeBooking extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         }
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -197,7 +194,7 @@ public class ArrangeBooking extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration
     private javax.swing.JButton arrangeButton;
     private javax.swing.JButton backButton;
     private javax.swing.JLabel dateLabel;
@@ -206,6 +203,5 @@ public class ArrangeBooking extends javax.swing.JFrame {
     private javax.swing.JLabel mainLabel;
     private javax.swing.JPanel panel;
     private javax.swing.JLabel timeLabel;
-    private javax.swing.JTextField timeText;
-    // End of variables declaration                   
+    private javax.swing.JTextField timeText;    
 }
