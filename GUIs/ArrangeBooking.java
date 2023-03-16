@@ -158,7 +158,6 @@ public class ArrangeBooking extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
-    /**
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
