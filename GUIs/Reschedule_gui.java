@@ -1,17 +1,15 @@
 package GUIs;
-
-import javax.print.attribute.standard.DateTimeAtCompleted;
-
+import Functionality.*;
 /**
  *
  * @author range
  */
-public class Reschedule extends javax.swing.JFrame {
+public class Reschedule_gui extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public Reschedule() {
+    public Reschedule_gui() {
         initComponents();
     }
 
@@ -97,7 +95,7 @@ public class Reschedule extends javax.swing.JFrame {
     private void submitButton(java.awt.event.ActionEvent evt) {
         String time = timeInput.getText();
         String date = dateInput.getText();
-        System.out.println(time + " " + date);
+        Reschedule.resechduleBooking(time,date);
     }
 
     public static void main(String args[]) {
@@ -109,23 +107,23 @@ public class Reschedule extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Reschedule.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(Reschedule_gui.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Reschedule.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(Reschedule_gui.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Reschedule.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(Reschedule_gui.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Reschedule.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(Reschedule_gui.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Reschedule().setVisible(true);
+                new Reschedule_gui().setVisible(true);
             }
         });
     }
