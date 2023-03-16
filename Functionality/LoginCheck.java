@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 
 public class LoginCheck {
     public static String backgroundID;
+    public static String fname;
+    public static String sname;
     public static void main(String user, String password) {
         testFunction(user, password);
     }
@@ -39,6 +41,8 @@ public class LoginCheck {
                 if ((username.equals(resultSet.getString("FirstName")))
                         && (password.equals((resultSet.getString("Surname")) + (resultSet.getString("PatientID"))))) {
                     backgroundID = resultSet.getString("patientID");
+                    fname = resultSet.getString("FirstName");
+                    sname = resultSet.getString("Surname");
                     JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
                     Window[] windows = Window.getWindows();
 
@@ -63,5 +67,13 @@ public class LoginCheck {
 
     public static String getID() {
         return backgroundID;
+    }
+
+    public static String getFirstName() {
+        return fname;        
+    }
+
+    public static String getSurname() {
+        return sname;
     }
 }

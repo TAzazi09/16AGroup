@@ -112,9 +112,9 @@ public class Registration {
             Statement statement = connection.createStatement();
 
             statement.executeUpdate(
-                    "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details )"
+                    "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details, messages )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
-                            + PhoneNumber + "','" + DoctorChosen + "','" + Details + "')");
+                            + PhoneNumber + "','" + DoctorChosen + "','" + Details + "','" + FirstName + " " + Surname + " succesfully registered with " + DoctorChosen + " as their doctor')");
             ResultSet resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
             if (resultSet.next()) {
             RightID = resultSet.getInt("PatientID");
