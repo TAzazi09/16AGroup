@@ -37,21 +37,13 @@ public class ArrangeBooking extends javax.swing.JFrame {
         arrangeButton.setBackground(new java.awt.Color(65, 175, 255));
         arrangeButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
-        arrangeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                arrangeButtonActionPerformed(evt);
-            }
-        });
+        arrangeButton.addActionListener(this::arrangeButtonActionPerformed);
 
         timeLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         timeText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         timeText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        timeText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timeTextActionPerformed(evt);
-            }
-        });
+        timeText.addActionListener(this::timeTextActionPerformed);
 
         dateText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         dateText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -182,10 +174,6 @@ public class ArrangeBooking extends javax.swing.JFrame {
         }
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ArrangeBooking().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new ArrangeBooking().setVisible(true));
     }
 }
