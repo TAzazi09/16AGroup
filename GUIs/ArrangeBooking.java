@@ -1,5 +1,7 @@
 package GUIs;
 
+import java.awt.Font;
+
 /**
  * @author Nikola
  */
@@ -29,13 +31,13 @@ public class ArrangeBooking extends javax.swing.JFrame {
         panel.setBackground(new java.awt.Color(255, 255, 255));
 
         backButton.setBackground(new java.awt.Color(65, 175, 255));
-        backButton.setFont(new java.awt.Font("Monospaced", 0, 18));
         backButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
 
         arrangeButton.setBackground(new java.awt.Color(65, 175, 255));
-        arrangeButton.setFont(new java.awt.Font("Monospaced", 0, 18));
         arrangeButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        arrangeButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
         arrangeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,9 +45,9 @@ public class ArrangeBooking extends javax.swing.JFrame {
             }
         });
 
-        timeLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        timeLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        timeText.setFont(new java.awt.Font("Monospaced", 0, 18));
+        timeText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         timeText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         timeText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,14 +55,14 @@ public class ArrangeBooking extends javax.swing.JFrame {
             }
         });
 
-        dateText.setFont(new java.awt.Font("Monospaced", 0, 18));
+        dateText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         dateText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        dateLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        dateLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        mainLabel.setFont(new java.awt.Font("Monospaced", 0, 36));
+        mainLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
 
-        instructionLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        instructionLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
