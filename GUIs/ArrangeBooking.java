@@ -30,27 +30,26 @@ public class ArrangeBooking extends javax.swing.JFrame {
 
         panel.setBackground(new java.awt.Color(255, 255, 255));
 
+        mainLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
+        instructionLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+
+        timeLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        timeText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        timeText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        dateLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        dateText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        dateText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         backButton.setBackground(new java.awt.Color(65, 175, 255));
         backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
+        arrangeButton.addActionListener(this::arrangeButtonActionPerformed);
 
         arrangeButton.setBackground(new java.awt.Color(65, 175, 255));
         arrangeButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
         arrangeButton.addActionListener(this::arrangeButtonActionPerformed);
-
-        timeLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-
-        timeText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        timeText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        timeText.addActionListener(this::timeTextActionPerformed);
-
-        dateText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        dateText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        dateLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-
-        mainLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
 
         instructionLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         // Panel layout code section (below)
