@@ -13,26 +13,24 @@ public class ArrangeBooking extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
         panel = new javax.swing.JPanel();
-        backButton = new javax.swing.JButton();
-        arrangeButton = new javax.swing.JButton();
-        timeLabel = new javax.swing.JLabel();
+        backButton = new javax.swing.JButton("Back");
+        arrangeButton = new javax.swing.JButton("Arrange");
+        timeLabel = new javax.swing.JLabel("Time");
         timeText = new javax.swing.JTextField();
         dateText = new javax.swing.JTextField();
-        dateLabel = new javax.swing.JLabel();
-        mainLabel = new javax.swing.JLabel();
-        instructionLabel = new javax.swing.JLabel();
+        dateLabel = new javax.swing.JLabel("Date");
+        mainLabel = new javax.swing.JLabel("Arrange a booking");
+        instructionLabel = new javax.swing.JLabel("Please enter your desired date and time");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(java.awt.Color.white);
-        setName(""); // NOI18N
 
         panel.setBackground(new java.awt.Color(255, 255, 255));
 
         backButton.setBackground(new java.awt.Color(65, 175, 255));
         backButton.setFont(new java.awt.Font("Monospaced", 0, 18));
         backButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        backButton.setLabel("Back");
         backButton.setMaximumSize(new java.awt.Dimension(68, 27));
         backButton.setMinimumSize(new java.awt.Dimension(68, 27));
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
@@ -40,7 +38,6 @@ public class ArrangeBooking extends javax.swing.JFrame {
         arrangeButton.setBackground(new java.awt.Color(65, 175, 255));
         arrangeButton.setFont(new java.awt.Font("Monospaced", 0, 18));
         arrangeButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        arrangeButton.setLabel("Arrange");
         arrangeButton.setMaximumSize(new java.awt.Dimension(68, 27));
         arrangeButton.setMinimumSize(new java.awt.Dimension(68, 27));
         arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
@@ -51,7 +48,6 @@ public class ArrangeBooking extends javax.swing.JFrame {
         });
 
         timeLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
-        timeLabel.setText("Time");
 
         timeText.setFont(new java.awt.Font("Monospaced", 0, 18));
         timeText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -65,14 +61,10 @@ public class ArrangeBooking extends javax.swing.JFrame {
         dateText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         dateLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
-        dateLabel.setText("Date");
 
         mainLabel.setFont(new java.awt.Font("Monospaced", 0, 36));
-        mainLabel.setText("Arrange a booking");
 
         instructionLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
-        instructionLabel.setText("Please enter your desired date and time");
-
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
