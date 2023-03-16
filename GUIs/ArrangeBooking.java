@@ -53,6 +53,8 @@ public class ArrangeBooking extends javax.swing.JFrame {
         mainLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
 
         instructionLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        // Panel layout code section (below)
+        // -----------------------------------------------------------------------------------------------------------------------------------
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
