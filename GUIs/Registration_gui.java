@@ -6,32 +6,18 @@ package GUIs;
  * @functional changes by ethan
  */
 
+import java.awt.*;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import Functionality.Registration;
 
 public class Registration_gui extends javax.swing.JFrame {
     // Variables declaration
-    private javax.swing.JButton backButton;
-    private javax.swing.JLabel detailsLabel;
-    private javax.swing.JLabel doctorLabel;
     private javax.swing.JComboBox<String> doctorList;
     private javax.swing.JTextField firstnameInput;
     private javax.swing.JTextField surnameInput;
-    private javax.swing.JLabel genderLabel;
     private javax.swing.JTextField phoneInput;
-    private javax.swing.JLabel phoneLabel;
-    private javax.swing.JButton regButton;
-    private javax.swing.JLabel regLabel;
     private javax.swing.JTextArea detailsInput;
-    private javax.swing.JLabel firstnameLabel;
-    private javax.swing.JRadioButton femaleCheck;
-    private javax.swing.JRadioButton maleCheck;
-    private javax.swing.JRadioButton otherCheck;
-    private javax.swing.JRadioButton pntsCheck;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel surnameLabel;
-    private javax.swing.JLabel ageLabel;
     private javax.swing.JTextField ageInput;
     public static ButtonGroup totalGroup;
 
@@ -39,7 +25,7 @@ public class Registration_gui extends javax.swing.JFrame {
         initComponents();
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // NetBeans' exception checks
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -63,44 +49,40 @@ public class Registration_gui extends javax.swing.JFrame {
         }
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registration_gui().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new Registration_gui().setVisible(true));
     }
 
     private void initComponents() {
         // Initialise components
-        regLabel = new javax.swing.JLabel("Register");
+        javax.swing.JLabel regLabel = new javax.swing.JLabel("Register");
 
-        firstnameLabel = new javax.swing.JLabel("First Name");
+        javax.swing.JLabel firstnameLabel = new javax.swing.JLabel("First Name");
         firstnameInput = new javax.swing.JTextField();
 
-        surnameLabel = new javax.swing.JLabel("Surname");
+        javax.swing.JLabel surnameLabel = new javax.swing.JLabel("Surname");
         surnameInput = new javax.swing.JTextField();
 
-        ageLabel = new javax.swing.JLabel("Age");
+        javax.swing.JLabel ageLabel = new javax.swing.JLabel("Age");
         ageInput = new javax.swing.JTextField();
 
-        genderLabel = new javax.swing.JLabel("Gender");
-        maleCheck = new javax.swing.JRadioButton("Male");
-        femaleCheck = new javax.swing.JRadioButton("Female");
-        otherCheck = new javax.swing.JRadioButton("Other");
-        pntsCheck = new javax.swing.JRadioButton("Prefer not to say");
+        javax.swing.JLabel genderLabel = new javax.swing.JLabel("Gender");
+        javax.swing.JRadioButton maleCheck = new javax.swing.JRadioButton("Male");
+        javax.swing.JRadioButton femaleCheck = new javax.swing.JRadioButton("Female");
+        javax.swing.JRadioButton otherCheck = new javax.swing.JRadioButton("Other");
+        javax.swing.JRadioButton pntsCheck = new javax.swing.JRadioButton("Prefer not to say");
 
-        phoneLabel = new javax.swing.JLabel("Phone Number");
+        javax.swing.JLabel phoneLabel = new javax.swing.JLabel("Phone Number");
         phoneInput = new javax.swing.JTextField();
 
-        doctorLabel = new javax.swing.JLabel("Doctor Choosen");
+        javax.swing.JLabel doctorLabel = new javax.swing.JLabel("Doctor Chosen");
         doctorList = new javax.swing.JComboBox<>();
 
-        detailsLabel = new javax.swing.JLabel("Details");
+        javax.swing.JLabel detailsLabel = new javax.swing.JLabel("Details");
         detailsInput = new javax.swing.JTextArea();
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        backButton = new javax.swing.JButton("Back");
-        regButton = new javax.swing.JButton("Register");
+        javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
+        javax.swing.JButton backButton = new javax.swing.JButton("Back");
+        javax.swing.JButton regButton = new javax.swing.JButton("Register");
 
         // Set up the form
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,25 +91,25 @@ public class Registration_gui extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(900, 900));
 
         // Set up the components
-        regLabel.setFont(new java.awt.Font("Monospaced", 0, 48));
+        regLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 48));
         regLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        firstnameLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        firstnameLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         surnameLabel.setToolTipText("");
-        surnameLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        surnameLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         ageLabel.setToolTipText("");
-        ageLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        ageLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        genderLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
-        maleCheck.setFont(new java.awt.Font("Monospaced", 0, 18));
+        genderLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        maleCheck.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         maleCheck.setActionCommand("male");
-        femaleCheck.setFont(new java.awt.Font("Monospaced", 0, 18));
+        femaleCheck.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         femaleCheck.setActionCommand("female");
-        otherCheck.setFont(new java.awt.Font("Monospaced", 0, 18));
+        otherCheck.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         otherCheck.setActionCommand("other");
-        pntsCheck.setFont(new java.awt.Font("Monospaced", 0, 18));
+        pntsCheck.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         pntsCheck.setActionCommand("pnts");
 
         ButtonGroup group = new ButtonGroup();
@@ -137,14 +119,14 @@ public class Registration_gui extends javax.swing.JFrame {
         group.add(pntsCheck);
         Registration_gui.totalGroup = group;
 
-        phoneLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        phoneLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        doctorLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        doctorLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         doctorList
                 .setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr Smith", "Dr Jason", "Dr Andrew" }));
-        doctorList.setFont(new java.awt.Font("Monospaced", 0, 18));
+        doctorList.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        detailsLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        detailsLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         detailsInput.setColumns(1);
         detailsInput.setLineWrap(true);
         detailsInput.setRows(5);
@@ -154,19 +136,11 @@ public class Registration_gui extends javax.swing.JFrame {
         jScrollPane1.setViewportView(detailsInput);
 
         // Set up the buttons
-        backButton.setFont(new java.awt.Font("Monospaced", 0, 18));
-        backButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Back_buttonActionPerformed(evt);
-            }
-        });
+        backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        backButton.addActionListener(this::Back_buttonActionPerformed);
 
-        regButton.setFont(new java.awt.Font("Monospaced", 0, 18));
-        regButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Register_buttonActionPerformed(evt);
-            }
-        });
+        regButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        regButton.addActionListener(this::Register_buttonActionPerformed);
 
         // Panel layout code section below
         // -----------------------------------------------------------------------------------------------------------------------------------
@@ -315,7 +289,7 @@ public class Registration_gui extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Phone number is missing!");
         } else if (doctorList.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(null, "Doctor is missing!");
-        } else if (ageInput.getText().matches("[0-9]+") == false) {
+        } else if (!ageInput.getText().matches("[0-9]+")) {
             JOptionPane.showMessageDialog(null, "Age must be a number!");
         } else if (detailsInput.getText().length() > 100) {
             JOptionPane.showMessageDialog(null, "Details must be less than 100 characters!");
@@ -334,13 +308,13 @@ public class Registration_gui extends javax.swing.JFrame {
             boolean outcome = Registration.test(firstnameInput.getText(), surnameInput.getText(), selection,
                     Integer.parseInt(ageInput.getText()), phoneInput.getText(),
                     String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());
-            if (outcome == true) {
+            if (outcome) {
                 Registration.sendData(firstnameInput.getText(), surnameInput.getText(), selection,
                         Integer.parseInt(ageInput.getText()), phoneInput.getText(),
                         String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());
                 dispose();
             } else {
-                JOptionPane.showMessageDialog(null, "Some error occured!");
+                JOptionPane.showMessageDialog(null, "Some error occurred!");
             }
         }
     }
