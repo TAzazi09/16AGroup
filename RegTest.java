@@ -1,3 +1,8 @@
+/**
+ * @author Callum
+ * @code quality check by nik
+ */
+
 import Functionality.Registration;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Assertions;

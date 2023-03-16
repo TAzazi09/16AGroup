@@ -2,7 +2,7 @@ package Functionality;
 
 /**
  * @author ethan
- * @additional check by nik
+ * @additional checks by nik
  */
 
 import java.sql.Connection;
