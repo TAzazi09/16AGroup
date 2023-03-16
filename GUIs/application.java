@@ -5,6 +5,7 @@ package GUIs;
  */
 
 import Functionality.LoginCheck;
+import java.awt.*;
 
 public class application extends javax.swing.JFrame {
     // Variables declaration
@@ -63,30 +64,22 @@ public class application extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
         // Set the font and size of the components
-        usernameLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
-        passwordLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        usernameLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        passwordLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        usernameText.setFont(new java.awt.Font("Monospaced", 0, 18));
+        usernameText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         usernameText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        passwordText.setFont(new java.awt.Font("Monospaced", 0, 18));
+        passwordText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         passwordText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        loginButton.setFont(new java.awt.Font("Monospaced", 0, 12));
+        loginButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 12));
         loginButton.setBackground(new java.awt.Color(65, 175, 255, 1));
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtonActionPerformed(evt);
-            }
-        });
+        loginButton.addActionListener(this::loginButtonActionPerformed);
 
-        backButton.setFont(new java.awt.Font("Monospaced", 0, 12));
+        backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 12));
         backButton.setBackground(new java.awt.Color(65, 175, 255, 1));
-        backButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
-            }
-        });
+        backButton.addActionListener(this::backButtonActionPerformed);
 
         // Panel layout code section below
         // -----------------------------------------------------------------------------------------------------------------------------------
