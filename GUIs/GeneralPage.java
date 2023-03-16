@@ -41,17 +41,18 @@ public class GeneralPage extends javax.swing.JFrame {
                     "Age int (3) not null," +
                     "PhoneNumber varchar(12) ," +
                     "DoctorChosen varchar(25) not null,  " +
-                    "Details varchar(100) " +
+                    "Details varchar(100), " +
+                    "Messages text" + 
                     ");");
             statement.execute("DROP TABLE IF EXISTS bookings");
             statement.execute("CREATE TABLE bookings ("
-                    + "BookingID int not null, "
+                    + "PatientID int not null, "
                     + "Time VARCHAR(250) not null,"
                     + "Date VARCHAR(250) not null,"
                     + "Detail VARCHAR(250),"
                     + "Prescription VARCHAR(250),"
-                    + "FOREIGN KEY (BookingID) REFERENCES patients (PatientID),"
-                    + "PRIMARY KEY (BookingID, Time, Date)"
+                    + "FOREIGN KEY (PatientID) REFERENCES patients (PatientID),"
+                    + "PRIMARY KEY (PatientID, Time, Date)"
                     + ");");
         } catch (Exception e) {
             e.printStackTrace();
