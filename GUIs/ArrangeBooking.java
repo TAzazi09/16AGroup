@@ -11,18 +11,56 @@ public class ArrangeBooking extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static void main(String[] args) {
+        /* Set the Nimbus look and feel */
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
+        }
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new ArrangeBooking().setVisible(true));
+    }
+
+    private void arrangeButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
     private void initComponents() {
         getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
-        panel = new javax.swing.JPanel();
-        backButton = new javax.swing.JButton("Back");
-        arrangeButton = new javax.swing.JButton("Arrange");
-        timeLabel = new javax.swing.JLabel("Time");
-        timeText = new javax.swing.JTextField();
-        dateText = new javax.swing.JTextField();
-        dateLabel = new javax.swing.JLabel("Date");
-        mainLabel = new javax.swing.JLabel("Arrange a booking");
-        instructionLabel = new javax.swing.JLabel("Please enter your desired date and time");
+        javax.swing.JPanel panel = new javax.swing.JPanel();
+        javax.swing.JButton backButton = new javax.swing.JButton("Back");
+        javax.swing.JButton arrangeButton = new javax.swing.JButton("Arrange");
+        javax.swing.JLabel timeLabel = new javax.swing.JLabel("Time");
+        javax.swing.JTextField timeText = new javax.swing.JTextField();
+        javax.swing.JTextField dateText = new javax.swing.JTextField();
+        javax.swing.JLabel dateLabel = new javax.swing.JLabel("Date");
+        javax.swing.JLabel mainLabel = new javax.swing.JLabel("Arrange a booking");
+        javax.swing.JLabel instructionLabel = new javax.swing.JLabel("Please enter your desired date and time");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -30,37 +68,29 @@ public class ArrangeBooking extends javax.swing.JFrame {
 
         panel.setBackground(new java.awt.Color(255, 255, 255));
 
+        mainLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
+        instructionLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+
+        timeLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        timeText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        timeText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        dateLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        dateText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        dateText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         backButton.setBackground(new java.awt.Color(65, 175, 255));
         backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
+        arrangeButton.addActionListener(this::arrangeButtonActionPerformed);
 
         arrangeButton.setBackground(new java.awt.Color(65, 175, 255));
         arrangeButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
-        arrangeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                arrangeButtonActionPerformed(evt);
-            }
-        });
+        arrangeButton.addActionListener(this::arrangeButtonActionPerformed);
 
-        timeLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-
-        timeText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        timeText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        timeText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timeTextActionPerformed(evt);
-            }
-        });
-
-        dateText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        dateText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        dateLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-
-        mainLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
-
-        instructionLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        // Panel layout code section (below)
+        // -----------------------------------------------------------------------------------------------------------------------------------
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
@@ -144,59 +174,5 @@ public class ArrangeBooking extends javax.swing.JFrame {
                                 .addGap(300, 300, 300)));
 
         pack();
-    }                       
-
-    private void timeTextActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
     }
-
-    private void arrangeButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        }
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ArrangeBooking().setVisible(true);
-            }
-        });
-    }
-
-    // Variables declaration
-    private javax.swing.JButton arrangeButton;
-    private javax.swing.JButton backButton;
-    private javax.swing.JLabel dateLabel;
-    private javax.swing.JTextField dateText;
-    private javax.swing.JLabel instructionLabel;
-    private javax.swing.JLabel mainLabel;
-    private javax.swing.JPanel panel;
-    private javax.swing.JLabel timeLabel;
-    private javax.swing.JTextField timeText;    
 }
