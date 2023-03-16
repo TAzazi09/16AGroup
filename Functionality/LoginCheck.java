@@ -25,7 +25,7 @@ public class LoginCheck {
             //Returns all tuples where the username matches
             ResultSet resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
             if (resultSet == null) {
-                JOptionPane.showMessageDialog(null, "No registerd accounts with that name! Please register first!");
+                JOptionPane.showMessageDialog(null, "No registered accounts with that name! Please register first!");
                 System.exit(1);
             }
 
@@ -40,9 +40,9 @@ public class LoginCheck {
                 }
             }
 
-            //If no matches are found, the user has entered incorrect credentials, and can try to login again.
+            //If no matches are found, the user has entered incorrect credentials, and can try to log-in again.
             if (!userFound) {
-                JOptionPane.showMessageDialog(null, "Incorect Credentials!");
+                JOptionPane.showMessageDialog(null, "Incorrect Credentials!");
             }
         } catch (Exception e) {
             e.printStackTrace();

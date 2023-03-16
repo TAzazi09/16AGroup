@@ -26,10 +26,8 @@ public class Registration {
             return false;
         else if (!doctorCheck(DoctorChosen))
             return false;
-        else if (!checkDetails(Details))
-            return false;
-        else
-            return true;
+        else return checkDetails(Details);
+            
     }
 
     // Checks if the first name is valid (between 2 and 15 characters, and only
