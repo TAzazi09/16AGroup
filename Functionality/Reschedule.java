@@ -19,11 +19,11 @@ public class Reschedule {
             Statement statement = connection.createStatement();
             //Test input
             System.out.println(LoginCheck.getID());
-            statement.execute("INSERT INTO Booking (BookingID, Time, Date, Detail, Prescription) VALUES ('1', '12:12', 12/12/1212', 'test', 'other test')");
-            ResultSet results = statement.executeQuery("SELECT * FROM Booking WHERE Time = '" + time + "' AND Date = '" + date + "'");
+            statement.execute("INSERT INTO Bookings (PatientID, Time, Date, Detail, Prescription) VALUES ('1', '12:12', '12/12/1212', 'test', 'other test');");
+            ResultSet results = statement.executeQuery("SELECT * FROM bookings WHERE Time = '" + time + "' AND Date = '" + date + "'");
             if(results.next())
             {
-                System.out.println(results.getString("patientID"));
+                System.out.println("it works" + results.getString("PatientID"));
             }
          } catch (Exception e) {
             e.printStackTrace();
