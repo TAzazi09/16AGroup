@@ -13,6 +13,12 @@ package GUIs;
  *
  * @author range
  */
+
+ import java.sql.Connection;
+ import java.sql.ResultSet;
+ import java.sql.Statement;
+ import javax.swing.JOptionPane;
+ import Functionality.*;
 public class menu extends javax.swing.JFrame {
 
     /**
@@ -44,7 +50,7 @@ public class menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Welcome \"first name\" + \"surname\"");
+        jLabel1.setText("Welcome " + LoginCheck.getFirstName() + " " + LoginCheck.getSurname() + "!");
 
         createBooking.setText("Create a booking");
         createBooking.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +90,21 @@ public class menu extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setEditable(false);
+        jTextArea1.setLineWrap(true);
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            //Connects to the database
+            Connection connection = DatabaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet message = statement.executeQuery("select messages from patients where patientID = '" + LoginCheck.getID() + "'");
+            while (message.next()) {
+                jTextArea1.append(message.getString("messages") + "\n");
+            }
+        } catch (Exception e) {
+        e.printStackTrace();
+        }
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
