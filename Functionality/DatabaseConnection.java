@@ -20,17 +20,21 @@ public class DatabaseConnection {
     // DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=root&password=***");
     public static void running() {
         System.out.println("Please enter your password: ");
+
         Scanner test = new Scanner(System.in);
-        String next = test.nextLine();
-        test.close(); 
-        String root = "root";
+        String password = test.nextLine();
+        test.close();
+
+        String username = "root";
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager
-                    .getConnection("jdbc:mysql://localhost/", root, next);
+                    .getConnection("jdbc:mysql://localhost/", username, password);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         getConnection();
     }
 

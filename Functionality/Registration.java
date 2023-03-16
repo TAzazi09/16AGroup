@@ -108,7 +108,6 @@ public class Registration {
         int RightID = 0;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            // DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=root&password=***");
             Connection connection = DatabaseConnection.getConnection();
             Statement statement = connection.createStatement();
 
