@@ -1,9 +1,11 @@
 package Functionality;
-
+import Functionality.*;
 /**
  * @author ethan
  * @code quality by nik
  */
+import GUIs.menu;
+import java.awt.Window;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,6 +13,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class LoginCheck {
+    public static String backgroundID;
     public static void main(String user, String password) {
         testFunction(user, password);
     }
@@ -35,8 +38,16 @@ public class LoginCheck {
             while (resultSet.next()) {
                 if ((username.equals(resultSet.getString("FirstName")))
                         && (password.equals((resultSet.getString("Surname")) + (resultSet.getString("PatientID"))))) {
+                    backgroundID = resultSet.getString("patientID");
                     JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
+                    Window[] windows = Window.getWindows();
+
+                    // Close all windows in the array
+                    for (Window window : windows) {
+                        window.dispose();
+                    }
                     userFound = true;
+                    menu.main(null);
                     break;
                 }
             }
@@ -48,5 +59,9 @@ public class LoginCheck {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static String getID() {
+        return backgroundID;
     }
 }
