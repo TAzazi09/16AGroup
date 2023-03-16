@@ -14,15 +14,15 @@ public class ArrangeBooking extends javax.swing.JFrame {
     private void initComponents() {
         getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
-        panel = new javax.swing.JPanel();
-        backButton = new javax.swing.JButton("Back");
-        arrangeButton = new javax.swing.JButton("Arrange");
-        timeLabel = new javax.swing.JLabel("Time");
-        timeText = new javax.swing.JTextField();
-        dateText = new javax.swing.JTextField();
-        dateLabel = new javax.swing.JLabel("Date");
-        mainLabel = new javax.swing.JLabel("Arrange a booking");
-        instructionLabel = new javax.swing.JLabel("Please enter your desired date and time");
+        javax.swing.JPanel panel = new javax.swing.JPanel();
+        javax.swing.JButton backButton = new javax.swing.JButton("Back");
+        javax.swing.JButton arrangeButton = new javax.swing.JButton("Arrange");
+        javax.swing.JLabel timeLabel = new javax.swing.JLabel("Time");
+        javax.swing.JTextField timeText = new javax.swing.JTextField();
+        javax.swing.JTextField dateText = new javax.swing.JTextField();
+        javax.swing.JLabel dateLabel = new javax.swing.JLabel("Date");
+        javax.swing.JLabel mainLabel = new javax.swing.JLabel("Arrange a booking");
+        javax.swing.JLabel instructionLabel = new javax.swing.JLabel("Please enter your desired date and time");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -188,15 +188,4 @@ public class ArrangeBooking extends javax.swing.JFrame {
             }
         });
     }
-
-    // Variables declaration
-    private javax.swing.JButton arrangeButton;
-    private javax.swing.JButton backButton;
-    private javax.swing.JLabel dateLabel;
-    private javax.swing.JTextField dateText;
-    private javax.swing.JLabel instructionLabel;
-    private javax.swing.JLabel mainLabel;
-    private javax.swing.JPanel panel;
-    private javax.swing.JLabel timeLabel;
-    private javax.swing.JTextField timeText;    
 }
