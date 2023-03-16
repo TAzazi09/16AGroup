@@ -10,10 +10,6 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class LoginCheck {
-    private static Connection connection;
-    private static Statement statement;
-    private static ResultSet resultSet;
-
     public static void main(String user, String password) {
         testFunction(user, password);
     }
@@ -23,12 +19,11 @@ public class LoginCheck {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             //Connects to the database
-            
-            connection = DatabaseConnection.getConnection();
-            statement = connection.createStatement();
+            Connection connection = DatabaseConnection.getConnection();
+            Statement statement = connection.createStatement();
             
             //Returns all tuples where the username matches
-            resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
+            ResultSet resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
             if (resultSet == null) {
                 JOptionPane.showMessageDialog(null, "No registerd accounts with that name! Please register first!");
                 System.exit(1);

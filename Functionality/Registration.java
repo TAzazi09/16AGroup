@@ -13,10 +13,6 @@ import javax.swing.JOptionPane;
 import GUIs.GeneralPage;
 
 public class Registration {
-    private static Connection connection;
-    private static Statement statement;
-    private static ResultSet resultSet;
-
     // Tests if the data is valid, and if it is, sends it to the database
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorChosen, String Details) {
@@ -114,16 +110,15 @@ public class Registration {
         int RightID = 0;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            // connection =
             // DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=root&password=***");
-            connection = DatabaseConnection.getConnection();
-            statement = connection.createStatement();
+            Connection connection = DatabaseConnection.getConnection();
+            Statement statement = connection.createStatement();
 
             statement.executeUpdate(
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
                             + PhoneNumber + "','" + DoctorChosen + "','" + Details + "')");
-            resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
+            ResultSet resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
             if (resultSet.next()) {
             RightID = resultSet.getInt("PatientID");
             System.out.println(RightID);
