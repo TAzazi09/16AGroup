@@ -43,6 +43,9 @@ public class RegistrationCheck {
         } else if (!firstName.matches("[a-zA-Z]+")) {
             JOptionPane.showMessageDialog(null, "First name must only contain letters!");
             return false;
+        } else if (Character.isLowerCase(firstName.charAt(0))) {
+            JOptionPane.showMessageDialog(null, "First name must start with a capital letter!");
+            return false;
         }
         return true;
     }
@@ -58,6 +61,9 @@ public class RegistrationCheck {
             return false;
         } else if (!surname.matches("[a-zA-Z]+")) {
             JOptionPane.showMessageDialog(null, "Surname must only contain letters!");
+            return false;
+        } else if (Character.isLowerCase(surname.charAt(0))) {
+            JOptionPane.showMessageDialog(null, "Surname must start with a capital letter!");
             return false;
         }
         return true;
