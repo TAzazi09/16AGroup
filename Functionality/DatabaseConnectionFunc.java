@@ -16,8 +16,6 @@ public class DatabaseConnectionFunc {
         running();
     }
 
-    // connection =
-    // DriverManager.getConnection("jdbc:mysql://localhost/nhs?user=root&password=***");
     public static void running() {
         System.out.println("Please enter your password: ");
 
