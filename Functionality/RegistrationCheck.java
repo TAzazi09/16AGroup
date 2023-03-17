@@ -26,8 +26,9 @@ public class RegistrationCheck {
             return false;
         else if (!doctorCheck(DoctorChosen))
             return false;
-        else return checkDetails(Details);
-            
+        else
+            return checkDetails(Details);
+
     }
 
     // Checks if the first name is valid (between 2 and 15 characters, and only
@@ -114,11 +115,12 @@ public class RegistrationCheck {
             statement.executeUpdate(
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details, messages )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
-                            + PhoneNumber + "','" + DoctorChosen + "','" + Details + "','" + FirstName + " " + Surname + " succesfully registered with " + DoctorChosen + " as their doctor')");
+                            + PhoneNumber + "','" + DoctorChosen + "','" + Details + "','" + FirstName + " " + Surname
+                            + " succesfully registered with " + DoctorChosen + " as their doctor')");
             ResultSet resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
             if (resultSet.next()) {
-            RightID = resultSet.getInt("PatientID");
-            System.out.println(RightID);
+                RightID = resultSet.getInt("PatientID");
+                System.out.println(RightID);
             }
         } catch (Exception e) {
             e.printStackTrace();

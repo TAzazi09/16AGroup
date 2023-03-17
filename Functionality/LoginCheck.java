@@ -1,4 +1,5 @@
 package Functionality;
+
 import Functionality.*;
 /**
  * @author ethan
@@ -16,6 +17,7 @@ public class LoginCheck {
     public static String backgroundID;
     public static String fname;
     public static String sname;
+
     public static void main(String user, String password) {
         testFunction(user, password);
     }
@@ -23,11 +25,11 @@ public class LoginCheck {
     public static void testFunction(String username, String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            
+
             //Connects to the database
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
-            
+
             //Returns all tuples where the username matches
             ResultSet resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
             if (resultSet == null) {
@@ -70,7 +72,7 @@ public class LoginCheck {
     }
 
     public static String getFirstName() {
-        return fname;        
+        return fname;
     }
 
     public static String getSurname() {

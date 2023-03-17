@@ -1,5 +1,7 @@
 package GUIs;
+
 import Functionality.*;
+
 /**
  *
  * @author range
@@ -95,7 +97,7 @@ public class ReschedulingPage extends javax.swing.JFrame {
     private void submitButton(java.awt.event.ActionEvent evt) {
         String time = timeInput.getText();
         String date = dateInput.getText();
-        ReschedulingFunc.resechduleBooking(time,date);
+        ReschedulingFunc.resechduleBooking(time, date);
     }
 
     public static void main(String args[]) {
@@ -107,16 +109,20 @@ public class ReschedulingPage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null,
                     ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null,
                     ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null,
                     ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null,
                     ex);
         }
 

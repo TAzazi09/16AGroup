@@ -20,7 +20,7 @@ public class ArrangeBookingFunc {
             //Connects to the database
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
-            
+
             //Test input
             System.out.println(LoginCheck.getID());
             statement.execute(

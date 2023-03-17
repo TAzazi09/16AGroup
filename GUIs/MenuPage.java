@@ -14,10 +14,11 @@ package GUIs;
  * @author range
  */
 
- import java.sql.Connection;
- import java.sql.ResultSet;
- import java.sql.Statement;
- import Functionality.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import Functionality.*;
+
 public class MenuPage extends javax.swing.JFrame {
 
     /**
@@ -94,89 +95,94 @@ public class MenuPage extends javax.swing.JFrame {
         jTextArea1.setWrapStyleWord(true);
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            
+
             //Connects to the database
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet message = statement.executeQuery("select messages from patients where patientID = '" + LoginCheck.getID() + "'");
+            ResultSet message = statement
+                    .executeQuery("select messages from patients where patientID = '" + LoginCheck.getID() + "'");
             while (message.next()) {
                 jTextArea1.append(" - " + message.getString("messages") + "\n");
             }
         } catch (Exception e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(viewBookingDetails)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(viewAllDoctors))
-                    .addComponent(jButton7)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(changeDoctor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(createBooking))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(viewBookings)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rescheduleBooking)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(viewBookingDetails)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(viewAllDoctors))
+                                        .addComponent(jButton7)
+                                        .addComponent(jLabel1)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(changeDoctor)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(createBooking))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(viewBookings)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(rescheduleBooking)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63,
+                                        Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(changeDoctor)
-                            .addComponent(createBooking))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(viewBookings)
-                            .addComponent(rescheduleBooking))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(viewBookingDetails)
-                            .addComponent(viewAllDoctors))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7)))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel1)
+                                                .addGap(26, 26, 26)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(changeDoctor)
+                                                        .addComponent(createBooking))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(viewBookings)
+                                                        .addComponent(rescheduleBooking))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(viewBookingDetails)
+                                                        .addComponent(viewAllDoctors))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton7)))
+                                .addContainerGap(30, Short.MAX_VALUE)));
 
         pack();
     }// </editor-fold>                        
 
-    private void createBookingAction(java.awt.event.ActionEvent evt) {                                         
-        dispose();                                    
+    private void createBookingAction(java.awt.event.ActionEvent evt) {
+        dispose();
         ArrangeBooking.main(null);
-    }                                        
+    }
 
-    private void rescheduleBookingAction(java.awt.event.ActionEvent evt) {     
-        dispose();                                    
+    private void rescheduleBookingAction(java.awt.event.ActionEvent evt) {
+        dispose();
         ReschedulingPage.main(null);
-    }                                        
+    }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                        
+    }
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                        
+    }
 
     /**
      * @param args the command line arguments
