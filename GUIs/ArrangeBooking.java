@@ -1,12 +1,13 @@
 package GUIs;
 
 import java.awt.Font;
-// import Functionality.ArrangeBookingFunc;
+import Functionality.ArrangeBookingFunc;
 
 /**
  * @author Nikola
  */
 public class ArrangeBooking extends javax.swing.JFrame {
+    private javax.swing.JTextField timeInput, dateInput;
 
     public ArrangeBooking() {
         initComponents();
@@ -44,7 +45,9 @@ public class ArrangeBooking extends javax.swing.JFrame {
 
     // Button actions
     private void arrangeButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        String time = timeInput.getText();
+        String date = dateInput.getText();
+        ArrangeBookingFunc.arrangeBooking(time, date);
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,9 +63,9 @@ public class ArrangeBooking extends javax.swing.JFrame {
         javax.swing.JButton backButton = new javax.swing.JButton("Back");
         javax.swing.JButton arrangeButton = new javax.swing.JButton("Arrange");
         javax.swing.JLabel timeLabel = new javax.swing.JLabel("Time");
-        javax.swing.JTextField timeText = new javax.swing.JTextField();
-        javax.swing.JTextField dateText = new javax.swing.JTextField();
+        timeInput = new javax.swing.JTextField();
         javax.swing.JLabel dateLabel = new javax.swing.JLabel("Date");
+        dateInput = new javax.swing.JTextField();
         javax.swing.JLabel mainLabel = new javax.swing.JLabel("Arrange a booking");
         javax.swing.JLabel instructionLabel = new javax.swing.JLabel("Please enter your desired date and time");
 
@@ -78,12 +81,12 @@ public class ArrangeBooking extends javax.swing.JFrame {
         instructionLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         timeLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        timeText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        timeText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        timeInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        timeInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         dateLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        dateText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        dateText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        dateInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        dateInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         backButton.setBackground(new java.awt.Color(65, 175, 255));
         backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
@@ -126,14 +129,14 @@ public class ArrangeBooking extends javax.swing.JFrame {
                                                                 .addComponent(dateLabel)
                                                                 .addPreferredGap(
                                                                         javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(dateText,
+                                                                .addComponent(dateInput,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE, 150,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addGroup(panelLayout.createSequentialGroup()
                                                                 .addComponent(timeLabel)
                                                                 .addPreferredGap(
                                                                         javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(timeText,
+                                                                .addComponent(timeInput,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE, 150,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGap(70, 70, 70)));
@@ -145,14 +148,14 @@ public class ArrangeBooking extends javax.swing.JFrame {
                                 .addComponent(instructionLabel)
                                 .addGap(75, 75, 75)
                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        .addComponent(dateInput, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(dateLabel))
                                 .addGap(10, 10, 10)
                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(timeLabel)
-                                        .addComponent(timeText, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        .addComponent(timeInput, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(50, 50, 50)

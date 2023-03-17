@@ -10,7 +10,7 @@ import GUIs.MenuPage;
 
 public class ArrangeBookingFunc {
 
-    public static void resechduleBooking(String time, String date) {
+    public static void arrangeBooking(String time, String date) {
         System.out.println(time);
         System.out.println(date);
 
@@ -22,19 +22,16 @@ public class ArrangeBookingFunc {
             Statement statement = connection.createStatement();
 
             //Test input
-            System.out.println(LoginCheck.getID());
-            statement.execute(
-                    "INSERT INTO Bookings (PatientID, Time, Date, Detail, Prescription) VALUES ('1', '12:12', '12/12/1212', 'test', 'other test');");
             ResultSet results = statement
                     .executeQuery("SELECT * FROM bookings WHERE Time = '" + time + "' AND Date = '" + date + "'");
             if (results.next()) {
                 JOptionPane.showMessageDialog(null, "INSERT DOCTOR NAME is unavailable at that time.");
             } else {
                 JOptionPane.showMessageDialog(null,
-                        "Your booking has successfully been changed to " + time + " on the " + date + ".");
+                        "Your booking has successfully been arranged at " + time + " on the " + date + ".");
                 statement.execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
-                        + " " + LoginCheck.getSurname() + " has changed their booking from INSERT DATE AND TIME to "
-                        + time + " " + date + ".') WHERE patientID = '" + LoginCheck.getID() + "';");
+                        + " " + LoginCheck.getSurname() + " has arranged a booking at "
+                        + time + " on " + date + ".') WHERE patientID = '" + LoginCheck.getID() + "';");
                 Window[] windows = Window.getWindows();
 
                 // Close all windows in the array
