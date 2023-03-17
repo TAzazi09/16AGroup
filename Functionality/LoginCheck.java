@@ -1,6 +1,5 @@
 package Functionality;
 
-import Functionality.*;
 /**
  * @author ethan
  * @code quality by nik
