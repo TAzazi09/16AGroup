@@ -41,6 +41,7 @@ public class ArrangeBooking extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new ArrangeBooking().setVisible(true));
     }
 
+    // Button actions
     private void arrangeButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
@@ -52,6 +53,7 @@ public class ArrangeBooking extends javax.swing.JFrame {
     private void initComponents() {
         getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
+        // initialise the components
         javax.swing.JPanel panel = new javax.swing.JPanel();
         javax.swing.JButton backButton = new javax.swing.JButton("Back");
         javax.swing.JButton arrangeButton = new javax.swing.JButton("Arrange");
@@ -62,12 +64,14 @@ public class ArrangeBooking extends javax.swing.JFrame {
         javax.swing.JLabel mainLabel = new javax.swing.JLabel("Arrange a booking");
         javax.swing.JLabel instructionLabel = new javax.swing.JLabel("Please enter your desired date and time");
 
+        // set the properties of the frame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(java.awt.Color.white);
 
         panel.setBackground(new java.awt.Color(255, 255, 255));
 
+        // set font for all labels and buttons
         mainLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
         instructionLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
