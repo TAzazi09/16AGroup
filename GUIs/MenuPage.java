@@ -2,7 +2,7 @@ package GUIs;
 
 /**
  * @author ethan
- * @minor cosmetic changes by nik
+ * @code quality changes by nik
  */
 
 import java.sql.Connection;
@@ -17,21 +17,20 @@ public class MenuPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-
-        jLabel1 = new javax.swing.JLabel();
+        welcomeLabel = new javax.swing.JLabel();
         createBooking = new javax.swing.JButton();
         rescheduleBooking = new javax.swing.JButton();
         changeDoctor = new javax.swing.JButton();
         viewBookings = new javax.swing.JButton();
         viewBookingDetails = new javax.swing.JButton();
         viewAllDoctors = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        viewDoctorButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Welcome " + LoginCheck.getFirstName() + " " + LoginCheck.getSurname() + "!");
+        welcomeLabel.setText("Welcome " + LoginCheck.getFirstName() + " " + LoginCheck.getSurname() + "!");
 
         createBooking.setText("Create a booking");
         createBooking.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +64,7 @@ public class MenuPage extends javax.swing.JFrame {
 
         viewAllDoctors.setText("View all doctors");
 
-        jButton7.setText("View doctor?");
+        viewDoctorButton.setText("View doctor?");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -101,8 +100,8 @@ public class MenuPage extends javax.swing.JFrame {
                                                 .addComponent(viewBookingDetails)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(viewAllDoctors))
-                                        .addComponent(jButton7)
-                                        .addComponent(jLabel1)
+                                        .addComponent(viewDoctorButton)
+                                        .addComponent(welcomeLabel)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(changeDoctor)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -124,7 +123,7 @@ public class MenuPage extends javax.swing.JFrame {
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
+                                                .addComponent(welcomeLabel)
                                                 .addGap(26, 26, 26)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -141,7 +140,7 @@ public class MenuPage extends javax.swing.JFrame {
                                                         .addComponent(viewBookingDetails)
                                                         .addComponent(viewAllDoctors))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton7)))
+                                                .addComponent(viewDoctorButton)))
                                 .addContainerGap(30, Short.MAX_VALUE)));
 
         pack();
@@ -202,8 +201,8 @@ public class MenuPage extends javax.swing.JFrame {
     private javax.swing.JButton viewBookings;
     private javax.swing.JButton viewBookingDetails;
     private javax.swing.JButton viewAllDoctors;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton viewDoctorButton;
+    private javax.swing.JLabel welcomeLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration                   
