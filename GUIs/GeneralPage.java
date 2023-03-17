@@ -8,9 +8,9 @@ import java.awt.Font;
  */
 
 import Functionality.DatabaseConnection;
-import Databases.Database;
-import Databases.Patients;
-import Databases.Bookings;
+import Databases.DatabaseDB;
+import Databases.PatientsDB;
+import Databases.BookingsDB;
 
 public class GeneralPage extends javax.swing.JFrame {
     public GeneralPage() {
@@ -24,9 +24,9 @@ public class GeneralPage extends javax.swing.JFrame {
             DatabaseConnection.main(null);
 
             // Lines below are used for creating tables
-            Database.main(null);
-            Patients.main(null);
-            Bookings.main(null);
+            DatabaseDB.main(null);
+            PatientsDB.main(null);
+            BookingsDB.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }

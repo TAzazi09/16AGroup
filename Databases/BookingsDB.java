@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 import Functionality.DatabaseConnection;
 
-public class Bookings {
+public class BookingsDB {
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
