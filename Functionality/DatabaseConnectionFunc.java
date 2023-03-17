@@ -17,7 +17,7 @@ public class DatabaseConnectionFunc {
     }
 
     public static void running() {
-        System.out.println("Please enter your password: ");
+        System.out.print("Please enter your password: ");
 
         Scanner test = new Scanner(System.in);
         String password = test.nextLine();
