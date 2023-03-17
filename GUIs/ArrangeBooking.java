@@ -1,7 +1,7 @@
 package GUIs;
 
 import java.awt.Font;
-import Functionality.ArrangeBookingFunc;
+// import Functionality.ArrangeBookingFunc;
 
 /**
  * @author Nikola
