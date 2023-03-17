@@ -7,14 +7,14 @@ package Databases;
 
 import java.sql.Connection;
 import java.sql.Statement;
-import Functionality.DatabaseConnection;
+import Functionality.DatabaseConnectionFunc;
 
 public class BookingsDB {
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection connection = DatabaseConnection.getConnection();
+            Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
 
             statement.executeUpdate("use NHS");

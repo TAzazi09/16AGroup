@@ -7,7 +7,7 @@ import java.awt.Font;
  * @functional changes by ethan
  */
 
-import Functionality.DatabaseConnection;
+import Functionality.DatabaseConnectionFunc;
 import Databases.DatabaseDB;
 import Databases.PatientsDB;
 import Databases.BookingsDB;
@@ -21,7 +21,7 @@ public class GeneralPage extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            DatabaseConnection.main(null);
+            DatabaseConnectionFunc.main(null);
 
             // Lines below are used for creating tables
             DatabaseDB.main(null);

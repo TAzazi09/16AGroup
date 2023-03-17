@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 import GUIs.GeneralPage;
 
-public class Registration {
+public class RegistrationCheck {
     // Tests if the data is valid, and if it is, sends it to the database
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorChosen, String Details) {
@@ -108,7 +108,7 @@ public class Registration {
         int RightID = 0;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DatabaseConnection.getConnection();
+            Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
 
             statement.executeUpdate(

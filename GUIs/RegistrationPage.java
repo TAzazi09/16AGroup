@@ -9,7 +9,7 @@ package GUIs;
 import java.awt.*;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
-import Functionality.Registration;
+import Functionality.RegistrationCheck;
 
 public class RegistrationPage extends javax.swing.JFrame {
     // Variables declaration
@@ -305,11 +305,11 @@ public class RegistrationPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Age must be greater than 0!");
         } else {
             String selection = RegistrationPage.totalGroup.getSelection().getActionCommand();
-            boolean outcome = Registration.test(firstnameInput.getText(), surnameInput.getText(), selection,
+            boolean outcome = RegistrationCheck.test(firstnameInput.getText(), surnameInput.getText(), selection,
                     Integer.parseInt(ageInput.getText()), phoneInput.getText(),
                     String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());
             if (outcome) {
-                Registration.sendData(firstnameInput.getText(), surnameInput.getText(), selection,
+                RegistrationCheck.sendData(firstnameInput.getText(), surnameInput.getText(), selection,
                         Integer.parseInt(ageInput.getText()), phoneInput.getText(),
                         String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());
                 dispose();

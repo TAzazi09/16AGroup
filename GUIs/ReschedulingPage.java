@@ -95,7 +95,7 @@ public class ReschedulingPage extends javax.swing.JFrame {
     private void submitButton(java.awt.event.ActionEvent evt) {
         String time = timeInput.getText();
         String date = dateInput.getText();
-        Reschedule.resechduleBooking(time,date);
+        ReschedulingFunc.resechduleBooking(time,date);
     }
 
     public static void main(String args[]) {

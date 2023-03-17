@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 import GUIs.MenuPage;
 
-public class Arrange {
+public class ArrangeBookingFunc {
 
     public static void resechduleBooking(String time, String date) {
         System.out.println(time);
@@ -18,7 +18,7 @@ public class Arrange {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             //Connects to the database
-            Connection connection = DatabaseConnection.getConnection();
+            Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
             
             //Test input

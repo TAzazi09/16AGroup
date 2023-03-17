@@ -10,7 +10,7 @@ import GUIs.MenuPage;
 
 // import com.mysql.cj.xdevapi.Result;
 
-public class Reschedule {
+public class ReschedulingFunc {
     public static void resechduleBooking(String time, String date) {
         System.out.println(time);
         System.out.println(date);
@@ -19,7 +19,7 @@ public class Reschedule {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             //Connects to the database
-            Connection connection = DatabaseConnection.getConnection();
+            Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
             //Test input
             System.out.println(LoginCheck.getID());

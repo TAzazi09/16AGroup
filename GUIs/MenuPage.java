@@ -96,7 +96,7 @@ public class MenuPage extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             //Connects to the database
-            Connection connection = DatabaseConnection.getConnection();
+            Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
             ResultSet message = statement.executeQuery("select messages from patients where patientID = '" + LoginCheck.getID() + "'");
             while (message.next()) {
