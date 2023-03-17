@@ -8,8 +8,6 @@ import javax.swing.JOptionPane;
 
 import GUIs.MenuPage;
 
-// import com.mysql.cj.xdevapi.Result;
-
 public class ReschedulingFunc {
     public static void resechduleBooking(String time, String date) {
         System.out.println(time);
