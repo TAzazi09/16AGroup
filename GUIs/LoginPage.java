@@ -7,12 +7,12 @@ package GUIs;
 import Functionality.LoginCheck;
 import java.awt.*;
 
-public class application extends javax.swing.JFrame {
+public class LoginPage extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JTextField usernameText;
     private javax.swing.JPasswordField passwordText;
 
-    public application() {
+    public LoginPage() {
         initComponents();
     }
 
@@ -27,25 +27,25 @@ public class application extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(
                     java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(
                     java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(
                     java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(
                     java.util.logging.Level.SEVERE, null,
                     ex);
         }
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new application().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new LoginPage().setVisible(true));
     }
 
     private void initComponents() {

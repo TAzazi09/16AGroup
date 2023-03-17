@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.awt.Window;
 import javax.swing.JOptionPane;
 
-import GUIs.menu;
+import GUIs.MenuPage;
 
 public class Arrange {
 
@@ -41,7 +41,7 @@ public class Arrange {
                 for (Window window : windows) {
                     window.dispose();
                 }
-                menu.main(null);
+                MenuPage.main(null);
             }
         } catch (Exception e) {
             e.printStackTrace();

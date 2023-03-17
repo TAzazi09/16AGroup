@@ -4,7 +4,7 @@ import Functionality.*;
  * @author ethan
  * @code quality by nik
  */
-import GUIs.menu;
+import GUIs.MenuPage;
 import java.awt.Window;
 
 import java.sql.Connection;
@@ -51,7 +51,7 @@ public class LoginCheck {
                         window.dispose();
                     }
                     userFound = true;
-                    menu.main(null);
+                    MenuPage.main(null);
                     break;
                 }
             }

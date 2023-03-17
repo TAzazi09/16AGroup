@@ -48,7 +48,7 @@ public class ArrangeBooking extends javax.swing.JFrame {
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        menu.main(null);
+        MenuPage.main(null);
         dispose();
     }
 

@@ -4,12 +4,12 @@ import Functionality.*;
  *
  * @author range
  */
-public class Reschedule_gui extends javax.swing.JFrame {
+public class ReschedulingPage extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public Reschedule_gui() {
+    public ReschedulingPage() {
         initComponents();
     }
 
@@ -107,23 +107,23 @@ public class Reschedule_gui extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Reschedule_gui.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Reschedule_gui.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Reschedule_gui.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Reschedule_gui.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Reschedule_gui().setVisible(true);
+                new ReschedulingPage().setVisible(true);
             }
         });
     }

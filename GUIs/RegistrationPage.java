@@ -11,7 +11,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import Functionality.Registration;
 
-public class Registration_gui extends javax.swing.JFrame {
+public class RegistrationPage extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JComboBox<String> doctorList;
     private javax.swing.JTextField firstnameInput;
@@ -21,7 +21,7 @@ public class Registration_gui extends javax.swing.JFrame {
     private javax.swing.JTextField ageInput;
     public static ButtonGroup totalGroup;
 
-    public Registration_gui() {
+    public RegistrationPage() {
         initComponents();
     }
 
@@ -35,21 +35,21 @@ public class Registration_gui extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(application.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         }
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Registration_gui().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new RegistrationPage().setVisible(true));
     }
 
     private void initComponents() {
@@ -117,7 +117,7 @@ public class Registration_gui extends javax.swing.JFrame {
         group.add(maleCheck);
         group.add(otherCheck);
         group.add(pntsCheck);
-        Registration_gui.totalGroup = group;
+        RegistrationPage.totalGroup = group;
 
         phoneLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
@@ -283,7 +283,7 @@ public class Registration_gui extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Surname is missing!");
         } else if (ageInput.getText() == null) {
             JOptionPane.showMessageDialog(null, "Age is missing!");
-        } else if (Registration_gui.totalGroup.getSelection() == null) {
+        } else if (RegistrationPage.totalGroup.getSelection() == null) {
             JOptionPane.showMessageDialog(null, "Gender is missing!");
         } else if (phoneInput.getText() == null) {
             JOptionPane.showMessageDialog(null, "Phone number is missing!");
@@ -304,7 +304,7 @@ public class Registration_gui extends javax.swing.JFrame {
         } else if (Integer.parseInt(ageInput.getText()) < 0) {
             JOptionPane.showMessageDialog(null, "Age must be greater than 0!");
         } else {
-            String selection = Registration_gui.totalGroup.getSelection().getActionCommand();
+            String selection = RegistrationPage.totalGroup.getSelection().getActionCommand();
             boolean outcome = Registration.test(firstnameInput.getText(), surnameInput.getText(), selection,
                     Integer.parseInt(ageInput.getText()), phoneInput.getText(),
                     String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());

@@ -70,13 +70,13 @@ public class GeneralPage extends javax.swing.JFrame {
 
         // Login button - opens the login page
         logButton.addActionListener(evt -> {
-            application.main(null);
+            LoginPage.main(null);
             dispose();
         });
 
         // Registration button - opens the registration page
         regButton.addActionListener(evt -> {
-            Registration_gui.main(null);
+            RegistrationPage.main(null);
             dispose(); // Close the current JFrame
         });
 

@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.awt.Window;
 import javax.swing.JOptionPane;
 
-import GUIs.menu;
+import GUIs.MenuPage;
 
 // import com.mysql.cj.xdevapi.Result;
 
@@ -38,7 +38,7 @@ public class Reschedule {
                 for (Window window : windows) {
                     window.dispose();
                 }
-                menu.main(null);
+                MenuPage.main(null);
             }
          } catch (Exception e) {
             e.printStackTrace();
