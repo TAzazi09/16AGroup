@@ -7,13 +7,12 @@ import java.awt.Font;
  * @functional changes by ethan
  */
 
-import java.sql.Connection;
-import java.sql.Statement;
 import Functionality.DatabaseConnection;
+import Databases.Database;
+import Databases.Patients;
+import Databases.Bookings;
 
 public class GeneralPage extends javax.swing.JFrame {
-    public static Connection connection;
-
     public GeneralPage() {
         initComponents();
     }
@@ -23,36 +22,11 @@ public class GeneralPage extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             DatabaseConnection.main(null);
-            connection = DatabaseConnection.getConnection();
-            Statement statement = connection.createStatement();
 
             // Lines below are used for creating tables
-            statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
-            statement.executeUpdate("CREATE DATABASE NHS");
-            statement.executeUpdate("use NHS");
-            statement.executeUpdate("DROP TABLE IF EXISTS patients;");
-            statement.execute("CREATE TABLE patients (" +
-                    "PatientID int not null auto_increment," +
-                    "FirstName VARCHAR(15) not null, " +
-                    "Surname varchar(15) NOT NULL," +
-                    "PRIMARY KEY (patientID), " +
-                    "Gender varchar(10) not null," +
-                    "Age int (3) not null," +
-                    "PhoneNumber varchar(12) ," +
-                    "DoctorChosen varchar(25) not null,  " +
-                    "Details varchar(100), " +
-                    "Messages text" + 
-                    ");");
-            statement.execute("DROP TABLE IF EXISTS bookings");
-            statement.execute("CREATE TABLE bookings ("
-                    + "PatientID int not null, "
-                    + "Time VARCHAR(250) not null,"
-                    + "Date VARCHAR(250) not null,"
-                    + "Detail VARCHAR(250),"
-                    + "Prescription VARCHAR(250),"
-                    + "FOREIGN KEY (PatientID) REFERENCES patients (PatientID),"
-                    + "PRIMARY KEY (PatientID, Time, Date)"
-                    + ");");
+            Database.main(null);
+            Patients.main(null);
+            Bookings.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }

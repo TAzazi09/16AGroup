@@ -1,6 +1,7 @@
 package GUIs;
 
 import java.awt.Font;
+import Functionality.Arrange;
 
 /**
  * @author Nikola
@@ -47,7 +48,7 @@ public class ArrangeBooking extends javax.swing.JFrame {
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        new menu().setVisible(true);
+        menu.main(null);
         dispose();
     }
 
@@ -87,7 +88,7 @@ public class ArrangeBooking extends javax.swing.JFrame {
         backButton.setBackground(new java.awt.Color(65, 175, 255));
         backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
-        arrangeButton.addActionListener(this::arrangeButtonActionPerformed);
+        backButton.addActionListener(this::backButtonActionPerformed);
 
         arrangeButton.setBackground(new java.awt.Color(65, 175, 255));
         arrangeButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));

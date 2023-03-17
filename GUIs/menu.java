@@ -161,7 +161,8 @@ public class menu extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void createBookingAction(java.awt.event.ActionEvent evt) {                                         
-        
+        dispose();                                    
+        ArrangeBooking.main(null);
     }                                        
 
     private void rescheduleBookingAction(java.awt.event.ActionEvent evt) {     
