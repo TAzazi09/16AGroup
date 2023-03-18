@@ -1,6 +1,7 @@
 package GUIs;
 
 import java.awt.Font;
+import java.awt.Color;
 import Functionality.ArrangeBookingFunc;
 
 /**
@@ -88,12 +89,14 @@ public class ArrangeBooking extends javax.swing.JFrame {
         dateInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         dateInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        backButton.setBackground(new java.awt.Color(65, 175, 255));
+        Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
+
+        backButton.setBackground(buttonBlue);
         backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
         backButton.addActionListener(this::backButtonActionPerformed);
 
-        arrangeButton.setBackground(new java.awt.Color(65, 175, 255));
+        arrangeButton.setBackground(buttonBlue);
         arrangeButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
         arrangeButton.addActionListener(this::arrangeButtonActionPerformed);
