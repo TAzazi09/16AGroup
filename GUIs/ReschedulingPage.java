@@ -4,7 +4,7 @@ import Functionality.*;
 
 /**
  *
- * @author range
+ * @author ethan
  */
 public class ReschedulingPage extends javax.swing.JFrame {
 
