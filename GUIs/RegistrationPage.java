@@ -53,6 +53,8 @@ public class RegistrationPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
+        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
+
         // Initialise components
         javax.swing.JLabel regLabel = new javax.swing.JLabel("Register");
 
@@ -80,9 +82,13 @@ public class RegistrationPage extends javax.swing.JFrame {
         javax.swing.JLabel detailsLabel = new javax.swing.JLabel("Details");
         detailsInput = new javax.swing.JTextArea();
 
+        Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
+
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         javax.swing.JButton backButton = new javax.swing.JButton("Back");
+        backButton.setBackground(buttonBlue);
         javax.swing.JButton regButton = new javax.swing.JButton("Register");
+        regButton.setBackground(buttonBlue);
 
         // Set up the form
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
