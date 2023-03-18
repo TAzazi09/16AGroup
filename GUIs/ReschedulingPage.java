@@ -13,20 +13,20 @@ public class ReschedulingPage extends javax.swing.JFrame {
     private void initComponents() {
 
         dateLabel = new javax.swing.JLabel();
-        timeInput = new javax.swing.JFormattedTextField();
-        dateInput = new javax.swing.JFormattedTextField();
+        timeInput = new javax.swing.JTextField();
+        dateInput = new javax.swing.JTextField();
         timeLabel = new javax.swing.JLabel();
         submit = new javax.swing.JButton();
         title = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        dateInput.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-                new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        // dateInput.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
+        //         new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
         dateLabel.setText("New Date");
 
-        timeInput.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-                new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+        // timeInput.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
+        //         new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
 
         timeLabel.setText("New Time");
 
@@ -133,7 +133,7 @@ public class ReschedulingPage extends javax.swing.JFrame {
     private javax.swing.JLabel timeLabel;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel title;
-    private javax.swing.JFormattedTextField dateInput;
-    private javax.swing.JFormattedTextField timeInput;
+    private javax.swing.JTextField dateInput;
+    private javax.swing.JTextField timeInput;
     // End of variables declaration
 }
