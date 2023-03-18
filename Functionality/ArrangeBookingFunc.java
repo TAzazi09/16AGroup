@@ -13,11 +13,7 @@ import javax.swing.JOptionPane;
 import GUIs.MenuPage;
 
 public class ArrangeBookingFunc {
-
     public static void arrangeBooking(String time, String date) {
-        System.out.println(time);
-        System.out.println(date);
-
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
