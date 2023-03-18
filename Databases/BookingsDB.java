@@ -20,14 +20,18 @@ public class BookingsDB {
             statement.executeUpdate("use NHS");
             statement.execute("DROP TABLE IF EXISTS bookings");
             statement.execute("CREATE TABLE bookings ("
+                    + "BookingID int not null auto_increment,"
                     + "PatientID int not null, "
-                    + "Time VARCHAR(250) not null,"
-                    + "Date VARCHAR(250) not null,"
+                    + "DoctorChosen varchar(25) not null, "
+                    + "Time Time not null,"
+                    + "Date Date not null,"
                     + "Detail VARCHAR(250),"
                     + "Prescription VARCHAR(250),"
                     + "FOREIGN KEY (PatientID) REFERENCES patients (PatientID),"
-                    + "PRIMARY KEY (PatientID, Time, Date)"
+                    + "PRIMARY KEY (BookingID),"
+                    + "UNIQUE (PatientID, DoctorChosen, Time, Date)"
                     + ");");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
