@@ -73,12 +73,14 @@ public class LoginPage extends javax.swing.JFrame {
         passwordText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         passwordText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
+
         loginButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 12));
-        loginButton.setBackground(new java.awt.Color(65, 175, 255, 1));
+        loginButton.setBackground(buttonBlue);
         loginButton.addActionListener(this::loginButtonActionPerformed);
 
         backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 12));
-        backButton.setBackground(new java.awt.Color(65, 175, 255, 1));
+        backButton.setBackground(buttonBlue);
         backButton.addActionListener(this::backButtonActionPerformed);
 
         // Panel layout code section below
