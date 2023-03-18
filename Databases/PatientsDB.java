@@ -17,6 +17,7 @@ public class PatientsDB {
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
 
+            // Creates the Patients table
             statement.executeUpdate("use NHS");
             statement.executeUpdate("DROP TABLE IF EXISTS patients;");
             statement.execute("CREATE TABLE patients (" +

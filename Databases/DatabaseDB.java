@@ -10,6 +10,7 @@ import java.sql.Statement;
 import Functionality.DatabaseConnectionFunc;
 
 public class DatabaseDB {
+    // Creates the database
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

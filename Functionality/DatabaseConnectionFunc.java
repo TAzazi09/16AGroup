@@ -16,6 +16,7 @@ public class DatabaseConnectionFunc {
         running();
     }
 
+    // This method is used to connect to the local database of the host machine
     public static void running() {
         System.out.print("Please enter your password: ");
 

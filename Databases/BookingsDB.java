@@ -11,6 +11,7 @@ import Functionality.DatabaseConnectionFunc;
 
 public class BookingsDB {
     public static void main(String[] args) {
+        // Creates the Bookings table
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
