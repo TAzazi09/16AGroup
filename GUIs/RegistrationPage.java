@@ -1,16 +1,15 @@
 package GUIs;
 
-/**
- * @author krist
- * @cosmetic and functional changes by nik
- * @functional changes by ethan
- */
-
 import java.awt.*;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import Functionality.RegistrationCheck;
 
+/**
+ * @author krist
+ * @cosmetic and functional changes by nik
+ * @functional changes by ethan
+ */
 public class RegistrationPage extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JComboBox<String> doctorList;

@@ -1,17 +1,15 @@
 package GUIs;
 
-/**
- * @author ethan
- * @code quality changes by nik
- */
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import Functionality.*;
 
+/**
+ * @author ethan
+ * @code quality changes by nik
+ */
 public class MenuPage extends javax.swing.JFrame {
-
     public MenuPage() {
         initComponents();
     }

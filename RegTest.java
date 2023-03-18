@@ -1,14 +1,12 @@
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import Functionality.RegistrationCheck;
 
 /**
  * @author Callum
  * @code quality check by nik
  */
-
-import Functionality.RegistrationCheck;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
 class RegTest {
     @Test
     public void testRegDetailsCorrect() {

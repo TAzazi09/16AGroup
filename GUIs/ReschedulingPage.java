@@ -3,14 +3,9 @@ package GUIs;
 import Functionality.*;
 
 /**
- *
  * @author ethan
  */
 public class ReschedulingPage extends javax.swing.JFrame {
-
-    /**
-     * Creates new form NewJFrame
-     */
     public ReschedulingPage() {
         initComponents();
     }

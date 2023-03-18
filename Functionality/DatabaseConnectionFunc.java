@@ -1,14 +1,13 @@
 package Functionality;
 
-/**
- * @author ethan
- * @code quality by nik
- */
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Scanner;
 
+/**
+ * @author ethan
+ * @code quality by nik
+ */
 public class DatabaseConnectionFunc {
     public static Connection connection;
 

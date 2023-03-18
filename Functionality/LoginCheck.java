@@ -1,17 +1,16 @@
 package Functionality;
 
-/**
- * @author ethan
- * @code quality by nik
- */
-import GUIs.MenuPage;
 import java.awt.Window;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import GUIs.MenuPage;
 
+/**
+ * @author ethan
+ * @code quality by nik
+ */
 public class LoginCheck {
     public static String backgroundID;
     public static String fname;

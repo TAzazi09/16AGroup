@@ -1,12 +1,11 @@
 package GUIs;
 
-/**
- * @author nik
- */
-
 import Functionality.LoginCheck;
 import java.awt.*;
 
+/**
+ * @author nik
+ */
 public class LoginPage extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JTextField usernameText;

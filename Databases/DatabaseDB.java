@@ -1,14 +1,13 @@
 package Databases;
 
-/**
- * @written by ethan
- * @file created by nik (project structure)
- */
-
 import java.sql.Connection;
 import java.sql.Statement;
 import Functionality.DatabaseConnectionFunc;
 
+/**
+ * @written by ethan
+ * @file created by nik (project structure)
+ */
 public class DatabaseDB {
     // Creates the database
     public static void main(String[] args) {

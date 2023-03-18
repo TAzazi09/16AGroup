@@ -1,17 +1,15 @@
 package Functionality;
 
-/**
- * @author nik
- */
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.awt.Window;
 import javax.swing.JOptionPane;
-
 import GUIs.MenuPage;
 
+/**
+ * @author nik
+ */
 public class ArrangeBookingFunc {
     public static void arrangeBooking(String time, String date) {
         try {

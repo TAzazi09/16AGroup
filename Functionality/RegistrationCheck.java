@@ -1,16 +1,15 @@
 package Functionality;
 
-/**
- * @author ethan
- * @additional checks by nik
- */
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.*;
 import javax.swing.JOptionPane;
-
 import GUIs.GeneralPage;
+
+/**
+ * @author ethan
+ * @additional checks by nik
+ */
 
 public class RegistrationCheck {
     // Tests if the data is valid, and if it is, sends it to the database

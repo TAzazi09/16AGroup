@@ -1,17 +1,14 @@
 package GUIs;
 
 import java.awt.Font;
+import Functionality.DatabaseConnectionFunc;
+import Databases.*;
+
 
 /**
  * @author nik
  * @functional changes by ethan
  */
-
-import Functionality.DatabaseConnectionFunc;
-import Databases.DatabaseDB;
-import Databases.PatientsDB;
-import Databases.BookingsDB;
-
 public class GeneralPage extends javax.swing.JFrame {
     public GeneralPage() {
         initComponents();
