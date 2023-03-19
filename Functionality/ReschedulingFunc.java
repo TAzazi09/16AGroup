@@ -20,8 +20,11 @@ public class ReschedulingFunc {
             Statement statement = connection.createStatement();
             //Test input
             System.out.println(LoginCheck.getID());
+            ResultSet D = statement.executeQuery("SELECT DoctorChosen FROM patients WHERE PatientID = '1'");
+            // System.out.println(D.getString("DoctorChosen"));
             statement.execute(
-                    "INSERT INTO Bookings (PatientID, Time, Date, Detail, Prescription) VALUES ('1', '12:12', '12/12/1212', 'test', 'other test');");
+                    "INSERT INTO Bookings (PatientID, BookingID, DoctorChosen, Time, Date, Detail, Prescription) VALUES ('1', '1', '" + D + "' '12:12', '1212/12/12', 'test', 'other test');"
+                    );
             ResultSet results = statement
                     .executeQuery("SELECT * FROM bookings WHERE Time = '" + time + "' AND Date = '" + date + "'");
             if (results.next()) {
