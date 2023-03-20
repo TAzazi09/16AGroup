@@ -13,8 +13,8 @@ public class ReschedulingPage extends javax.swing.JFrame {
     private void initComponents() {
 
         dateLabel = new javax.swing.JLabel();
-        timeInput = new javax.swing.JTextField();
-        dateInput = new javax.swing.JTextField();
+        timeInput = new javax.swing.JTextField("HH:MM");
+        dateInput = new javax.swing.JTextField("YYYY-MM-DD");
         timeLabel = new javax.swing.JLabel();
         submit = new javax.swing.JButton();
         title = new javax.swing.JLabel();
