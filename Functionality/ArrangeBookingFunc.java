@@ -13,6 +13,8 @@ import GUIs.MenuPage;
 public class ArrangeBookingFunc {
     public static void arrangeBooking(String time, String date) {
         try {
+
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Connects to the database
@@ -26,18 +28,10 @@ public class ArrangeBookingFunc {
             String doctor = currentDoctor.getString("DoctorChosen");
 
             // check if the doctor is available at that time
-            System.out.println("SELECT * FROM bookings WHERE DoctorChosen = '" + doctor + "' AND Time = '" + "10:00:00"
-                    + "' AND Date = '" + "2010-10-10" + "';");
             ResultSet docAvailability = statement
-                    .executeQuery("SELECT * FROM bookings;");// WHERE DoctorChosen = '" + doctor + "' AND Time = '"
-                            // + time + "' AND Date = '" + date + "';");
+                    .executeQuery("SELECT * FROM bookings WHERE DoctorChosen = '" + doctor + "' AND Time = '"
+                            + time + "' AND Date = '" + date + "';");
 
-            // print resultset
-            while (docAvailability.next()) {
-                System.out.println(docAvailability.getString("DoctorChosen") + " " + docAvailability.getString("Time")
-                        + " " + docAvailability.getString("Date"));
-            }
-            
             if (docAvailability.next()) {
                 JOptionPane.showMessageDialog(null, doctor + " is unavailable at that time.");
             } else {
