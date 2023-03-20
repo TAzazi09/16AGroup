@@ -70,9 +70,9 @@ public class ArrangeBooking extends javax.swing.JFrame {
         javax.swing.JButton backButton = new javax.swing.JButton("Back");
         javax.swing.JButton arrangeButton = new javax.swing.JButton("Arrange");
         javax.swing.JLabel timeLabel = new javax.swing.JLabel("Time");
-        timeInput = new javax.swing.JTextField();
+        timeInput = new javax.swing.JTextField("HH:MM");
         javax.swing.JLabel dateLabel = new javax.swing.JLabel("Date");
-        dateInput = new javax.swing.JTextField();
+        dateInput = new javax.swing.JTextField("YYYY-MM-DD");
         javax.swing.JLabel mainLabel = new javax.swing.JLabel("Arrange a booking");
         javax.swing.JLabel instructionLabel = new javax.swing.JLabel("Please enter your desired date and time");
 
