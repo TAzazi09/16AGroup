@@ -5,8 +5,8 @@ import java.sql.Statement;
 import Functionality.DatabaseConnectionFunc;
 
 /**
- * @written by ethan
- * @file created by nik (project structure)
+ * @written by Ethan
+ * @file created by Nikola (project structure)
  */
 public class BookingsDB {
     public static void main(String[] args) {

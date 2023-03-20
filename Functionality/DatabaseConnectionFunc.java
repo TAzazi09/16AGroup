@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.util.Scanner;
 
 /**
- * @author ethan
- * @code quality by nik
+ * @author Ethan
+ * @code quality by Nikola
  */
 public class DatabaseConnectionFunc {
     public static Connection connection;

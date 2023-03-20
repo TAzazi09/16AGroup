@@ -5,7 +5,7 @@ import Functionality.RegistrationCheck;
 
 /**
  * @author Callum
- * @code quality check by nik
+ * @code quality check by Nikola
  */
 class RegTest {
     @Test

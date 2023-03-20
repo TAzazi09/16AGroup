@@ -6,9 +6,9 @@ import javax.swing.JOptionPane;
 import Functionality.RegistrationCheck;
 
 /**
- * @author krist
- * @cosmetic and functional changes by nik
- * @functional changes by ethan
+ * @author Kristian
+ * @cosmetic and functional changes by Nikola
+ * @functional changes by Ethan
  */
 public class RegistrationPage extends javax.swing.JFrame {
     // Variables declaration

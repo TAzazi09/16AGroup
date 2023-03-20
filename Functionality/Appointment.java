@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  * @author Tare
- * @fixed by Nik (file was broken)
+ * @fixed by Nikola (file was broken)
  */
 public class Appointment {
 

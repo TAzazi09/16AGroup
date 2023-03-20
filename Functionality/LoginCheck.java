@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 import GUIs.MenuPage;
 
 /**
- * @author ethan
- * @code quality by nik
+ * @author Ethan
+ * @code quality by Nikola
  */
 public class LoginCheck {
     public static String backgroundID;

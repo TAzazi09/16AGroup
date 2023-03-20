@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 import GUIs.GeneralPage;
 
 /**
- * @author ethan
- * @additional checks by nik
+ * @author Ethan
+ * @additional checks by Nikola
  */
 public class RegistrationCheck {
     // Tests if the data is valid, and if it is, sends it to the database

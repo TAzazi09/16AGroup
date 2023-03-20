@@ -3,7 +3,7 @@ package GUIs;
 import Functionality.*;
 
 /**
- * @author ethan
+ * @author Ethan
  */
 public class ReschedulingPage extends javax.swing.JFrame {
     public ReschedulingPage() {

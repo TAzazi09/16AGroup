@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import GUIs.MenuPage;
 
 /**
- * @author ethan
+ * @author Ethan
  */
 public class ReschedulingFunc {
     public static void resechduleBooking(String time, String date) {

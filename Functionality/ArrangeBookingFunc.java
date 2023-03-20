@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import GUIs.MenuPage;
 
 /**
- * @author nik
+ * @author Nikola
  */
 public class ArrangeBookingFunc {
     public static void arrangeBooking(String time, String date) {

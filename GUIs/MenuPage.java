@@ -6,8 +6,8 @@ import java.sql.Statement;
 import Functionality.*;
 
 /**
- * @author ethan
- * @code quality changes by nik
+ * @author Ethan
+ * @code quality changes by Nikola
  */
 public class MenuPage extends javax.swing.JFrame {
     public MenuPage() {

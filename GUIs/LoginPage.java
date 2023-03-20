@@ -4,7 +4,7 @@ import Functionality.LoginCheck;
 import java.awt.*;
 
 /**
- * @author nik
+ * @author Nikola
  */
 public class LoginPage extends javax.swing.JFrame {
     // Variables declaration
