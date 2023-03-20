@@ -10,7 +10,6 @@ import GUIs.GeneralPage;
  * @author ethan
  * @additional checks by nik
  */
-
 public class RegistrationCheck {
     // Tests if the data is valid, and if it is, sends it to the database
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,

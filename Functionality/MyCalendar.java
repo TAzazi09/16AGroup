@@ -4,6 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * @author Tare
+ * @fixed by Nik (file was broken)
+ */
 public class MyCalendar {
 
     private String name;

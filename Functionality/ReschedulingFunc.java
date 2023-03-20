@@ -7,6 +7,9 @@ import java.awt.Window;
 import javax.swing.JOptionPane;
 import GUIs.MenuPage;
 
+/**
+ * @author ethan
+ */
 public class ReschedulingFunc {
     public static void resechduleBooking(String time, String date) {
         System.out.println(time);

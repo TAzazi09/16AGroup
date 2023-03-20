@@ -3,6 +3,11 @@ package Functionality;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+/**
+ * @author Tare
+ * @fixed by Nik (file was broken)
+ */
 public class Appointment {
 
     private int duration;
