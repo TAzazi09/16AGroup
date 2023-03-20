@@ -4,7 +4,6 @@ import java.awt.Font;
 import Functionality.DatabaseConnectionFunc;
 import Databases.*;
 
-
 /**
  * @author Nikola
  * @functional changes by Ethan
@@ -20,43 +19,47 @@ public class GeneralPage extends javax.swing.JFrame {
 
             DatabaseConnectionFunc.main(null);
 
-            // Lines below are used for creating tables
-            DatabaseDB.main(null);
-            PatientsDB.main(null);
-            BookingsDB.main(null);
+            if (DatabaseConnectionFunc.connected) {
+                // Lines below are used for creating tables
+                DatabaseDB.main(null);
+                PatientsDB.main(null);
+                BookingsDB.main(null);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        /* Set the Nimbus look and feel */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
-                    .getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+        if (DatabaseConnectionFunc.connected) {
+            /* Set the Nimbus look and feel */
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
+                        .getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
                 }
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(GeneralPage.class.getName()).log(
+                        java.util.logging.Level.SEVERE, null,
+                        ex);
+            } catch (InstantiationException ex) {
+                java.util.logging.Logger.getLogger(GeneralPage.class.getName()).log(
+                        java.util.logging.Level.SEVERE, null,
+                        ex);
+            } catch (IllegalAccessException ex) {
+                java.util.logging.Logger.getLogger(GeneralPage.class.getName()).log(
+                        java.util.logging.Level.SEVERE, null,
+                        ex);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(GeneralPage.class.getName()).log(
+                        java.util.logging.Level.SEVERE, null,
+                        ex);
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GeneralPage.class.getName()).log(
-                    java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GeneralPage.class.getName()).log(
-                    java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GeneralPage.class.getName()).log(
-                    java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GeneralPage.class.getName()).log(
-                    java.util.logging.Level.SEVERE, null,
-                    ex);
-        }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new GeneralPage().setVisible(true));
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(() -> new GeneralPage().setVisible(true));
+        }
     }
 
     private void initComponents() {

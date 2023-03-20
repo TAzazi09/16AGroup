@@ -10,6 +10,7 @@ import java.util.Scanner;
  */
 public class DatabaseConnectionFunc {
     public static Connection connection;
+    public static boolean connected = false;
 
     public static void main(String[] args) {
         running();
@@ -17,9 +18,9 @@ public class DatabaseConnectionFunc {
 
     // This method is used to connect to the local database of the host machine
     public static void running() {
-        System.out.print("Please enter your password: ");
-
+        
         Scanner test = new Scanner(System.in);
+        System.out.print("Please enter your password: ");
         String password = test.nextLine();
         test.close();
 
@@ -29,11 +30,14 @@ public class DatabaseConnectionFunc {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager
                     .getConnection("jdbc:mysql://localhost/", username, password);
+            connected = true;
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Connection failed\nEither the password is incorrect, your username is not '" + username + "', or the database is not running\nTry again");
         }
 
-        getConnection();
+        if (connected) {
+            getConnection();
+        }
     }
 
     public static Connection getConnection() {
