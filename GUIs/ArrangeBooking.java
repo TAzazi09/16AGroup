@@ -3,6 +3,7 @@ package GUIs;
 import java.awt.Font;
 import java.awt.Color;
 import Functionality.ArrangeBookingFunc;
+import Functionality.DatabaseConnectionFunc;
 
 /**
  * @author Nikola
@@ -15,33 +16,38 @@ public class ArrangeBooking extends javax.swing.JFrame {
     }
 
     public static void main(String[] args) {
-        /* Set the Nimbus look and feel */
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+        if (DatabaseConnectionFunc.connected) {
+            /* Set the Nimbus look and feel */
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
                 }
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE,
+                        null,
+                        ex);
+            } catch (InstantiationException ex) {
+                java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE,
+                        null,
+                        ex);
+            } catch (IllegalAccessException ex) {
+                java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE,
+                        null,
+                        ex);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE,
+                        null,
+                        ex);
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ArrangeBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new ArrangeBooking().setVisible(true));
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(() -> new ArrangeBooking().setVisible(true));
+        } else {
+            GeneralPage.main(null);
+        }
     }
 
     // Button actions

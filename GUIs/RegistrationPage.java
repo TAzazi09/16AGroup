@@ -4,6 +4,7 @@ import java.awt.*;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import Functionality.RegistrationCheck;
+import Functionality.DatabaseConnectionFunc;
 
 /**
  * @author Kristian
@@ -25,30 +26,35 @@ public class RegistrationPage extends javax.swing.JFrame {
     }
 
     public static void main(String[] args) {
-        // NetBeans' exception checks
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        }
+        if (DatabaseConnectionFunc.connected) {
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new RegistrationPage().setVisible(true));
+            // NetBeans' exception checks
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+                }
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                        ex);
+            } catch (InstantiationException ex) {
+                java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                        ex);
+            } catch (IllegalAccessException ex) {
+                java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                        ex);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                        ex);
+            }
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(() -> new RegistrationPage().setVisible(true));
+        } else {
+            GeneralPage.main(null);
+        }
     }
 
     private void initComponents() {
@@ -318,8 +324,6 @@ public class RegistrationPage extends javax.swing.JFrame {
                         Integer.parseInt(ageInput.getText()), phoneInput.getText(),
                         String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());
                 dispose();
-            } else {
-                JOptionPane.showMessageDialog(null, "Some error occurred!");
             }
         }
     }
