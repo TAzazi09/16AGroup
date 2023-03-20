@@ -25,19 +25,19 @@ public class ArrangeBookingFunc {
             // if ((currentDoctor.getString("DoctorChosen")) == null) {
             //     // JOptionPane.showMessageDialog("Booking completed "");
             // } else { 
-                currentDoctor.next();
-                String doctor = currentDoctor.getString("DoctorChosen");
-                ResultSet results = statement
-                        .executeQuery("SELECT * FROM bookings WHERE Time = '" + time + "' AND DoctorChosen = '"
-                                + doctor + "' AND Date = '" + date + "';");
+            currentDoctor.next();
+            String doctor = currentDoctor.getString("DoctorChosen");
+            ResultSet results = statement
+                    .executeQuery("SELECT * FROM bookings WHERE Time = '" + time + "' AND DoctorChosen = '"
+                            + doctor + "' AND Date = '" + date + "';");
             // }
             if (results.next()) {
                 JOptionPane.showMessageDialog(null, doctor + " is unavailable at that time.");
             } else {
                 statement.execute(
-                    "INSERT INTO Bookings (PatientID, DoctorChosen, Time, Date) VALUES ('" + LoginCheck.getID() +  "' , '" + doctor + "', '" + time + "' , '" + date + "');"
-                );
-                
+                        "INSERT INTO Bookings (PatientID, DoctorChosen, Time, Date) VALUES ('" + LoginCheck.getID()
+                                + "' , '" + doctor + "', '" + time + "' , '" + date + "');");
+
                 JOptionPane.showMessageDialog(null,
                         "Your booking has successfully been arranged at " + time + " on the " + date + ".");
                 statement.execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()

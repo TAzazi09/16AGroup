@@ -18,7 +18,7 @@ public class DatabaseConnectionFunc {
 
     // This method is used to connect to the local database of the host machine
     public static void running() {
-        
+
         Scanner test = new Scanner(System.in);
         System.out.print("Please enter your password: ");
         String password = test.nextLine();
@@ -32,7 +32,8 @@ public class DatabaseConnectionFunc {
                     .getConnection("jdbc:mysql://localhost/", username, password);
             connected = true;
         } catch (Exception e) {
-            System.out.println("Connection failed\nEither the password is incorrect, your username is not '" + username + "', or the database is not running\nTry again");
+            System.out.println("Connection failed\nEither the password is incorrect, your username is not '" + username
+                    + "', or the database is not running\nTry again");
         }
 
         if (connected) {
