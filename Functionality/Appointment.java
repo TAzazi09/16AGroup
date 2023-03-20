@@ -15,12 +15,12 @@ public class Appointment {
     /**
      * Constructor for objects of class Appointment.
      */
-    public Appointment(String date, int duration) {
+    public Appointment(String dateStr, int duration) {
         // initialise instance variables
         date = new Date();
         end = new Date();
         try {
-            date = form.parse(date);
+            date = form.parse(dateStr);
         } catch (Exception e) {
             System.out.println();
         }
