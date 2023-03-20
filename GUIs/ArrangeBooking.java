@@ -90,6 +90,7 @@ public class ArrangeBooking extends javax.swing.JFrame {
         timeLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         timeInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         timeInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        timeInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         dateLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         dateInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
