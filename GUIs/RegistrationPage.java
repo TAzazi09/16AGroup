@@ -70,7 +70,7 @@ public class RegistrationPage extends javax.swing.JFrame {
         surnameInput = new javax.swing.JTextField();
 
         javax.swing.JLabel ageLabel = new javax.swing.JLabel("Age");
-        ageInput = new javax.swing.JTextField();
+        ageInput = new javax.swing.JTextField("> 18 && < 130");
 
         javax.swing.JLabel genderLabel = new javax.swing.JLabel("Gender");
         javax.swing.JRadioButton maleCheck = new javax.swing.JRadioButton("Male");
@@ -79,12 +79,12 @@ public class RegistrationPage extends javax.swing.JFrame {
         javax.swing.JRadioButton pntsCheck = new javax.swing.JRadioButton("Prefer not to say");
 
         javax.swing.JLabel phoneLabel = new javax.swing.JLabel("Phone Number");
-        phoneInput = new javax.swing.JTextField();
+        phoneInput = new javax.swing.JTextField("##### ######");
 
         javax.swing.JLabel doctorLabel = new javax.swing.JLabel("Doctor Chosen");
         doctorList = new javax.swing.JComboBox<>();
 
-        javax.swing.JLabel detailsLabel = new javax.swing.JLabel("Details");
+        javax.swing.JLabel detailsLabel = new javax.swing.JLabel("Details (max 100 characters)");
         detailsInput = new javax.swing.JTextArea();
 
         Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
