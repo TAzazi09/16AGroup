@@ -38,7 +38,6 @@ public class ArrangeBookingFunc {
                 if (docAvailability.next()) {
                     JOptionPane.showMessageDialog(null, doctor + " is unavailable at that time.");
                 } else {
-                    System.out.println("Doctor is " + doctor + " and time is " + time + " and date is " + date);
                     // insert the booking into the database (after ensuring the doctor is available)
                     statement.execute(
                             "INSERT INTO bookings (PatientID, DoctorChosen, Time, Date) VALUES ('" + LoginCheck.getID()

@@ -124,7 +124,6 @@ public class RegistrationCheck {
             ResultSet resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
             if (resultSet.next()) {
                 RightID = resultSet.getInt("PatientID");
-                System.out.println(RightID);
             }
         } catch (Exception e) {
             e.printStackTrace();
