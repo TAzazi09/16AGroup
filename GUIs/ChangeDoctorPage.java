@@ -62,7 +62,8 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
             Statement statement = connection.createStatement();
 
             // get the patioent's doctor
-            ResultSet currentDoctor = statement.executeQuery("SELECT DoctorChosen FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
+            ResultSet currentDoctor = statement
+                    .executeQuery("SELECT DoctorChosen FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
             currentDoctor.next();
             curDoc = currentDoctor.getString("DoctorChosen");
         } catch (Exception e) {

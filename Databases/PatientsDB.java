@@ -7,6 +7,7 @@ import Functionality.DatabaseConnectionFunc;
 /**
  * @written by Ethan
  * @file created by Nikola (project structure)
+ * && quality of life changes (added auto-login for me and Ethan)
  */
 public class PatientsDB {
     public static void main(String[] args) {

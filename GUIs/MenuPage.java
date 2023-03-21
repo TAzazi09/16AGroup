@@ -154,7 +154,7 @@ public class MenuPage extends javax.swing.JFrame {
     //     ReschedulingPage.main(null);
     // }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void changeDoctorActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
         ChangeDoctorPage.main(null);
     }
