@@ -118,7 +118,7 @@ public class RegistrationCheck {
             Statement statement = connection.createStatement();
 
             statement.executeUpdate(
-                    "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details, messages )"
+                    "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
                             + PhoneNumber + "','" + DoctorsDB.getDoctorID(DoctorChosen) + "','" + Details + "','" + FirstName + " " + Surname
                             + " succesfully registered with " + DoctorChosen + " as their doctor')");

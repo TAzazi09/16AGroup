@@ -28,12 +28,12 @@ public class ArrangeBookingFunc {
                         .executeQuery(
                                 "SELECT DoctorID FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
                 currentDoctor.next();
-                int doctorID = Integer.parseInt(currentDoctor.getString("DoctorChosen"));
+                int doctorID = Integer.parseInt(currentDoctor.getString("DoctorID"));
                 String doctor = DoctorsDB.getDoctorName(doctorID);
 
                 // check if the doctor is available at that time
                 ResultSet docAvailability = statement
-                        .executeQuery("SELECT * FROM bookings WHERE DoctorID = ' + '" + doctorID + "' + ' AND Time = '"
+                        .executeQuery("SELECT * FROM bookings WHERE DoctorID = '" + doctorID + "' AND Time = '"
                                 + time + "' AND Date = '" + date + "';");
 
                 if (docAvailability.next()) {

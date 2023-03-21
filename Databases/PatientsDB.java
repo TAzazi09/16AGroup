@@ -29,7 +29,7 @@ public class PatientsDB {
                     "PhoneNumber varchar(12) ," +
                     "DoctorID int not null,  " +
                     "Details varchar(100), " +
-                    "Messages text" +
+                    "Messages text, " +
                     "PRIMARY KEY (patientID), " +
                     "FOREIGN KEY (DoctorID) REFERENCES doctors (DoctorID)" +
                     ");");
@@ -50,6 +50,6 @@ public class PatientsDB {
                 "INSERT into patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages) "
                         +
                         "VALUES (DEFAULT, '" + firstName + "', '" + surname + "', '" + gender + "', '" + age + "', '"
-                        + phoneNumber + "', '" + doctorID + "', '" + details + "', '" + messages + "')");
+                        + phoneNumber + "', '" + doctorId + "', '" + details + "', '" + messages + "')");
     }
 }
