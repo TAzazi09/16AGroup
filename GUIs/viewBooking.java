@@ -1,4 +1,5 @@
 package GUIs;
+
 import java.awt.Frame;
 import java.time.Month;
 import Functionality.*;
@@ -15,6 +16,7 @@ import javax.swing.UIManager;
 public class viewBooking extends javax.swing.JFrame {
 
     public String userId = LoginCheck.getFirstName();
+
     /**
      * Creates new form viewBooking
      */
@@ -38,7 +40,7 @@ public class viewBooking extends javax.swing.JFrame {
         Confirm_button = new javax.swing.JButton();
         logged_user_text = new javax.swing.JLabel();
         Month_Selector = new javax.swing.JComboBox<>();
-        Year_selector = new javax.swing.JComboBox<>();
+        yearInput = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,34 +53,38 @@ public class viewBooking extends javax.swing.JFrame {
         Confirm_button.setText("Confirm");
         Confirm_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                String Year = (String) Year_selector.getSelectedItem();
+                String Year = (String) yearInput.getText();
                 String Month = (String) Month_Selector.getSelectedItem();
                 System.out.println(Month_Selector.getSelectedItem());
-                if(Month_Selector.getSelectedItem() != null || Year_selector.getSelectedItem() != null){
+                if(!(Year.matches("\\d{4}"))) {
+                    JOptionPane.showMessageDialog(null, "Invalid year!");
+                }
+                else{
                     System.out.println("You have selected " + Month + " and " + Year);
+                }
                     // Put code here for DB
-                    if(Year_selector.getSelectedItem() != null /* CHANGE THIS TO SAY IF THE RESULT OF THE DB IS NOT NULL THEN */){
-                        JDialog results = new JDialog();
-                        JLabel l = new JLabel("Result");
-                        // For(i = 0, i < results.db, i++){
-                            // results.add(i)
-                        //}
-                        results.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-                        results.setBounds(150,150,50,50);
-                        results.setSize(getPreferredSize());
-                        results.setVisible(true);
-                        results.add(l);
-                    }
+                    // if(yearInput.getText() != null /* CHANGE THIS TO SAY IF THE RESULT OF THE DB IS NOT NULL THEN */){
+                    //     JDialog results = new JDialog();
+                    //     JLabel l = new JLabel("Result");
+                    //     // For(i = 0, i < results.db, i++){
+                    //         // results.add(i)
+                    //     //}
+                    //     results.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+                    //     results.setBounds(150,150,50,50);
+                    //     results.setSize(getPreferredSize());
+                    //     results.setVisible(true);
+                    //     results.add(l);
+                    // }
                 } 
             }
-        });
+        );
 
         logged_user_text.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         logged_user_text.setText("User: ");
 
         Month_Selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        Year_selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2022" }));
+        // Year_selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2022" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,7 +107,7 @@ public class viewBooking extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Month_Selector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(54, 54, 54)
-                                .addComponent(Year_selector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(date_selected_text))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -117,22 +123,27 @@ public class viewBooking extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Month_Selector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Year_selector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addComponent(Confirm_button)
                 .addContainerGap(86, Short.MAX_VALUE))
         );
 
         pack();
-    }                       
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -142,15 +153,19 @@ public class viewBooking extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(viewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(viewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(viewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(viewBooking.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         }
-        //</editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -160,12 +175,12 @@ public class viewBooking extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify
     private javax.swing.JButton Confirm_button;
     private javax.swing.JComboBox<String> Month_Selector;
     private javax.swing.JLabel Title;
-    private javax.swing.JComboBox<String> Year_selector;
+    private javax.swing.JTextField yearInput;
     private javax.swing.JLabel date_selected_text;
     private javax.swing.JLabel logged_user_text;
-    // End of variables declaration                   
+    // End of variables declaration
 }
