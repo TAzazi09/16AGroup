@@ -47,14 +47,14 @@ public class MenuPage extends javax.swing.JFrame {
         changeDoctor.setText("Change your doctor");
         changeDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                changeDoctorActionPerformed(evt);
             }
         });
 
         viewBookings.setText("View bookings");
         viewBookings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                viewBookingsActionPerformed(evt);
             }
         });
 
@@ -149,16 +149,16 @@ public class MenuPage extends javax.swing.JFrame {
         ArrangeBooking.main(null);
     }
 
-    private void rescheduleBookingAction(java.awt.event.ActionEvent evt) {
-        dispose();
-        ReschedulingPage.main(null);
-    }
+    // private void rescheduleBookingAction(java.awt.event.ActionEvent evt) {
+    //     dispose();
+    //     ReschedulingPage.main(null);
+    // }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void changeDoctorActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void viewBookingsActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
