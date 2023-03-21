@@ -31,6 +31,9 @@ public class PatientsDB {
                     "Details varchar(100), " +
                     "Messages text" +
                     ");");
+
+            statement.executeUpdate("INSERT INTO patients (FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen) VALUES ('Nikola', 'Kolev', 'Male', 20, '07856 791314', 'Dr Jason');");
+            statement.executeUpdate("INSERT INTO patients (FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen) VALUES ('Ethan', 'Teather', 'Male', 19, '00000 000000', 'Dr Andrew');");
         } catch (Exception e) {
             e.printStackTrace();
         }
