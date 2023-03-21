@@ -25,10 +25,9 @@ public class ReschedulingFunc {
             System.out.println(LoginCheck.getID());
             ResultSet D = statement.executeQuery("SELECT DoctorChosen FROM patients WHERE PatientID = '1'");
             String currentDoctor = D.getString("DoctorChosen");
-            // System.out.println(D.getString("DoctorChosen"));
-            statement.execute(
-                    "INSERT INTO Bookings (PatientID, BookingID, DoctorChosen, Time, Date, Detail, Prescription) VALUES ('1', '1', '"
-                            + D + "' '12:12', '1212/12/12', 'test', 'other test');");
+            // statement.execute(
+            //         "INSERT INTO Bookings (PatientID, BookingID, DoctorChosen, Time, Date, Detail, Prescription) VALUES ('1', '1', '"
+            //                 + D + "' '12:12', '1212/12/12', 'test', 'other test');");
             ResultSet results = statement
                     .executeQuery("SELECT * FROM bookings WHERE Time = '" + newTime + "' AND DoctorChosen = '" + currentDoctor + "' AND Date = '" + newDate + "'");
             if (results.next()) {
@@ -40,7 +39,7 @@ public class ReschedulingFunc {
                         + " " + LoginCheck.getSurname() + " has changed their booking from " + oldTime + " " + oldDate + " to "
                         + newTime + " " + newTime + ".') WHERE patientID = '" + LoginCheck.getID() + "';");
 
-                statement.executeUpdate("UPDATE bookings ")        
+                // statement.executeUpdate("UPDATE bookings ")        
                 Window[] windows = Window.getWindows();
 
                 // Close all windows in the array
