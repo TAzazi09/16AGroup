@@ -32,14 +32,23 @@ public class PatientsDB {
                     "Details varchar(100), " +
                     "Messages text" +
                     ");");
-                    
-            statement.executeUpdate(
-                    "insert into patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details, messages)"
-                            + "values (DEFAULT,'Nikola', 'Kolev', 'Male', 20, '07856 791314', 'Dr Jason', 'no details', 'Nikola Kolev succesfully registered with Dr Jason as their doctor')");
-            statement.executeUpdate("insert into patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details, messages)"
-            + "values (DEFAULT,'Ethan', 'Teather', 'Male', 19, '00000 000000', 'Dr Andrew', '', 'Ethan Teather succesfully registered with Dr Andrew as their doctor')");
+
+            // Inserts the patients into the table
+            insertPatient(statement, "Nikola", "Kolev", "Male", 20, "07856 791314", "Dr Jason", "no details",
+                    "Nikola Kolev succesfully registered with Dr Jason as their doctor");
+            insertPatient(statement, "Ethan", "Teather", "Male", 19, "00000 000000", "Dr Andrew", "",
+                    "Ethan Teather succesfully registered with Dr Andrew as their doctor");
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static void insertPatient(Statement statement, String firstName, String surname, String gender, int age,
+            String phoneNumber, String doctorChosen, String details, String messages) throws Exception {
+        statement.executeUpdate(
+                "INSERT into patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details, messages) "
+                        +
+                        "VALUES (DEFAULT, '" + firstName + "', '" + surname + "', '" + gender + "', '" + age + "', '"
+                        + phoneNumber + "', '" + doctorChosen + "', '" + details + "', '" + messages + "')");
     }
 }
