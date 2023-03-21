@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import Functionality.DatabaseConnectionFunc;
 import Functionality.LoginCheck;
+import Databases.DoctorsDB;
 
 /**
  * @author Nikola
@@ -53,7 +54,8 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
         curDocName.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        String curDoc = "Dr someone";
+        int curDocID = 0;
+        String curDoc = "";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -63,14 +65,15 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
             // get the patient's doctor
             ResultSet currentDoctor = statement
-                    .executeQuery("SELECT DoctorChosen FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
+                    .executeQuery("SELECT DoctorID FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
             currentDoctor.next();
-            curDoc = currentDoctor.getString("DoctorChosen");
+            curDocID = Integer.parseInt(currentDoctor.getString("DoctorID"));
+            curDoc = DoctorsDB.getDoctorName(curDocID);
 
             // get the list of doctors without the current patient's doctor (for the drop down menu)
-            ResultSet doctors = statement.executeQuery("SELECT * FROM doctors WHERE doctorName != '" + curDoc + "';");
+            ResultSet doctors = statement.executeQuery("SELECT * FROM doctors WHERE DoctorID != '" + curDocID + "';");
             while (doctors.next()) {
-                newDocBox.addItem(doctors.getString("doctorName"));
+                newDocBox.addItem(doctors.getString("Name"));
             }
         } catch (Exception e) {
             e.printStackTrace();
