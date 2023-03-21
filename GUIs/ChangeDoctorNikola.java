@@ -4,6 +4,14 @@ package GUIs;
  * @author Nikola
  */
 public class ChangeDoctorNikola extends javax.swing.JFrame {
+    private javax.swing.JButton backButton;
+    private javax.swing.JLabel changeDocLabel;
+    private javax.swing.JLabel curDocLabel;
+    private javax.swing.JLabel curDocName;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> newDocBox;
+    private javax.swing.JLabel newDocLabel;
+    private javax.swing.JButton submitButton;
 
     public ChangeDoctorNikola() {
         initComponents();
@@ -12,39 +20,35 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        changeDocLabel = new javax.swing.JLabel();
+        changeDocLabel = new javax.swing.JLabel("Change your doctor");
         newDocBox = new javax.swing.JComboBox<>();
-        curDocLabel = new javax.swing.JLabel();
-        newDocLabel = new javax.swing.JLabel();
-        curDocName = new javax.swing.JLabel();
-        backButton = new javax.swing.JButton();
-        submitButton = new javax.swing.JButton();
+        curDocLabel = new javax.swing.JLabel("doc name");
+        newDocLabel = new javax.swing.JLabel("New doctor: ");
+        curDocName = new javax.swing.JLabel("Current doctor: ");
+        backButton = new javax.swing.JButton("Back");
+        submitButton = new javax.swing.JButton("Submit");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         changeDocLabel.setFont(new java.awt.Font("Monospaced", 0, 36));
-        changeDocLabel.setText("Change your doctor");
 
         newDocBox.setFont(new java.awt.Font("Monospaced", 0, 18));
         newDocBox.setModel(
                 new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         curDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
-        curDocLabel.setText("Current doctor: ");
 
         newDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
-        newDocLabel.setText("New doctor: ");
 
         curDocName.setFont(new java.awt.Font("Monospaced", 0, 18));
-        curDocName.setText("doc name");
+        String curDoc = "Dr. " + "name";
+        // curDocName.setText();
 
         backButton.setFont(new java.awt.Font("Monospaced", 0, 18));
-        backButton.setText("Back");
 
         submitButton.setFont(new java.awt.Font("Monospaced", 0, 18));
-        submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
@@ -152,13 +156,4 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
             }
         });
     }
-
-    private javax.swing.JButton backButton;
-    private javax.swing.JLabel changeDocLabel;
-    private javax.swing.JLabel curDocLabel;
-    private javax.swing.JLabel curDocName;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JComboBox<String> newDocBox;
-    private javax.swing.JLabel newDocLabel;
-    private javax.swing.JButton submitButton;
 }
