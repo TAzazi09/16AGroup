@@ -15,7 +15,7 @@ public class ArrangeRescheduleCheck {
         else
             return true;
     }
-    
+
     // Checks if the time is valid (format HH:MM and between 8:00 and 17:00)
     private static boolean timeCheck(String time) {
         // Checks if the time is in the format HH:MM
