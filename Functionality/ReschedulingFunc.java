@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.awt.Window;
 import javax.swing.JOptionPane;
 import GUIs.MenuPage;
+import Databases.DoctorsDB;
 
 /**
  * @author Ethan
@@ -23,13 +24,14 @@ public class ReschedulingFunc {
             Statement statement = connection.createStatement();
             //Test input
             System.out.println(LoginCheck.getID());
-            ResultSet D = statement.executeQuery("SELECT DoctorChosen FROM patients WHERE PatientID = '1'");
-            String currentDoctor = D.getString("DoctorChosen");
+            ResultSet D = statement.executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '1'");
+            String currentDoctor = DoctorsDB.getDoctorName(Integer.parseInt(D.getString("DoctorID")));
+            int currentDoctorID = Integer.parseInt(D.getString("DoctorID"));
             // statement.execute(
-            //         "INSERT INTO Bookings (PatientID, BookingID, DoctorChosen, Time, Date, Detail, Prescription) VALUES ('1', '1', '"
+            //         "INSERT INTO Bookings (PatientID, BookingID, DoctorID, Time, Date, Detail, Prescription) VALUES ('1', '1', '"
             //                 + D + "' '12:12', '1212/12/12', 'test', 'other test');");
             ResultSet results = statement
-                    .executeQuery("SELECT * FROM bookings WHERE Time = '" + newTime + "' AND DoctorChosen = '" + currentDoctor + "' AND Date = '" + newDate + "'");
+                    .executeQuery("SELECT * FROM bookings WHERE Time = '" + newTime + "' AND DoctorChosen = '" + currentDoctorID + "' AND Date = '" + newDate + "'");
             if (results.next()) {
                 JOptionPane.showMessageDialog(null, currentDoctor + " is unavailable at that time.");
             } else {

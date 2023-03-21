@@ -45,11 +45,11 @@ public class PatientsDB {
     }
 
     private static void insertPatient(Statement statement, String firstName, String surname, String gender, int age,
-            String phoneNumber, int doctorChosen, String details, String messages) throws Exception {
+            String phoneNumber, int doctorId, String details, String messages) throws Exception {
         statement.executeUpdate(
-                "INSERT into patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details, messages) "
+                "INSERT into patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages) "
                         +
                         "VALUES (DEFAULT, '" + firstName + "', '" + surname + "', '" + gender + "', '" + age + "', '"
-                        + phoneNumber + "', '" + doctorChosen + "', '" + details + "', '" + messages + "')");
+                        + phoneNumber + "', '" + doctorID + "', '" + details + "', '" + messages + "')");
     }
 }

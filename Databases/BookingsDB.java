@@ -30,7 +30,7 @@ public class BookingsDB {
                     + "FOREIGN KEY (PatientID) REFERENCES patients (PatientID),"
                     + "FOREIGN KEY (DoctorID) REFERENCES doctors (DoctorID),"
                     + "PRIMARY KEY (BookingID),"
-                    + "UNIQUE (PatientID, DoctorChosen, Time, Date)"
+                    + "UNIQUE (PatientID, DoctorID, Time, Date)"
                     + ");");
 
         } catch (Exception e) {

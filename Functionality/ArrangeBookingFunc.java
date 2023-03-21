@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.awt.Window;
 import javax.swing.JOptionPane;
 import GUIs.MenuPage;
+import Databases.DoctorsDB;
 
 /**
  * @author Nikola
@@ -25,13 +26,14 @@ public class ArrangeBookingFunc {
                 // get the patioent's doctor
                 ResultSet currentDoctor = statement
                         .executeQuery(
-                                "SELECT DoctorChosen FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
+                                "SELECT DoctorID FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
                 currentDoctor.next();
-                String doctor = currentDoctor.getString("DoctorChosen");
+                int doctorID = Integer.parseInt(currentDoctor.getString("DoctorChosen"));
+                String doctor = DoctorsDB.getDoctorName(doctorID);
 
                 // check if the doctor is available at that time
                 ResultSet docAvailability = statement
-                        .executeQuery("SELECT * FROM bookings WHERE DoctorChosen = '" + doctor + "' AND Time = '"
+                        .executeQuery("SELECT * FROM bookings WHERE DoctorID = ' + '" + doctorID + "' + ' AND Time = '"
                                 + time + "' AND Date = '" + date + "';");
 
                 if (docAvailability.next()) {
@@ -39,8 +41,8 @@ public class ArrangeBookingFunc {
                 } else {
                     // insert the booking into the database (after ensuring the doctor is available)
                     statement.execute(
-                            "INSERT INTO bookings (PatientID, DoctorChosen, Time, Date) VALUES ('" + LoginCheck.getID()
-                                    + "', '" + doctor + "', '" + time + "', '" + date + "');");
+                            "INSERT INTO bookings (PatientID, DoctorID, Time, Date) VALUES ('" + LoginCheck.getID()
+                                    + "', '" + doctorID + "', '" + time + "', '" + date + "');");
 
                     // display a message to the user
                     JOptionPane.showMessageDialog(null,

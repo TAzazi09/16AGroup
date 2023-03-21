@@ -76,10 +76,10 @@ public class viewBooking extends javax.swing.JFrame {
                         //Connects to the database
                         Connection connection = DatabaseConnectionFunc.getConnection();
                         Statement statement = connection.createStatement();
-                        ResultSet results = statement.executeQuery("SELECT DoctorChosen, Date, Time FROM bookings WHERE Date LIKE '%" + combination + "%';");
+                        ResultSet results = statement.executeQuery("SELECT DoctorID, Date, Time FROM bookings WHERE Date LIKE '%" + combination + "%';");
 
                         while (results.next()) {
-                            System.out.println(results.getString("DoctorChosen"));
+                            System.out.println(results.getString("DoctorID"));
                         }
                     } catch (Exception e) {
                         e.printStackTrace();

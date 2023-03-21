@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import GUIs.GeneralPage;
+import Databases.DoctorsDB;
 
 /**
  * @author Ethan
@@ -119,7 +120,7 @@ public class RegistrationCheck {
             statement.executeUpdate(
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details, messages )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
-                            + PhoneNumber + "','" + DoctorChosen + "','" + Details + "','" + FirstName + " " + Surname
+                            + PhoneNumber + "','" + DoctorsDB.getDoctorID(DoctorChosen) + "','" + Details + "','" + FirstName + " " + Surname
                             + " succesfully registered with " + DoctorChosen + " as their doctor')");
             ResultSet resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
             if (resultSet.next()) {
