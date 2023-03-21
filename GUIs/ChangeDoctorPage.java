@@ -6,7 +6,7 @@ import java.awt.Color;
 /**
  * @author Nikola
  */
-public class ChangeDoctorNikola extends javax.swing.JFrame {
+public class ChangeDoctorPage extends javax.swing.JFrame {
     private javax.swing.JButton backButton;
     private javax.swing.JLabel changeDocLabel;
     private javax.swing.JLabel curDocLabel;
@@ -16,7 +16,7 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
     private javax.swing.JLabel newDocLabel;
     private javax.swing.JButton submitButton;
 
-    public ChangeDoctorNikola() {
+    public ChangeDoctorPage() {
         initComponents();
     }
 
@@ -150,23 +150,23 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorNikola.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorNikola.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorNikola.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorNikola.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ChangeDoctorNikola().setVisible(true);
+                new ChangeDoctorPage().setVisible(true);
             }
         });
     }
