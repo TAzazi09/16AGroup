@@ -1,6 +1,7 @@
 package GUIs;
 
 import java.awt.Font;
+import java.awt.Color;
 
 /**
  * @author Nikola
@@ -20,6 +21,7 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
     }
 
     private void initComponents() {
+        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1 = new javax.swing.JPanel();
         changeDocLabel = new javax.swing.JLabel("Change your doctor");
@@ -48,9 +50,13 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
         String curDoc = "Dr. " + "name";
         // curDocName.setText();
 
+        Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
+
         backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        backButton.setBackground(buttonBlue);
 
         submitButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        submitButton.setBackground(buttonBlue);
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
