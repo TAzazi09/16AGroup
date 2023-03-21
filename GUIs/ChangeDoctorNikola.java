@@ -54,6 +54,7 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
 
         backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         backButton.setBackground(buttonBlue);
+        backButton.addActionListener(this::backButtonActionPerformed);
 
         submitButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         submitButton.setBackground(buttonBlue);
@@ -132,6 +133,11 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+    }
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        MenuPage.main(null);
+        dispose();
     }
 
     public static void main(String args[]) {
