@@ -148,7 +148,7 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void createBookingAction(java.awt.event.ActionEvent evt) {
         dispose();
-        ArrangeBooking.main(null);
+        BookingPage.main(null);
     }
 
     // private void rescheduleBookingAction(java.awt.event.ActionEvent evt) {
@@ -163,7 +163,7 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void viewBookingsActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
-        viewBooking.main(null);
+        ViewBookingPage.main(null);
     }
 
     public static void main(String args[]) {

@@ -5,8 +5,8 @@ import Functionality.*;
 /**
  * @author Ethan
  */
-public class ReschedulingPage extends javax.swing.JFrame {
-    public ReschedulingPage() {
+public class ReschedulePage extends javax.swing.JFrame {
+    public ReschedulePage() {
         initComponents();
     }
 
@@ -106,19 +106,19 @@ public class ReschedulingPage extends javax.swing.JFrame {
                     }
                 }
             } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE,
+                java.util.logging.Logger.getLogger(ReschedulePage.class.getName()).log(java.util.logging.Level.SEVERE,
                         null,
                         ex);
             } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE,
+                java.util.logging.Logger.getLogger(ReschedulePage.class.getName()).log(java.util.logging.Level.SEVERE,
                         null,
                         ex);
             } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE,
+                java.util.logging.Logger.getLogger(ReschedulePage.class.getName()).log(java.util.logging.Level.SEVERE,
                         null,
                         ex);
             } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(ReschedulingPage.class.getName()).log(java.util.logging.Level.SEVERE,
+                java.util.logging.Logger.getLogger(ReschedulePage.class.getName()).log(java.util.logging.Level.SEVERE,
                         null,
                         ex);
             }
@@ -126,7 +126,7 @@ public class ReschedulingPage extends javax.swing.JFrame {
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new ReschedulingPage().setVisible(true);
+                    new ReschedulePage().setVisible(true);
                 }
             });
         } else {
