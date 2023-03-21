@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import GUIs.Appointment;
+
 /**
  * @author Tare
  * @fixed by Nikola (file was broken)
