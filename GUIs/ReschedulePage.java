@@ -6,11 +6,11 @@ import Functionality.*;
  * @author Ethan
  */
 public class ReschedulePage extends javax.swing.JFrame {
-    public ReschedulePage() {
-        initComponents();
+    public ReschedulePage(String oldDate, String oldTime) {
+        initComponents(oldDate, oldTime);
     }
 
-    private void initComponents() {
+    private void initComponents(String oldDate, String oldTime) {
 
         dateLabel = new javax.swing.JLabel();
         timeInput = new javax.swing.JTextField("HH:MM");
@@ -33,7 +33,7 @@ public class ReschedulePage extends javax.swing.JFrame {
         submit.setText("Reschedule");
         submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButton(evt);
+                submitButton(evt, oldDate,  oldTime);
             }
         });
 
@@ -89,13 +89,18 @@ public class ReschedulePage extends javax.swing.JFrame {
         pack();
     }
 
-    private void submitButton(java.awt.event.ActionEvent evt) {
+    private void submitButton(java.awt.event.ActionEvent evt, String oldDate, String oldTime) {
         String time = timeInput.getText();
         String date = dateInput.getText();
+        System.out.println("old time = " + oldTime);
+        System.out.println("Old date = " + oldDate);
+        System.out.println("new time " + time);
+        System.out.println("new date " + date);
+
         // ReschedulingFunc.resechduleBooking(time, date);
     }
 
-    public static void main(String args[]) {
+    public static void main(String oldDate, String oldTime) {
         if (DatabaseConnectionFunc.connected) {
 
             try {
@@ -126,7 +131,7 @@ public class ReschedulePage extends javax.swing.JFrame {
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new ReschedulePage().setVisible(true);
+                    new ReschedulePage( oldDate,  oldTime).setVisible(true);
                 }
             });
         } else {
