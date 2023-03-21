@@ -24,26 +24,26 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        changeDocLabel.setFont(new java.awt.Font("Monospaced", 0, 36)); // NOI18N
+        changeDocLabel.setFont(new java.awt.Font("Monospaced", 0, 36));
         changeDocLabel.setText("Change your doctor");
 
-        newDocBox.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        newDocBox.setFont(new java.awt.Font("Monospaced", 0, 18));
         newDocBox.setModel(
                 new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        curDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        curDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
         curDocLabel.setText("Current doctor: ");
 
-        newDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        newDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
         newDocLabel.setText("New doctor: ");
 
-        curDocName.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        curDocName.setFont(new java.awt.Font("Monospaced", 0, 18));
         curDocName.setText("doc name");
 
-        backButton.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        backButton.setFont(new java.awt.Font("Monospaced", 0, 18));
         backButton.setText("Back");
 
-        submitButton.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        submitButton.setFont(new java.awt.Font("Monospaced", 0, 18));
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,21 +116,14 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
                                 .addContainerGap(310, Short.MAX_VALUE)));
 
         pack();
-    }// </editor-fold>                        
+    }                    
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -151,7 +144,6 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ChangeDoctorNikola.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         }
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -160,8 +152,7 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
             }
         });
     }
-
-    // Variables declaration - do not modify                     
+                  
     private javax.swing.JButton backButton;
     private javax.swing.JLabel changeDocLabel;
     private javax.swing.JLabel curDocLabel;
@@ -169,6 +160,5 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> newDocBox;
     private javax.swing.JLabel newDocLabel;
-    private javax.swing.JButton submitButton;
-    // End of variables declaration                   
+    private javax.swing.JButton submitButton;           
 }
