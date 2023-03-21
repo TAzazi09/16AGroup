@@ -2,6 +2,11 @@ package GUIs;
 
 import java.awt.Font;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import Functionality.DatabaseConnectionFunc;
+import Functionality.LoginCheck;
 
 /**
  * @author Nikola
@@ -47,8 +52,23 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
         newDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         curDocName.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        String curDoc = "Dr. " + "name";
-        // curDocName.setText();
+
+        String curDoc = "Dr someone";
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Connects to the database
+            Connection connection = DatabaseConnectionFunc.getConnection();
+            Statement statement = connection.createStatement();
+
+            // get the patioent's doctor
+            ResultSet currentDoctor = statement.executeQuery("SELECT DoctorChosen FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
+            currentDoctor.next();
+            curDoc = currentDoctor.getString("DoctorChosen");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        curDocName.setText(curDoc);
 
         Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
 
