@@ -2,6 +2,7 @@ package Databases;
 
 import java.sql.Connection;
 import java.sql.Statement;
+import java.sql.ResultSet;
 import Functionality.DatabaseConnectionFunc;
 
 /**
@@ -39,5 +40,14 @@ public class DoctorsDB {
     private static void insertDoctor(Statement statement, String name, String phoneNumber, String specialty) throws Exception {
         statement.executeUpdate("INSERT into doctors (DoctorID, Name, PhoneNumber, Specialty) " +
                 "VALUES (DEFAULT, '" + name + "', '" + phoneNumber + "', '" + specialty + "')");
+    }
+
+    public static int getDoctorID(String name) throws Exception {
+        Connection connection = DatabaseConnectionFunc.getConnection();
+        Statement statement = connection.createStatement();
+        statement.executeUpdate("use NHS");
+        ResultSet resultSet = statement.executeQuery("SELECT DoctorID FROM doctors WHERE Name = '" + name + "';");
+        resultSet.next();
+        return Integer.parseInt(resultSet.getString("DoctorID"));
     }
 }
