@@ -2,7 +2,7 @@ package GUIs;
 
 import java.awt.Font;
 import Functionality.DatabaseConnectionFunc;
-import Databases.*;
+import Databases.DatabaseDB;
 
 /**
  * @author Nikola
@@ -19,11 +19,9 @@ public class GeneralPage extends javax.swing.JFrame {
 
             DatabaseConnectionFunc.main(null);
 
+            // Initialize the database
             if (DatabaseConnectionFunc.connected) {
-                // Lines below are used for creating tables
                 DatabaseDB.main(null);
-                PatientsDB.main(null);
-                BookingsDB.main(null);
             }
         } catch (Exception e) {
             e.printStackTrace();

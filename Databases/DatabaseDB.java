@@ -19,6 +19,11 @@ public class DatabaseDB {
 
             statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
             statement.executeUpdate("CREATE DATABASE NHS");
+
+            // Creates the Doctors, Patients, and Bookings tables
+            DoctorsDB.main(null);
+            PatientsDB.main(null);
+            BookingsDB.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
