@@ -50,4 +50,13 @@ public class DoctorsDB {
         resultSet.next();
         return Integer.parseInt(resultSet.getString("DoctorID"));
     }
+
+    public static String getDoctorName(int id) throws Exception {
+        Connection connection = DatabaseConnectionFunc.getConnection();
+        Statement statement = connection.createStatement();
+        statement.executeUpdate("use NHS");
+        ResultSet resultSet = statement.executeQuery("SELECT Name FROM doctors WHERE DoctorID = '" + id + "';");
+        resultSet.next();
+        return resultSet.getString("Name");
+    }
 }
