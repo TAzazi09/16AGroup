@@ -36,9 +36,9 @@ public class PatientsDB {
 
             // Inserts the patients into the table
             insertPatient(statement, "Nikola", "Kolev", "Male", 20, "07856 791314", DoctorsDB.getDoctorID("Dr Jason"), "no details",
-                    "Nikola Kolev succesfully registered with Dr Jason as their doctor");
+                    "Nikola Kolev successfully registered with Dr Jason as their doctor");
             insertPatient(statement, "Ethan", "Teather", "Male", 19, "00000 000000", DoctorsDB.getDoctorID("Dr Andrew"), "",
-                    "Ethan Teather succesfully registered with Dr Andrew as their doctor");
+                    "Ethan Teather successfully registered with Dr Andrew as their doctor");
         } catch (Exception e) {
             e.printStackTrace();
         }
