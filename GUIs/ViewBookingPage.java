@@ -7,12 +7,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.Month;
+import java.util.ArrayList;
+
 import Functionality.*;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import Databases.*;
 
 /**
  *
@@ -48,6 +51,8 @@ public class ViewBookingPage extends javax.swing.JFrame {
         Month_Selector = new javax.swing.JComboBox<>();
         yearInput = new javax.swing.JTextField();
         back = new javax.swing.JButton();
+        resultBookings = new javax.swing.JComboBox<>();
+        list = new ArrayList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +65,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
         Confirm_button.setText("Confirm");
         Confirm_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
+                resultBookings.setVisible(false);
                 String Year = (String) yearInput.getText();
                 String Month = (String) Month_Selector.getSelectedItem();
                 System.out.println(Month_Selector.getSelectedItem());
@@ -77,14 +83,28 @@ public class ViewBookingPage extends javax.swing.JFrame {
                         Connection connection = DatabaseConnectionFunc.getConnection();
                         Statement statement = connection.createStatement();
                         ResultSet results = statement.executeQuery("SELECT DoctorID, Date, Time FROM bookings WHERE Date LIKE '%" + combination + "%';");
-
-                        while (results.next()) {
-                            System.out.println(results.getString("DoctorID"));
+                        list.clear();
+                        resultBookings.removeAllItems();
+                        if(results != null) {
+                            resultBookings.setVisible(true);
                         }
+                        else {
+                            resultBookings.setVisible(false);
+                        }
+                        while (results.next()) {
+                            list.add((DoctorsDB.getDoctorName(results.getInt("DoctorID"))) + " ~ " + results.getString("Date") + " ~ " + results.getString("Time"));
+                        //    list.add("test");
+                            System.out.println(list.toString());
+                            //System.out.println(DoctorsDB.getDoctorName(results.getInt("DoctorID")));
+                            // System.out.println(getD);
+                    }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                }
+                    for (int i = 0; i < list.size(); i++) {
+                        //System.out.println(list.get(i));
+                        resultBookings.addItem(list.get(i));
+                    }
 
                     // Put code here for DB
                     // if(yearInput.getText() != null /* CHANGE THIS TO SAY IF THE RESULT OF THE DB IS NOT NULL THEN */){
@@ -101,6 +121,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                     // }
                 } 
             }
+        }
         );
         back.setText("Back");
        back.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,8 +137,9 @@ public class ViewBookingPage extends javax.swing.JFrame {
         );
         logged_user_text.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         logged_user_text.setText("User: ");
-
+        resultBookings.setVisible(false);
         Month_Selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+
 
         // Year_selector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2022" }));
 
@@ -145,7 +167,9 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                 .addComponent(Month_Selector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(54, 54, 54)
                                 .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(date_selected_text))))
+                            .addComponent(date_selected_text)))
+                            .addGap(250, 250, 250)
+                            .addComponent(resultBookings, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE ))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -165,6 +189,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(Confirm_button)
                 .addComponent(back))
+                .addComponent(resultBookings)
                 .addContainerGap(86, Short.MAX_VALUE))
         );
 
@@ -222,5 +247,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
     private javax.swing.JLabel date_selected_text;
     private javax.swing.JLabel logged_user_text;
     private javax.swing.JButton back;
+    private javax.swing.JComboBox resultBookings;
+    private java.util.ArrayList list;
     // End of variables declaration
 }
