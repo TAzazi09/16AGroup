@@ -23,7 +23,7 @@ public class ArrangeBookingFunc {
                 Connection connection = DatabaseConnectionFunc.getConnection();
                 Statement statement = connection.createStatement();
 
-                // get the patioent's doctor
+                // get the patient's doctor
                 ResultSet currentDoctor = statement
                         .executeQuery(
                                 "SELECT DoctorID FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
