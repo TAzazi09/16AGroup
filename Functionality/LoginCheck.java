@@ -4,8 +4,15 @@ import java.awt.Window;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import javax.print.Doc;
 import javax.swing.JOptionPane;
+
+import com.mysql.cj.protocol.Resultset;
+import com.mysql.cj.xdevapi.Result;
+
 import GUIs.MenuPage;
+import Databases.DoctorsDB;
 
 /**
  * @author Ethan
@@ -15,11 +22,11 @@ public class LoginCheck {
     public static String backgroundID;
     public static String fname;
     public static String sname;
-
+    public static int doctorName;
     public static void main(String user, String password) {
         testFunction(user, password);
     }
-
+    
     public static void testFunction(String username, String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -43,6 +50,7 @@ public class LoginCheck {
                     backgroundID = resultSet.getString("patientID");
                     fname = resultSet.getString("FirstName");
                     sname = resultSet.getString("Surname");
+                    doctorName = resultSet.getInt("doctorID");
                     JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
                     Window[] windows = Window.getWindows();
 
@@ -51,6 +59,7 @@ public class LoginCheck {
                         window.dispose();
                     }
                     userFound = true;
+
                     MenuPage.main(null);
                     break;
                 }
@@ -76,4 +85,8 @@ public class LoginCheck {
     public static String getSurname() {
         return sname;
     }
+
+    // public static String getDoctor() throws Exception {
+    //     return DoctorsDB.getDoctorName(doctorName);
+    // }
 }
