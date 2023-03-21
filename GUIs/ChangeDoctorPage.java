@@ -1,50 +1,63 @@
 package GUIs;
 
+import java.awt.Font;
+import java.awt.Color;
+
 /**
  * @author Nikola
  */
-public class ChangeDoctorNikola extends javax.swing.JFrame {
+public class ChangeDoctorPage extends javax.swing.JFrame {
+    private javax.swing.JButton backButton;
+    private javax.swing.JLabel changeDocLabel;
+    private javax.swing.JLabel curDocLabel;
+    private javax.swing.JLabel curDocName;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> newDocBox;
+    private javax.swing.JLabel newDocLabel;
+    private javax.swing.JButton submitButton;
 
-    public ChangeDoctorNikola() {
+    public ChangeDoctorPage() {
         initComponents();
     }
 
     private void initComponents() {
+        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1 = new javax.swing.JPanel();
-        changeDocLabel = new javax.swing.JLabel();
+        changeDocLabel = new javax.swing.JLabel("Change your doctor");
         newDocBox = new javax.swing.JComboBox<>();
-        curDocLabel = new javax.swing.JLabel();
-        newDocLabel = new javax.swing.JLabel();
-        curDocName = new javax.swing.JLabel();
-        backButton = new javax.swing.JButton();
-        submitButton = new javax.swing.JButton();
+        curDocLabel = new javax.swing.JLabel("Current doctor: ");
+        newDocLabel = new javax.swing.JLabel("New doctor: ");
+        curDocName = new javax.swing.JLabel("doc name");
+        backButton = new javax.swing.JButton("Back");
+        submitButton = new javax.swing.JButton("Submit");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        changeDocLabel.setFont(new java.awt.Font("Monospaced", 0, 36)); // NOI18N
-        changeDocLabel.setText("Change your doctor");
+        changeDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
 
-        newDocBox.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        newDocBox.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         newDocBox.setModel(
                 new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        curDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
-        curDocLabel.setText("Current doctor: ");
+        curDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        newDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
-        newDocLabel.setText("New doctor: ");
+        newDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        curDocName.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
-        curDocName.setText("doc name");
+        curDocName.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        String curDoc = "Dr. " + "name";
+        // curDocName.setText();
 
-        backButton.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
-        backButton.setText("Back");
+        Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
 
-        submitButton.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
-        submitButton.setText("Submit");
+        backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        backButton.setBackground(buttonBlue);
+        backButton.addActionListener(this::backButtonActionPerformed);
+
+        submitButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        submitButton.setBackground(buttonBlue);
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
@@ -116,21 +129,19 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
                                 .addContainerGap(310, Short.MAX_VALUE)));
 
         pack();
-    }// </editor-fold>                        
+    }
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    /**
-     * @param args the command line arguments
-     */
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        MenuPage.main(null);
+        dispose();
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -139,36 +150,24 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorNikola.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorNikola.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorNikola.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorNikola.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         }
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ChangeDoctorNikola().setVisible(true);
+                new ChangeDoctorPage().setVisible(true);
             }
         });
     }
-
-    // Variables declaration - do not modify                     
-    private javax.swing.JButton backButton;
-    private javax.swing.JLabel changeDocLabel;
-    private javax.swing.JLabel curDocLabel;
-    private javax.swing.JLabel curDocName;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JComboBox<String> newDocBox;
-    private javax.swing.JLabel newDocLabel;
-    private javax.swing.JButton submitButton;
-    // End of variables declaration                   
 }
