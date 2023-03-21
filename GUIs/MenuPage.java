@@ -155,7 +155,8 @@ public class MenuPage extends javax.swing.JFrame {
     }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        dispose();
+        ChangeDoctorPage.main(null);
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {

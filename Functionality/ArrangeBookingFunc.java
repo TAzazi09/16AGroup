@@ -16,7 +16,6 @@ public class ArrangeBookingFunc {
             if (time == null || date == null) {
                 JOptionPane.showMessageDialog(null, "Please select a time and date.");
             } else if (ArrangeRescheduleCheck.test(time, date)) {
-
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
                 // Connects to the database
