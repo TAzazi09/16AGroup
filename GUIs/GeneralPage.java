@@ -6,7 +6,7 @@ import Databases.*;
 
 /**
  * @author Nikola
- * @functional changes by Ethan
+ * @functional changes by Ethan test
  */
 public class GeneralPage extends javax.swing.JFrame {
     public GeneralPage() {
