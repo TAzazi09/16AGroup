@@ -1,7 +1,7 @@
 package GUIs;
 import java.awt.Frame;
 import java.time.Month;
-
+import Functionality.*;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,14 +14,14 @@ import javax.swing.UIManager;
  */
 public class viewBooking extends javax.swing.JFrame {
 
-    public String userId = "eeewwew";
+    public String userId = LoginCheck.getFirstName();
     /**
      * Creates new form viewBooking
      */
     public viewBooking() {
         super("View Bookings");
         initComponents();
-        logged_user_text.setText("User: "+ userId);
+        logged_user_text.setText("User: " + userId);
     }
 
     /**

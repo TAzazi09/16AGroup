@@ -159,7 +159,7 @@ public class MenuPage extends javax.swing.JFrame {
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        viewBooking.main(null);
     }
 
     public static void main(String args[]) {
