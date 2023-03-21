@@ -116,7 +116,7 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
                                 .addContainerGap(310, Short.MAX_VALUE)));
 
         pack();
-    }                    
+    }
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
@@ -152,7 +152,7 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
             }
         });
     }
-                  
+
     private javax.swing.JButton backButton;
     private javax.swing.JLabel changeDocLabel;
     private javax.swing.JLabel curDocLabel;
@@ -160,5 +160,5 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> newDocBox;
     private javax.swing.JLabel newDocLabel;
-    private javax.swing.JButton submitButton;           
+    private javax.swing.JButton submitButton;
 }
