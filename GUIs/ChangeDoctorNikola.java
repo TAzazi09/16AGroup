@@ -1,5 +1,7 @@
 package GUIs;
 
+import java.awt.Font;
+
 /**
  * @author Nikola
  */
@@ -22,9 +24,9 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         changeDocLabel = new javax.swing.JLabel("Change your doctor");
         newDocBox = new javax.swing.JComboBox<>();
-        curDocLabel = new javax.swing.JLabel("doc name");
+        curDocLabel = new javax.swing.JLabel("Current doctor: ");
         newDocLabel = new javax.swing.JLabel("New doctor: ");
-        curDocName = new javax.swing.JLabel("Current doctor: ");
+        curDocName = new javax.swing.JLabel("doc name");
         backButton = new javax.swing.JButton("Back");
         submitButton = new javax.swing.JButton("Submit");
 
@@ -32,23 +34,23 @@ public class ChangeDoctorNikola extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        changeDocLabel.setFont(new java.awt.Font("Monospaced", 0, 36));
+        changeDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
 
-        newDocBox.setFont(new java.awt.Font("Monospaced", 0, 18));
+        newDocBox.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         newDocBox.setModel(
                 new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        curDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        curDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        newDocLabel.setFont(new java.awt.Font("Monospaced", 0, 18));
+        newDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        curDocName.setFont(new java.awt.Font("Monospaced", 0, 18));
+        curDocName.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         String curDoc = "Dr. " + "name";
         // curDocName.setText();
 
-        backButton.setFont(new java.awt.Font("Monospaced", 0, 18));
+        backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        submitButton.setFont(new java.awt.Font("Monospaced", 0, 18));
+        submitButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
