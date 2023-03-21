@@ -10,10 +10,7 @@ public class ArrangeRescheduleCheck {
     public static boolean test(String time, String date) {
         if (!timeCheck(time))
             return false;
-        else if (!dateCheck(date))
-            return false;
-        else
-            return true;
+        else return dateCheck(date);
     }
 
     // Checks if the time is valid (format HH:MM and between 8:00 and 17:00)

@@ -121,7 +121,7 @@ public class RegistrationCheck {
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
                             + PhoneNumber + "','" + DoctorsDB.getDoctorID(DoctorChosen) + "','" + Details + "','" + FirstName + " " + Surname
-                            + " succesfully registered with " + DoctorChosen + " as their doctor')");
+                            + " successfully registered with " + DoctorChosen + " as their doctor')");
             ResultSet resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
             if (resultSet.next()) {
                 RightID = resultSet.getInt("PatientID");
