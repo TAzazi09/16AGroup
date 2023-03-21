@@ -24,19 +24,20 @@ public class PatientsDB {
                     "PatientID int not null auto_increment," +
                     "FirstName VARCHAR(15) not null, " +
                     "Surname varchar(15) NOT NULL," +
-                    "PRIMARY KEY (patientID), " +
                     "Gender varchar(10) not null," +
                     "Age int (3) not null," +
                     "PhoneNumber varchar(12) ," +
-                    "DoctorChosen varchar(25) not null,  " +
+                    "DoctorID int not null,  " +
                     "Details varchar(100), " +
                     "Messages text" +
+                    "PRIMARY KEY (patientID), " +
+                    "FOREIGN KEY (DoctorID) REFERENCES doctors (DoctorID)" +
                     ");");
 
             // Inserts the patients into the table
-            insertPatient(statement, "Nikola", "Kolev", "Male", 20, "07856 791314", "Dr Jason", "no details",
+            insertPatient(statement, "Nikola", "Kolev", "Male", 20, "07856 791314", DoctorsDB.getDoctorID("Dr Jason"), "no details",
                     "Nikola Kolev succesfully registered with Dr Jason as their doctor");
-            insertPatient(statement, "Ethan", "Teather", "Male", 19, "00000 000000", "Dr Andrew", "",
+            insertPatient(statement, "Ethan", "Teather", "Male", 19, "00000 000000", DoctorsDB.getDoctorID("Dr Andrew"), "",
                     "Ethan Teather succesfully registered with Dr Andrew as their doctor");
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,7 +45,7 @@ public class PatientsDB {
     }
 
     private static void insertPatient(Statement statement, String firstName, String surname, String gender, int age,
-            String phoneNumber, String doctorChosen, String details, String messages) throws Exception {
+            String phoneNumber, int doctorChosen, String details, String messages) throws Exception {
         statement.executeUpdate(
                 "INSERT into patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorChosen, Details, messages) "
                         +
