@@ -37,12 +37,12 @@ public class MenuPage extends javax.swing.JFrame {
             }
         });
 
-        rescheduleBooking.setText("Reschedule a booking");
-        rescheduleBooking.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rescheduleBookingAction(evt);
-            }
-        });
+        // rescheduleBooking.setText("Reschedule a booking");
+        // rescheduleBooking.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         rescheduleBookingAction(evt);
+        //     }
+        // });
 
         changeDoctor.setText("Change your doctor");
         changeDoctor.addActionListener(new java.awt.event.ActionListener() {
