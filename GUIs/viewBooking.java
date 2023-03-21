@@ -1,6 +1,11 @@
 package GUIs;
 
 import java.awt.Frame;
+import java.awt.Window;
+import java.awt.Window;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.Month;
 import Functionality.*;
 import javax.swing.JDialog;
@@ -12,6 +17,7 @@ import javax.swing.UIManager;
 /**
  *
  * @author ks818
+ * @functionality Ethan
  */
 public class viewBooking extends javax.swing.JFrame {
 
@@ -41,6 +47,7 @@ public class viewBooking extends javax.swing.JFrame {
         logged_user_text = new javax.swing.JLabel();
         Month_Selector = new javax.swing.JComboBox<>();
         yearInput = new javax.swing.JTextField();
+        back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,7 +68,24 @@ public class viewBooking extends javax.swing.JFrame {
                 }
                 else{
                     System.out.println("You have selected " + Month + " and " + Year);
+                    String combination = Year + "-" + Month;
+                    System.out.println(combination);
+                    try {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+            
+                        //Connects to the database
+                        Connection connection = DatabaseConnectionFunc.getConnection();
+                        Statement statement = connection.createStatement();
+                        ResultSet results = statement.executeQuery("SELECT DoctorChosen, Date, Time FROM bookings WHERE Date LIKE '%" + combination + "%';");
+
+                        while (results.next()) {
+                            System.out.println(results.getString("DoctorChosen"));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
+
                     // Put code here for DB
                     // if(yearInput.getText() != null /* CHANGE THIS TO SAY IF THE RESULT OF THE DB IS NOT NULL THEN */){
                     //     JDialog results = new JDialog();
@@ -78,7 +102,18 @@ public class viewBooking extends javax.swing.JFrame {
                 } 
             }
         );
+        back.setText("Back");
+       back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Window[] windows = Window.getWindows();
 
+                    // Close all windows in the array
+                    for (Window window : windows) {
+                        window.dispose();
+                    }                    
+                    MenuPage.main(null);            }
+        }
+        );
         logged_user_text.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         logged_user_text.setText("User: ");
 
@@ -99,8 +134,10 @@ public class viewBooking extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(263, 263, 263)
-                        .addComponent(Confirm_button))
+                        // .addComponent(back)
+                        .addGap(250, 250, 250)
+                        .addComponent(Confirm_button)
+                        .addComponent(back))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(211, 211, 211)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +162,9 @@ public class viewBooking extends javax.swing.JFrame {
                     .addComponent(Month_Selector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(yearInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(Confirm_button)
+                .addComponent(back))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
 
@@ -182,5 +221,6 @@ public class viewBooking extends javax.swing.JFrame {
     private javax.swing.JTextField yearInput;
     private javax.swing.JLabel date_selected_text;
     private javax.swing.JLabel logged_user_text;
+    private javax.swing.JButton back;
     // End of variables declaration
 }
