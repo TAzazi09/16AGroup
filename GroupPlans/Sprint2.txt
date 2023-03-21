@@ -4,7 +4,9 @@ Ethan:
 - GUI: Reschedule booking
 _______________________________________________________________________________________________________________________________________
 Nikola:
-- GUI: Arrange a booking
+- GUIs: ArrangeBooking, ChangeDoctor
+- Functionality: ArrangeBooking functionality, Arrange and Reschedule booking checks
+- Databases: Doctors DB creation, reformatting of the rest of the DBs
 - code quality control for all files except the sprint 2 GUIs
 _______________________________________________________________________________________________________________________________________
 Callum:
@@ -14,4 +16,4 @@ Kristian:
 - GUI: view bookings by month and year
 _______________________________________________________________________________________________________________________________________
 Tare:
-- GUI: Change doctor
+- GUI: Doctor details
