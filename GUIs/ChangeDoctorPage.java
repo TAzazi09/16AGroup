@@ -45,7 +45,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
         newDocBox.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
         newDocBox.setModel(
-                new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+                new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose a doctor" }));
 
         curDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
@@ -61,11 +61,17 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
 
-            // get the patioent's doctor
+            // get the patient's doctor
             ResultSet currentDoctor = statement
                     .executeQuery("SELECT DoctorChosen FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
             currentDoctor.next();
             curDoc = currentDoctor.getString("DoctorChosen");
+
+            // get the list of doctors without the current patient's doctor (for the drop down menu)
+            ResultSet doctors = statement.executeQuery("SELECT * FROM doctors WHERE doctorName != '" + curDoc + "';");
+            while (doctors.next()) {
+                newDocBox.addItem(doctors.getString("doctorName"));
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
