@@ -18,7 +18,6 @@ public class DatabaseConnectionFunc {
 
     // This method is used to connect to the local database of the host machine
     private static void running() {
-
         Scanner test = new Scanner(System.in);
         System.out.print("Please enter your password: ");
         String password = test.nextLine();
@@ -43,5 +42,17 @@ public class DatabaseConnectionFunc {
 
     public static Connection getConnection() {
         return connection;
+    }
+
+    public static void connectForTests(String password) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager
+                    .getConnection("jdbc:mysql://localhost/", "root", password);
+            connected = true;
+        } catch (Exception e) {
+            System.out.println("Connection failed\nEither the password is incorrect, your username is not '" + "root"
+                    + "', or the database is not running\nTry again");
+        }
     }
 }
