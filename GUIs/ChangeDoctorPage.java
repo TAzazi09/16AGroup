@@ -57,14 +57,14 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
 
-            // get the patient's doctor
+            // Get the patient's doctor
             ResultSet currentDoctor = statement
                     .executeQuery("SELECT DoctorID FROM patients WHERE patientID = '" + Info.backgroundID + "';");
             currentDoctor.next();
             curDocID = Integer.parseInt(currentDoctor.getString("DoctorID"));
             curDoc = DoctorsDB.getDoctorName(curDocID);
 
-            // get the list of doctors without the current patient's doctor (for the drop-down menu)
+            // Get the list of doctors without the current patient's doctor (for the drop-down menu)
             ResultSet doctors = statement.executeQuery("SELECT * FROM doctors WHERE DoctorID != '" + curDocID + "';");
             while (doctors.next()) {
                 newDocBox.addItem(doctors.getString("Name"));
