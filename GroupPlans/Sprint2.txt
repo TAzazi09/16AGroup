@@ -1,4 +1,7 @@
 Group 16A - Sprint 2 Plan
+
+Ethan:
+_______________________________________________________________________________________________________________________________________
 Nikola:
 - GUIs: ArrangeBooking, ChangeDoctor
 - Functionality: ArrangeBooking functionality, Arrange and Reschedule booking checks
