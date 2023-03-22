@@ -14,7 +14,7 @@ import Databases.DoctorsDB;
 public class RegistrationCheck {
     // Tests if the data is valid, and if it is, sends it to the database
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
-            String DoctorChosen, String Details) {
+            String DoctorName, String Details) {
         if (!firstNameCheck(FirstName))
             return false;
         else if (!surnameCheck(Surname))
@@ -23,7 +23,7 @@ public class RegistrationCheck {
             return false;
         else if (!phoneNumberCheck(PhoneNumber))
             return false;
-        else if (!doctorCheck(DoctorChosen))
+        else if (!doctorCheck(DoctorName))
             return false;
         else
             return checkDetails(Details);
@@ -91,11 +91,21 @@ public class RegistrationCheck {
 
     // If we add "Select a doctor" to the doctor list, we can use this check
     // Checks if the doctor is valid (not "Select a doctor")
+    // Checks if the doctor is in the database
     private static boolean doctorCheck(String doctor) {
-        if (doctor.equals("Select a doctor")) {
-            JOptionPane.showMessageDialog(null, "Please select a doctor!");
+        try {
+            if (doctor.equals("Select a doctor")) {
+                JOptionPane.showMessageDialog(null, "Please select a doctor!");
+                return false;
+            } else if (!DoctorsDB.doctorExists(doctor)) {
+                JOptionPane.showMessageDialog(null, "Doctor does not exist!");
+                return false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Doctor does not exist!");
             return false;
         }
+
         return true;
     }
 
@@ -110,7 +120,7 @@ public class RegistrationCheck {
 
     // Sends the data to the database
     public static void sendData(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
-            String DoctorChosen, String Details) {
+            String DoctorName, String Details) {
         int RightID = 0;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -120,8 +130,9 @@ public class RegistrationCheck {
             statement.executeUpdate(
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
-                            + PhoneNumber + "','" + DoctorsDB.getDoctorID(DoctorChosen) + "','" + Details + "','" + FirstName + " " + Surname
-                            + " successfully registered with " + DoctorChosen + " as their doctor')");
+                            + PhoneNumber + "','" + DoctorsDB.getDoctorID(DoctorName) + "','" + Details + "','"
+                            + FirstName + " " + Surname
+                            + " successfully registered with " + DoctorName + " as their doctor')");
             ResultSet resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
             if (resultSet.next()) {
                 RightID = resultSet.getInt("PatientID");
