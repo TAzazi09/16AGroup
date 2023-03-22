@@ -21,9 +21,8 @@ public class ReschedulingFunc {
             Statement statement = connection.createStatement();
             ResultSet D = statement
                     .executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + LoginCheck.getID() + "'");
-            if (D.next()) {
-                System.out.println("id is " + D.getString("DoctorID"));
-            }
+           D.next();
+           
             String currentDoctor = DoctorsDB.getDoctorName(Integer.parseInt(D.getString("DoctorID")));
             int currentDoctorID = Integer.parseInt(D.getString("DoctorID"));
             //Checks if there are any bookings that could clash
