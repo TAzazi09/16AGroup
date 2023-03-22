@@ -1,5 +1,6 @@
 package GUIs;
 
+import Functionality.*;
 /**
  *
  * @author range
@@ -108,7 +109,8 @@ public class ViewPastBooking extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        dispose();
+        MenuPage.main(null);
     }
 
     /**
