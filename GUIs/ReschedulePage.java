@@ -21,19 +21,14 @@ public class ReschedulePage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        // dateInput.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-        //         new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
         dateLabel.setText("New Date");
-
-        // timeInput.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
-        //         new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
 
         timeLabel.setText("New Time");
 
         submit.setText("Reschedule");
         submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButton(evt, oldDate,  oldTime);
+                submitButton(evt, oldDate, oldTime);
             }
         });
 
@@ -92,6 +87,7 @@ public class ReschedulePage extends javax.swing.JFrame {
     private void submitButton(java.awt.event.ActionEvent evt, String oldDate, String oldTime) {
         String time = timeInput.getText();
         String date = dateInput.getText();
+        // Sends both the new and old date / time
         ReschedulingFunc.resechduleBooking(oldDate, oldTime, date, time);
     }
 
@@ -126,7 +122,7 @@ public class ReschedulePage extends javax.swing.JFrame {
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new ReschedulePage( oldDate,  oldTime).setVisible(true);
+                    new ReschedulePage(oldDate, oldTime).setVisible(true);
                 }
             });
         } else {
