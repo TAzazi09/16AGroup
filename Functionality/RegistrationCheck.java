@@ -1,11 +1,10 @@
 package Functionality;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.*;
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 import GUIs.GeneralPage;
 import Databases.DoctorsDB;
+import Session.Info;
 
 /**
  * @author Ethan
@@ -130,17 +129,14 @@ public class RegistrationCheck {
             String DoctorName, String Details) {
         int RightID = 0;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DatabaseConnectionFunc.getConnection();
-            Statement statement = connection.createStatement();
-
-            statement.executeUpdate(
+            Info.statement.executeUpdate(
                     "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
                             + PhoneNumber + "','" + DoctorsDB.getDoctorID(DoctorName) + "','" + Details + "','"
                             + FirstName + " " + Surname
                             + " successfully registered with " + DoctorName + " as their doctor')");
-            ResultSet resultSet = statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
+            ResultSet resultSet = Info.statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
+            
             if (resultSet.next()) {
                 RightID = resultSet.getInt("PatientID");
             }

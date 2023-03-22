@@ -1,8 +1,5 @@
 package Databases;
 
-import java.sql.Connection;
-import java.sql.Statement;
-import Functionality.DatabaseConnectionFunc;
 import Session.Info;
 
 /**
@@ -16,10 +13,6 @@ public class DatabaseDB {
             if (!Info.connected) {
                 Info.connect();
             }
-            // Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // Connection connection = DatabaseConnectionFunc.getConnection();
-            // Statement statement = connection.createStatement();
 
             Info.statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
             Info.statement.executeUpdate("CREATE DATABASE NHS");

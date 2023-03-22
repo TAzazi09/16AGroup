@@ -1,8 +1,6 @@
 package Functionality;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.awt.Window;
 import javax.swing.JOptionPane;
 import GUIs.MenuPage;
@@ -18,18 +16,16 @@ public class ReschedulingFunc {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Connects to the database
-            Connection connection = DatabaseConnectionFunc.getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet D = statement
+            ResultSet D = Info.statement
                     .executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + Info.backgroundID + "'");
             D.next();
-            
+
             //Gets the Doctors name associated with the patient
             String currentDoctor = DoctorsDB.getDoctorName(Integer.parseInt(D.getString("DoctorID")));
             //Gets the DoctorsID
             int currentDoctorID = Integer.parseInt(D.getString("DoctorID"));
             // Checks if there are any bookings that could clash
-            ResultSet results = statement
+            ResultSet results = Info.statement
                     .executeQuery("SELECT * FROM bookings WHERE Time = '" + newTime + "' AND DoctorID = '"
                             + currentDoctorID + "' AND Date = '" + newDate + "'");
             if (results.next()) {
@@ -38,12 +34,13 @@ public class ReschedulingFunc {
             } else {
                 JOptionPane.showMessageDialog(null,
                         "Your booking has successfully been changed to " + newTime + " on the " + newDate + ".");
-                statement.execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
+                Info.statement.execute("UPDATE patients SET messages = CONCAT(messages,'\n + "
+                        + LoginCheck.getFirstName()
                         + " " + LoginCheck.getSurname() + " has changed their booking from " + oldTime + " " + oldDate
                         + " to "
                         + newTime + " " + newDate + ".') WHERE patientID = '" + Info.backgroundID + "';");
                 // Updates the booking
-                statement.executeUpdate(
+                Info.statement.executeUpdate(
                         "UPDATE bookings SET Date = '" + newDate + "', Time = '" + newTime + "' WHERE Time = '"
                                 + oldTime + "' AND DoctorID = '" + currentDoctorID + "' AND Date = '" + oldDate + "'");
                 Window[] windows = Window.getWindows();
