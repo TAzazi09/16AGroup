@@ -4,15 +4,8 @@ import java.awt.Window;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
-import javax.print.Doc;
 import javax.swing.JOptionPane;
-
-import com.mysql.cj.protocol.Resultset;
-import com.mysql.cj.xdevapi.Result;
-
 import GUIs.MenuPage;
-import Databases.DoctorsDB;
 
 /**
  * @author Ethan
@@ -85,8 +78,4 @@ public class LoginCheck {
     public static String getSurname() {
         return sname;
     }
-
-    // public static String getDoctor() throws Exception {
-    //     return DoctorsDB.getDoctorName(doctorName);
-    // }
 }

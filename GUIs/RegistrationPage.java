@@ -19,7 +19,7 @@ public class RegistrationPage extends javax.swing.JFrame {
     private javax.swing.JTextField phoneInput;
     private javax.swing.JTextArea detailsInput;
     private javax.swing.JTextField ageInput;
-    public static ButtonGroup totalGroup;
+    private static ButtonGroup totalGroup;
 
     public RegistrationPage() {
         initComponents();

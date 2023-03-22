@@ -17,7 +17,7 @@ public class MenuPage extends javax.swing.JFrame {
     private void initComponents() {
         welcomeLabel = new javax.swing.JLabel();
         createBooking = new javax.swing.JButton();
-//rescheduleBooking = new javax.swing.JButton();
+        //rescheduleBooking = new javax.swing.JButton();
         changeDoctor = new javax.swing.JButton();
         viewBookings = new javax.swing.JButton();
         viewBookingDetails = new javax.swing.JButton();
@@ -107,8 +107,8 @@ public class MenuPage extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(viewBookings)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                              //  .addComponent(rescheduleBooking)
-                                              ))
+                                        //  .addComponent(rescheduleBooking)
+                                        ))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63,
                                         Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217,
@@ -132,9 +132,9 @@ public class MenuPage extends javax.swing.JFrame {
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(viewBookings)
-                                                    //    .addComponent(rescheduleBooking)
-                                                    )
-                                               // .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                //    .addComponent(rescheduleBooking)
+                                                )
+                                                // .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(viewBookingDetails)
@@ -204,9 +204,8 @@ public class MenuPage extends javax.swing.JFrame {
         }
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify
     private javax.swing.JButton createBooking;
-   // private javax.swing.JButton rescheduleBooking;
     private javax.swing.JButton changeDoctor;
     private javax.swing.JButton viewBookings;
     private javax.swing.JButton viewBookingDetails;
@@ -215,5 +214,5 @@ public class MenuPage extends javax.swing.JFrame {
     private javax.swing.JLabel welcomeLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    // End of variables declaration                   
+    // End of variables declaration
 }
