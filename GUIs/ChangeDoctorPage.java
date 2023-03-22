@@ -10,6 +10,7 @@ import Functionality.DatabaseConnectionFunc;
 import Functionality.LoginCheck;
 import Databases.DoctorsDB;
 import Databases.PatientsDB;
+import Session.Info;
 
 /**
  * @author Nikola
@@ -60,7 +61,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
             // get the patient's doctor
             ResultSet currentDoctor = statement
-                    .executeQuery("SELECT DoctorID FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
+                    .executeQuery("SELECT DoctorID FROM patients WHERE patientID = '" + Info.backgroundID + "';");
             currentDoctor.next();
             curDocID = Integer.parseInt(currentDoctor.getString("DoctorID"));
             curDoc = DoctorsDB.getDoctorName(curDocID);
@@ -156,7 +157,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
         try {
             String newDocName = newDocBox.getSelectedItem().toString();
             int newDocID = DoctorsDB.getDoctorID(newDocName);
-            PatientsDB.changeDoctor(Integer.parseInt(LoginCheck.getID()), newDocID);
+            PatientsDB.changeDoctor(Integer.parseInt(Info.backgroundID), newDocID);
 
             JOptionPane.showMessageDialog(null,
                     "Your doctor has successfully been changed to " + newDocName + ".");
@@ -169,7 +170,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
             statement
                     .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
                             + " " + LoginCheck.getSurname() + " has changed their doctor to " + newDocName
-                            + ".') WHERE patientID = '" + LoginCheck.getID() + "';");
+                            + ".') WHERE patientID = '" + Info.backgroundID + "';");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,
                     "An error has occurred. Please try again.");

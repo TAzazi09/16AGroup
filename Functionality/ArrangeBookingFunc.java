@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.awt.Window;
 import javax.swing.JOptionPane;
 import GUIs.MenuPage;
+import Session.Info;
 import Databases.DoctorsDB;
 
 /**
@@ -26,7 +27,7 @@ public class ArrangeBookingFunc {
                 // get the patient's doctor
                 ResultSet currentDoctor = statement
                         .executeQuery(
-                                "SELECT DoctorID FROM patients WHERE patientID = '" + LoginCheck.getID() + "';");
+                                "SELECT DoctorID FROM patients WHERE patientID = '" + Info.backgroundID + "';");
                 currentDoctor.next();
                 int doctorID = Integer.parseInt(currentDoctor.getString("DoctorID"));
                 String doctor = DoctorsDB.getDoctorName(doctorID);
@@ -41,7 +42,7 @@ public class ArrangeBookingFunc {
                 } else {
                     // insert the booking into the database (after ensuring the doctor is available)
                     statement.execute(
-                            "INSERT INTO bookings (PatientID, DoctorID, Time, Date) VALUES ('" + LoginCheck.getID()
+                            "INSERT INTO bookings (PatientID, DoctorID, Time, Date) VALUES ('" + Info.backgroundID
                                     + "', '" + doctorID + "', '" + time + "', '" + date + "');");
 
                     // display a message to the user
@@ -53,7 +54,7 @@ public class ArrangeBookingFunc {
                             .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
                                     + " " + LoginCheck.getSurname() + " has arranged a booking at "
                                     + time + " on " + date + " with " + doctor + ".') WHERE patientID = '"
-                                    + LoginCheck.getID() + "';");
+                                    + Info.backgroundID + "';");
 
                     // Close all windows in the array
                     Window[] windows = Window.getWindows();

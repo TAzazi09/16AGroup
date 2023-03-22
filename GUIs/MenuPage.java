@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import Functionality.*;
+import Session.Info;
 
 /**
  * @author Ethan
@@ -71,7 +72,7 @@ public class MenuPage extends javax.swing.JFrame {
             Statement statement = connection.createStatement();
             //Selects message for the patient
             ResultSet message = statement
-                    .executeQuery("select messages from patients where patientID = '" + LoginCheck.getID() + "'");
+                    .executeQuery("select messages from patients where patientID = '" + Info.backgroundID + "'");
             while (message.next()) {
                 //Adds the messages
                 jTextArea1.append(" - " + message.getString("messages") + "\n");
