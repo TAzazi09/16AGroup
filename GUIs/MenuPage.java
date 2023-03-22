@@ -17,7 +17,6 @@ public class MenuPage extends javax.swing.JFrame {
     private void initComponents() {
         welcomeLabel = new javax.swing.JLabel();
         createBooking = new javax.swing.JButton();
-        //rescheduleBooking = new javax.swing.JButton();
         changeDoctor = new javax.swing.JButton();
         viewBookings = new javax.swing.JButton();
         viewBookingDetails = new javax.swing.JButton();
@@ -36,13 +35,6 @@ public class MenuPage extends javax.swing.JFrame {
                 createBookingAction(evt);
             }
         });
-
-        // rescheduleBooking.setText("Reschedule a booking");
-        // rescheduleBooking.addActionListener(new java.awt.event.ActionListener() {
-        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        //         rescheduleBookingAction(evt);
-        //     }
-        // });
 
         changeDoctor.setText("Change your doctor");
         changeDoctor.addActionListener(new java.awt.event.ActionListener() {
@@ -77,14 +69,17 @@ public class MenuPage extends javax.swing.JFrame {
             //Connects to the database
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
+            //Selects message for the patient
             ResultSet message = statement
                     .executeQuery("select messages from patients where patientID = '" + LoginCheck.getID() + "'");
             while (message.next()) {
+                //Adds the messages
                 jTextArea1.append(" - " + message.getString("messages") + "\n");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,11 +145,6 @@ public class MenuPage extends javax.swing.JFrame {
         dispose();
         BookingPage.main(null);
     }
-
-    // private void rescheduleBookingAction(java.awt.event.ActionEvent evt) {
-    //     dispose();
-    //     ReschedulingPage.main(null);
-    // }
 
     private void changeDoctorActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
