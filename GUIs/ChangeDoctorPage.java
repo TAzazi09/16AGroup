@@ -5,6 +5,9 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import javax.swing.JOptionPane;
+
 import Functionality.DatabaseConnectionFunc;
 import Functionality.LoginCheck;
 import Databases.DoctorsDB;
@@ -156,8 +159,12 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
             String newDocName = newDocBox.getSelectedItem().toString();
             int newDocID = DoctorsDB.getDoctorID(newDocName);
             PatientsDB.changeDoctor(Integer.parseInt(LoginCheck.getID()), newDocID);
+
+            JOptionPane.showMessageDialog(null,
+                    "Your doctor has successfully been changed to " + newDocName + ".");
         } catch (Exception e) {
-            // TODO: handle exception
+            JOptionPane.showMessageDialog(null,
+                    "An error has occurred. Please try again.");
         }
     }
 
