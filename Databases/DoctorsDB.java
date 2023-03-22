@@ -59,4 +59,12 @@ public class DoctorsDB {
         resultSet.next();
         return resultSet.getString("Name");
     }
+
+    public static boolean doctorExists(String name) throws Exception {
+        Connection connection = DatabaseConnectionFunc.getConnection();
+        Statement statement = connection.createStatement();
+        statement.executeUpdate("use NHS");
+        ResultSet resultSet = statement.executeQuery("SELECT Name FROM doctors WHERE Name = '" + name + "';");
+        return resultSet.next();
+    }
 }
