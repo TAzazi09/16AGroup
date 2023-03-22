@@ -65,12 +65,15 @@ public class RegistrationPage extends javax.swing.JFrame {
 
         javax.swing.JLabel firstnameLabel = new javax.swing.JLabel("First Name");
         firstnameInput = new javax.swing.JTextField();
+        firstnameInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         javax.swing.JLabel surnameLabel = new javax.swing.JLabel("Surname");
         surnameInput = new javax.swing.JTextField();
+        surnameInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
-        javax.swing.JLabel ageLabel = new javax.swing.JLabel("Age");
-        ageInput = new javax.swing.JTextField("> 18 && < 130");
+        javax.swing.JLabel ageLabel = new javax.swing.JLabel("Age (> 18 && < 130)");
+        ageInput = new javax.swing.JTextField();
+        ageInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         javax.swing.JLabel genderLabel = new javax.swing.JLabel("Gender");
         javax.swing.JRadioButton maleCheck = new javax.swing.JRadioButton("Male");
@@ -80,6 +83,7 @@ public class RegistrationPage extends javax.swing.JFrame {
 
         javax.swing.JLabel phoneLabel = new javax.swing.JLabel("Phone Number");
         phoneInput = new javax.swing.JTextField("##### ######");
+        phoneInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
 
         javax.swing.JLabel doctorLabel = new javax.swing.JLabel("Doctor Chosen");
         doctorList = new javax.swing.JComboBox<>();
