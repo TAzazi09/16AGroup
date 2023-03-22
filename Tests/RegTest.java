@@ -3,7 +3,6 @@ package Tests;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import Functionality.RegistrationCheck;
-import Functionality.DatabaseConnectionFunc;
 
 /**
  * @author Callum
@@ -12,8 +11,6 @@ import Functionality.DatabaseConnectionFunc;
 class RegTest {
     @Test
     public void testRegDetailsCorrect() {
-        DatabaseConnectionFunc.connectForTests("*Niko1312");
-
         //Test to check if correct details are accepted
         assertTrue(RegistrationCheck.test("James", "Lee", "male", 25, "11111 111111", "Dr Andrew", "deaf & blind"));
     }

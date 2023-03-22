@@ -14,10 +14,12 @@ public class DatabaseConnectionFunc {
     public static boolean connected = false;
 
     public static void main(String[] args) {
-        if (PasswordForDB.testing) {
-            DatabaseConnectionFunc.connectForTests(PasswordForDB.password);
-        } else {
-            DatabaseConnectionFunc.connect();
+        if (!connected) {
+            if (PasswordForDB.testing) {
+                DatabaseConnectionFunc.connectForTests(PasswordForDB.password);
+            } else {
+                DatabaseConnectionFunc.connect();
+            }
         }
     }
 
@@ -39,17 +41,20 @@ public class DatabaseConnectionFunc {
             System.out.println("Connection failed\nEither the password is incorrect, your username is not '" + username
                     + "', or the database is not running\nTry again");
         }
-
-        if (connected) {
-            getConnection();
-        }
     }
 
     public static Connection getConnection() {
+        if (!connected) {
+            if (PasswordForDB.testing) {
+                connectForTests(PasswordForDB.password);
+            } else {
+                connect();
+            }
+        }
         return connection;
     }
 
-    public static void connectForTests(String password) {
+    private static void connectForTests(String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager
