@@ -1,6 +1,7 @@
 package Databases;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import Functionality.DatabaseConnectionFunc;
 
@@ -61,5 +62,18 @@ public class PatientsDB {
         Statement statement = connection.createStatement();
 
         statement.executeUpdate("UPDATE patients SET DoctorID = '" + doctorID + "' WHERE PatientID = '" + patientID + "'");
+    }
+
+    // Get patient's doctor's name
+    public static String getDoctorName(int patientID) throws Exception {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DatabaseConnectionFunc.getConnection();
+        Statement statement = connection.createStatement();
+
+        ResultSet resultSet = statement.executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + patientID + "'");
+        resultSet.next();
+        int doctorID = Integer.parseInt(resultSet.getString("DoctorID"));
+
+        return DoctorsDB.getDoctorName(doctorID);
     }
 }

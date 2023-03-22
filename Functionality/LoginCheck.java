@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import GUIs.MenuPage;
+import Session.Info;
 
 /**
  * @author Ethan
  * @code quality by Nikola
  */
 public class LoginCheck {
-    public static String backgroundID;
     public static String fname;
     public static String sname;
     public static int doctorName;
@@ -40,7 +40,7 @@ public class LoginCheck {
             while (resultSet.next()) {
                 if ((username.equals(resultSet.getString("FirstName")))
                         && (password.equals((resultSet.getString("Surname")) + (resultSet.getString("PatientID"))))) {
-                    backgroundID = resultSet.getString("patientID");
+                    Info.backgroundID = resultSet.getString("patientID");
                     fname = resultSet.getString("FirstName");
                     sname = resultSet.getString("Surname");
                     doctorName = resultSet.getInt("doctorID");
@@ -65,10 +65,6 @@ public class LoginCheck {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static String getID() {
-        return backgroundID;
     }
 
     public static String getFirstName() {
