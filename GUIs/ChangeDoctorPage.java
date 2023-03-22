@@ -8,11 +8,14 @@ import java.sql.Statement;
 import Functionality.DatabaseConnectionFunc;
 import Functionality.LoginCheck;
 import Databases.DoctorsDB;
+import Databases.PatientsDB;
 
 /**
  * @author Nikola
  */
 public class ChangeDoctorPage extends javax.swing.JFrame {
+    private javax.swing.JComboBox<String> newDocBox;
+
     public ChangeDoctorPage() {
         initComponents();
     }
@@ -22,7 +25,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
         javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
         javax.swing.JLabel changeDocLabel = new javax.swing.JLabel("Change your doctor");
-        javax.swing.JComboBox<String> newDocBox = new javax.swing.JComboBox<>();
+        newDocBox = new javax.swing.JComboBox<>();
         javax.swing.JLabel curDocLabel = new javax.swing.JLabel("Current doctor: ");
         javax.swing.JLabel newDocLabel = new javax.swing.JLabel("New doctor: ");
         javax.swing.JLabel curDocName = new javax.swing.JLabel("doc name");
@@ -149,7 +152,13 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     }
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        try {
+            String newDocName = newDocBox.getSelectedItem().toString();
+            int newDocID = DoctorsDB.getDoctorID(newDocName);
+            PatientsDB.changeDoctor(Integer.parseInt(LoginCheck.getID()), newDocID);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
