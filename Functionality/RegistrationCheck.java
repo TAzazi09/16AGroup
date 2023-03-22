@@ -12,11 +12,15 @@ import Databases.DoctorsDB;
  * @additional checks by Nikola
  */
 public class RegistrationCheck {
+    public static void main(String[] args) {
+        System.out.println(test("James", "Lee", "male", 25, "11111 111111", "Dr Andrew", "deaf & blind"));
+    }
+
     // Tests if the data is valid, and if it is, sends it to the database
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorName, String Details) {
         if (FirstName == null || Surname == null || Gender == null || Age == null || PhoneNumber == null
-                || DoctorName == null || Details == null) {
+                || DoctorName == null) {
             return false;
         } else if (!firstNameCheck(FirstName))
             return false;
@@ -114,7 +118,7 @@ public class RegistrationCheck {
 
     // Checks if the details are valid (less than 100 characters)
     private static boolean checkDetails(String details) {
-        if (details.length() > 100) {
+        if (details != null && details.length() > 100) {
             JOptionPane.showMessageDialog(null, "Details too long!");
             return false;
         }
