@@ -27,7 +27,6 @@ public class RegistrationPage extends javax.swing.JFrame {
 
     public static void main(String[] args) {
         if (DatabaseConnectionFunc.connected) {
-
             // NetBeans' exception checks
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

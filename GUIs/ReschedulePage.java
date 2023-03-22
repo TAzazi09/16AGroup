@@ -130,11 +130,11 @@ public class ReschedulePage extends javax.swing.JFrame {
         }
     }
 
+    // Variables declaration
     private javax.swing.JButton submit;
     private javax.swing.JLabel timeLabel;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel title;
     private javax.swing.JTextField dateInput;
     private javax.swing.JTextField timeInput;
-    // End of variables declaration
 }
