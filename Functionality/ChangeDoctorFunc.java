@@ -2,8 +2,6 @@ package Functionality;
 
 import java.awt.Window;
 import javax.swing.JOptionPane;
-import java.sql.Connection;
-import java.sql.Statement;
 import Databases.PatientsDB;
 import Databases.DoctorsDB;
 import Session.Info;
@@ -18,12 +16,8 @@ public class ChangeDoctorFunc {
                 // Change the doctor in the database
                 PatientsDB.changeDoctor(Integer.parseInt(Info.backgroundID), newDoctorID);
 
-                // Connects to the database
-                Connection connection = DatabaseConnectionFunc.getConnection();
-                Statement statement = connection.createStatement();
-
                 // add a message to the patient's log
-                statement
+                Info.statement
                         .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
                                 + " " + LoginCheck.getSurname() + " has changed their doctor to " + newDoctorName
                                 + ".') WHERE patientID = '" + Info.backgroundID + "';");

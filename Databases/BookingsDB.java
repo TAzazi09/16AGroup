@@ -1,8 +1,6 @@
 package Databases;
 
-import java.sql.Connection;
-import java.sql.Statement;
-import Functionality.DatabaseConnectionFunc;
+import Session.Info;
 
 /**
  * @written by Ethan
@@ -12,14 +10,9 @@ public class BookingsDB {
     public static void main(String[] args) {
         // Creates the Bookings table
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            Connection connection = DatabaseConnectionFunc.getConnection();
-            Statement statement = connection.createStatement();
-
-            statement.executeUpdate("use NHS");
-            statement.execute("DROP TABLE IF EXISTS bookings");
-            statement.execute("CREATE TABLE bookings ("
+            Info.statement.executeUpdate("use NHS");
+            Info.statement.execute("DROP TABLE IF EXISTS bookings");
+            Info.statement.execute("CREATE TABLE bookings ("
                     + "BookingID int not null auto_increment,"
                     + "PatientID int not null, "
                     + "DoctorID int not null, "
@@ -32,7 +25,6 @@ public class BookingsDB {
                     + "PRIMARY KEY (BookingID),"
                     + "UNIQUE (PatientID, DoctorID, Time, Date)"
                     + ");");
-
         } catch (Exception e) {
             e.printStackTrace();
         }

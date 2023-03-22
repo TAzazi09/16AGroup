@@ -1,9 +1,8 @@
 package Databases;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import Functionality.DatabaseConnectionFunc;
+import Session.Info;
 
 /**
  * @written by Ethan
@@ -13,15 +12,11 @@ import Functionality.DatabaseConnectionFunc;
 public class PatientsDB {
     public static void main(String[] args) {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            Connection connection = DatabaseConnectionFunc.getConnection();
-            Statement statement = connection.createStatement();
 
             // Creates the Patients table
-            statement.executeUpdate("use NHS");
-            statement.executeUpdate("DROP TABLE IF EXISTS patients;");
-            statement.execute("CREATE TABLE patients (" +
+            Info.statement.executeUpdate("use NHS");
+            Info.statement.executeUpdate("DROP TABLE IF EXISTS patients;");
+            Info.statement.execute("CREATE TABLE patients (" +
                     "PatientID int not null auto_increment," +
                     "FirstName VARCHAR(15) not null, " +
                     "Surname varchar(15) NOT NULL," +
@@ -36,9 +31,11 @@ public class PatientsDB {
                     ");");
 
             // Inserts the patients into the table
-            insertPatient(statement, "Nikola", "Kolev", "Male", 20, "07856 791314", DoctorsDB.getDoctorID("Dr Jason"), "no details",
+            insertPatient(Info.statement, "Nikola", "Kolev", "Male", 20, "07856 791314",
+                    DoctorsDB.getDoctorID("Dr Jason"), "no details",
                     "Nikola Kolev successfully registered with Dr Jason as their doctor");
-            insertPatient(statement, "Ethan", "Teather", "Male", 19, "00000 000000", DoctorsDB.getDoctorID("Dr Andrew"), "",
+            insertPatient(Info.statement, "Ethan", "Teather", "Male", 19, "00000 000000",
+                    DoctorsDB.getDoctorID("Dr Andrew"), "",
                     "Ethan Teather successfully registered with Dr Andrew as their doctor");
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,29 +45,22 @@ public class PatientsDB {
     // Inserts a patient into the table
     private static void insertPatient(Statement statement, String firstName, String surname, String gender, int age,
             String phoneNumber, int doctorId, String details, String messages) throws Exception {
-        statement.executeUpdate(
+        Info.statement.executeUpdate(
                 "INSERT into patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages) "
-                        +
-                        "VALUES (DEFAULT, '" + firstName + "', '" + surname + "', '" + gender + "', '" + age + "', '"
+                        + "VALUES (DEFAULT, '" + firstName + "', '" + surname + "', '" + gender + "', '" + age + "', '"
                         + phoneNumber + "', '" + doctorId + "', '" + details + "', '" + messages + "')");
     }
 
     // Change doctor for a patient
     public static void changeDoctor(int patientID, int doctorID) throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection connection = DatabaseConnectionFunc.getConnection();
-        Statement statement = connection.createStatement();
-
-        statement.executeUpdate("UPDATE patients SET DoctorID = '" + doctorID + "' WHERE PatientID = '" + patientID + "'");
+        Info.statement.executeUpdate(
+                "UPDATE patients SET DoctorID = '" + doctorID + "' WHERE PatientID = '" + patientID + "'");
     }
 
     // Get patient's doctor's name
     public static String getDoctorName(int patientID) throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection connection = DatabaseConnectionFunc.getConnection();
-        Statement statement = connection.createStatement();
-
-        ResultSet resultSet = statement.executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + patientID + "'");
+        ResultSet resultSet = Info.statement
+                .executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + patientID + "'");
         resultSet.next();
         int doctorID = Integer.parseInt(resultSet.getString("DoctorID"));
 

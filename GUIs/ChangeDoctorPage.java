@@ -5,13 +5,9 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javax.swing.JOptionPane;
 import Functionality.DatabaseConnectionFunc;
-import Functionality.LoginCheck;
 import Databases.DoctorsDB;
-import Databases.PatientsDB;
 import Session.Info;
-import Functionality.CahangeDoctorCheck;
 import Functionality.ChangeDoctorFunc;
 
 /**
@@ -61,14 +57,14 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
 
-            // get the patient's doctor
+            // Get the patient's doctor
             ResultSet currentDoctor = statement
                     .executeQuery("SELECT DoctorID FROM patients WHERE patientID = '" + Info.backgroundID + "';");
             currentDoctor.next();
             curDocID = Integer.parseInt(currentDoctor.getString("DoctorID"));
             curDoc = DoctorsDB.getDoctorName(curDocID);
 
-            // get the list of doctors without the current patient's doctor (for the drop-down menu)
+            // Get the list of doctors without the current patient's doctor (for the drop-down menu)
             ResultSet doctors = statement.executeQuery("SELECT * FROM doctors WHERE DoctorID != '" + curDocID + "';");
             while (doctors.next()) {
                 newDocBox.addItem(doctors.getString("Name"));
@@ -158,34 +154,6 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String newDocName = newDocBox.getSelectedItem().toString();
         ChangeDoctorFunc.changeDoctor(newDocName);
-        
-        // try {
-        //     String newDocName = newDocBox.getSelectedItem().toString();
-        //     if (CahangeDoctorCheck.test(newDocName)) {
-        //         int newDocID = DoctorsDB.getDoctorID(newDocName);
-        //         PatientsDB.changeDoctor(Integer.parseInt(Info.backgroundID), newDocID);
-
-        //         JOptionPane.showMessageDialog(null,
-        //                 "Your doctor has successfully been changed to " + newDocName + ".");
-
-        //         // Connects to the database
-        //         Connection connection = DatabaseConnectionFunc.getConnection();
-        //         Statement statement = connection.createStatement();
-
-        //         // add a message to the patient's log
-        //         statement
-        //                 .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
-        //                         + " " + LoginCheck.getSurname() + " has changed their doctor to " + newDocName
-        //                         + ".') WHERE patientID = '" + Info.backgroundID + "';");
-        //     }
-
-        // } catch (Exception e) {
-        //     JOptionPane.showMessageDialog(null,
-        //             "An error has occurred. Please try again.");
-        // }
-
-        // MenuPage.main(null);
-        // dispose();
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {

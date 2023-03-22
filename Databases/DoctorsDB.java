@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import Functionality.DatabaseConnectionFunc;
+import Session.Info;
 
 /**
  * @author Nikola
@@ -11,15 +12,10 @@ import Functionality.DatabaseConnectionFunc;
 public class DoctorsDB {
     public static void main(String[] args) {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            Connection connection = DatabaseConnectionFunc.getConnection();
-            Statement statement = connection.createStatement();
-
             // Creates the Doctors table
-            statement.executeUpdate("use NHS");
-            statement.executeUpdate("DROP TABLE IF EXISTS doctors;");
-            statement.execute("CREATE TABLE doctors (" +
+            Info.statement.executeUpdate("use NHS");
+            Info.statement.executeUpdate("DROP TABLE IF EXISTS doctors;");
+            Info.statement.execute("CREATE TABLE doctors (" +
                     "DoctorID int not null auto_increment," +
                     "Name VARCHAR(15) not null, " +
                     "PhoneNumber varchar(12) not null," +
@@ -29,9 +25,9 @@ public class DoctorsDB {
                     ");");
 
             // Inserts the doctors into the table
-            insertDoctor(statement, "Dr Jason", "12345 123456", "Cardiologist");
-            insertDoctor(statement, "Dr Andrew", "56712 09876", "Dentist");
-            insertDoctor(statement, "Dr Smith", "55555 666666", "Dermatologist");
+            insertDoctor(Info.statement, "Dr Jason", "12345 123456", "Cardiologist");
+            insertDoctor(Info.statement, "Dr Andrew", "56712 09876", "Dentist");
+            insertDoctor(Info.statement, "Dr Smith", "55555 666666", "Dermatologist");
         } catch (Exception e) {
             e.printStackTrace();
         }

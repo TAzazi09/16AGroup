@@ -1,9 +1,7 @@
 package Functionality;
 
 import java.awt.Window;
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.swing.JOptionPane;
 import GUIs.MenuPage;
 import Session.Info;
@@ -22,14 +20,8 @@ public class LoginCheck {
     
     public static void testFunction(String username, String password) {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            //Connects to the database
-            Connection connection = DatabaseConnectionFunc.getConnection();
-            Statement statement = connection.createStatement();
-
             //Returns all tuples where the username matches
-            ResultSet resultSet = statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
+            ResultSet resultSet = Info.statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
             if (resultSet == null) {
                 JOptionPane.showMessageDialog(null, "No registered accounts with that name! Please register first!");
                 System.exit(1);
