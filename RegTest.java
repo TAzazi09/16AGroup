@@ -2,6 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import Functionality.RegistrationCheck;
+import Functionality.DatabaseConnectionFunc;
 
 /**
  * @author Callum
@@ -10,13 +11,14 @@ import Functionality.RegistrationCheck;
 class RegTest {
     @Test
     public void testRegDetailsCorrect() {
+        DatabaseConnectionFunc.connectForTests("password");
+
         //Test to check if correct details are accepted
         assertTrue(RegistrationCheck.test("James", "Lee", "male", 25, "11111 111111", "Dr Andrew", "deaf & blind"));
     }
 
     @Test
-    public void firstNameTest() {
-        //test to see if it will reject empty string for firstName
+    public void firstNameTest() {//test to see if it will reject empty string for firstName
         Assertions
                 .assertFalse(RegistrationCheck.test("", "Lee", "male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
         assertFalse(RegistrationCheck.test("", "Brown", "Female", 20, "12345 123456", "Dr Jason", null));
@@ -50,9 +52,7 @@ class RegTest {
         assertFalse(RegistrationCheck.test("A", "Smith", "Male", 45, "12345 123456", "Dr Andrew", "something"));
 
         //Checking for null value
-        assertThrows(NullPointerException.class,
-                () -> RegistrationCheck.test(null, "Lee", "female", 100, "15073 84920", "Dr Jason", "deaf & blind"),
-                "firstName shouldn't be null");
+        assertFalse(RegistrationCheck.test(null, "Lee", "female", 100, "15073 84920", "Dr Jason", "deaf & blind"));
     }
 
     @Test
