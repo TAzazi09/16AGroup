@@ -69,11 +69,11 @@ public class MenuPage extends javax.swing.JFrame {
             //Connects to the database
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
-            //Selects message for the patient
+            //Selects messages for the patient
             ResultSet message = statement
                     .executeQuery("select messages from patients where patientID = '" + LoginCheck.getID() + "'");
             while (message.next()) {
-                //Adds the messages
+                //Adds the messages to the unmodifiable text area
                 jTextArea1.append(" - " + message.getString("messages") + "\n");
             }
         } catch (Exception e) {
@@ -102,7 +102,6 @@ public class MenuPage extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(viewBookings)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        //  .addComponent(rescheduleBooking)
                                         ))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63,
                                         Short.MAX_VALUE)
@@ -127,9 +126,7 @@ public class MenuPage extends javax.swing.JFrame {
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(viewBookings)
-                                                //    .addComponent(rescheduleBooking)
                                                 )
-                                                // .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(viewBookingDetails)
