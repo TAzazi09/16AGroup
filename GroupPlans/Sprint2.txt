@@ -1,7 +1,8 @@
 Group 16A - Sprint 2 Plan
 
 Ethan:
-- GUI: Reschedule booking
+- GUI: Reschedule booking, menu, view bookings, 
+- All functionality for rescheduling, view bookings and menu. Assisted on arrange booking.
 _______________________________________________________________________________________________________________________________________
 Nikola:
 - GUIs: ArrangeBooking, ChangeDoctor
