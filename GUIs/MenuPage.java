@@ -95,8 +95,7 @@ public class MenuPage extends javax.swing.JFrame {
                                                 .addComponent(createBooking))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(viewBookings)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        ))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63,
                                         Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217,
@@ -119,8 +118,7 @@ public class MenuPage extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(viewBookings)
-                                                )
+                                                        .addComponent(viewBookings))
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(viewBookingDetails)

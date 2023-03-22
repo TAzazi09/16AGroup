@@ -14,14 +14,16 @@ public class LoginCheck {
     public static String fname;
     public static String sname;
     public static int doctorName;
+
     public static void main(String user, String password) {
         testFunction(user, password);
     }
-    
+
     public static void testFunction(String username, String password) {
         try {
             //Returns all tuples where the username matches
-            ResultSet resultSet = Info.statement.executeQuery("select * from patients WHERE FirstName = '" + username + "'");
+            ResultSet resultSet = Info.statement
+                    .executeQuery("select * from patients WHERE FirstName = '" + username + "'");
             if (resultSet == null) {
                 JOptionPane.showMessageDialog(null, "No registered accounts with that name! Please register first!");
                 System.exit(1);
@@ -44,7 +46,7 @@ public class LoginCheck {
                         window.dispose();
                     }
                     userFound = true;
-                    
+
                     //Returns the user to the main menu
                     MenuPage.main(null);
                     break;

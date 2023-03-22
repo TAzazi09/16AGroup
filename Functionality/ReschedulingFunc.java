@@ -53,7 +53,7 @@ public class ReschedulingFunc {
                 for (Window window : windows) {
                     window.dispose();
                 }
-                
+
                 //Returns the user to the menu
                 MenuPage.main(null);
             }

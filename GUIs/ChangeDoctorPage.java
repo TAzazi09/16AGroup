@@ -56,7 +56,8 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
             curDoc = DoctorsDB.getDoctorName(curDocID);
 
             // Get the list of doctors without the current patient's doctor (for the drop-down menu)
-            ResultSet doctors = Info.statement.executeQuery("SELECT * FROM doctors WHERE DoctorID != '" + curDocID + "';");
+            ResultSet doctors = Info.statement
+                    .executeQuery("SELECT * FROM doctors WHERE DoctorID != '" + curDocID + "';");
             while (doctors.next()) {
                 newDocBox.addItem(doctors.getString("Name"));
             }

@@ -52,17 +52,17 @@ public class ViewBookingPage extends javax.swing.JFrame {
             selectedLabel.setText("Current booking: " + resultBookings.getSelectedItem());
             selectedLabel.setVisible(true);
             reschedule.setVisible(true);
-            if(resultBookings.getSelectedItem() != null) {
-            String[] split = resultBookings.getSelectedItem().toString().split("~");
-            String dateInput = split[1].split(" ")[1];
-            LocalDate inputDate = LocalDate.parse(dateInput);
-            LocalDate currentDate = LocalDate.now();
-            if (inputDate.isBefore(currentDate)) {
-                viewPastBooking.setVisible(true);
-            } else {
-                viewPastBooking.setVisible(false);
+            if (resultBookings.getSelectedItem() != null) {
+                String[] split = resultBookings.getSelectedItem().toString().split("~");
+                String dateInput = split[1].split(" ")[1];
+                LocalDate inputDate = LocalDate.parse(dateInput);
+                LocalDate currentDate = LocalDate.now();
+                if (inputDate.isBefore(currentDate)) {
+                    viewPastBooking.setVisible(true);
+                } else {
+                    viewPastBooking.setVisible(false);
+                }
             }
-        }
         });
 
         reschedule.setText("Reschedule");
@@ -136,7 +136,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
         Month_Selector.setModel(new javax.swing.DefaultComboBoxModel<>(
                 new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,10 +175,10 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                                 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(250, 250, 250)
                                         .addGroup(layout.createSequentialGroup()
-                                        .addComponent(back)
-                                        .addGap(250, 250, 250)
-                                        .addComponent(reschedule)
-                                        .addComponent(viewPastBooking)))
+                                                .addComponent(back)
+                                                .addGap(250, 250, 250)
+                                                .addComponent(reschedule)
+                                                .addComponent(viewPastBooking)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,10 +203,10 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                         .addComponent(back))
                                 .addComponent(resultBookings)
                                 .addComponent(selectedLabel)
-                                .addGap(20,20,20)
+                                .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(reschedule)
-                                .addComponent(viewPastBooking))
+                                        .addComponent(reschedule)
+                                        .addComponent(viewPastBooking))
 
                                 .addContainerGap(86, Short.MAX_VALUE)));
 

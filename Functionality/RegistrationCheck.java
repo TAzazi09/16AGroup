@@ -136,7 +136,7 @@ public class RegistrationCheck {
                             + FirstName + " " + Surname
                             + " successfully registered with " + DoctorName + " as their doctor')");
             ResultSet resultSet = Info.statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
-            
+
             if (resultSet.next()) {
                 RightID = resultSet.getInt("PatientID");
             }
