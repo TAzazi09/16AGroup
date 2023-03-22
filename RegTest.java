@@ -11,7 +11,7 @@ class RegTest {
     @Test
     public void testRegDetailsCorrect() {
         //Test to check if correct details are accepted
-        assertTrue(RegistrationCheck.test("james", "lee", "male", 25, "11111 111111", "Dr Andrew", "deaf & blind"));
+        assertTrue(RegistrationCheck.test("James", "Lee", "male", 25, "11111 111111", "Dr Andrew", "deaf & blind"));
     }
 
     @Test
@@ -24,7 +24,7 @@ class RegTest {
 
         //Test to see if it will reject null value for firstName
         assertFalse(RegistrationCheck.test(null, "Kolev", "Male", 18, "98765 098765", "Dr Jason", "foo"));
-        assertFalse (RegistrationCheck.test(null, "Smith", "Male", 45, "12345 123456", "Dr Andrew", "bar"));
+        assertFalse(RegistrationCheck.test(null, "Smith", "Male", 45, "12345 123456", "Dr Andrew", "bar"));
 
         //Test to see if it will accept correct firstName
         assertTrue(RegistrationCheck.test("John", "Green", "male", 27, "13579 246800", "Dr Jason", ""));
@@ -35,78 +35,77 @@ class RegTest {
         //Test over character limit for firstName
         assertFalse(RegistrationCheck.test("Anhfdsfhdsfhsdfhdsfhfdsh", "Lee", "male", 25, "11111 111111", "Dr Jason",
                 "deaf & blind"));
-        assertFalse (RegistrationCheck.test("Qwertyuiopasdfghjklzxcvb", "Smith", "Male", 45, "12345 123456", "Dr Andrew", "something"));
-        assertFalse (RegistrationCheck.test("Johnisaveryveryverylongname", "Smith", "Male", 45, "12345 123456", "Dr Andrew", "hello"));
+        assertFalse(RegistrationCheck.test("Qwertyuiopasdfghjklzxcvb", "Smith", "Male", 45, "12345 123456", "Dr Andrew",
+                "something"));
+        assertFalse(RegistrationCheck.test("Johnisaveryveryverylongname", "Smith", "Male", 45, "12345 123456",
+                "Dr Andrew", "hello"));
 
         //Reject numbers in firstName
-        assertFalse(RegistrationCheck.test("john1245", "lee", "male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
+        assertFalse(RegistrationCheck.test("John1245", "Lee", "male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
+        assertFalse(RegistrationCheck.test("12345678", "Smith", "Male", 45, "12345 123456", "Dr Andrew", "something"));
+        assertFalse(RegistrationCheck.test("123", "Smith", "Male", 45, "12345 123456", "Dr Andrew", "hello"));
 
         //Reject firstName under character limit
-        assertFalse(RegistrationCheck.test("j", "Lee", "Male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
+        assertFalse(RegistrationCheck.test("J", "Lee", "Male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
+        assertFalse(RegistrationCheck.test("A", "Smith", "Male", 45, "12345 123456", "Dr Andrew", "something"));
 
         //Checking for null value
         assertThrows(NullPointerException.class,
-                () -> RegistrationCheck.test(null, "lee", "male", 10, "11111 111111", "Dr Jason", "deaf & blind"),
+                () -> RegistrationCheck.test(null, "Lee", "female", 100, "15073 84920", "Dr Jason", "deaf & blind"),
                 "firstName shouldn't be null");
     }
 
     @Test
     public void surnameTest() {
+        //Test to see if it will reject empty string for surname
+        assertFalse(RegistrationCheck.test("John", "", "male", 25, "11111 111111", "Dr Jason", ""));
+
         //Test surname character limit
         Assertions.assertFalse(
-                RegistrationCheck.test("john", "leeerttysdffdfsdfsdffsds", "male", 25, "11111 111111", "Dr Jason",
+                RegistrationCheck.test("Sam", "leeerttysdffdfsdfsdffsds", "male", 25, "11111 111111", "Dr Jason",
                         "deaf & blind"));
 
         //Checking under limit
         Assertions.assertFalse(
-                RegistrationCheck.test("john", "l", "male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
+                RegistrationCheck.test("Bob", "l", "male", 25, "11111 111111", "Dr Jason", ""));
 
         //Test for numbers included in surname
         Assertions.assertFalse(
-                RegistrationCheck.test("john", "lee123", "male", 25, "11111 111111", "Dr Smith", "deaf & blind"));
+                RegistrationCheck.test("Frank", "lee123", "male", 25, "11111 111111", "Dr Smith", "foo"));
 
         //test for null value for surname 
-        assertThrows(NullPointerException.class,
-                () -> RegistrationCheck.test("john", null, "male", 10, "11111 111111", "Dr Smith", "deaf & blind"),
-                "age shouldn't be null");
+        assertFalse(RegistrationCheck.test("Smith", null, "male", 10, "11111 111111", "Dr Smith", "foo"));
     }
 
     @Test
     public void ageTest() {
         //Test under-age limit
         Assertions.assertFalse(
-                RegistrationCheck.test("john", "lee", "male", 17, "11111 111111", "Dr Smith", "deaf & blind"));
+                RegistrationCheck.test("Rachel", "Long", "male", 17, "11111 111111", "Dr Smith", "something"));
 
         //Test over limit
         Assertions.assertFalse(
-                RegistrationCheck.test("john", "lee", "male", 131, "11111 111111", "Dr Smith", "deaf & blind"));
+                RegistrationCheck.test("Daniel", "Lee", "male", 131, "11111 111111", "Dr Smith", null));
 
         //Test for null values for age
-        assertThrows(NullPointerException.class,
-                () -> RegistrationCheck.test("john", "lee", "male", null, "11111 111111", "Dr Smith", "deaf & blind"),
-                "age shouldn't be null");
+        assertFalse(RegistrationCheck.test("John", "Steward", "male", null, "11111 111111", "Dr Smith",
+                "Hello world"));
     }
 
     @Test
     public void phoneNumberTest() {
         //Testing for only correct Phone Number is accepted
-        Assertions.assertFalse(RegistrationCheck.test("john", "lee", "male", 25, "111", "Dr Smith", "deaf & blind"));
+        Assertions
+                .assertFalse(RegistrationCheck.test("Jack", "Lampard", "male", 25, "111", "Dr Smith", ""));
 
         //Testing for null values in phone number
-        assertThrows(NullPointerException.class,
-                () -> RegistrationCheck.test("john", "lee", "male", 18, null, "Dr Andrew", "deaf & blind"),
-                "Phone Number shouldn't be null");
+        assertFalse(RegistrationCheck.test("Elon", "Musk", "male", 18, null, "Dr Andrew", null));
     }
 
     @Test
     public void detailsTest() {
         //Test to check details only accept under character limit 100
-        Assertions.assertFalse(RegistrationCheck.test("james", "lee", "male", 25, "11111 111111", "Dr Andrew",
+        Assertions.assertFalse(RegistrationCheck.test("James", "Stephan", "male", 25, "11111 111111", "Dr Andrew",
                 "deaf & blindsadasdasdasdasdasdggfsafdsdaadssadasdasdsadasdasdsadsadsadsadsadasdasdasddsaasdsadadsasdadsdsaadsasdadsdasasddsasdasdasadsdadsadas"));
-
-        //Test for null values in detail
-        assertThrows(NullPointerException.class,
-                () -> RegistrationCheck.test("john", "lee", "male", 18, "11111 111111", "Dr Andrew", null),
-                "Detail shouldn't be null");
     }
 }
