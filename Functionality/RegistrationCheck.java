@@ -15,7 +15,10 @@ public class RegistrationCheck {
     // Tests if the data is valid, and if it is, sends it to the database
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorName, String Details) {
-        if (!firstNameCheck(FirstName))
+        if (FirstName == null || Surname == null || Gender == null || Age == null || PhoneNumber == null
+                || DoctorName == null || Details == null) {
+            return false;
+        } else if (!firstNameCheck(FirstName))
             return false;
         else if (!surnameCheck(Surname))
             return false;
