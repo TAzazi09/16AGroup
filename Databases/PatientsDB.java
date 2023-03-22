@@ -44,6 +44,7 @@ public class PatientsDB {
         }
     }
 
+    // Inserts a patient into the table
     private static void insertPatient(Statement statement, String firstName, String surname, String gender, int age,
             String phoneNumber, int doctorId, String details, String messages) throws Exception {
         statement.executeUpdate(
@@ -52,6 +53,8 @@ public class PatientsDB {
                         "VALUES (DEFAULT, '" + firstName + "', '" + surname + "', '" + gender + "', '" + age + "', '"
                         + phoneNumber + "', '" + doctorId + "', '" + details + "', '" + messages + "')");
     }
+
+    // Change doctor for a patient
     public static void changeDoctor(int patientID, int doctorID) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DatabaseConnectionFunc.getConnection();
