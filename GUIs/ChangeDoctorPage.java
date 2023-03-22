@@ -11,6 +11,8 @@ import Functionality.LoginCheck;
 import Databases.DoctorsDB;
 import Databases.PatientsDB;
 import Session.Info;
+import Functionality.CahangeDoctorCheck;
+import Functionality.ChangeDoctorFunc;
 
 /**
  * @author Nikola
@@ -154,30 +156,36 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     }
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        try {
-            String newDocName = newDocBox.getSelectedItem().toString();
-            int newDocID = DoctorsDB.getDoctorID(newDocName);
-            PatientsDB.changeDoctor(Integer.parseInt(Info.backgroundID), newDocID);
+        String newDocName = newDocBox.getSelectedItem().toString();
+        ChangeDoctorFunc.changeDoctor(newDocName);
+        
+        // try {
+        //     String newDocName = newDocBox.getSelectedItem().toString();
+        //     if (CahangeDoctorCheck.test(newDocName)) {
+        //         int newDocID = DoctorsDB.getDoctorID(newDocName);
+        //         PatientsDB.changeDoctor(Integer.parseInt(Info.backgroundID), newDocID);
 
-            JOptionPane.showMessageDialog(null,
-                    "Your doctor has successfully been changed to " + newDocName + ".");
+        //         JOptionPane.showMessageDialog(null,
+        //                 "Your doctor has successfully been changed to " + newDocName + ".");
 
-            // Connects to the database
-            Connection connection = DatabaseConnectionFunc.getConnection();
-            Statement statement = connection.createStatement();
+        //         // Connects to the database
+        //         Connection connection = DatabaseConnectionFunc.getConnection();
+        //         Statement statement = connection.createStatement();
 
-            // add a message to the patient's log
-            statement
-                    .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
-                            + " " + LoginCheck.getSurname() + " has changed their doctor to " + newDocName
-                            + ".') WHERE patientID = '" + Info.backgroundID + "';");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,
-                    "An error has occurred. Please try again.");
-        }
+        //         // add a message to the patient's log
+        //         statement
+        //                 .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
+        //                         + " " + LoginCheck.getSurname() + " has changed their doctor to " + newDocName
+        //                         + ".') WHERE patientID = '" + Info.backgroundID + "';");
+        //     }
 
-        MenuPage.main(null);
-        dispose();
+        // } catch (Exception e) {
+        //     JOptionPane.showMessageDialog(null,
+        //             "An error has occurred. Please try again.");
+        // }
+
+        // MenuPage.main(null);
+        // dispose();
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
