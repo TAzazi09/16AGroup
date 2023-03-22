@@ -92,12 +92,7 @@ public class ReschedulePage extends javax.swing.JFrame {
     private void submitButton(java.awt.event.ActionEvent evt, String oldDate, String oldTime) {
         String time = timeInput.getText();
         String date = dateInput.getText();
-        System.out.println("old time = " + oldTime);
-        System.out.println("Old date = " + oldDate);
-        System.out.println("new time " + time);
-        System.out.println("new date " + date);
-
-        // ReschedulingFunc.resechduleBooking(time, date);
+        ReschedulingFunc.resechduleBooking(oldDate, oldTime, date, time);
     }
 
     public static void main(String oldDate, String oldTime) {
