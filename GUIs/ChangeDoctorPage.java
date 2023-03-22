@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import Functionality.DatabaseConnectionFunc;
 import Functionality.LoginCheck;
 import Databases.DoctorsDB;
@@ -156,9 +157,26 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
             String newDocName = newDocBox.getSelectedItem().toString();
             int newDocID = DoctorsDB.getDoctorID(newDocName);
             PatientsDB.changeDoctor(Integer.parseInt(LoginCheck.getID()), newDocID);
+
+            JOptionPane.showMessageDialog(null,
+                    "Your doctor has successfully been changed to " + newDocName + ".");
+
+            // Connects to the database
+            Connection connection = DatabaseConnectionFunc.getConnection();
+            Statement statement = connection.createStatement();
+
+            // add a message to the patient's log
+            statement
+                    .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
+                            + " " + LoginCheck.getSurname() + " has changed their doctor to " + newDocName
+                            + ".') WHERE patientID = '" + LoginCheck.getID() + "';");
         } catch (Exception e) {
-            // TODO: handle exception
+            JOptionPane.showMessageDialog(null,
+                    "An error has occurred. Please try again.");
         }
+
+        MenuPage.main(null);
+        dispose();
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
