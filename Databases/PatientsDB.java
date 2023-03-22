@@ -52,4 +52,11 @@ public class PatientsDB {
                         "VALUES (DEFAULT, '" + firstName + "', '" + surname + "', '" + gender + "', '" + age + "', '"
                         + phoneNumber + "', '" + doctorId + "', '" + details + "', '" + messages + "')");
     }
+    public static void changeDoctor(int patientID, int doctorID) throws Exception {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DatabaseConnectionFunc.getConnection();
+        Statement statement = connection.createStatement();
+
+        statement.executeUpdate("UPDATE patients SET DoctorID = '" + doctorID + "' WHERE PatientID = '" + patientID + "'");
+    }
 }
