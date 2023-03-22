@@ -31,12 +31,13 @@ public class ArrangeBookingFunc {
                 int doctorID = Integer.parseInt(currentDoctor.getString("DoctorID"));
                 String doctor = DoctorsDB.getDoctorName(doctorID);
 
-                // check if the doctor is available at that time
+                //Checks if the doctor is available at that time
                 ResultSet docAvailability = statement
                         .executeQuery("SELECT * FROM bookings WHERE DoctorID = '" + doctorID + "' AND Time = '"
                                 + time + "' AND Date = '" + date + "';");
-
+                
                 if (docAvailability.next()) {
+                    //Informs the user the doctors unavailable
                     JOptionPane.showMessageDialog(null, doctor + " is unavailable at that time.");
                 } else {
                     // insert the booking into the database (after ensuring the doctor is available)
@@ -60,6 +61,7 @@ public class ArrangeBookingFunc {
                     for (Window window : windows) {
                         window.dispose();
                     }
+                    //Returns the user to the main menu
                     MenuPage.main(null);
                 }
             }
