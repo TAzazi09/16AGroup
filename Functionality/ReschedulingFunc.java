@@ -7,6 +7,7 @@ import java.awt.Window;
 import javax.swing.JOptionPane;
 import GUIs.MenuPage;
 import Databases.DoctorsDB;
+import Session.Info;
 
 /**
  * @author Ethan
@@ -20,7 +21,7 @@ public class ReschedulingFunc {
             Connection connection = DatabaseConnectionFunc.getConnection();
             Statement statement = connection.createStatement();
             ResultSet D = statement
-                    .executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + LoginCheck.getID() + "'");
+                    .executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + Info.backgroundID + "'");
             D.next();
             
             //Gets the Doctors name associated with the patient
@@ -40,7 +41,7 @@ public class ReschedulingFunc {
                 statement.execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
                         + " " + LoginCheck.getSurname() + " has changed their booking from " + oldTime + " " + oldDate
                         + " to "
-                        + newTime + " " + newDate + ".') WHERE patientID = '" + LoginCheck.getID() + "';");
+                        + newTime + " " + newDate + ".') WHERE patientID = '" + Info.backgroundID + "';");
                 // Updates the booking
                 statement.executeUpdate(
                         "UPDATE bookings SET Date = '" + newDate + "', Time = '" + newTime + "' WHERE Time = '"
