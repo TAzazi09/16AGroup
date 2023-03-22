@@ -12,10 +12,12 @@ class RegTest {
     @Test
     public void correctEverything() {
         //Test to check if correct details are accepted
-        assertTrue(RegistrationCheck.test("James", "Lee", "male", 25, "11111 111111", "Dr Andrew", "deaf & blind"));
-        assertTrue(RegistrationCheck.test("John", "Smith", "Male", 45, "12345 123456", "Dr Jason", null));
-        assertTrue(RegistrationCheck.test("Jane", "Smith", "Female", 130, "07836 142516", "Dr Andrew", ""));
-        assertTrue(RegistrationCheck.test("Samantha", "Liu", "female", 18, "98765 098765", "Dr Jason", "foo"));
+        assertTrue(
+                RegistrationCheck.test("Mrogan", "Freeman", "male", 75, "11111 111111", "Dr Andrew",
+                        "The Shawshank Redemption"));
+        assertTrue(RegistrationCheck.test("Keanu", "Reeves", "Male", 45, "12345 123456", "Dr Jason", null));
+        assertTrue(RegistrationCheck.test("Sandra", "Bullock", "Female", 130, "07836 142516", "Dr Andrew", ""));
+        assertTrue(RegistrationCheck.test("Julia", "Roberts", "female", 18, "98765 098765", "Dr Jason", "foo"));
     }
 
     @Test
@@ -26,46 +28,48 @@ class RegTest {
 
         // Test to see if it will reject null value for firstName
         assertFalse(RegistrationCheck.test(null, "Kolev", "Male", 18, "98765 098765", "Dr Jason", "foo"));
-        assertFalse(RegistrationCheck.test(null, "Smith", "Male", 45, "12345 123456", "Dr Andrew", "bar"));
+        assertFalse(RegistrationCheck.test(null, "Teather", "Male", 42, "12345 123456", "Dr Andrew", "bar"));
 
         // Test over character limit for firstName
-        assertFalse(RegistrationCheck.test("Anhfdsfhdsfhsdfhdsfhfdsh", "Lee", "male", 25, "11111 111111", "Dr Jason",
+        assertFalse(RegistrationCheck.test("Anhfdsfhdsfhsdfhdsfhfdsh", "Wills", "male", 28, "11111 111111", "Dr Jason",
                 "deaf & blind"));
-        assertFalse(RegistrationCheck.test("Qwertyuiopasdfghjklzxcvb", "Smith", "Male", 45, "12345 123456", "Dr Andrew",
+        assertFalse(RegistrationCheck.test("Qwertyuiopasdfghjklzxcvb", "Smith", "Male", 43, "12345 123456", "Dr Andrew",
                 "something"));
 
         // Reject firstName under character limit
-        assertFalse(RegistrationCheck.test("J", "Lee", "Male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
-        assertFalse(RegistrationCheck.test("A", "Smith", "Male", 45, "12345 123456", "Dr Andrew", "something"));
+        assertFalse(RegistrationCheck.test("N", "Tesla", "Male", 29, "11111 111111", "Dr Jason", "Physics"));
+        assertFalse(RegistrationCheck.test("A", "Einstein", "Male", 49, "12345 123456", "Dr Andrew", "Theories"));
 
         // Reject numbers in firstName
-        assertFalse(RegistrationCheck.test("John1245", "Lee", "male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
-        assertFalse(RegistrationCheck.test("123", "Smith", "Male", 45, "12345 123456", "Dr Andrew", "hello"));
+        assertFalse(RegistrationCheck.test("Stephen1245", "Hawking", "male", 24, "11111 111111", "Dr Jason",
+                "COSMIC RAY"));
+        assertFalse(RegistrationCheck.test("123", "Styles", "Male", 40, "12345 123456", "Dr Andrew", "hello world"));
 
         // Test to see if it will accept correct firstName
-        assertTrue(RegistrationCheck.test("John", "Green", "male", 27, "13579 246800", "Dr Jason", ""));
-        assertTrue(RegistrationCheck.test("Jane", "Brown", "Female", 20, "12345 123456", "Dr Jason", null));
-        assertTrue(RegistrationCheck.test("John", "Kolev", "Male", 18, "98765 098765", "Dr Jason", "foo"));
+        assertTrue(RegistrationCheck.test("Ed", "Sheeran", "male", 97, "13579 246800", "Dr Jason", "Shape of you"));
+        assertTrue(RegistrationCheck.test("Ariana", "Grande", "Female", 20, "12345 123456", "Dr Jason", null));
+        assertTrue(RegistrationCheck.test("Justin", "Bieber", "Male", 18, "98765 098765", "Dr Jason", "foo"));
     }
 
     @Test
     public void surnameTest() {
         // Test to see if it will reject empty string for surname
-        assertFalse(RegistrationCheck.test("John", "", "male", 25, "11111 738432", "Dr Jason", ""));
-        assertFalse(RegistrationCheck.test("Jane", "", "Female", 20, "12345 123456", "Dr Jason", null));
+        assertFalse(RegistrationCheck.test("Adele", "", "female", 35, "11111 738432", "Dr Jason",
+                "Hello, it's me | I was wondering..."));
+        assertFalse(RegistrationCheck.test("Beyoncé", "", "Female", 20, "12345 123456", "Dr Jason", null));
 
         // Test for null value for surname 
         assertFalse(RegistrationCheck.test("Smith", null, "male", 10, "11111 000000", "Dr Smith", "foo"));
 
         // Test over character limit for surname
-        assertFalse(RegistrationCheck.test("Sam", "Keeerttysdffdfsdfsdffsds", "male", 25, "86783 145792", "Dr Jason",
-                "deaf & blind"));
+        assertFalse(RegistrationCheck.test("Alan", "Turingysdffdfsdfsdffsds", "male", 26, "86783 145792", "Dr Jason",
+                "Computer goes bleep bloop"));
 
         // Reject surname under character limit
-        assertFalse(RegistrationCheck.test("Bob", "K", "male", 25, "12346 718235", "Dr Jason", ""));
+        assertFalse(RegistrationCheck.test("John", "M", "male", 23, "12346 718235", "Dr Jason", ""));
 
         // Test for numbers included in surname
-        assertFalse(RegistrationCheck.test("Frank", "Lee123", "male", 25, "87325 129834", "Dr Smith", "foo"));
+        assertFalse(RegistrationCheck.test("Frank", "Lee123", "male", 35, "87325 129834", "Dr Smith", "foo"));
 
         // Test to see if it will accept correct surname
         assertTrue(RegistrationCheck.test("Frank", "Sinatra", "Male", 27, "13579 246800", "Dr Jason", null));
@@ -74,20 +78,22 @@ class RegTest {
     @Test
     public void ageTest() {
         // Test under-age limit
-        assertFalse(RegistrationCheck.test("Rachel", "Long", "male", 17, "43157 532197", "Dr Smith", "something"));
+        assertFalse(RegistrationCheck.test("Ludwig", "Beethoven", "male", 17, "43157 532197", "Dr Smith",
+                "Please don't play so loud!"));
 
         // Test over limit
-        assertFalse(RegistrationCheck.test("Daniel", "Lee", "female", 131, "27385 123593", "Dr Smith", null));
+        assertFalse(RegistrationCheck.test("Jane", "Austen", "female", 131, "27385 123593", "Dr Smith", null));
 
         // Test for null values for age
-        assertFalse(RegistrationCheck.test("John", "Steward", "Female", null, "78623 897234", "Dr Smith",
-                "Hello world"));
+        assertFalse(RegistrationCheck.test("Joan", "OfArc", "Female", null, "78623 897234", "Dr Smith",
+                "Remember, remember the 5th of November"));
 
         // Test for correct age lower limit
-        assertTrue(RegistrationCheck.test("Anna", "Steward", "Female", 18, "78623 897234", "Dr Smith", "Hello world"));
+        assertTrue(RegistrationCheck.test("Queen", "ElizabethII", "Female", 18, "78623 897234", "Dr Smith",
+                "Long live the queen!"));
 
         // Test for correct age upper limit
-        assertTrue(RegistrationCheck.test("John", "Steward", "Male", 130, "78623 897234", "Dr Smith", "Hello world"));
+        assertTrue(RegistrationCheck.test("Mahatma", "Gandhi", "Male", 130, "78623 897234", "Dr Smith", "Hello world"));
     }
 
     @Test
@@ -96,29 +102,29 @@ class RegTest {
         // wrong format of space
         assertFalse(RegistrationCheck.test("Stephan", "King", "Male", 99, "123456 78901", "Dr Smith", "Author"));
         // wrong length of phone number
-        assertFalse(RegistrationCheck.test("Jack", "Lampard", "male", 25, "111", "Dr Smith", ""));
+        assertFalse(RegistrationCheck.test("Frank", "Lampard", "male", 22, "111", "Dr Smith", "Footballer"));
 
         // Testing for null values in phone number
         assertFalse(RegistrationCheck.test("Elon", "Musk", "male", 18, null, "Dr Andrew", null));
 
         // Test for correct phone number
-        assertTrue(RegistrationCheck.test("Mark", "Zuckerberg", "male", 18, "08828 082001", "Dr Andrew", null));
+        assertTrue(RegistrationCheck.test("Mark", "Zuckerberg", "male", 19, "08828 082001", "Dr Andrew", null));
     }
 
     @Test
     public void detailsTest() {
         // Test to check details only accept under character limit 100
-        assertFalse(RegistrationCheck.test("James", "Stephan", "male", 25, "11111 111111", "Dr Andrew",
-                "deaf & blindsadasdasdasdasdasdggfsafdsdaadssadasdasdsadasdasdsadsadsadsadsadasdasdasddsaasdsadadsasdadsdsaadsasdadsdasasddsasdasdasadsdadsadas"));
+        assertFalse(RegistrationCheck.test("Charles", "Darwin", "male", 25, "54231 643132", "Dr Andrew",
+                "Evolution blindsadasdasdasdasdasdggfsafdsdaadssadasdasdsadasdasdsadsadsadsadsadasdasdasddsaasdsadadsasdadsdsaadsasdadsdasasddsasdasdasadsdadsadas"));
 
         // Test to check details accept null values
-        assertTrue(RegistrationCheck.test("James", "Stephan", "male", 25, "11111 111111", "Dr Andrew", null));
+        assertTrue(RegistrationCheck.test("Jon", "Snow", "male", 79, "14785 876423", "Dr Andrew", null));
 
         // Test to check details accept empty string
-        assertTrue(RegistrationCheck.test("James", "Stephan", "male", 25, "11111 111111", "Dr Andrew", ""));
+        assertTrue(RegistrationCheck.test("Vasil", "Levski", "male", 50, "12321 556655", "Dr Andrew", "Narode"));
 
         // Test to check details accept correct character limit
-        assertTrue(RegistrationCheck.test("James", "Stephan", "male", 25, "11111 111111", "Dr Andrew",
+        assertTrue(RegistrationCheck.test("Hristo", "Botev", "male", 52, "55555 666666", "Dr Andrew",
                 "These are some details about the patient"));
     }
 }
