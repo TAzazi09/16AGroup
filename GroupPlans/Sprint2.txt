@@ -4,10 +4,10 @@ Ethan:
 _______________________________________________________________________________________________________________________________________
 Nikola:
 - GUIs: ArrangeBooking, ChangeDoctor
-- Functionality: ArrangeBooking functionality, Arrange and Reschedule booking checks
+- Functionality: ArrangeBooking and ChangeDoctor functionality, Arrange and Reschedule booking checks
 - Databases: Doctors DB creation, reformatting of the rest of the DBs
-- code quality control for all files except the sprint 2 GUIs
-- add more tests to RegTest
+- Tests: add more tests to RegTest
+- Other: code quality control for all files except the sprint 2 GUIs (&& commenting)
 _______________________________________________________________________________________________________________________________________
 Callum:
 - test cases 
