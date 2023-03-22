@@ -1,5 +1,6 @@
+package Tests;
+
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import Functionality.RegistrationCheck;
 import Functionality.DatabaseConnectionFunc;
@@ -11,7 +12,7 @@ import Functionality.DatabaseConnectionFunc;
 class RegTest {
     @Test
     public void testRegDetailsCorrect() {
-        DatabaseConnectionFunc.connectForTests("password");
+        DatabaseConnectionFunc.connectForTests("*Niko1312");
 
         //Test to check if correct details are accepted
         assertTrue(RegistrationCheck.test("James", "Lee", "male", 25, "11111 111111", "Dr Andrew", "deaf & blind"));
@@ -19,8 +20,7 @@ class RegTest {
 
     @Test
     public void firstNameTest() {//test to see if it will reject empty string for firstName
-        Assertions
-                .assertFalse(RegistrationCheck.test("", "Lee", "male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
+        assertFalse(RegistrationCheck.test("", "Lee", "male", 25, "11111 111111", "Dr Jason", "deaf & blind"));
         assertFalse(RegistrationCheck.test("", "Brown", "Female", 20, "12345 123456", "Dr Jason", null));
         assertFalse(RegistrationCheck.test("", "Davis", "Female", 83, "07836 142516", "Dr Andrew", ""));
 
@@ -61,17 +61,14 @@ class RegTest {
         assertFalse(RegistrationCheck.test("John", "", "male", 25, "11111 111111", "Dr Jason", ""));
 
         //Test surname character limit
-        Assertions.assertFalse(
-                RegistrationCheck.test("Sam", "leeerttysdffdfsdfsdffsds", "male", 25, "11111 111111", "Dr Jason",
-                        "deaf & blind"));
+        assertFalse(RegistrationCheck.test("Sam", "leeerttysdffdfsdfsdffsds", "male", 25, "11111 111111", "Dr Jason",
+                "deaf & blind"));
 
         //Checking under limit
-        Assertions.assertFalse(
-                RegistrationCheck.test("Bob", "l", "male", 25, "11111 111111", "Dr Jason", ""));
+        assertFalse(RegistrationCheck.test("Bob", "l", "male", 25, "11111 111111", "Dr Jason", ""));
 
         //Test for numbers included in surname
-        Assertions.assertFalse(
-                RegistrationCheck.test("Frank", "lee123", "male", 25, "11111 111111", "Dr Smith", "foo"));
+        assertFalse(RegistrationCheck.test("Frank", "lee123", "male", 25, "11111 111111", "Dr Smith", "foo"));
 
         //test for null value for surname 
         assertFalse(RegistrationCheck.test("Smith", null, "male", 10, "11111 111111", "Dr Smith", "foo"));
@@ -80,12 +77,10 @@ class RegTest {
     @Test
     public void ageTest() {
         //Test under-age limit
-        Assertions.assertFalse(
-                RegistrationCheck.test("Rachel", "Long", "male", 17, "11111 111111", "Dr Smith", "something"));
+        assertFalse(RegistrationCheck.test("Rachel", "Long", "male", 17, "11111 111111", "Dr Smith", "something"));
 
         //Test over limit
-        Assertions.assertFalse(
-                RegistrationCheck.test("Daniel", "Lee", "male", 131, "11111 111111", "Dr Smith", null));
+        assertFalse(RegistrationCheck.test("Daniel", "Lee", "male", 131, "11111 111111", "Dr Smith", null));
 
         //Test for null values for age
         assertFalse(RegistrationCheck.test("John", "Steward", "male", null, "11111 111111", "Dr Smith",
@@ -95,8 +90,7 @@ class RegTest {
     @Test
     public void phoneNumberTest() {
         //Testing for only correct Phone Number is accepted
-        Assertions
-                .assertFalse(RegistrationCheck.test("Jack", "Lampard", "male", 25, "111", "Dr Smith", ""));
+        assertFalse(RegistrationCheck.test("Jack", "Lampard", "male", 25, "111", "Dr Smith", ""));
 
         //Testing for null values in phone number
         assertFalse(RegistrationCheck.test("Elon", "Musk", "male", 18, null, "Dr Andrew", null));
@@ -105,7 +99,7 @@ class RegTest {
     @Test
     public void detailsTest() {
         //Test to check details only accept under character limit 100
-        Assertions.assertFalse(RegistrationCheck.test("James", "Stephan", "male", 25, "11111 111111", "Dr Andrew",
+        assertFalse(RegistrationCheck.test("James", "Stephan", "male", 25, "11111 111111", "Dr Andrew",
                 "deaf & blindsadasdasdasdasdasdggfsafdsdaadssadasdasdsadasdasdsadsadsadsadsadasdasdasddsaasdsadadsasdadsdsaadsasdadsdasasddsasdasdasadsdadsadas"));
     }
 }
