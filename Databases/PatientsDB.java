@@ -26,7 +26,7 @@ public class PatientsDB {
                     "Surname varchar(15) NOT NULL," +
                     "Gender varchar(10) not null," +
                     "Age int (3) not null," +
-                    "PhoneNumber varchar(12) ," +
+                    "PhoneNumber varchar(12) not null ," +
                     "DoctorID int not null,  " +
                     "Details varchar(100), " +
                     "Messages text, " +
