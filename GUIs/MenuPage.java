@@ -1,8 +1,6 @@
 package GUIs;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import Functionality.*;
 import Session.Info;
 
@@ -65,13 +63,8 @@ public class MenuPage extends javax.swing.JFrame {
         jTextArea1.setLineWrap(true);
         jTextArea1.setWrapStyleWord(true);
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            //Connects to the database
-            Connection connection = DatabaseConnectionFunc.getConnection();
-            Statement statement = connection.createStatement();
             //Selects messages for the patient
-            ResultSet message = statement
+            ResultSet message = Info.statement
                     .executeQuery("select messages from patients where patientID = '" + Info.backgroundID + "'");
             while (message.next()) {
                 //Adds the messages to the unmodifiable text area
@@ -157,9 +150,6 @@ public class MenuPage extends javax.swing.JFrame {
     public static void main(String args[]) {
         if (DatabaseConnectionFunc.connected) {
             /* Set the Nimbus look and feel */
-            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-             * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-             */
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                     if ("Nimbus".equals(info.getName())) {
@@ -192,7 +182,7 @@ public class MenuPage extends javax.swing.JFrame {
         }
     }
 
-    // Variables declaration - do not modify
+    // Variables declaration
     private javax.swing.JButton createBooking;
     private javax.swing.JButton changeDoctor;
     private javax.swing.JButton viewBookings;
@@ -202,5 +192,4 @@ public class MenuPage extends javax.swing.JFrame {
     private javax.swing.JLabel welcomeLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    // End of variables declaration
 }
