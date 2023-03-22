@@ -166,6 +166,9 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,
                     "An error has occurred. Please try again.");
         }
+
+        MenuPage.main(null);
+        dispose();
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
