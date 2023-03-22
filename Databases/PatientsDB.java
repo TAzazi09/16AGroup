@@ -12,7 +12,6 @@ import Session.Info;
 public class PatientsDB {
     public static void main(String[] args) {
         try {
-
             // Creates the Patients table
             Info.statement.executeUpdate("use NHS");
             Info.statement.executeUpdate("DROP TABLE IF EXISTS patients;");

@@ -54,6 +54,7 @@ public class ArrangeBookingFunc {
                     for (Window window : windows) {
                         window.dispose();
                     }
+                    
                     //Returns the user to the main menu
                     MenuPage.main(null);
                 }

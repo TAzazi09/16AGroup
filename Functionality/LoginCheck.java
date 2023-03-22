@@ -44,6 +44,7 @@ public class LoginCheck {
                         window.dispose();
                     }
                     userFound = true;
+                    
                     //Returns the user to the main menu
                     MenuPage.main(null);
                     break;
