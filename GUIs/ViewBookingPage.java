@@ -1,15 +1,13 @@
 package GUIs;
 
 import java.awt.Window;
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.time.LocalDate;
-
 import Functionality.*;
 import javax.swing.JOptionPane;
 import Databases.*;
+import Session.Info;
 
 /**
  *
@@ -104,13 +102,9 @@ public class ViewBookingPage extends javax.swing.JFrame {
                 } else {
                     String combination = Year + "-" + Month;
                     try {
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        // Connects to the database
-                        Connection connection = DatabaseConnectionFunc.getConnection();
-                        Statement statement = connection.createStatement();
                         // Gets the required information about the booking where the date contains the
                         // year and month
-                        ResultSet results = statement.executeQuery(
+                        ResultSet results = Info.statement.executeQuery(
                                 "SELECT DoctorID, Date, Time FROM bookings WHERE Date LIKE '%" + combination + "%';");
                         // Clears the dropdown and the array of bookings.
                         //Also sets all tempory objects as invisible.
@@ -269,7 +263,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
                     null,
                     ex);
         }
-        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

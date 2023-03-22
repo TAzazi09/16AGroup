@@ -2,10 +2,7 @@ package GUIs;
 
 import java.awt.Font;
 import java.awt.Color;
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import Functionality.DatabaseConnectionFunc;
 import Databases.DoctorsDB;
 import Session.Info;
 import Functionality.ChangeDoctorFunc;
@@ -51,21 +48,15 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
         int curDocID;
         String curDoc = "";
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // Connects to the database
-            Connection connection = DatabaseConnectionFunc.getConnection();
-            Statement statement = connection.createStatement();
-
             // Get the patient's doctor
-            ResultSet currentDoctor = statement
+            ResultSet currentDoctor = Info.statement
                     .executeQuery("SELECT DoctorID FROM patients WHERE patientID = '" + Info.backgroundID + "';");
             currentDoctor.next();
             curDocID = Integer.parseInt(currentDoctor.getString("DoctorID"));
             curDoc = DoctorsDB.getDoctorName(curDocID);
 
             // Get the list of doctors without the current patient's doctor (for the drop-down menu)
-            ResultSet doctors = statement.executeQuery("SELECT * FROM doctors WHERE DoctorID != '" + curDocID + "';");
+            ResultSet doctors = Info.statement.executeQuery("SELECT * FROM doctors WHERE DoctorID != '" + curDocID + "';");
             while (doctors.next()) {
                 newDocBox.addItem(doctors.getString("Name"));
             }
