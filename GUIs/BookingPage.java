@@ -1,9 +1,9 @@
 package GUIs;
 
-import java.awt.Font;
 import java.awt.Color;
 import Functionality.ArrangeBookingFunc;
 import Functionality.DatabaseConnectionFunc;
+import Session.General;
 
 /**
  * @author Nikola
@@ -84,27 +84,27 @@ public class BookingPage extends javax.swing.JFrame {
         panel.setBackground(new java.awt.Color(255, 255, 255));
 
         // set font for all labels and buttons
-        mainLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
-        instructionLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        mainLabel.setFont(General.font(36));
+        instructionLabel.setFont(General.font(18));
 
-        timeLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        timeInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        timeLabel.setFont(General.font(18));
+        timeInput.setFont(General.font(18));
         timeInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        timeInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        timeInput.setFont(General.font(18));
 
-        dateLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        dateInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        dateLabel.setFont(General.font(18));
+        dateInput.setFont(General.font(18));
         dateInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
 
         backButton.setBackground(buttonBlue);
-        backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        backButton.setFont(General.font(18));
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
         backButton.addActionListener(this::backButtonActionPerformed);
 
         arrangeButton.setBackground(buttonBlue);
-        arrangeButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        arrangeButton.setFont(General.font(18));
         arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
         arrangeButton.addActionListener(this::arrangeButtonActionPerformed);
 
