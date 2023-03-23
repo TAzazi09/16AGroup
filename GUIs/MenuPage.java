@@ -54,7 +54,7 @@ public class MenuPage extends javax.swing.JFrame {
 
         viewAllDoctors.setText("View all doctors");
 
-        viewDoctorButton.setText("View doctor?");
+        viewDoctorButton.setText("View current doctor");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -85,17 +85,17 @@ public class MenuPage extends javax.swing.JFrame {
                                 .addGap(65, 65, 65)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(viewBookingDetails)
+                                                .addComponent(createBooking)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(viewAllDoctors))
+                                                .addComponent(viewBookings))
                                         .addComponent(viewDoctorButton)
                                         .addComponent(welcomeLabel)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(changeDoctor)
+                                                .addComponent(viewDoctorButton)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(createBooking))
+                                                .addComponent(changeDoctor))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(viewBookings)
+                                                .addComponent(viewAllDoctors)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63,
                                         Short.MAX_VALUE)
@@ -114,15 +114,15 @@ public class MenuPage extends javax.swing.JFrame {
                                                 .addGap(26, 26, 26)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(changeDoctor)
-                                                        .addComponent(createBooking))
+                                                        .addComponent(createBooking)
+                                                        .addComponent(viewBookings))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(viewBookings))
+                                                        .addComponent(viewDoctorButton)
+                                                        .addComponent(changeDoctor))
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(viewBookingDetails)
                                                         .addComponent(viewAllDoctors))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(viewDoctorButton)))
@@ -147,7 +147,7 @@ public class MenuPage extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-        if (DatabaseConnectionFunc.connected) {
+       if (DatabaseConnectionFunc.connected) {
             /* Set the Nimbus look and feel */
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
