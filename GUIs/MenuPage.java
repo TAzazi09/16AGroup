@@ -1,7 +1,8 @@
 package GUIs;
 
 import java.sql.ResultSet;
-import Functionality.*;
+import Functionality.LoginCheck;
+import Functionality.DatabaseConnectionFunc;
 import Session.Info;
 
 /**

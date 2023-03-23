@@ -4,9 +4,9 @@ import java.awt.Window;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.time.LocalDate;
-import Functionality.*;
+import Functionality.LoginCheck;
 import javax.swing.JOptionPane;
-import Databases.*;
+import Databases.DoctorsDB;
 import Session.Info;
 
 /**

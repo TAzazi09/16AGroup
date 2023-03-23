@@ -1,6 +1,7 @@
 package GUIs;
 
-import Functionality.*;
+import Functionality.DatabaseConnectionFunc;
+import Functionality.ReschedulingFunc;
 
 /**
  * @author Ethan
