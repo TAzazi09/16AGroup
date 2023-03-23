@@ -1,9 +1,7 @@
 package Databases;
 
-import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
-import Functionality.DatabaseConnectionFunc;
 import Session.Info;
 
 /**
@@ -40,28 +38,22 @@ public class DoctorsDB {
     }
 
     public static int getDoctorID(String name) throws Exception {
-        Connection connection = DatabaseConnectionFunc.getConnection();
-        Statement statement = connection.createStatement();
-        statement.executeUpdate("use NHS");
-        ResultSet resultSet = statement.executeQuery("SELECT DoctorID FROM doctors WHERE Name = '" + name + "';");
+        Info.statement.executeUpdate("use NHS");
+        ResultSet resultSet = Info.statement.executeQuery("SELECT DoctorID FROM doctors WHERE Name = '" + name + "';");
         resultSet.next();
         return Integer.parseInt(resultSet.getString("DoctorID"));
     }
 
     public static String getDoctorName(int id) throws Exception {
-        Connection connection = DatabaseConnectionFunc.getConnection();
-        Statement statement = connection.createStatement();
-        statement.executeUpdate("use NHS");
-        ResultSet resultSet = statement.executeQuery("SELECT Name FROM doctors WHERE DoctorID = '" + id + "';");
+        Info.statement.executeUpdate("use NHS");
+        ResultSet resultSet = Info.statement.executeQuery("SELECT Name FROM doctors WHERE DoctorID = '" + id + "';");
         resultSet.next();
         return resultSet.getString("Name");
     }
 
     public static boolean doctorExists(String name) throws Exception {
-        Connection connection = DatabaseConnectionFunc.getConnection();
-        Statement statement = connection.createStatement();
-        statement.executeUpdate("use NHS");
-        ResultSet resultSet = statement.executeQuery("SELECT Name FROM doctors WHERE Name = '" + name + "';");
+        Info.statement.executeUpdate("use NHS");
+        ResultSet resultSet = Info.statement.executeQuery("SELECT Name FROM doctors WHERE Name = '" + name + "';");
         return resultSet.next();
     }
 }
