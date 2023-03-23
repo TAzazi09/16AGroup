@@ -2,7 +2,6 @@ package GUIs;
 
 import Functionality.LoginCheck;
 import Functionality.DatabaseConnectionFunc;
-import java.awt.Color;
 import Session.General;
 
 /**
@@ -65,27 +64,25 @@ public class LoginPage extends javax.swing.JFrame {
 
         // Set the layout of the components
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        loginPanel.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
+        loginPanel.setBackground(General.WHITE);
+        getContentPane().setBackground(General.WHITE);
 
         // Set the font and size of the components
         usernameLabel.setFont(General.font(18));
         passwordLabel.setFont(General.font(18));
 
         usernameText.setFont(General.font(18));
-        usernameText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        usernameText.setBorder(javax.swing.BorderFactory.createLineBorder(General.BLACK));
 
         passwordText.setFont(General.font(18));
-        passwordText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
+        passwordText.setBorder(javax.swing.BorderFactory.createLineBorder(General.BLACK));
 
         loginButton.setFont(General.font(12));
-        loginButton.setBackground(buttonBlue);
+        loginButton.setBackground(General.BUTTON_BLUE);
         loginButton.addActionListener(this::loginButtonActionPerformed);
 
         backButton.setFont(General.font(12));
-        backButton.setBackground(buttonBlue);
+        backButton.setBackground(General.BUTTON_BLUE);
         backButton.addActionListener(this::backButtonActionPerformed);
 
         // Panel layout code section below

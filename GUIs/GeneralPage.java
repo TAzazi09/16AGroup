@@ -80,14 +80,14 @@ public class GeneralPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        generalPanel.setBackground(new java.awt.Color(255, 255, 255));
+        generalPanel.setBackground(General.WHITE);
 
         helloLabel.setFont(General.font(36));
 
-        logButton.setBackground(new java.awt.Color(65, 175, 255));
+        logButton.setBackground(General.BUTTON_BLUE);
         logButton.setFont(General.font(18));
 
-        regButton.setBackground(new java.awt.Color(65, 175, 255));
+        regButton.setBackground(General.BUTTON_BLUE);
         regButton.setFont(General.font(18));
 
         // Panel layout code section (below)

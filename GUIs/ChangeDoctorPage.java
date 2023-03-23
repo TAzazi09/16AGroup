@@ -1,6 +1,5 @@
 package GUIs;
 
-import java.awt.Color;
 import java.sql.ResultSet;
 import Databases.DoctorsDB;
 import Session.Info;
@@ -18,7 +17,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setBackground(General.WHITE);
 
         javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
         javax.swing.JLabel changeDocLabel = new javax.swing.JLabel("Change your doctor");
@@ -31,7 +30,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(General.WHITE);
 
         changeDocLabel.setFont(General.font(36));
 
@@ -66,14 +65,12 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
         }
         curDocName.setText(curDoc);
 
-        Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
-
         backButton.setFont(General.font(18));
-        backButton.setBackground(buttonBlue);
+        backButton.setBackground(General.BUTTON_BLUE);
         backButton.addActionListener(this::backButtonActionPerformed);
 
         submitButton.setFont(General.font(18));
-        submitButton.setBackground(buttonBlue);
+        submitButton.setBackground(General.BUTTON_BLUE);
         submitButton.addActionListener(this::submitButtonActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
