@@ -7,6 +7,7 @@ Nikola:
 - Functionality: ArrangeBooking and ChangeDoctor functionality, Arrange and Reschedule booking checks
 - Databases: Doctors DB creation, reformatting of the rest of the DBs
 - Tests: add more tests to RegTest
+- Session: Info and General
 - Other: code quality control for all files except the sprint 2 GUIs (&& commenting)
 _______________________________________________________________________________________________________________________________________
 Callum:
