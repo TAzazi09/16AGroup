@@ -2,7 +2,8 @@ package GUIs;
 
 import Functionality.LoginCheck;
 import Functionality.DatabaseConnectionFunc;
-import java.awt.*;
+import java.awt.Color;
+import Session.General;
 
 /**
  * @author Nikola
@@ -68,22 +69,22 @@ public class LoginPage extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(255, 255, 255));
 
         // Set the font and size of the components
-        usernameLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        passwordLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        usernameLabel.setFont(General.font(18));
+        passwordLabel.setFont(General.font(18));
 
-        usernameText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        usernameText.setFont(General.font(18));
         usernameText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        passwordText.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        passwordText.setFont(General.font(18));
         passwordText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
 
-        loginButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 12));
+        loginButton.setFont(General.font(12));
         loginButton.setBackground(buttonBlue);
         loginButton.addActionListener(this::loginButtonActionPerformed);
 
-        backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 12));
+        backButton.setFont(General.font(12));
         backButton.setBackground(buttonBlue);
         backButton.addActionListener(this::backButtonActionPerformed);
 
