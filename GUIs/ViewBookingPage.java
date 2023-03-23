@@ -100,6 +100,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                         list.clear();
                         resultBookings.removeAllItems();
                         resultBookings.setVisible(false);
+                        viewPastBooking.setVisible(false);
                         reschedule.setVisible(false);
                         while (results.next()) {
                             // Sets tempory objects as true
