@@ -1,13 +1,16 @@
 package GUIs;
 
 import java.awt.Window;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.time.LocalDate;
+
+import Functionality.DatabaseConnectionFunc;
 import Functionality.LoginCheck;
 import javax.swing.JOptionPane;
 import Databases.DoctorsDB;
-import Session.Info;
 
 /**
  *
@@ -15,7 +18,8 @@ import Session.Info;
  * @functionality Ethan
  */
 public class ViewBookingPage extends javax.swing.JFrame {
-
+    public static Connection connection;
+    public static Statement statement;
     public String userId = LoginCheck.getFirstName();
 
     public ViewBookingPage() {
@@ -35,7 +39,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
         resultBookings = new javax.swing.JComboBox<>();
         list = new ArrayList<>();
         reschedule = new javax.swing.JButton();
-        selectedLabel = new javax.swing.JLabel();
         viewPastBooking = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,8 +52,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
         viewPastBooking.setText("View booking details");
         viewPastBooking.setVisible(false);
         resultBookings.addActionListener(evt -> {
-            selectedLabel.setText("Current booking: " + resultBookings.getSelectedItem());
-            selectedLabel.setVisible(true);
             reschedule.setVisible(true);
             if (resultBookings.getSelectedItem() != null) {
                 String[] split = resultBookings.getSelectedItem().toString().split("~");
@@ -76,8 +77,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
 
         });
 
-        selectedLabel.setVisible(false);
-        selectedLabel.setText("test");
         Confirm_button.setText("Confirm");
         Confirm_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -90,20 +89,20 @@ public class ViewBookingPage extends javax.swing.JFrame {
                 } else {
                     String combination = Year + "-" + Month;
                     try {
+                        connection = DatabaseConnectionFunc.getConnection();
+                        statement = connection.createStatement();
                         // Gets the required information about the booking where the date contains the
                         // year and month
-                        ResultSet results = Info.statement.executeQuery(
+                        ResultSet results = statement.executeQuery(
                                 "SELECT DoctorID, Date, Time FROM bookings WHERE Date LIKE '%" + combination + "%';");
                         // Clears the dropdown and the array of bookings.
-                        //Also sets all tempory objects as invisible.
+                        // Also sets all tempory objects as invisible.
                         list.clear();
                         resultBookings.removeAllItems();
-                        selectedLabel.setVisible(false);
                         resultBookings.setVisible(false);
                         reschedule.setVisible(false);
                         while (results.next()) {
-                            //Sets tempory objects as true
-                            selectedLabel.setVisible(true);
+                            // Sets tempory objects as true
                             resultBookings.setVisible(true);
                             reschedule.setVisible(true);
                             list.add((DoctorsDB.getDoctorName(results.getInt("DoctorID"))) + " ~ "
@@ -118,6 +117,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                 }
             }
         });
+
         back.setText("Back");
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -130,6 +130,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                 MenuPage.main(null);
             }
         });
+
         logged_user_text.setFont(new java.awt.Font("Monospaced", 0, 14));
         logged_user_text.setText("User: ");
         resultBookings.setVisible(false);
@@ -167,16 +168,15 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE, 50,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addComponent(date_selected_text)))
-                                        .addGap(250, 250, 250)
-                                        .addComponent(resultBookings, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(250, 250, 250)
-                                        .addComponent(selectedLabel, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(250, 250, 250)
+                                        .addGap(50, 50, 50)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(150, 150, 150)
+                                                .addComponent(resultBookings, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(10, 10, 10)
+                                        )
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(back)
-                                                .addGap(250, 250, 250)
                                                 .addComponent(reschedule)
                                                 .addComponent(viewPastBooking)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
@@ -202,7 +202,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                         .addComponent(Confirm_button)
                                         .addComponent(back))
                                 .addComponent(resultBookings)
-                                .addComponent(selectedLabel)
+                                .addGap(10, 10, 10)
                                 .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(reschedule)
@@ -262,6 +262,5 @@ public class ViewBookingPage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> resultBookings;
     private java.util.ArrayList<String> list;
     private javax.swing.JButton reschedule;
-    private javax.swing.JLabel selectedLabel;
     private javax.swing.JButton viewPastBooking;
 }
