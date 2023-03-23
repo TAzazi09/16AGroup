@@ -1,10 +1,10 @@
 package GUIs;
 
-import java.awt.*;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import Functionality.RegistrationCheck;
 import Functionality.DatabaseConnectionFunc;
+import Session.General;
 
 /**
  * @author Kristian
@@ -57,22 +57,22 @@ public class RegistrationPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setBackground(General.WHITE);
 
         // Initialise components
         javax.swing.JLabel regLabel = new javax.swing.JLabel("Register");
 
         javax.swing.JLabel firstnameLabel = new javax.swing.JLabel("First Name");
         firstnameInput = new javax.swing.JTextField();
-        firstnameInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        firstnameInput.setFont(General.font(18));
 
         javax.swing.JLabel surnameLabel = new javax.swing.JLabel("Surname");
         surnameInput = new javax.swing.JTextField();
-        surnameInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        surnameInput.setFont(General.font(18));
 
         javax.swing.JLabel ageLabel = new javax.swing.JLabel("Age (> 18 && < 130)");
         ageInput = new javax.swing.JTextField();
-        ageInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        ageInput.setFont(General.font(18));
 
         javax.swing.JLabel genderLabel = new javax.swing.JLabel("Gender");
         javax.swing.JRadioButton maleCheck = new javax.swing.JRadioButton("Male");
@@ -82,7 +82,7 @@ public class RegistrationPage extends javax.swing.JFrame {
 
         javax.swing.JLabel phoneLabel = new javax.swing.JLabel("Phone Number");
         phoneInput = new javax.swing.JTextField("##### ######");
-        phoneInput.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        phoneInput.setFont(General.font(18));
 
         javax.swing.JLabel doctorLabel = new javax.swing.JLabel("Doctor Chosen");
         doctorList = new javax.swing.JComboBox<>();
@@ -90,13 +90,11 @@ public class RegistrationPage extends javax.swing.JFrame {
         javax.swing.JLabel detailsLabel = new javax.swing.JLabel("Details (max 100 characters)");
         detailsInput = new javax.swing.JTextArea();
 
-        Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
-
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         javax.swing.JButton backButton = new javax.swing.JButton("Back");
-        backButton.setBackground(buttonBlue);
+        backButton.setBackground(General.BUTTON_BLUE);
         javax.swing.JButton regButton = new javax.swing.JButton("Register");
-        regButton.setBackground(buttonBlue);
+        regButton.setBackground(General.BUTTON_BLUE);
 
         // Set up the form
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -105,25 +103,25 @@ public class RegistrationPage extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(900, 900));
 
         // Set up the components
-        regLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 48));
+        regLabel.setFont(General.font(48));
         regLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        firstnameLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        firstnameLabel.setFont(General.font(18));
 
         surnameLabel.setToolTipText("");
-        surnameLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        surnameLabel.setFont(General.font(18));
 
         ageLabel.setToolTipText("");
-        ageLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        ageLabel.setFont(General.font(18));
 
-        genderLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        maleCheck.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        genderLabel.setFont(General.font(18));
+        maleCheck.setFont(General.font(18));
         maleCheck.setActionCommand("male");
-        femaleCheck.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        femaleCheck.setFont(General.font(18));
         femaleCheck.setActionCommand("female");
-        otherCheck.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        otherCheck.setFont(General.font(18));
         otherCheck.setActionCommand("other");
-        pntsCheck.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        pntsCheck.setFont(General.font(18));
         pntsCheck.setActionCommand("pnts");
 
         ButtonGroup group = new ButtonGroup();
@@ -133,14 +131,14 @@ public class RegistrationPage extends javax.swing.JFrame {
         group.add(pntsCheck);
         RegistrationPage.totalGroup = group;
 
-        phoneLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        phoneLabel.setFont(General.font(18));
 
-        doctorLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        doctorLabel.setFont(General.font(18));
         doctorList
                 .setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr Smith", "Dr Jason", "Dr Andrew" }));
-        doctorList.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        doctorList.setFont(General.font(18));
 
-        detailsLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        detailsLabel.setFont(General.font(18));
         detailsInput.setColumns(1);
         detailsInput.setLineWrap(true);
         detailsInput.setRows(5);
@@ -150,10 +148,10 @@ public class RegistrationPage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(detailsInput);
 
         // Set up the buttons
-        backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        backButton.setFont(General.font(18));
         backButton.addActionListener(this::Back_buttonActionPerformed);
 
-        regButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        regButton.setFont(General.font(18));
         regButton.addActionListener(this::Register_buttonActionPerformed);
 
         // Panel layout code section below

@@ -1,10 +1,9 @@
 package GUIs;
 
-import java.awt.Font;
-import java.awt.Color;
 import java.sql.ResultSet;
 import Databases.DoctorsDB;
 import Session.Info;
+import Session.General;
 import Functionality.ChangeDoctorFunc;
 
 /**
@@ -18,7 +17,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setBackground(General.WHITE);
 
         javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
         javax.swing.JLabel changeDocLabel = new javax.swing.JLabel("Change your doctor");
@@ -31,19 +30,19 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(General.WHITE);
 
-        changeDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
+        changeDocLabel.setFont(General.font(36));
 
-        newDocBox.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        newDocBox.setFont(General.font(18));
         newDocBox.setModel(
                 new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose a doctor" }));
 
-        curDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        curDocLabel.setFont(General.font(18));
 
-        newDocLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        newDocLabel.setFont(General.font(18));
 
-        curDocName.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        curDocName.setFont(General.font(18));
 
         int curDocID;
         String curDoc = "";
@@ -66,14 +65,12 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
         }
         curDocName.setText(curDoc);
 
-        Color buttonBlue = new java.awt.Color(65, 175, 255, 1);
-
-        backButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        backButton.setBackground(buttonBlue);
+        backButton.setFont(General.font(18));
+        backButton.setBackground(General.BUTTON_BLUE);
         backButton.addActionListener(this::backButtonActionPerformed);
 
-        submitButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
-        submitButton.setBackground(buttonBlue);
+        submitButton.setFont(General.font(18));
+        submitButton.setBackground(General.BUTTON_BLUE);
         submitButton.addActionListener(this::submitButtonActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

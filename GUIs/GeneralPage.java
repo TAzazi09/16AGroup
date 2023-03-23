@@ -1,8 +1,8 @@
 package GUIs;
 
-import java.awt.Font;
 import Functionality.DatabaseConnectionFunc;
 import Databases.DatabaseDB;
+import Session.General;
 
 /**
  * @author Nikola
@@ -80,15 +80,15 @@ public class GeneralPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        generalPanel.setBackground(new java.awt.Color(255, 255, 255));
+        generalPanel.setBackground(General.WHITE);
 
-        helloLabel.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 36));
+        helloLabel.setFont(General.font(36));
 
-        logButton.setBackground(new java.awt.Color(65, 175, 255));
-        logButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        logButton.setBackground(General.BUTTON_BLUE);
+        logButton.setFont(General.font(18));
 
-        regButton.setBackground(new java.awt.Color(65, 175, 255));
-        regButton.setFont(new java.awt.Font("Monospaced", Font.PLAIN, 18));
+        regButton.setBackground(General.BUTTON_BLUE);
+        regButton.setFont(General.font(18));
 
         // Panel layout code section (below)
         // -----------------------------------------------------------------------------------------------------------------------------------
