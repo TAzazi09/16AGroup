@@ -8,7 +8,7 @@ import Session.Info;
 /**
  * @author Nikola
  */
-public class CahangeDoctorCheck {
+public class ChangeDoctorCheck {
     public static boolean test(String newDoctorName) {
         try {
             if (newDoctorName.equals("Choose a doctor")) {
