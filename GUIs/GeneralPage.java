@@ -6,7 +6,7 @@ import Session.General;
 
 /**
  * @author Nikola
- * @functional changes by Ethan test
+ * @functional changes by Ethan
  */
 public class GeneralPage extends javax.swing.JFrame {
     public GeneralPage() {
