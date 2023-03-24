@@ -1,7 +1,8 @@
 Group 16A - Sprint 3 Plan
 
 Ethan:
-
+GUIs: ViewPastBooking
+Functionality: ViewPastBooking
 _______________________________________________________________________________________________________________________________________
 Nikola:
 

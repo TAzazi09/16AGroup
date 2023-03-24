@@ -1,6 +1,9 @@
 Group 16A - Sprint 2 Plan
 
 Ethan:
+- GUIs: MenuPage, ReschedulePage, ViewBookingPage.
+- Functionality: MenuPage, ReschedulePage, ViewBookingPage
+- Database: Updated patients to allow for arrays of messages.
 _______________________________________________________________________________________________________________________________________
 Nikola:
 - GUIs: ArrangeBooking, ChangeDoctor
