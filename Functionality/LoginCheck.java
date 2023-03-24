@@ -62,11 +62,11 @@ public class LoginCheck {
         }
     }
 
-    public String getFirstName() {
+    public static String getFirstName() {
         return fname;
     }
 
-    public String getSurname() {
+    public static String getSurname() {
         return sname;
     }
 }
