@@ -8,7 +8,7 @@ import Session.General;
 
 /**
  * @author Kristian
- * @functional changes by Ethan
+ * @functional and GUI changes by Ethan
  * @cosmetic and minor functional changes by Nikola
  */
 
