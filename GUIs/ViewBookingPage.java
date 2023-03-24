@@ -15,8 +15,9 @@ import Databases.DoctorsDB;
 /**
  *
  * @author ks818
- * @functionality Ethan
+ * @functionality and GUI improvement by Ethan
  */
+
 public class ViewBookingPage extends javax.swing.JFrame {
     public static Connection connection;
     public static Statement statement;

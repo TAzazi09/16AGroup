@@ -7,7 +7,7 @@ import Session.Info;
 
 /**
  * @author Ethan
- * @code quality changes by Nikola
+ * @minor code quality changes by Nikola
  */
 public class MenuPage extends javax.swing.JFrame {
     public MenuPage() {
