@@ -6,6 +6,7 @@ import Functionality.ReschedulingFunc;
 /**
  * @author Ethan
  */
+
 public class ReschedulePage extends javax.swing.JFrame {
     public ReschedulePage(String oldDate, String oldTime) {
         initComponents(oldDate, oldTime);
