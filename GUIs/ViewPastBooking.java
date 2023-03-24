@@ -3,7 +3,7 @@ package GUIs;
 import Functionality.*;
 /**
  *
- * @author range
+ * @author Ethan
  */
 public class ViewPastBooking extends javax.swing.JFrame {
 
