@@ -1,16 +1,19 @@
-package kent.comp5590;
-
+package  Functionality.*;
 import static org.junit.Assert.*;
 
 
 import org.junit.Before;
 import org.junit.Test;
 
+import Databases.DatabaseDB;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import kent.comp5590.*;
+import Functionality.*;
+import Databases.*;
+import Session.*;
 
 /**
  * @author Callum

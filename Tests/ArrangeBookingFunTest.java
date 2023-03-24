@@ -1,4 +1,4 @@
-package kent.comp5590;
+package Functionality.*;
 
 import static org.mockito.Mockito.*;
 
@@ -11,7 +11,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import Databases.*;
 import Functionality.ArrangeBookingFunc;
+import Functionality.LoginCheck;
+import Session.*;
 
 class ArrangeBookingFuncTest {
 
@@ -35,7 +38,7 @@ class ArrangeBookingFuncTest {
         doNothing().when(mockOptionPane).showMessageDialog(null, "Please select a time and date.");
 
         // Act
-        arrangeBookingFunc.arrangeBooking(time, date);
+        ArrangeBookingFunc.arrangeBooking(time, date);
 
         // Assert
         verify(mockOptionPane, times(1)).showMessageDialog(null, "Please select a time and date.");
@@ -59,7 +62,7 @@ class ArrangeBookingFuncTest {
         doNothing().when(mockOptionPane).showMessageDialog(null, "Doctor is unavailable at that time.");
 
         // Act
-        arrangeBookingFunc.arrangeBooking(time, date);
+        ArrangeBookingFunc.arrangeBooking(time, date);
 
         // Assert
         verify(infoMock.statement, times(1)).executeQuery(

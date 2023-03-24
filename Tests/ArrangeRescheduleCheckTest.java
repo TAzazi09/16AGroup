@@ -1,11 +1,13 @@
-package kent.comp5590;
+package Tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import org.mockito.Mockito.*;
+import static org.mockito.Mockito.*;
 import javax.swing.JOptionPane;
+
+import Functionality.*;
 
 class ArrangeRescheduleCheckTest {
 	

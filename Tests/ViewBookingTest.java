@@ -1,6 +1,4 @@
-package kent.comp5590;
-
-import static org.junit.Assert.*;
+package Tests;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,11 +8,16 @@ import java.sql.Statement;
 import org.junit.Before;
 import org.junit.Test;
 
-import kent.comp5590.Info;
+import Functionality.*;
+import Databases.*;
+import Session.*;
+
+// import kent.comp5590.Info;
 
 /**
  * @author Callum
  */
+
 public class ViewBookingTest {
 	
 	 public static Connection connection;
