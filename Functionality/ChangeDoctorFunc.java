@@ -10,7 +10,7 @@ import GUIs.MenuPage;
 public class ChangeDoctorFunc {
     public static void changeDoctor(String newDoctorName) {
         try {
-            if (CahangeDoctorCheck.test(newDoctorName)) {
+            if (ChangeDoctorCheck.test(newDoctorName)) {
                 int newDoctorID = DoctorsDB.getDoctorID(newDoctorName);
 
                 // Change the doctor in the database
