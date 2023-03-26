@@ -5,6 +5,8 @@ GUIs: ViewPastBooking
 Functionality: ViewPastBooking
 _______________________________________________________________________________________________________________________________________
 Nikola:
+Functionality: Authorization (users should not be able to access certain pages without being logged in)
+Other: Code quality review for all pages
 
 _______________________________________________________________________________________________________________________________________
 Callum:
