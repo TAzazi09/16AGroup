@@ -11,8 +11,8 @@ import Session.Info;
  * @code quality by Nikola
  */
 public class LoginCheck {
-    public static String fname;
-    public static String sname;
+    public static String firstname;
+    public static String surname;
     public static int doctorName;
 
     public static void main(String user, String password) {
@@ -35,8 +35,8 @@ public class LoginCheck {
                 if ((username.equals(resultSet.getString("FirstName")))
                         && (password.equals((resultSet.getString("Surname")) + (resultSet.getString("PatientID"))))) {
                     Info.backgroundID = resultSet.getString("patientID");
-                    fname = resultSet.getString("FirstName");
-                    sname = resultSet.getString("Surname");
+                    firstname = resultSet.getString("FirstName");
+                    surname = resultSet.getString("Surname");
                     doctorName = resultSet.getInt("doctorID");
                     JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
                     Window[] windows = Window.getWindows();
@@ -63,10 +63,10 @@ public class LoginCheck {
     }
 
     public static String getFirstName() {
-        return fname;
+        return firstname;
     }
 
     public static String getSurname() {
-        return sname;
+        return surname;
     }
 }

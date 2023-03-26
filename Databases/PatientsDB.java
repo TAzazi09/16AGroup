@@ -1,7 +1,6 @@
 package Databases;
 
 import java.sql.ResultSet;
-import java.sql.Statement;
 import Session.Info;
 
 /**
@@ -30,10 +29,10 @@ public class PatientsDB {
                     ");");
 
             // Inserts the patients into the table
-            insertPatient(Info.statement, "Nikola", "Kolev", "Male", 20, "07856 791314",
+            insertPatient("Nikola", "Kolev", "Male", 20, "07856 791314",
                     DoctorsDB.getDoctorID("Dr Jason"), "no details",
                     "Nikola Kolev successfully registered with Dr Jason as their doctor");
-            insertPatient(Info.statement, "Ethan", "Teather", "Male", 19, "00000 000000",
+            insertPatient("Ethan", "Teather", "Male", 19, "00000 000000",
                     DoctorsDB.getDoctorID("Dr Andrew"), "",
                     "Ethan Teather successfully registered with Dr Andrew as their doctor");
         } catch (Exception e) {
@@ -42,7 +41,7 @@ public class PatientsDB {
     }
 
     // Inserts a patient into the table
-    private static void insertPatient(Statement statement, String firstName, String surname, String gender, int age,
+    private static void insertPatient(String firstName, String surname, String gender, int age,
             String phoneNumber, int doctorId, String details, String messages) throws Exception {
         Info.statement.executeUpdate(
                 "INSERT into patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages) "
