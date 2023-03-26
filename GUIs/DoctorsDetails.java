@@ -11,14 +11,13 @@ import java.awt.event.*;
 public class DoctorsDetails extends javax.swing.JFrame {
     private JComboBox<String> doctorDropdown;
     private JTextArea doctorDetails;
-    private String[] doctorNames;
     private String[] doctorInfo;
 
     public DoctorsDetails() {
         super("Doctor Details");
 
         // Initialize doctor names and info
-        doctorNames = new String[] { "Dr. J", "Dr. A", "Dr. M" };
+        String[] doctorNames = new String[] { "Dr. J", "Dr. A", "Dr. M" };
         doctorInfo = new String[] { "Dr. J - 38, Cardiologist Phone: 07555555555",
                 "Dr. A - 67, Neurologist,Phone: 0788888888",
                 "Dr. M - 54, Osemetrist,Phone: 0799999999" };
@@ -73,15 +72,8 @@ public class DoctorsDetails extends javax.swing.JFrame {
                 pack();
             }
 
-            public static void main(String args[]) {
-
+            public static void main(String[] args) {
                 DoctorsDetails doctorMenu = new DoctorsDetails();
-                /*
-                 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
-                 * look and feel.
-                 * For details see
-                 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-                 */
                 try {
                     for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
                             .getInstalledLookAndFeels()) {
@@ -104,11 +96,7 @@ public class DoctorsDetails extends javax.swing.JFrame {
                             .log(java.util.logging.Level.SEVERE, null, ex);
                 }
 
-                java.awt.EventQueue.invokeLater(new Runnable() {
-                    public void run() {
-                        new DoctorsDetails().setVisible(true);
-                    }
-                });
+                java.awt.EventQueue.invokeLater(() -> new DoctorsDetails().setVisible(true));
             }
         });
     }
