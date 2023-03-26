@@ -1,8 +1,10 @@
 package GUIs;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * @author Tare
@@ -46,7 +48,6 @@ public class DoctorsDetails extends javax.swing.JFrame {
             }
 
             private void initComponents() {
-
                 jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
                 jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
                 jMenuBar1 = new javax.swing.JMenuBar();
