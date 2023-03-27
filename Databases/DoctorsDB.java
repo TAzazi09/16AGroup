@@ -9,8 +9,21 @@ import Session.Info;
  */
 public class DoctorsDB {
     public static void main(String[] args) {
+        tableInitialization();
+
         try {
-            // Creates the Doctors table
+            // Inserts the doctors into the table
+            insertDoctor(Info.statement, "Dr Jason", "12345 123456", "Cardiologist");
+            insertDoctor(Info.statement, "Dr Andrew", "56712 09876", "Dentist");
+            insertDoctor(Info.statement, "Dr Smith", "55555 666666", "Dermatologist");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Creates the Doctors table
+    private static void tableInitialization() {
+        try {
             Info.statement.executeUpdate("use NHS");
             Info.statement.executeUpdate("DROP TABLE IF EXISTS doctors;");
             Info.statement.execute("CREATE TABLE doctors (" +
@@ -21,11 +34,6 @@ public class DoctorsDB {
                     "Speciality varchar(15) NOT NULL," +
                     "PRIMARY KEY (DoctorID)" +
                     ");");
-
-            // Inserts the doctors into the table
-            insertDoctor(Info.statement, "Dr Jason", "12345 123456", "Cardiologist");
-            insertDoctor(Info.statement, "Dr Andrew", "56712 09876", "Dentist");
-            insertDoctor(Info.statement, "Dr Smith", "55555 666666", "Dermatologist");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -8,7 +8,11 @@ import Session.Info;
  */
 public class BookingsDB {
     public static void main(String[] args) {
-        // Creates the Bookings table
+        tableInitialization();
+    }
+
+    // Creates the Bookings table
+    private static void tableInitialization() {
         try {
             Info.statement.executeUpdate("use NHS");
             Info.statement.execute("DROP TABLE IF EXISTS bookings");
