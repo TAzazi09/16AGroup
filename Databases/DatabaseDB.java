@@ -10,6 +10,7 @@ public class DatabaseDB {
     // Creates the database
     public static void main(String[] args) {
         try {
+            // Connects to the database (if not already connected)
             if (!Info.connected) {
                 Info.connect();
             }

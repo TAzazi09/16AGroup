@@ -10,6 +10,22 @@ import Session.Info;
  */
 public class PatientsDB {
     public static void main(String[] args) {
+        tableInitialization();
+        try {
+            // Inserts the patients into the table
+            insertPatient("Nikola", "Kolev", "Male", 20, "07856 791314",
+                    DoctorsDB.getDoctorID("Dr Jason"), "no details",
+                    "Nikola Kolev successfully registered with Dr Jason as their doctor");
+            insertPatient("Ethan", "Teather", "Male", 19, "00000 000000",
+                    DoctorsDB.getDoctorID("Dr Andrew"), "",
+                    "Ethan Teather successfully registered with Dr Andrew as their doctor");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Creates the Patients table
+    private static void tableInitialization() {
         try {
             // Creates the Patients table
             Info.statement.executeUpdate("use NHS");
@@ -27,14 +43,6 @@ public class PatientsDB {
                     "PRIMARY KEY (patientID), " +
                     "FOREIGN KEY (DoctorID) REFERENCES doctors (DoctorID)" +
                     ");");
-
-            // Inserts the patients into the table
-            insertPatient("Nikola", "Kolev", "Male", 20, "07856 791314",
-                    DoctorsDB.getDoctorID("Dr Jason"), "no details",
-                    "Nikola Kolev successfully registered with Dr Jason as their doctor");
-            insertPatient("Ethan", "Teather", "Male", 19, "00000 000000",
-                    DoctorsDB.getDoctorID("Dr Andrew"), "",
-                    "Ethan Teather successfully registered with Dr Andrew as their doctor");
         } catch (Exception e) {
             e.printStackTrace();
         }
