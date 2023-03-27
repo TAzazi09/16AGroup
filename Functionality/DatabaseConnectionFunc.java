@@ -3,7 +3,7 @@ package Functionality;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Scanner;
-import Tests.PasswordForDB;
+// import Tests.PasswordForDB;
 
 /**
  * @author Ethan
@@ -15,11 +15,11 @@ public class DatabaseConnectionFunc {
 
     public static void main(String[] args) {
         if (!connected) {
-            if (PasswordForDB.testing) {
-                DatabaseConnectionFunc.connectForTests(PasswordForDB.password);
-            } else {
+            // if (PasswordForDB.testing) {
+            //     DatabaseConnectionFunc.connectForTests(PasswordForDB.password);
+            // } else {
                 DatabaseConnectionFunc.connect();
-            }
+            // }
         }
     }
 
@@ -45,24 +45,24 @@ public class DatabaseConnectionFunc {
 
     public static Connection getConnection() {
         if (!connected) {
-            if (PasswordForDB.testing) {
-                connectForTests(PasswordForDB.password);
-            } else {
+            // if (PasswordForDB.testing) {
+            //     connectForTests(PasswordForDB.password);
+            // } else {
                 connect();
-            }
+            // }
         }
         return connection;
     }
 
-    private static void connectForTests(String password) {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager
-                    .getConnection("jdbc:mysql://localhost/", "root", PasswordForDB.password);
-            connected = true;
-        } catch (Exception e) {
-            System.out.println("Connection failed\nEither the password is incorrect, your username is not '" + "root"
-                    + "', or the database is not running\nTry again");
-        }
-    }
+    // private static void connectForTests(String password) {
+    //     try {
+    //         Class.forName("com.mysql.cj.jdbc.Driver");
+    //         connection = DriverManager
+    //                 .getConnection("jdbc:mysql://localhost/", "root", PasswordForDB.password);
+    //         connected = true;
+    //     } catch (Exception e) {
+    //         System.out.println("Connection failed\nEither the password is incorrect, your username is not '" + "root"
+    //                 + "', or the database is not running\nTry again");
+    //     }
+    // }
 }
