@@ -15,28 +15,40 @@ public class MenuPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-        javax.swing.JLabel welcomeLabel = new javax.swing.JLabel();
-        javax.swing.JButton createBooking = new javax.swing.JButton();
-        javax.swing.JButton changeDoctor = new javax.swing.JButton();
-        javax.swing.JButton viewBookings = new javax.swing.JButton();
-        javax.swing.JButton viewBookingDetails = new javax.swing.JButton();
-        javax.swing.JButton viewAllDoctors = new javax.swing.JButton();
-        javax.swing.JButton viewDoctorButton = new javax.swing.JButton();
-        javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
-        javax.swing.JTextArea jTextArea1 = new javax.swing.JTextArea();
+        welcomeLabel = new javax.swing.JLabel();
+        createBooking = new javax.swing.JButton();
+        changeDoctor = new javax.swing.JButton();
+        viewBookings = new javax.swing.JButton();
+        viewBookingDetails = new javax.swing.JButton();
+        viewAllDoctors = new javax.swing.JButton();
+        viewDoctorButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         welcomeLabel.setText("Welcome " + LoginCheck.getFirstName() + " " + LoginCheck.getSurname() + "!");
 
         createBooking.setText("Create a booking");
-        createBooking.addActionListener(this::createBookingAction);
+        createBooking.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createBookingAction(evt);
+            }
+        });
 
         changeDoctor.setText("Change your doctor");
-        changeDoctor.addActionListener(this::changeDoctorActionPerformed);
+        changeDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeDoctorActionPerformed(evt);
+            }
+        });
 
         viewBookings.setText("View bookings");
-        viewBookings.addActionListener(this::viewBookingsActionPerformed);
+        viewBookings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBookingsActionPerformed(evt);
+            }
+        });
 
         viewBookingDetails.setText("View past booking");
 
@@ -134,7 +146,7 @@ public class MenuPage extends javax.swing.JFrame {
         ViewBookingPage.main(null);
     }
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
        if (DatabaseConnectionFunc.connected) {
             /* Set the Nimbus look and feel */
             try {
@@ -159,9 +171,24 @@ public class MenuPage extends javax.swing.JFrame {
             }
 
             /* Create and display the form */
-            java.awt.EventQueue.invokeLater(() -> new MenuPage().setVisible(true));
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new MenuPage().setVisible(true);
+                }
+            });
         } else {
             GeneralPage.main(null);
         }
     }
+
+    // Variables declaration
+    private javax.swing.JButton createBooking;
+    private javax.swing.JButton changeDoctor;
+    private javax.swing.JButton viewBookings;
+    private javax.swing.JButton viewBookingDetails;
+    private javax.swing.JButton viewAllDoctors;
+    private javax.swing.JButton viewDoctorButton;
+    private javax.swing.JLabel welcomeLabel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
 }
