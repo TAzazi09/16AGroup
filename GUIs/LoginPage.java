@@ -1,6 +1,6 @@
 package GUIs;
 
-import Functionality.LoginCheck;
+import Checks.LoginCheck;
 import Functionality.DatabaseConnectionFunc;
 import Session.General;
 

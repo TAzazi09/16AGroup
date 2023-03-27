@@ -11,9 +11,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import Checks.LoginCheck;
 import Databases.*;
 import Functionality.ArrangeBookingFunc;
-import Functionality.LoginCheck;
 import Session.*;
 
 class ArrangeBookingFuncTest {

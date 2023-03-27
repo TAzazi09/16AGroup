@@ -1,4 +1,4 @@
-package Functionality;
+package Checks;
 
 import java.awt.Window;
 import java.sql.ResultSet;

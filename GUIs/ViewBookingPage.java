@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 
 import Functionality.DatabaseConnectionFunc;
-import Functionality.LoginCheck;
+
 import javax.swing.JOptionPane;
+
+import Checks.LoginCheck;
 import Databases.DoctorsDB;
 
 /**

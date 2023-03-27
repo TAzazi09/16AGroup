@@ -2,6 +2,9 @@ package Functionality;
 
 import java.awt.Window;
 import javax.swing.JOptionPane;
+
+import Checks.ChangeDoctorCheck;
+import Checks.LoginCheck;
 import Databases.PatientsDB;
 import Databases.DoctorsDB;
 import Session.Info;

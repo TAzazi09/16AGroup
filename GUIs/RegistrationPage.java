@@ -2,7 +2,8 @@ package GUIs;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
-import Functionality.RegistrationCheck;
+
+import Checks.RegistrationCheck;
 import Functionality.DatabaseConnectionFunc;
 import Session.General;
 

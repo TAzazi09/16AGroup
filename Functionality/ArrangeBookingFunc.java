@@ -3,6 +3,9 @@ package Functionality;
 import java.sql.ResultSet;
 import java.awt.Window;
 import javax.swing.JOptionPane;
+
+import Checks.ArrangeRescheduleCheck;
+import Checks.LoginCheck;
 import GUIs.MenuPage;
 import Session.Info;
 import Databases.DoctorsDB;

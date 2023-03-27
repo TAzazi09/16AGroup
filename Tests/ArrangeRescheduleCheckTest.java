@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import Checks.ArrangeRescheduleCheck;
+
 import static org.mockito.Mockito.*;
 import javax.swing.JOptionPane;
 

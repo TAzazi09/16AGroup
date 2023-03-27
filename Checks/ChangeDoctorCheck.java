@@ -1,4 +1,4 @@
-package Functionality;
+package Checks;
 
 import javax.swing.JOptionPane;
 import Databases.DoctorsDB;
