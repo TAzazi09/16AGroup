@@ -32,8 +32,8 @@ public class PatientsDB {
             Info.statement.executeUpdate("DROP TABLE IF EXISTS patients;");
             Info.statement.execute("CREATE TABLE patients (" +
                     "PatientID int not null auto_increment," +
-                    "FirstName VARCHAR(15) not null, " +
-                    "Surname varchar(15) NOT NULL," +
+                    "FirstName VARCHAR(20) not null, " +
+                    "Surname varchar(20) NOT NULL," +
                     "Gender varchar(10) not null," +
                     "Age int (3) not null," +
                     "PhoneNumber varchar(12) not null ," +

@@ -15,9 +15,9 @@ public class RegistrationCheck {
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorName, String Details) {
         if (FirstName == null || Surname == null || Gender == null || Age == null || PhoneNumber == null
-                || DoctorName == null) {
+                || DoctorName == null)
             return false;
-        } else if (!firstNameCheck(FirstName))
+        else if (!firstNameCheck(FirstName))
             return false;
         else if (!surnameCheck(Surname))
             return false;
@@ -35,7 +35,7 @@ public class RegistrationCheck {
     // Checks if the first name is valid (between 2 and 15 characters, and only
     // contains letters)
     private static boolean firstNameCheck(String firstName) {
-        if (firstName.length() > 15) {
+        if (firstName.length() > 20) {
             JOptionPane.showMessageDialog(null, "First name too long!");
             return false;
         } else if (firstName.length() < 2) {
@@ -54,7 +54,7 @@ public class RegistrationCheck {
     // Checks if the surname is valid (between 2 and 15 characters, and only
     // contains letters)
     private static boolean surnameCheck(String surname) {
-        if (surname.length() > 15) {
+        if (surname.length() > 20) {
             JOptionPane.showMessageDialog(null, "Surname too long!");
             return false;
         } else if (surname.length() < 2) {
