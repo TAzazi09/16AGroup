@@ -141,8 +141,10 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     }
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        String newDocName = newDocBox.getSelectedItem().toString();
-        ChangeDoctorFunc.changeDoctor(newDocName);
+        if (newDocBox.getSelectedItem() != null) {
+            String newDocName = newDocBox.getSelectedItem().toString();
+            ChangeDoctorFunc.changeDoctor(newDocName);
+        }
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
