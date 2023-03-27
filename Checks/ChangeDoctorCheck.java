@@ -1,6 +1,7 @@
 package Checks;
 
 import javax.swing.JOptionPane;
+
 import Databases.DoctorsDB;
 import Databases.PatientsDB;
 import Session.Info;

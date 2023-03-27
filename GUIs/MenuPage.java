@@ -2,7 +2,6 @@ package GUIs;
 
 import java.sql.ResultSet;
 
-import Checks.LoginCheck;
 import Functionality.DatabaseConnectionFunc;
 import Session.Info;
 
@@ -28,7 +27,7 @@ public class MenuPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        welcomeLabel.setText("Welcome " + LoginCheck.getFirstName() + " " + LoginCheck.getSurname() + "!");
+        welcomeLabel.setText("Welcome " + Info.firstname + " " + Info.surname + "!");
 
         createBooking.setText("Create a booking");
         createBooking.addActionListener(this::createBookingAction);

@@ -5,7 +5,6 @@ import java.awt.Window;
 import javax.swing.JOptionPane;
 
 import Checks.ArrangeRescheduleCheck;
-import Checks.LoginCheck;
 import GUIs.MenuPage;
 import Session.Info;
 import Databases.DoctorsDB;
@@ -47,8 +46,8 @@ public class ArrangeBookingFunc {
 
                     // add a message to the patient's log
                     Info.statement
-                            .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
-                                    + " " + LoginCheck.getSurname() + " has arranged a booking at "
+                            .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + Info.firstname
+                                    + " " + Info.surname + " has arranged a booking at "
                                     + time + " on " + date + " with " + doctor + ".') WHERE patientID = '"
                                     + Info.backgroundID + "';");
 

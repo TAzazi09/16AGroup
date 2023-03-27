@@ -3,6 +3,7 @@ package Checks;
 import java.awt.Window;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+
 import GUIs.MenuPage;
 import Session.Info;
 
@@ -11,8 +12,6 @@ import Session.Info;
  * @code quality by Nikola
  */
 public class LoginCheck {
-    public static String firstname;
-    public static String surname;
     public static int doctorName;
     public static boolean userFound = false;
 
@@ -34,8 +33,9 @@ public class LoginCheck {
                 return false;
             } else {
                 Info.backgroundID = resultSet.getString("patientID");
-                firstname = resultSet.getString("FirstName");
-                surname = resultSet.getString("Surname");
+                Info.firstname = resultSet.getString("FirstName");
+                Info.surname = resultSet.getString("Surname");
+                
                 doctorName = resultSet.getInt("doctorID");
                 JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
                 Window[] windows = Window.getWindows();
@@ -89,13 +89,5 @@ public class LoginCheck {
             e.printStackTrace();
             return false;
         }
-    }
-
-    public static String getFirstName() {
-        return firstname;
-    }
-
-    public static String getSurname() {
-        return surname;
     }
 }

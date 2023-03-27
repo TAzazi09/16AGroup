@@ -11,6 +11,9 @@ public class Info {
     public static boolean connected;
     public static boolean loggedIn;
 
+    public static String firstname;
+    public static String surname;
+
     public static String backgroundID;
 
     public static Connection connection;

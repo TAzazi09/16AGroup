@@ -6,12 +6,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.time.LocalDate;
-
-import Functionality.DatabaseConnectionFunc;
-
 import javax.swing.JOptionPane;
 
-import Checks.LoginCheck;
+import Functionality.DatabaseConnectionFunc;
+import Session.Info;
 import Databases.DoctorsDB;
 
 /**
@@ -23,7 +21,7 @@ import Databases.DoctorsDB;
 public class ViewBookingPage extends javax.swing.JFrame {
     public static Connection connection;
     public static Statement statement;
-    public String userId = LoginCheck.getFirstName();
+    public String userId = Info.firstname;
 
     public ViewBookingPage() {
         super("View Bookings");

@@ -4,7 +4,6 @@ import java.awt.Window;
 import javax.swing.JOptionPane;
 
 import Checks.ChangeDoctorCheck;
-import Checks.LoginCheck;
 import Databases.PatientsDB;
 import Databases.DoctorsDB;
 import Session.Info;
@@ -21,8 +20,8 @@ public class ChangeDoctorFunc {
 
                 // add a message to the patient's log
                 Info.statement
-                        .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + LoginCheck.getFirstName()
-                                + " " + LoginCheck.getSurname() + " has changed their doctor to " + newDoctorName
+                        .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + Info.firstname
+                                + " " + Info.surname + " has changed their doctor to " + newDoctorName
                                 + ".') WHERE patientID = '" + Info.backgroundID + "';");
 
                 // display a message to the user

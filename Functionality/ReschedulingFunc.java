@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.awt.Window;
 import javax.swing.JOptionPane;
 
-import Checks.LoginCheck;
 import GUIs.MenuPage;
 import Databases.DoctorsDB;
 import Session.Info;
@@ -40,8 +39,8 @@ public class ReschedulingFunc {
                 JOptionPane.showMessageDialog(null,
                         "Your booking has successfully been changed to " + newTime + " on the " + newDate + ".");
                 Info.statement.execute("UPDATE patients SET messages = CONCAT(messages,'\n + "
-                        + LoginCheck.getFirstName()
-                        + " " + LoginCheck.getSurname() + " has changed their booking from " + oldTime + " " + oldDate
+                        + Info.firstname
+                        + " " + Info.surname + " has changed their booking from " + oldTime + " " + oldDate
                         + " to "
                         + newTime + " " + newDate + ".') WHERE patientID = '" + Info.backgroundID + "';");
 

@@ -2,6 +2,7 @@ package Checks;
 
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+
 import GUIs.GeneralPage;
 import Databases.DoctorsDB;
 import Session.Info;
