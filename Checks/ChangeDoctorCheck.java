@@ -10,6 +10,10 @@ import Session.Info;
  */
 public class ChangeDoctorCheck {
     public static boolean test(String newDoctorName) {
+        return newDoctorNameCheck(newDoctorName);
+    }
+
+    private static boolean newDoctorNameCheck(String newDoctorName) {
         try {
             if (newDoctorName.equals("Choose a doctor")) {
                 JOptionPane.showMessageDialog(null, "Please choose a doctor!");
