@@ -191,7 +191,7 @@ public class LoginPage extends javax.swing.JFrame {
         String username = usernameText.getText();
         String password = new String(passwordText.getPassword());
 
-        LoginCheck.testFunction(username, password);
+        LoginCheck.test(username, password);
     }
 
     // Back button - returns to the general page
