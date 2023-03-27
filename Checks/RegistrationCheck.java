@@ -11,10 +11,6 @@ import Session.Info;
  * @additional checks by Nikola
  */
 public class RegistrationCheck {
-    public static void main(String[] args) {
-        System.out.println(test("James", "Lee", "male", 25, "11111 111111", "Dr Andrew", "deaf & blind"));
-    }
-
     // Tests if the data is valid, and if it is, sends it to the database
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorName, String Details) {
