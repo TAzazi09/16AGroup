@@ -18,11 +18,11 @@ public class BookingsDB {
             Info.statement.executeUpdate("use NHS");
             Info.statement.execute("DROP TABLE IF EXISTS bookings");
             Info.statement.execute("CREATE TABLE bookings ("
-                    + "BookingID int not null auto_increment,"
-                    + "PatientID int not null, "
-                    + "DoctorID int not null, "
-                    + "Time Time not null,"
-                    + "Date Date not null,"
+                    + "BookingID INT NOT NULL auto_increment,"
+                    + "PatientID INT NOT NULL, "
+                    + "DoctorID INT NOT NULL, "
+                    + "Time Time NOT NULL,"
+                    + "Date Date NOT NULL,"
                     + "Detail VARCHAR(250),"
                     + "Prescription VARCHAR(250),"
                     + "FOREIGN KEY (PatientID) REFERENCES patients (PatientID),"

@@ -30,11 +30,11 @@ public class DoctorsDB {
             Info.statement.executeUpdate("use NHS");
             Info.statement.executeUpdate("DROP TABLE IF EXISTS doctors;");
             Info.statement.execute("CREATE TABLE doctors (" +
-                    "DoctorID int not null auto_increment," +
-                    "Name VARCHAR(15) not null, " +
-                    "PhoneNumber varchar(12) not null," +
-                    "Background varchar(100), " +
-                    "Speciality varchar(15) NOT NULL," +
+                    "DoctorID INT NOT NULL auto_increment," +
+                    "Name VARCHAR(15) NOT NULL, " +
+                    "PhoneNumber VARCHAR(12) NOT NULL," +
+                    "Background VARCHAR(100), " +
+                    "Speciality VARCHAR(15) NOT NULL," +
                     "PRIMARY KEY (DoctorID)" +
                     ");");
         } catch (Exception e) {

@@ -35,15 +35,15 @@ public class PatientsDB {
             Info.statement.executeUpdate("use NHS");
             Info.statement.executeUpdate("DROP TABLE IF EXISTS patients;");
             Info.statement.execute("CREATE TABLE patients (" +
-                    "PatientID int not null auto_increment," +
-                    "FirstName VARCHAR(20) not null, " +
-                    "Surname varchar(20) NOT NULL," +
-                    "Gender varchar(10) not null," +
-                    "Age int (3) not null," +
-                    "PhoneNumber varchar(12) not null ," +
-                    "DoctorID int not null,  " +
-                    "Details varchar(100), " +
-                    "Messages text, " +
+                    "PatientID INT NOT NULL auto_increment," +
+                    "FirstName VARCHAR(20) NOT NULL, " +
+                    "Surname VARCHAR(20) NOT NULL," +
+                    "Gender VARCHAR(10) NOT NULL," +
+                    "Age INT (3) NOT NULL," +
+                    "PhoneNumber VARCHAR(12) NOT NULL," +
+                    "DoctorID INT NOT NULL,  " +
+                    "Details VARCHAR(100), " +
+                    "Messages TEXT, " +
                     "PRIMARY KEY (patientID), " +
                     "FOREIGN KEY (DoctorID) REFERENCES doctors (DoctorID)" +
                     ");");

@@ -17,9 +17,9 @@ public class LogsDB {
             Info.statement.executeUpdate("use NHS");
             Info.statement.executeUpdate("DROP TABLE IF EXISTS logs;");
             Info.statement.execute("CREATE TABLE logs (" +
-                    "LogID int not null auto_increment," +
-                    "PatientID int not null, " +
-                    "Timestamp TIMESTAMP not null," +
+                    "LogID INT NOT NULL auto_increment," +
+                    "PatientID INT NOT NULL, " +
+                    "Timestamp TIMESTAMP NOT NULL," +
                     "Action VARCHAR(255)," +
                     "FOREIGN KEY (PatientID) REFERENCES patients (PatientID)," +
                     "PRIMARY KEY (LogID)," +
