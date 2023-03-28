@@ -42,30 +42,30 @@ public class DoctorsDB {
         }
     }
 
-    private static void insertDoctor(Statement statement, String name, String phoneNumber, String specialty)
+    private static void insertDoctor(Statement statement, String doctorName, String phoneNumber, String specialty)
             throws Exception {
         statement.executeUpdate("INSERT into doctors (DoctorID, Name, PhoneNumber, Speciality) " +
-                "VALUES (DEFAULT, '" + name + "', '" + phoneNumber + "', '" + specialty + "')");
+                "VALUES (DEFAULT, '" + doctorName + "', '" + phoneNumber + "', '" + specialty + "')");
     }
 
-    public static int getDoctorID(String name) throws Exception {
+    public static int getDoctorID(String doctorName) throws Exception {
         Info.statement.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement.executeQuery("SELECT DoctorID FROM doctors WHERE Name = '" + name + "';");
+        ResultSet resultSet = Info.statement.executeQuery("SELECT DoctorID FROM doctors WHERE Name = '" + doctorName + "';");
         resultSet.next();
         return Integer.parseInt(resultSet.getString("DoctorID"));
     }
 
-    public static String getDoctorName(int id) throws Exception {
+    public static String getDoctorName(int doctorId) throws Exception {
         Info.statement.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement.executeQuery("SELECT Name FROM doctors WHERE DoctorID = '" + id + "';");
+        ResultSet resultSet = Info.statement.executeQuery("SELECT Name FROM doctors WHERE DoctorID = '" + doctorId + "';");
         resultSet.next();
         return resultSet.getString("Name");
     }
 
     // Checks if a doctor exists
-    public static boolean doctorExists(String name) throws Exception {
+    public static boolean doctorExists(String doctorName) throws Exception {
         Info.statement.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement.executeQuery("SELECT Name FROM doctors WHERE Name = '" + name + "';");
+        ResultSet resultSet = Info.statement.executeQuery("SELECT Name FROM doctors WHERE Name = '" + doctorName + "';");
         return resultSet.next();
     }
 }
