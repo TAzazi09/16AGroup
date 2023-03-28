@@ -11,6 +11,9 @@ import Databases.DoctorsDB;
 import Session.Info;
 import GUIs.MenuPage;
 
+/**
+ * @author Nikola
+ */
 public class ChangeDoctorFunc {
     public static void changeDoctor(String newDoctorName) {
         try {

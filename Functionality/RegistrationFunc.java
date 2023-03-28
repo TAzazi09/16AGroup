@@ -9,6 +9,10 @@ import Session.Info;
 import Databases.DoctorsDB;
 import GUIs.GeneralPage;
 
+/**
+ * @author Nikola
+ * @some code wirten by Ethan
+ */
 public class RegistrationFunc {
     // Sends the data to the database
     public static void sendData(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
