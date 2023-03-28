@@ -1,11 +1,8 @@
 package Checks;
 
 import javax.swing.JOptionPane;
-import java.sql.ResultSet;
 
-import GUIs.GeneralPage;
 import Databases.DoctorsDB;
-import Session.Info;
 
 /**
  * @author Ethan
@@ -29,7 +26,7 @@ public class RegistrationCheck {
         else if (!doctorCheck(DoctorName))
             return false;
         else
-            return checkDetails(Details);
+            return detailsCheck(Details);
 
     }
 
@@ -113,39 +110,11 @@ public class RegistrationCheck {
     }
 
     // Checks if the details are valid (less than 100 characters)
-    private static boolean checkDetails(String details) {
+    private static boolean detailsCheck(String details) {
         if (details != null && details.length() > 100) {
             JOptionPane.showMessageDialog(null, "Details too long!");
             return false;
         }
         return true;
-    }
-
-    // Sends the data to the database
-    public static void sendData(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
-            String DoctorName, String Details) {
-        int RightID = 0;
-        try {
-            Info.statement.executeUpdate(
-                    "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages )"
-                            + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
-                            + PhoneNumber + "','" + DoctorsDB.getDoctorID(DoctorName) + "','" + Details + "','"
-                            + FirstName + " " + Surname
-                            + " successfully registered with " + DoctorName + " as their doctor')");
-            ResultSet resultSet = Info.statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
-
-            if (resultSet.next()) {
-                RightID = resultSet.getInt("PatientID");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // Displays the username and password
-        JOptionPane.showMessageDialog(null,
-                (("Thank you for registering " + FirstName + " " + Surname
-                        + ", and welcome to the NHS! \nYour username is " + FirstName + " and your password is "
-                        + Surname + RightID + ". \nPlease keep theses safe!")));
-        new GeneralPage().setVisible(true);
     }
 }
