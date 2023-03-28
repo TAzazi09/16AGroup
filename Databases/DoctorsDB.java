@@ -1,7 +1,6 @@
 package Databases;
 
 // imports from the java library
-import java.sql.Statement;
 import java.sql.ResultSet;
 
 // imports from the project
@@ -16,9 +15,9 @@ public class DoctorsDB {
 
         try {
             // Inserts the doctors into the table
-            insertDoctor(Info.statement, "Dr Jason", "12345 123456", "Cardiologist");
-            insertDoctor(Info.statement, "Dr Andrew", "56712 09876", "Dentist");
-            insertDoctor(Info.statement, "Dr Smith", "55555 666666", "Dermatologist");
+            insertDoctor("Dr Jason", "12345 123456", "Cardiologist");
+            insertDoctor("Dr Andrew", "56712 09876", "Dentist");
+            insertDoctor("Dr Smith", "55555 666666", "Dermatologist");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,9 +41,9 @@ public class DoctorsDB {
         }
     }
 
-    private static void insertDoctor(Statement statement, String doctorName, String phoneNumber, String specialty)
+    private static void insertDoctor(String doctorName, String phoneNumber, String specialty)
             throws Exception {
-        statement.executeUpdate("INSERT into doctors (DoctorID, Name, PhoneNumber, Speciality) " +
+        Info.statement.executeUpdate("INSERT into doctors (DoctorID, Name, PhoneNumber, Speciality) " +
                 "VALUES (DEFAULT, '" + doctorName + "', '" + phoneNumber + "', '" + specialty + "')");
     }
 
