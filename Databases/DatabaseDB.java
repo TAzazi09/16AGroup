@@ -23,6 +23,7 @@ public class DatabaseDB {
             DoctorsDB.main(null);
             PatientsDB.main(null);
             BookingsDB.main(null);
+            LogsDB.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
