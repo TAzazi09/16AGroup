@@ -27,17 +27,17 @@ public class LoginCheck {
             ResultSet resultSet = Info.statement
                     .executeQuery("select * from patients WHERE FirstName = '" + username + "'");
 
-            if (!credentialsLengthCheck(username, password)) {
+            if (!credentialsLengthCheck(username, password))
                 return false;
-            } else if (!resultSetCheck(resultSet)) {
+            else if (!resultSetCheck(resultSet))
                 return false;
-            } else if (!loginInfoCheck(resultSet, username, password)) {
+            else if (!loginInfoCheck(resultSet, username, password))
                 return false;
-            } else {
+            else {
                 Info.backgroundID = resultSet.getString("patientID");
                 Info.firstname = resultSet.getString("FirstName");
                 Info.surname = resultSet.getString("Surname");
-                
+
                 doctorName = resultSet.getInt("doctorID");
                 JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
                 Window[] windows = Window.getWindows();
