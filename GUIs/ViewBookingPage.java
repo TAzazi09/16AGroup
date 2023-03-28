@@ -3,13 +3,11 @@ package GUIs;
 // imports from the java library
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
 // imports from the project
-import Functionality.DatabaseConnectionFunc;
 import Session.*;
 import Databases.DoctorsDB;
 
@@ -20,7 +18,6 @@ import Databases.DoctorsDB;
 
 public class ViewBookingPage extends javax.swing.JFrame {
     public static Connection connection;
-    public static Statement statement;
     public String userId = Info.firstname;
 
     public ViewBookingPage() {
@@ -90,12 +87,11 @@ public class ViewBookingPage extends javax.swing.JFrame {
                 } else {
                     String combination = Year + "-" + Month;
                     try {
-                        connection = DatabaseConnectionFunc.getConnection();
-                        statement = connection.createStatement();
                         // Gets the required information about the booking where the date contains the
                         // year and month
-                        ResultSet results = statement.executeQuery(
+                        ResultSet results = Info.statement.executeQuery(
                                 "SELECT DoctorID, Date, Time FROM bookings WHERE Date LIKE '%" + combination + "%';");
+
                         // Clears the dropdown and the array of bookings.
                         // Also sets all tempory objects as invisible.
                         list.clear();
@@ -103,6 +99,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                         resultBookings.setVisible(false);
                         viewPastBooking.setVisible(false);
                         reschedule.setVisible(false);
+
                         while (results.next()) {
                             // Sets tempory objects as true
                             resultBookings.setVisible(true);
@@ -212,9 +209,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
         pack();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         try {
