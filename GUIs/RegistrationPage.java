@@ -4,6 +4,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
 import Checks.RegistrationCheck;
+import Functionality.RegistrationFunc;
 import Functionality.DatabaseConnectionFunc;
 import Session.General;
 
@@ -319,11 +320,13 @@ public class RegistrationPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Age must be greater than 0!");
         } else {
             String selection = RegistrationPage.totalGroup.getSelection().getActionCommand();
+
             boolean outcome = RegistrationCheck.test(firstnameInput.getText(), surnameInput.getText(), selection,
                     Integer.parseInt(ageInput.getText()), phoneInput.getText(),
                     String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());
+
             if (outcome) {
-                RegistrationCheck.sendData(firstnameInput.getText(), surnameInput.getText(), selection,
+                RegistrationFunc.sendData(firstnameInput.getText(), surnameInput.getText(), selection,
                         Integer.parseInt(ageInput.getText()), phoneInput.getText(),
                         String.valueOf(doctorList.getSelectedItem()), detailsInput.getText());
                 dispose();
