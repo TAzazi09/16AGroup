@@ -16,10 +16,7 @@ public class LoginCheck {
     public static int doctorName;
     public static boolean userFound = false;
 
-    public static void main(String user, String password) {
-        test(user, password);
-    }
-
+    // Performs the credentials, resultSet, and loginInfo checks
     public static boolean test(String username, String password) {
         try {
             //Returns all tuples where the username matches

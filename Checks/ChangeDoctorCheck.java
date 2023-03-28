@@ -12,10 +12,12 @@ import Session.Info;
  * @author Nikola
  */
 public class ChangeDoctorCheck {
+    // Performs the new doctor name check
     public static boolean test(String newDoctorName) {
         return newDoctorNameCheck(newDoctorName);
     }
 
+    // Checks if the new doctor name is valid
     private static boolean newDoctorNameCheck(String newDoctorName) {
         try {
             if (newDoctorName.equals("Choose a doctor")) {

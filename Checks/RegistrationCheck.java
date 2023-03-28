@@ -11,7 +11,7 @@ import Databases.DoctorsDB;
  * @additional checks by Nikola
  */
 public class RegistrationCheck {
-    // Tests if the data is valid, and if it is, sends it to the database
+    // Performs the first name, surname, age, phone number, doctor name, and details checks
     public static boolean test(String FirstName, String Surname, String Gender, Integer Age, String PhoneNumber,
             String DoctorName, String Details) {
         if (FirstName == null || Surname == null || Gender == null || Age == null || PhoneNumber == null

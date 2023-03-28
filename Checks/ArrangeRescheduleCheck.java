@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author Nikola
  */
 public class ArrangeRescheduleCheck {
-    // Tests if the data is valid, and if it is, returns true
+    // Performs the time and date checks
     public static boolean test(String time, String date) {
         if (!timeCheck(time))
             return false;

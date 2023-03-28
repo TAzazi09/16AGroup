@@ -49,10 +49,8 @@ public class ArrangeBookingFunc {
                                     + time + " on " + date + " with " + currentDocName + ".') WHERE patientID = '"
                                     + Info.backgroundID + "';");
 
-                    // Close all windows in the array
+                    // Close all windows and return to the main menu
                     General.closeAllWindows();
-
-                    //Returns the user to the main menu
                     MenuPage.main(null);
                 }
             }

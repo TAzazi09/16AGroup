@@ -32,10 +32,8 @@ public class ChangeDoctorFunc {
                 JOptionPane.showMessageDialog(null,
                         "Your doctor has successfully been changed to " + newDoctorName + ".");
 
-                // Close all windows in the array
+                // Close all windows and return to the main menu
                 General.closeAllWindows();
-
-                // Open the menu page
                 MenuPage.main(null);
             }
         } catch (Exception e) {
