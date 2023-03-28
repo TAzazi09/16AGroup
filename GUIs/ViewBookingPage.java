@@ -1,5 +1,6 @@
 package GUIs;
 
+// imports from the java library
 import java.awt.Window;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
+// imports from the project
 import Functionality.DatabaseConnectionFunc;
 import Session.Info;
 import Databases.DoctorsDB;

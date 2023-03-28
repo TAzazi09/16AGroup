@@ -1,8 +1,10 @@
 package Databases;
 
+// imports from the java library
 import java.sql.Statement;
 import java.sql.ResultSet;
 
+// imports from the project
 import Session.Info;
 
 /**

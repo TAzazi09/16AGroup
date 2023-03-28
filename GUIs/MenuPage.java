@@ -1,7 +1,9 @@
 package GUIs;
 
+// imports from the java library
 import java.sql.ResultSet;
 
+// imports from the project
 import Functionality.DatabaseConnectionFunc;
 import Session.Info;
 

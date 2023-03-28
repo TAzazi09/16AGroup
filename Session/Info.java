@@ -1,7 +1,10 @@
 package Session;
 
+// imports from the java library
 import java.sql.Connection;
 import java.sql.Statement;
+
+// imports from the project
 import Functionality.DatabaseConnectionFunc;
 
 /**

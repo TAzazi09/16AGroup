@@ -1,5 +1,6 @@
 package GUIs;
 
+// imports from the project
 import Functionality.ArrangeBookingFunc;
 import Functionality.DatabaseConnectionFunc;
 import Session.General;

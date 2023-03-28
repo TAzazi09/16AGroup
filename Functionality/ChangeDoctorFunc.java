@@ -1,8 +1,10 @@
 package Functionality;
 
+// imports from the java library
 import java.awt.Window;
 import javax.swing.JOptionPane;
 
+// imports from the project
 import Checks.ChangeDoctorCheck;
 import Databases.PatientsDB;
 import Databases.DoctorsDB;

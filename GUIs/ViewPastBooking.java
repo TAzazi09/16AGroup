@@ -1,8 +1,9 @@
 package GUIs;
 
+// imports from the project
 import Functionality.*;
+
 /**
- *
  * @author Ethan
  */
 public class ViewPastBooking extends javax.swing.JFrame {

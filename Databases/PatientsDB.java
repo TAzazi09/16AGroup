@@ -1,7 +1,9 @@
 package Databases;
 
+// imports from the java library
 import java.sql.ResultSet;
 
+// imports from the project
 import Session.Info;
 
 /**
@@ -12,7 +14,7 @@ import Session.Info;
 public class PatientsDB {
     public static void main(String[] args) {
         tableInitialization();
-        
+
         try {
             // Inserts the patients into the table
             insertPatient("Nikola", "Kolev", "Male", 20, "07856 791314",

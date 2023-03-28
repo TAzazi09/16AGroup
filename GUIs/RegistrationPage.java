@@ -1,8 +1,10 @@
 package GUIs;
 
+// imports from the java library
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
+// imports from the project
 import Checks.RegistrationCheck;
 import Functionality.RegistrationFunc;
 import Functionality.DatabaseConnectionFunc;

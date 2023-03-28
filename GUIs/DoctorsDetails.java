@@ -1,5 +1,6 @@
 package GUIs;
 
+// imports from the java library
 import javax.swing.*;
 import java.awt.Container;
 import java.awt.FlowLayout;

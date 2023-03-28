@@ -1,7 +1,9 @@
 package Checks;
 
+// imports from the java library
 import javax.swing.JOptionPane;
 
+// imports from the project
 import Databases.DoctorsDB;
 import Databases.PatientsDB;
 import Session.Info;

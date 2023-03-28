@@ -1,9 +1,11 @@
 package Checks;
 
+// imports from the java library
 import java.awt.Window;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
+// imports from the project
 import GUIs.MenuPage;
 import Session.Info;
 

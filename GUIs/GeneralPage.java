@@ -1,5 +1,6 @@
 package GUIs;
 
+// imports from the project
 import Functionality.DatabaseConnectionFunc;
 import Databases.DatabaseDB;
 import Session.General;
