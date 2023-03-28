@@ -3,6 +3,7 @@ package Session;
 // imports from the java library
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Window;
 
 /**
  * @author Nikola
@@ -14,5 +15,13 @@ public class General {
 
     public static Font font(int size) {
         return new Font("Monospaced", Font.PLAIN, size);
+    }
+
+    // Close all windows in the array
+    public static void closeAllWindows() {
+        Window[] windows = Window.getWindows();
+        for (Window window : windows) {
+            window.dispose();
+        }
     }
 }

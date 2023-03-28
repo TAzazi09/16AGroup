@@ -1,14 +1,13 @@
 package Functionality;
 
 // imports from the java library
-import java.awt.Window;
 import javax.swing.JOptionPane;
 
 // imports from the project
 import Checks.ChangeDoctorCheck;
 import Databases.PatientsDB;
 import Databases.DoctorsDB;
-import Session.Info;
+import Session.*;
 import GUIs.MenuPage;
 
 /**
@@ -34,9 +33,7 @@ public class ChangeDoctorFunc {
                         "Your doctor has successfully been changed to " + newDoctorName + ".");
 
                 // Close all windows in the array
-                for (Window window : Window.getWindows()) {
-                    window.dispose();
-                }
+                General.closeAllWindows();
 
                 // Open the menu page
                 MenuPage.main(null);

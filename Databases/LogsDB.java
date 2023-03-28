@@ -22,7 +22,7 @@ public class LogsDB {
                     "Timestamp TIMESTAMP NOT NULL," +
                     "Action VARCHAR(255)," +
                     "FOREIGN KEY (PatientID) REFERENCES patients (PatientID)," +
-                    "PRIMARY KEY (LogID)," +
+                    "PRIMARY KEY (LogID)" +
                     ");");
         } catch (Exception e) {
             e.printStackTrace();

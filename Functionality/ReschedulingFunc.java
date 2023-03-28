@@ -2,13 +2,12 @@ package Functionality;
 
 // imports from the java library
 import java.sql.ResultSet;
-import java.awt.Window;
 import javax.swing.JOptionPane;
 
 // imports from the project
 import GUIs.MenuPage;
 import Databases.DoctorsDB;
-import Session.Info;
+import Session.*;
 
 /**
  * @author Ethan
@@ -50,12 +49,9 @@ public class ReschedulingFunc {
                 Info.statement.executeUpdate(
                         "UPDATE bookings SET Date = '" + newDate + "', Time = '" + newTime + "' WHERE Time = '"
                                 + oldTime + "' AND DoctorID = '" + currentDoctorID + "' AND Date = '" + oldDate + "'");
-                Window[] windows = Window.getWindows();
-
+                
                 // Close all windows in the array
-                for (Window window : windows) {
-                    window.dispose();
-                }
+                General.closeAllWindows();
 
                 //Returns the user to the menu
                 MenuPage.main(null);

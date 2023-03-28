@@ -1,13 +1,12 @@
 package Checks;
 
 // imports from the java library
-import java.awt.Window;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 // imports from the project
 import GUIs.MenuPage;
-import Session.Info;
+import Session.*;
 
 /**
  * @author Ethan
@@ -40,12 +39,9 @@ public class LoginCheck {
 
                 doctorName = resultSet.getInt("doctorID");
                 JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
-                Window[] windows = Window.getWindows();
+                
+                General.closeAllWindows();
 
-                // Close all windows in the array
-                for (Window window : windows) {
-                    window.dispose();
-                }
                 userFound = true;
 
                 //Returns the user to the main menu

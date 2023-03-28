@@ -2,13 +2,12 @@ package Functionality;
 
 // imports from the java library
 import java.sql.ResultSet;
-import java.awt.Window;
 import javax.swing.JOptionPane;
 
 // imports from the project
 import Checks.ArrangeRescheduleCheck;
 import GUIs.MenuPage;
-import Session.Info;
+import Session.*;
 import Databases.PatientsDB;
 
 /**
@@ -51,10 +50,7 @@ public class ArrangeBookingFunc {
                                     + Info.backgroundID + "';");
 
                     // Close all windows in the array
-                    Window[] windows = Window.getWindows();
-                    for (Window window : windows) {
-                        window.dispose();
-                    }
+                    General.closeAllWindows();
 
                     //Returns the user to the main menu
                     MenuPage.main(null);

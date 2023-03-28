@@ -1,7 +1,6 @@
 package GUIs;
 
 // imports from the java library
-import java.awt.Window;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -11,7 +10,7 @@ import javax.swing.JOptionPane;
 
 // imports from the project
 import Functionality.DatabaseConnectionFunc;
-import Session.Info;
+import Session.*;
 import Databases.DoctorsDB;
 
 /**
@@ -124,12 +123,9 @@ public class ViewBookingPage extends javax.swing.JFrame {
         back.setText("Back");
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Window[] windows = Window.getWindows();
+                
+                General.closeAllWindows();
 
-                // Close all windows in the array
-                for (Window window : windows) {
-                    window.dispose();
-                }
                 MenuPage.main(null);
             }
         });
