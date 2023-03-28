@@ -6,6 +6,8 @@ Functionality: ViewPastBooking
 _______________________________________________________________________________________________________________________________________
 Nikola:
 Functionality: Authorization (users should not be able to access certain pages without being logged in)
+Func files: RegistrationFunc (emerged when refactoring RegistrationCheck)
+Checks: Create a separate folder and refactor code to separate the checks from the functional files
 Other: Code quality review for all pages
 
 _______________________________________________________________________________________________________________________________________
