@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 import Checks.ArrangeRescheduleCheck;
 import GUIs.MenuPage;
 import Session.Info;
-import Databases.DoctorsDB;
+import Databases.PatientsDB;
 
 /**
  * @author Nikola
@@ -20,27 +20,24 @@ public class ArrangeBookingFunc {
             if (time == null || date == null) {
                 JOptionPane.showMessageDialog(null, "Please select a time and date.");
             } else if (ArrangeRescheduleCheck.test(time, date)) {
-                // get the patient's doctor
-                ResultSet currentDoctor = Info.statement
-                        .executeQuery(
-                                "SELECT DoctorID FROM patients WHERE patientID = '" + Info.backgroundID + "';");
-                currentDoctor.next();
-                int doctorID = Integer.parseInt(currentDoctor.getString("DoctorID"));
-                String doctor = DoctorsDB.getDoctorName(doctorID);
+                // get the patient's doctor ID
+                int patientID = Integer.parseInt(Info.backgroundID);
+                int currentDocID = PatientsDB.getDoctorID(patientID);
+                String currentDocName = PatientsDB.getDoctorName(patientID);
 
                 //Checks if the doctor is available at that time
                 ResultSet docAvailability = Info.statement
-                        .executeQuery("SELECT * FROM bookings WHERE DoctorID = '" + doctorID + "' AND Time = '"
+                        .executeQuery("SELECT * FROM bookings WHERE DoctorID = '" + currentDocID + "' AND Time = '"
                                 + time + "' AND Date = '" + date + "';");
 
                 if (docAvailability.next()) {
                     //Informs the user the doctors unavailable
-                    JOptionPane.showMessageDialog(null, doctor + " is unavailable at that time.");
+                    JOptionPane.showMessageDialog(null, currentDocName + " is unavailable at that time.");
                 } else {
                     // insert the booking into the database (after ensuring the doctor is available)
                     Info.statement.execute(
                             "INSERT INTO bookings (PatientID, DoctorID, Time, Date) VALUES ('" + Info.backgroundID
-                                    + "', '" + doctorID + "', '" + time + "', '" + date + "');");
+                                    + "', '" + currentDocID + "', '" + time + "', '" + date + "');");
 
                     // display a message to the user
                     JOptionPane.showMessageDialog(null,
@@ -50,7 +47,7 @@ public class ArrangeBookingFunc {
                     Info.statement
                             .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + Info.firstname
                                     + " " + Info.surname + " has arranged a booking at "
-                                    + time + " on " + date + " with " + doctor + ".') WHERE patientID = '"
+                                    + time + " on " + date + " with " + currentDocName + ".') WHERE patientID = '"
                                     + Info.backgroundID + "';");
 
                     // Close all windows in the array
