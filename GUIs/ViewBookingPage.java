@@ -15,7 +15,6 @@ import Session.Info;
 import Databases.DoctorsDB;
 
 /**
- *
  * @author ks818
  * @functionality and GUI improvement by Ethan
  */

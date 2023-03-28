@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.util.Scanner;
 
 // imports from the project
+// Commented out because tests broke after sprint 2
 // import Tests.PasswordForDB;
 
 /**
@@ -18,6 +19,7 @@ public class DatabaseConnectionFunc {
 
     public static void main(String[] args) {
         if (!connected) {
+            // Commented out because tests broke after sprint 2
             // if (PasswordForDB.testing) {
             //     DatabaseConnectionFunc.connectForTests(PasswordForDB.password);
             // } else {
@@ -48,6 +50,7 @@ public class DatabaseConnectionFunc {
 
     public static Connection getConnection() {
         if (!connected) {
+            // Commented out because tests broke after sprint 2
             // if (PasswordForDB.testing) {
             //     connectForTests(PasswordForDB.password);
             // } else {
@@ -57,6 +60,7 @@ public class DatabaseConnectionFunc {
         return connection;
     }
 
+    // Commented out because tests broke after sprint 2
     // private static void connectForTests(String password) {
     //     try {
     //         Class.forName("com.mysql.cj.jdbc.Driver");
