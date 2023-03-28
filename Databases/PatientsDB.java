@@ -76,4 +76,12 @@ public class PatientsDB {
 
         return DoctorsDB.getDoctorName(doctorID);
     }
+
+    // Get patient's doctor's ID
+    public static int getDoctorID(int patientID) throws Exception {
+        ResultSet resultSet = Info.statement
+                .executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + patientID + "'");
+        resultSet.next();
+        return Integer.parseInt(resultSet.getString("DoctorID"));
+    }
 }
