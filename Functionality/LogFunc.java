@@ -31,14 +31,11 @@ public class LogFunc {
         }
     }
 
-    // TODO
-    public static void logArrangeBooking(int patientID) {
-        if (LogCheck.checkArrangeBooking(patientID)) {
-            try {
-                LogsDB.insertLog(patientID, "Arranged a booking");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+    public static void logBooking(int patientID, String time, String date, String doctorName) {
+        try {
+            LogsDB.insertLog(patientID, "Arranged a booking at " + time + " on " + date + " with " + doctorName);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

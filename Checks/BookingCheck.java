@@ -2,17 +2,23 @@ package Checks;
 
 // imports from the java library
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+
+// imports from the project
+import Session.Info;
 
 /**
  * @author Nikola
  */
 public class BookingCheck {
     // Performs the time and date checks
-    public static boolean test(String time, String date) {
+    public static boolean test(String time, String date, int doctorID) {
         if (!timeCheck(time))
             return false;
+        else if (!dateCheck(date))
+            return false;
         else
-            return dateCheck(date);
+            return doctorCheck(time, date, doctorID);
     }
 
     // Checks if the time is valid (format HH:MM and between 8:00 and 17:00)
@@ -57,5 +63,25 @@ public class BookingCheck {
             return false;
         }
         return true;
+    }
+
+    // Checks if the doctor is available at the time and date
+    public static boolean doctorCheck(String time, String date, int doctorID) {
+        try {
+            // Returns all tuples where the doctor is available at the time and date
+            ResultSet resultSet = Info.statement
+                    .executeQuery("select * from appointments WHERE doctorID = '" + doctorID + "' AND time = '" + time + "' AND date = '" + date + "'");
+
+            // If there are no tuples, the doctor is available
+            if (!resultSet.next())
+                return true;
+            else {
+                JOptionPane.showMessageDialog(null, "Doctor is not available at this time and date!");
+                return false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+            return false;
+        }
     }
 }
