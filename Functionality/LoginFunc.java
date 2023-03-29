@@ -34,6 +34,9 @@ public class LoginFunc {
 
                 userFound = true;
 
+                // Adds the login to the log
+                LogFunc.logLogin(Integer.parseInt(Info.backgroundID));
+
                 //Returns the user to the main menu
                 MenuPage.main(null);
             }

@@ -1,7 +1,7 @@
 package GUIs;
 
 // imports from the project
-import Checks.LoginCheck;
+import Functionality.LoginFunc;
 import Functionality.DatabaseConnectionFunc;
 import Session.General;
 
@@ -192,7 +192,7 @@ public class LoginPage extends javax.swing.JFrame {
         String username = usernameText.getText();
         String password = new String(passwordText.getPassword());
 
-        LoginCheck.test(username, password);
+        LoginFunc.sendData(username, password);
     }
 
     // Back button - returns to the general page
