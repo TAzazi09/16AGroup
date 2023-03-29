@@ -23,14 +23,11 @@ public class LogFunc {
         }
     }
 
-    // TODO
     public static void logLogin(int patientID) {
-        if (LogCheck.checkLogin(patientID)) {
-            try {
-                LogsDB.insertLog(patientID, "Logged in");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            LogsDB.insertLog(patientID, "Logged in");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

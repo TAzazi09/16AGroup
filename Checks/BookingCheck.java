@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 /**
  * @author Nikola
  */
-public class ArrangeRescheduleCheck {
+public class BookingCheck {
     // Performs the time and date checks
     public static boolean test(String time, String date) {
         if (!timeCheck(time))

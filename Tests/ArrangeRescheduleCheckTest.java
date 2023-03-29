@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import Checks.ArrangeRescheduleCheck;
+import Checks.BookingCheck;
 
 import static org.mockito.Mockito.*;
 import javax.swing.JOptionPane;
@@ -19,9 +19,9 @@ class ArrangeRescheduleCheckTest {
 		String date = "2024-05-05";
 		System.out.println(time.length());
 		
-		 JOptionPane optionPaneMock = mock(ArrangeRescheduleCheck.class);
+		 JOptionPane optionPaneMock = mock(BookingCheck.class);
 		
-		ArrangeRescheduleCheck.test(time, date);
+		BookingCheck.test(time, date);
 		
 		//assertFalse(ArrangeRescheduleCheck.test("1", "2024"));
 		

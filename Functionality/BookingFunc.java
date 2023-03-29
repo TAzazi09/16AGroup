@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 // imports from the project
-import Checks.ArrangeRescheduleCheck;
+import Checks.BookingCheck;
 import GUIs.MenuPage;
 import Session.*;
 import Databases.PatientsDB;
@@ -13,12 +13,12 @@ import Databases.PatientsDB;
 /**
  * @author Nikola
  */
-public class ArrangeBookingFunc {
+public class BookingFunc {
     public static void arrangeBooking(String time, String date) {
         try {
             if (time == null || date == null) {
                 JOptionPane.showMessageDialog(null, "Please select a time and date.");
-            } else if (ArrangeRescheduleCheck.test(time, date)) {
+            } else if (BookingCheck.test(time, date)) {
                 // get the patient's doctor ID
                 int patientID = Integer.parseInt(Info.backgroundID);
                 int currentDocID = PatientsDB.getDoctorID(patientID);

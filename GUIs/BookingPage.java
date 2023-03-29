@@ -1,7 +1,7 @@
 package GUIs;
 
 // imports from the project
-import Functionality.ArrangeBookingFunc;
+import Functionality.BookingFunc;
 import Functionality.DatabaseConnectionFunc;
 import Session.General;
 
@@ -54,7 +54,7 @@ public class BookingPage extends javax.swing.JFrame {
     private void arrangeButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String time = timeInput.getText();
         String date = dateInput.getText();
-        ArrangeBookingFunc.arrangeBooking(time, date);
+        BookingFunc.arrangeBooking(time, date);
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
