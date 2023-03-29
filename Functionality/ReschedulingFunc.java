@@ -45,6 +45,10 @@ public class ReschedulingFunc {
                         + " to "
                         + newTime + " " + newDate + ".') WHERE patientID = '" + Info.backgroundID + "';");
 
+                // Add the rescheduling to the log
+                LogFunc.logRescheduleBooking(Integer.parseInt(Info.backgroundID), oldTime, oldDate, newTime, newDate,
+                        currentDoctor);
+
                 // Updates the booking
                 Info.statement.executeUpdate(
                         "UPDATE bookings SET Date = '" + newDate + "', Time = '" + newTime + "' WHERE Time = '"
