@@ -4,10 +4,6 @@ package Checks;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
-// imports from the project
-import GUIs.MenuPage;
-import Session.*;
-
 /**
  * @author Ethan
  * @code quality by Nikola
@@ -15,20 +11,14 @@ import Session.*;
 public class LoginCheck {
     // Performs the credentials, resultSet, and loginInfo checks
     public static boolean test(String username, String password, ResultSet resultSet) {
-        try {
-            if (!credentialsLengthCheck(username, password))
-                return false;
-            else if (!resultSetCheck(resultSet))
-                return false;
-            else if (!loginInfoCheck(resultSet, username, password))
-                return false;
-            else {
-                return true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (!credentialsLengthCheck(username, password))
             return false;
-        }
+        else if (!resultSetCheck(resultSet))
+            return false;
+        else if (!loginInfoCheck(resultSet, username, password))
+            return false;
+        else
+            return true;
     }
 
     private static boolean credentialsLengthCheck(String username, String password) {
@@ -38,16 +28,16 @@ public class LoginCheck {
         } else if (password == null || password.length() > 100) {
             JOptionPane.showMessageDialog(null, "Password too long!");
             return false;
-        }
-        return true;
+        } else
+            return true;
     }
 
     private static boolean resultSetCheck(ResultSet resultSet) {
         if (resultSet == null) {
             JOptionPane.showMessageDialog(null, "No registered accounts with that name! Please register first!");
             return false;
-        }
-        return true;
+        } else
+            return true;
     }
 
     private static boolean loginInfoCheck(ResultSet resultSet, String username, String password) {
