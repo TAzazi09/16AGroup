@@ -2,7 +2,6 @@ package Functionality;
 
 // imports from the project
 import Databases.LogsDB;
-import Checks.LogCheck;
 import Databases.PatientsDB;
 
 public class LogFunc {
