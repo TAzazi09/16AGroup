@@ -13,16 +13,9 @@ import Session.*;
  * @code quality by Nikola
  */
 public class LoginCheck {
-    public static int doctorName;
-    public static boolean userFound = false;
-
     // Performs the credentials, resultSet, and loginInfo checks
-    public static boolean test(String username, String password) {
+    public static boolean test(String username, String password, ResultSet resultSet) {
         try {
-            //Returns all tuples where the username matches
-            ResultSet resultSet = Info.statement
-                    .executeQuery("select * from patients WHERE FirstName = '" + username + "'");
-
             if (!credentialsLengthCheck(username, password))
                 return false;
             else if (!resultSetCheck(resultSet))
@@ -30,20 +23,6 @@ public class LoginCheck {
             else if (!loginInfoCheck(resultSet, username, password))
                 return false;
             else {
-                Info.backgroundID = resultSet.getString("patientID");
-                Info.firstname = resultSet.getString("FirstName");
-                Info.surname = resultSet.getString("Surname");
-
-                doctorName = resultSet.getInt("doctorID");
-                JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
-                
-                General.closeAllWindows();
-
-                userFound = true;
-
-                //Returns the user to the main menu
-                MenuPage.main(null);
-
                 return true;
             }
         } catch (Exception e) {
