@@ -28,6 +28,9 @@ public class ChangeDoctorFunc {
                                 + " " + Info.surname + " has changed their doctor to " + newDoctorName
                                 + ".') WHERE patientID = '" + Info.backgroundID + "';");
 
+                // Adds the change of doctor to the log
+                LogFunc.logChangeDoctor(Integer.parseInt(Info.backgroundID), newDoctorName);
+
                 // display a message to the user
                 JOptionPane.showMessageDialog(null,
                         "Your doctor has successfully been changed to " + newDoctorName + ".");

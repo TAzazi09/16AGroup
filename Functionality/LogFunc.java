@@ -6,25 +6,20 @@ import Checks.LogCheck;
 import Databases.PatientsDB;
 
 public class LogFunc {
-    // Logs the registration of a patient if it passes the check
+    // Logs the registration of a patient
     public static void logRegistration(int patientID) {
-        if (LogCheck.checkRegistration(patientID)) {
-            try {
-                LogsDB.insertLog(patientID, "Registered with doctor " + PatientsDB.getDoctorID(patientID));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            LogsDB.insertLog(patientID, "Registered with doctor " + PatientsDB.getDoctorID(patientID));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    // TODO
     public static void logChangeDoctor(int patientID, String newDoctorName) {
-        if (LogCheck.checkChangeDoctor(patientID, newDoctorName)) {
-            try {
-                LogsDB.insertLog(patientID, "Changed doctor to " + newDoctorName);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            LogsDB.insertLog(patientID, "Changed doctor to " + newDoctorName);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
