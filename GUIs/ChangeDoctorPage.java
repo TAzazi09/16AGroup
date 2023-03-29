@@ -52,7 +52,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
         try {
             // Get the patient's doctor
             ResultSet currentDoctor = Info.statement
-                    .executeQuery("SELECT DoctorID FROM patients WHERE patientID = '" + Info.backgroundID + "';");
+                    .executeQuery("SELECT DoctorID FROM patients WHERE patientID = '" + Info.userID + "';");
             currentDoctor.next();
             curDocID = Integer.parseInt(currentDoctor.getString("DoctorID"));
             curDoc = DoctorsDB.getDoctorName(curDocID);

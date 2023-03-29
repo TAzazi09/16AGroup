@@ -17,7 +17,7 @@ public class Info {
     public static String firstname;
     public static String surname;
 
-    public static String backgroundID;
+    public static int userID;
 
     public static Connection connection;
     public static Statement statement;

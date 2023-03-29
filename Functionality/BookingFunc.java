@@ -17,15 +17,15 @@ public class BookingFunc {
         try {
             if (time == null || date == null) {
                 JOptionPane.showMessageDialog(null, "Please select a time and date.");
-            } else if (BookingCheck.test(time, date, PatientsDB.getDoctorID(Integer.parseInt(Info.backgroundID)))) {
+            } else if (BookingCheck.test(time, date, PatientsDB.getDoctorID(Info.userID))) {
                 // get the patient's doctor ID
-                int patientID = Integer.parseInt(Info.backgroundID);
+                int patientID = Info.userID;
                 int currentDocID = PatientsDB.getDoctorID(patientID);
                 String currentDocName = PatientsDB.getDoctorName(patientID);
 
                 // insert the booking into the database (after ensuring the doctor is available)
                 Info.statement.execute(
-                        "INSERT INTO bookings (PatientID, DoctorID, Time, Date) VALUES ('" + Info.backgroundID
+                        "INSERT INTO bookings (PatientID, DoctorID, Time, Date) VALUES ('" + Info.userID
                                 + "', '" + currentDocID + "', '" + time + "', '" + date + "');");
 
                 // Add the booking to the log
@@ -40,7 +40,7 @@ public class BookingFunc {
                         .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + Info.firstname
                                 + " " + Info.surname + " has arranged a booking at "
                                 + time + " on " + date + " with " + currentDocName + ".') WHERE patientID = '"
-                                + Info.backgroundID + "';");
+                                + Info.userID + "';");
 
                 // Close all windows and return to the main menu
                 General.closeAllWindows();

@@ -20,16 +20,16 @@ public class ChangeDoctorFunc {
                 int newDoctorID = DoctorsDB.getDoctorID(newDoctorName);
 
                 // Change the doctor in the database
-                PatientsDB.changeDoctor(Integer.parseInt(Info.backgroundID), newDoctorID);
+                PatientsDB.changeDoctor(Info.userID, newDoctorID);
 
                 // add a message to the patient's log
                 Info.statement
                         .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + Info.firstname
                                 + " " + Info.surname + " has changed their doctor to " + newDoctorName
-                                + ".') WHERE patientID = '" + Info.backgroundID + "';");
+                                + ".') WHERE patientID = '" + Info.userID + "';");
 
                 // Adds the change of doctor to the log
-                LogFunc.logChangeDoctor(Integer.parseInt(Info.backgroundID), newDoctorName);
+                LogFunc.logChangeDoctor(Info.userID, newDoctorName);
 
                 // display a message to the user
                 JOptionPane.showMessageDialog(null,

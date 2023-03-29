@@ -23,7 +23,7 @@ public class LoginFunc {
                     .executeQuery("select * from patients WHERE FirstName = '" + username + "'");
 
             if (LoginCheck.test(username, password, resultSet)) {
-                Info.backgroundID = resultSet.getString("patientID");
+                Info.userID = Integer.parseInt(resultSet.getString("patientID"));
                 Info.firstname = resultSet.getString("FirstName");
                 Info.surname = resultSet.getString("Surname");
 
@@ -35,7 +35,7 @@ public class LoginFunc {
                 userFound = true;
 
                 // Add the login to the log
-                LogFunc.logLogin(Integer.parseInt(Info.backgroundID));
+                LogFunc.logLogin(Info.userID);
 
                 //Returns the user to the main menu
                 MenuPage.main(null);

@@ -19,7 +19,7 @@ public class ReschedulingFunc {
 
             // Connects to the database
             ResultSet D = Info.statement
-                    .executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + Info.backgroundID + "'");
+                    .executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + Info.userID + "'");
             D.next();
 
             //Gets the Doctors name associated with the patient
@@ -43,10 +43,10 @@ public class ReschedulingFunc {
                         + Info.firstname
                         + " " + Info.surname + " has changed their booking from " + oldTime + " " + oldDate
                         + " to "
-                        + newTime + " " + newDate + ".') WHERE patientID = '" + Info.backgroundID + "';");
+                        + newTime + " " + newDate + ".') WHERE patientID = '" + Info.userID + "';");
 
                 // Add the rescheduling to the log
-                LogFunc.logRescheduleBooking(Integer.parseInt(Info.backgroundID), oldTime, oldDate, newTime, newDate,
+                LogFunc.logRescheduleBooking(Info.userID, oldTime, oldDate, newTime, newDate,
                         currentDoctor);
 
                 // Updates the booking
