@@ -31,10 +31,10 @@ public class BookingCheck {
             JOptionPane.showMessageDialog(null, "Time must be in the format HH:MM!");
             return false;
         } else if (Integer.parseInt(time.substring(0, 2)) < 8) {
-            JOptionPane.showMessageDialog(null, "Time must be between 8:00 and 17:00!");
+            JOptionPane.showMessageDialog(null, "Time must be between 8:00 and 17:30!");
             return false;
         } else if (Integer.parseInt(time.substring(0, 2)) > 17) {
-            JOptionPane.showMessageDialog(null, "Time must be between 8:00 and 17:00!");
+            JOptionPane.showMessageDialog(null, "Time must be between 8:00 and 17:30!");
             return false;
         } else if (Integer.parseInt(time.substring(3, 5)) != 0 && Integer.parseInt(time.substring(3, 5)) != 30) {
             JOptionPane.showMessageDialog(null, "Time must be in 30 minute intervals (eg. 16:00, 16:30, 17:00)!");
@@ -70,7 +70,7 @@ public class BookingCheck {
         try {
             // Returns all tuples where the doctor is available at the time and date
             ResultSet resultSet = Info.statement
-                    .executeQuery("select * from appointments WHERE doctorID = '" + doctorID + "' AND time = '" + time + "' AND date = '" + date + "'");
+                    .executeQuery("select * from bookings WHERE doctorID = '" + doctorID + "' AND time = '" + time + "' AND date = '" + date + "'");
 
             // If there are no tuples, the doctor is available
             if (!resultSet.next())

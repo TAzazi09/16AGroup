@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
  */
 public class LoginCheck {
     // Performs the credentials, resultSet, and loginInfo checks
+    // TODO: Find out why error messages are not being displayed
     public static boolean test(String username, String password, ResultSet resultSet) {
         if (!credentialsLengthCheck(username, password))
             return false;

@@ -27,7 +27,7 @@ public class ChangeDoctorCheck {
                 JOptionPane.showMessageDialog(null, "Doctor does not exist!");
                 return false;
             } else if (newDoctorName
-                    .equals(PatientsDB.getDoctorName(Integer.parseInt(Info.userID)))) {
+                    .equals(PatientsDB.getDoctorName(Info.userID))) {
                 JOptionPane.showMessageDialog(null, "You are already assigned to this doctor!");
                 return false;
             } else {
