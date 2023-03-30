@@ -80,7 +80,7 @@ public class DoctorsDetails extends javax.swing.JFrame {
             public static void main(String[] args) {
                 DoctorsDetails doctorMenu = new DoctorsDetails();
                 
-                General.setLookAndFeel(doctorMenu.getClass());
+                General.setNimbusLookAndFeel(doctorMenu.getClass());
 
                 java.awt.EventQueue.invokeLater(() -> new DoctorsDetails().setVisible(true));
             }

@@ -117,8 +117,7 @@ public class ViewPastBooking extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        General.setLookAndFeel(ViewPastBooking.class);
+        General.setNimbusLookAndFeel(ViewPastBooking.class);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

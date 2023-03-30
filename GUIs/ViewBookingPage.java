@@ -210,8 +210,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        General.setLookAndFeel(ViewBookingPage.class);
+        General.setNimbusLookAndFeel(ViewBookingPage.class);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

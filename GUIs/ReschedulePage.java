@@ -96,8 +96,7 @@ public class ReschedulePage extends javax.swing.JFrame {
 
     public static void main(String oldDate, String oldTime) {
         if (DatabaseConnectionFunc.connected) {
-
-            General.setLookAndFeel(ReschedulePage.class);
+            General.setNimbusLookAndFeel(ReschedulePage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {

@@ -32,8 +32,7 @@ public class RegistrationPage extends javax.swing.JFrame {
 
     public static void main(String[] args) {
         if (DatabaseConnectionFunc.connected) {
-            // NetBeans' exception checks
-            General.setLookAndFeel(RegistrationPage.class);
+            General.setNimbusLookAndFeel(RegistrationPage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(() -> new RegistrationPage().setVisible(true));

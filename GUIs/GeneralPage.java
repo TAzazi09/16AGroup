@@ -29,8 +29,7 @@ public class GeneralPage extends javax.swing.JFrame {
         }
 
         if (DatabaseConnectionFunc.connected) {
-            /* Set the Nimbus look and feel */
-            General.setLookAndFeel(GeneralPage.class);
+            General.setNimbusLookAndFeel(GeneralPage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(() -> new GeneralPage().setVisible(true));

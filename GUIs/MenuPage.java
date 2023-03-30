@@ -138,8 +138,7 @@ public class MenuPage extends javax.swing.JFrame {
 
     public static void main(String[] args) {
        if (DatabaseConnectionFunc.connected) {
-            /* Set the Nimbus look and feel */
-            General.setLookAndFeel(MenuPage.class);
+            General.setNimbusLookAndFeel(MenuPage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(() -> new MenuPage().setVisible(true));

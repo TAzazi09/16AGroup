@@ -155,8 +155,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     }
 
     public static void main(String[] args) {
-        /* Set the Nimbus look and feel */
-        General.setLookAndFeel(ChangeDoctorFunc.class);
+        General.setNimbusLookAndFeel(ChangeDoctorFunc.class);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new ChangeDoctorPage().setVisible(true));

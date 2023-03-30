@@ -17,8 +17,7 @@ public class BookingPage extends javax.swing.JFrame {
 
     public static void main(String[] args) {
         if (DatabaseConnectionFunc.connected) {
-            /* Set the Nimbus look and feel */
-        General.setLookAndFeel(BookingPage.class);
+        General.setNimbusLookAndFeel(BookingPage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(() -> new BookingPage().setVisible(true));

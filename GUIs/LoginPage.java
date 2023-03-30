@@ -19,7 +19,7 @@ public class LoginPage extends javax.swing.JFrame {
 
     public static void main(String[] args) {
         if (DatabaseConnectionFunc.connected) {
-            General.setLookAndFeel(LoginPage.class);
+            General.setNimbusLookAndFeel(LoginPage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(() -> new LoginPage().setVisible(true));
