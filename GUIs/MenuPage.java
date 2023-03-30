@@ -47,6 +47,9 @@ public class MenuPage extends javax.swing.JFrame {
 
         viewAllDoctors.setText("View all doctors");
 
+        printAllLogsButton.setText("Print all logs");
+        printAllLogsButton.addActionListener(this::printAllLogsActionPerformed);
+
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         patientMessages.setColumns(20);
@@ -138,10 +141,25 @@ public class MenuPage extends javax.swing.JFrame {
         ChangeDoctorPage.main(null);
     }
 
-//     private void viewAllDoctorsActionPerformed(java.awt.event.ActionEvent evt) {
-//         dispose();
-//         DoctorsDetails.main(null);
-//     }
+    //     private void viewAllDoctorsActionPerformed(java.awt.event.ActionEvent evt) {
+    //         dispose();
+    //         DoctorsDetails.main(null);
+    //     }
+
+    private void printAllLogsActionPerformed(java.awt.event.ActionEvent evt) {
+        try {
+            System.out.println("LogChecker.main() called");
+        
+            ResultSet allLogs = Info.statement.executeQuery("SELECT * FROM logs;");
+    
+            while (allLogs.next()) {
+                System.out.println(allLogs.getString("LogID") + " " + allLogs.getString("PatientID") + " "
+                        + allLogs.getString("Timestamp") + " " + allLogs.getString("Action"));
+            }
+        } catch (Exception e) {
+            System.out.println("Error (LogChecker.main())");
+        }
+    }
 
     public static void main(String[] args) {
         if (DatabaseConnectionFunc.connected) {
