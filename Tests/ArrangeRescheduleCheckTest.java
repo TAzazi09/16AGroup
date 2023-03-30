@@ -24,9 +24,4 @@ class ArrangeRescheduleCheckTest {
 		
 		//ArrangeRescheduleCheck.timeCheck("12:00");
 	}
-	
-	
 }
-
-
-

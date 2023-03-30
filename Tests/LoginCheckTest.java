@@ -26,8 +26,6 @@ public class TestLogin {
         assertFalse(result);
     }
 
-
-
     @Test
     public void testInvalidLengthCheck() {
         // Test invalid username and password lengths

@@ -18,13 +18,8 @@ import Session.*;
  */
 public class ReschedulingFuncTest {
 
-
-
-
 	@Before
 	public void setUp() throws Exception {
-		
-		
 		//ArrangeBookingFunc a = new ArrangeBookingFunc();
 		//kent.comp5590.ArrangeBookingFunc myClassMock = Mockito.mock(ArrangeBookingFunc.class);
 		 try {
@@ -41,8 +36,6 @@ public class ReschedulingFuncTest {
 	        }
 		 
 		 //ResultSet selectDoc = Info.statement.executeQuery("SELECT DoctorID FROM patients WHERE patientID = '1';");
-        
-		
 	}
 	@Test
 	public void testOverall() {
@@ -51,7 +44,6 @@ public class ReschedulingFuncTest {
 		String newDate ="2023-05-01";
 		String newTime ="11:00";
 		int docID = 1;
-		
 		
 		try {
 			ResultSet results = Info.statement
@@ -94,10 +86,7 @@ public class ReschedulingFuncTest {
 		
 		int otherPatient = 2;
 		
-		
 		try {
-	
-			
 			//Populating table with booking already at desired data and time for reschedule with other patient
 			 Info.statement.execute(
 		                "INSERT INTO bookings (PatientID, DoctorID, Time, Date) VALUES ('" + otherPatient
@@ -120,8 +109,6 @@ public class ReschedulingFuncTest {
 	        Mockito.verify(mockOptionPane);
 			//Checking to see if same message was output once method was called with values
 	        
-	        
-	        
 	        mockOptionPane.showMessageDialog(null, curDoc + " is unavailable at that time.");
 	        
 			} catch (Exception e) {
@@ -129,5 +116,4 @@ public class ReschedulingFuncTest {
 			e.printStackTrace();
 		}
 	}
-
 }

@@ -98,5 +98,4 @@ class ArrangeBookingFuncTest {
         // Mock DoctorsDB.getDoctorName method to return test data
         when(DoctorsDB.getDoctorName(anyInt()));
     }
-
 }

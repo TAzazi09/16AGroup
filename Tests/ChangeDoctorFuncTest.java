@@ -15,7 +15,6 @@ import Session.*;
  * @author Callum
  */
 public class ChangeDoctorFuncTest {
-	
 	 public static Connection connection;
 	 public static Statement statement;
 
@@ -36,7 +35,6 @@ public class ChangeDoctorFuncTest {
 		        }
 	}
 
-	
 	 @Test
 	 public void testChangeDoctor() throws Exception {
 	        // Set up initial state
@@ -49,28 +47,19 @@ public class ChangeDoctorFuncTest {
 	        String surname = "Doe";
 	        String expectedMessage = "Your doctor has successfully been changed to " + newDoctorName + ".";
 
-	        
-
 	        // Call the method
 	        Info.backgroundID = backgroundID;
 	        try {
-	        	
 	        	//statement = connection.createStatement();
 	        //Checking if it can change doctor if all requirements are hit	
 	        Info.statement
             .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + firstName
                     + " " + surname + " has changed their doctor to " + newDoctorName
                     + ".') WHERE patientID = '" + Info.backgroundID + "';");
-	        
-	        
 	        }
 	        catch (Exception e) {
-	        	
 	        	assertEquals(expectedMessage, "Your doctor has successfully been changed to " + newDoctorName + ".");
-	        
 	        }
-
-	        
 	    }
 	 
 	 @Test
@@ -83,26 +72,16 @@ public class ChangeDoctorFuncTest {
 	        String surname = "Doe";
 	        String expectedMessage = "Doctor does not exist!";
 
-	        
-
 	        // Call the method
 	        Info.backgroundID = backgroundID;
 	        try {
-	        	
 	        	//statement = connection.createStatement();
 	        //Checking if it can change doctor if all requirements are hit	
 	        	Info.statement.executeUpdate("use NHS");
 	            ResultSet resultSet = Info.statement.executeQuery("SELECT Name FROM doctors WHERE Name = '" + doctorName + "';");
-	        
-	        
 	        }
 	        catch (Exception e) {
-	        	
 	        	assertEquals(resultSet, "Doctor does not exist!");
-	        
-	        }
-
-	        
+	        }       
 	    }
-
 }

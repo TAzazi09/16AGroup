@@ -29,7 +29,6 @@ public class BookingCheckTest {
 
         assertFalse(BookingCheck.test("abc", "2023-01-01", 1));
 
-
         //test correct details
         assertTrue(BookingCheck.test("08:00", "2023-04-01", 1));
 
@@ -38,9 +37,3 @@ public class BookingCheckTest {
         assertTrue(BookingCheck.test("16:30", "2023-04-01", 1));
     }
 }
-
-
-
-
-
-

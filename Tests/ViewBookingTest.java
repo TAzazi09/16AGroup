@@ -15,7 +15,6 @@ import Session.*;
 /**
  * @author Callum
  */
-
 public class ViewBookingTest {
 	
 	 public static Connection connection;
@@ -23,7 +22,6 @@ public class ViewBookingTest {
 
 	@Before
 	public void setUp() {
-		
 		try {
 			 Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -64,8 +62,5 @@ public class ViewBookingTest {
         e.printStackTrace();
     }
         //assertEquals(testDocAvailability, results);
-        
-        
 	}
-
 }
