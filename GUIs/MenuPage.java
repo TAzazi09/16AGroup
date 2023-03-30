@@ -26,7 +26,7 @@ public class MenuPage extends javax.swing.JFrame {
         javax.swing.JButton viewDoctorButton = new javax.swing.JButton();
         javax.swing.JButton printAllLogsButton = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
-        javax.swing.JTextArea jTextArea1 = new javax.swing.JTextArea();
+        javax.swing.JTextArea patientMessages = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,24 +49,25 @@ public class MenuPage extends javax.swing.JFrame {
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setEditable(false);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setWrapStyleWord(true);
+        patientMessages.setColumns(20);
+        patientMessages.setRows(5);
+        patientMessages.setEditable(false);
+        patientMessages.setLineWrap(true);
+        patientMessages.setWrapStyleWord(true);
+        
         try {
             //Selects messages for the patient
             ResultSet message = Info.statement
                     .executeQuery("select messages from patients where patientID = '" + Info.userID + "'");
             while (message.next()) {
                 //Adds the messages to the unmodifiable text area
-                jTextArea1.append(" - " + message.getString("messages") + "\n");
+                patientMessages.append(" - " + message.getString("messages") + "\n");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        jScrollPane1.setViewportView(jTextArea1);
+        jScrollPane1.setViewportView(patientMessages);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
