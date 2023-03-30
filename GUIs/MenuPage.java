@@ -24,6 +24,7 @@ public class MenuPage extends javax.swing.JFrame {
         javax.swing.JButton viewBookingDetails = new javax.swing.JButton();
         javax.swing.JButton viewAllDoctors = new javax.swing.JButton();
         javax.swing.JButton viewDoctorButton = new javax.swing.JButton();
+        javax.swing.JButton printAllLogsButton = new javax.swing.JButton();
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         javax.swing.JTextArea jTextArea1 = new javax.swing.JTextArea();
 
@@ -34,17 +35,17 @@ public class MenuPage extends javax.swing.JFrame {
         createBooking.setText("Create a booking");
         createBooking.addActionListener(this::createBookingAction);
 
-        changeDoctor.setText("Change your doctor");
-        changeDoctor.addActionListener(this::changeDoctorActionPerformed);
-
         viewBookings.setText("View bookings");
         viewBookings.addActionListener(this::viewBookingsActionPerformed);
 
         viewBookingDetails.setText("View past booking");
 
-        viewAllDoctors.setText("View all doctors");
-
         viewDoctorButton.setText("View current doctor");
+
+        changeDoctor.setText("Change your doctor");
+        changeDoctor.addActionListener(this::changeDoctorActionPerformed);
+
+        viewAllDoctors.setText("View all doctors");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
