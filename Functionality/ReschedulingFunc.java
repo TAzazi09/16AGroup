@@ -49,7 +49,7 @@ public class ReschedulingFunc {
                 LogFunc.logRescheduleBooking(Info.userID, oldTime, oldDate, newTime, newDate,
                         currentDoctor);
 
-                // Updates the booking
+                // Updates the booking DB
                 Info.statement.executeUpdate(
                         "UPDATE bookings SET Date = '" + newDate + "', Time = '" + newTime + "' WHERE Time = '"
                                 + oldTime + "' AND DoctorID = '" + currentDoctorID + "' AND Date = '" + oldDate + "'");
