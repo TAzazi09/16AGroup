@@ -38,9 +38,11 @@ public class LogFunc {
         }
     }
 
-    public static void logRescheduleBooking(int patientID, String oldTime, String oldDate, String newTime, String newDate, String doctorName) {
+    public static void logRescheduleBooking(int patientID, String oldTime, String oldDate, String newTime,
+            String newDate, String doctorName) {
         try {
-            LogsDB.insertLog(patientID, "Rescheduled a booking from " + oldTime + " on " + oldDate + " to " + newTime + " on " + newDate + " with " + doctorName);
+            LogsDB.insertLog(patientID, "Rescheduled a booking from " + oldTime + " on " + oldDate + " to " + newTime
+                    + " on " + newDate + " with " + doctorName);
         } catch (Exception e) {
             e.printStackTrace();
         }

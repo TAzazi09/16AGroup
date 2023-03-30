@@ -49,14 +49,16 @@ public class DoctorsDB {
 
     public static int getDoctorID(String doctorName) throws Exception {
         Info.statement.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement.executeQuery("SELECT DoctorID FROM doctors WHERE Name = '" + doctorName + "';");
+        ResultSet resultSet = Info.statement
+                .executeQuery("SELECT DoctorID FROM doctors WHERE Name = '" + doctorName + "';");
         resultSet.next();
         return Integer.parseInt(resultSet.getString("DoctorID"));
     }
 
     public static String getDoctorName(int doctorId) throws Exception {
         Info.statement.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement.executeQuery("SELECT Name FROM doctors WHERE DoctorID = '" + doctorId + "';");
+        ResultSet resultSet = Info.statement
+                .executeQuery("SELECT Name FROM doctors WHERE DoctorID = '" + doctorId + "';");
         resultSet.next();
         return resultSet.getString("Name");
     }
@@ -64,7 +66,8 @@ public class DoctorsDB {
     // Checks if a doctor exists
     public static boolean doctorExists(String doctorName) throws Exception {
         Info.statement.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement.executeQuery("SELECT Name FROM doctors WHERE Name = '" + doctorName + "';");
+        ResultSet resultSet = Info.statement
+                .executeQuery("SELECT Name FROM doctors WHERE Name = '" + doctorName + "';");
         return resultSet.next();
     }
 }

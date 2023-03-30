@@ -29,7 +29,6 @@ public class RegistrationCheck {
             return false;
         else
             return detailsCheck(Details);
-
     }
 
     // Checks if the first name is valid (between 2 and 15 characters, and only

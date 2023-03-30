@@ -53,7 +53,7 @@ public class ReschedulingFunc {
                 Info.statement.executeUpdate(
                         "UPDATE bookings SET Date = '" + newDate + "', Time = '" + newTime + "' WHERE Time = '"
                                 + oldTime + "' AND DoctorID = '" + currentDoctorID + "' AND Date = '" + oldDate + "'");
-                
+
                 // Close all windows in the array
                 General.closeAllWindows();
 

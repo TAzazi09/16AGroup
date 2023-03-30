@@ -6,7 +6,6 @@ import Session.General;
  * @author Ethan
  */
 public class ViewPastBooking extends javax.swing.JFrame {
-
     /**
      * Creates new form NewJFrame1
      */

@@ -23,7 +23,7 @@ public class DatabaseConnectionFunc {
             // if (PasswordForDB.testing) {
             //     DatabaseConnectionFunc.connectForTests(PasswordForDB.password);
             // } else {
-                DatabaseConnectionFunc.connect();
+            DatabaseConnectionFunc.connect();
             // }
         }
     }
@@ -54,7 +54,7 @@ public class DatabaseConnectionFunc {
             // if (PasswordForDB.testing) {
             //     connectForTests(PasswordForDB.password);
             // } else {
-                connect();
+            connect();
             // }
         }
         return connection;

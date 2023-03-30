@@ -15,7 +15,6 @@ import Session.General;
  * @functional and GUI changes by Ethan
  * @cosmetic and minor functional changes by Nikola
  */
-
 public class RegistrationPage extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JComboBox<String> doctorList;
