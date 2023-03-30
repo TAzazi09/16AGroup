@@ -33,7 +33,7 @@ public class BookingCheckTest {
         assertTrue(BookingCheck.test("08:00", "2023-04-01", 1));
 
         assertTrue(BookingCheck.test("17:00", "2023-04-01", 1));
-        
+
         assertTrue(BookingCheck.test("16:30", "2023-04-01", 1));
     }
 }

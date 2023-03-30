@@ -16,29 +16,29 @@ import Session.*;
  * @author Callum
  */
 public class ViewBookingTest {
-	
-	 public static Connection connection;
-	 public static Statement statement;
+
+	public static Connection connection;
+	public static Statement statement;
 
 	@Before
 	public void setUp() {
 		try {
-			 Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 
-	         DatabaseConnectionFunc.main(null);
+			DatabaseConnectionFunc.main(null);
 
-	         // Initialize the database
-	         if (DatabaseConnectionFunc.connected) {
-	             DatabaseDB.main(null);
-	             
-	             connection = DatabaseConnectionFunc.getConnection();
-                 statement = connection.createStatement();
-                 
-                 Info.connect();
-	         }
-			  } catch (Exception e) {
-		            e.printStackTrace();
-		        }
+			// Initialize the database
+			if (DatabaseConnectionFunc.connected) {
+				DatabaseDB.main(null);
+
+				connection = DatabaseConnectionFunc.getConnection();
+				statement = connection.createStatement();
+
+				Info.connect();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
@@ -46,21 +46,21 @@ public class ViewBookingTest {
 		String time = "12:00";
 		int doctorID = 1;
 		String date = "2024-05-01";
-		
+
 		String yearAndMonth = "2024-05";
-		
+
 		try {
-        //Add booking for time and date
-        ResultSet testDocAvailability = Info.statement.executeQuery("SELECT * FROM bookings WHERE DoctorID = '" + doctorID + "' AND Time = '"
-            + time + "' AND Date = '" + date + "';");
-        
-        //Query to check if there is a booking made in the same timeframe
-        ResultSet results = statement.executeQuery(
-                "SELECT DoctorID, Date, Time FROM bookings WHERE Date LIKE '%" + yearAndMonth + "%';");
+			//Add booking for time and date
+			ResultSet testDocAvailability = Info.statement
+					.executeQuery("SELECT * FROM bookings WHERE DoctorID = '" + doctorID + "' AND Time = '"
+							+ time + "' AND Date = '" + date + "';");
+
+			//Query to check if there is a booking made in the same timeframe
+			ResultSet results = statement.executeQuery(
+					"SELECT DoctorID, Date, Time FROM bookings WHERE Date LIKE '%" + yearAndMonth + "%';");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-	 catch (Exception e) {
-        e.printStackTrace();
-    }
-        //assertEquals(testDocAvailability, results);
+		//assertEquals(testDocAvailability, results);
 	}
 }
