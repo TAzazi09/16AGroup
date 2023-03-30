@@ -54,7 +54,7 @@ public class MenuPage extends javax.swing.JFrame {
         patientMessages.setEditable(false);
         patientMessages.setLineWrap(true);
         patientMessages.setWrapStyleWord(true);
-        
+
         try {
             //Selects messages for the patient
             ResultSet message = Info.statement
@@ -128,15 +128,20 @@ public class MenuPage extends javax.swing.JFrame {
         BookingPage.main(null);
     }
 
+    private void viewBookingsActionPerformed(java.awt.event.ActionEvent evt) {
+        dispose();
+        ViewBookingPage.main(null);
+    }
+
     private void changeDoctorActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
         ChangeDoctorPage.main(null);
     }
 
-    private void viewBookingsActionPerformed(java.awt.event.ActionEvent evt) {
-        dispose();
-        ViewBookingPage.main(null);
-    }
+//     private void viewAllDoctorsActionPerformed(java.awt.event.ActionEvent evt) {
+//         dispose();
+//         DoctorsDetails.main(null);
+//     }
 
     public static void main(String[] args) {
         if (DatabaseConnectionFunc.connected) {
