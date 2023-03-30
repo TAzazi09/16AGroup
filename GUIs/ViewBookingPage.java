@@ -120,7 +120,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
         back.setText("Back");
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                
+
                 General.closeAllWindows();
 
                 MenuPage.main(null);
@@ -169,8 +169,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                                 .addGap(150, 150, 150)
                                                 .addComponent(resultBookings, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                         250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(10, 10, 10)
-                                        )
+                                                .addGap(10, 10, 10))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(back)
                                                 .addComponent(reschedule)

@@ -17,7 +17,7 @@ public class BookingPage extends javax.swing.JFrame {
 
     public static void main(String[] args) {
         if (DatabaseConnectionFunc.connected) {
-        General.setNimbusLookAndFeel(BookingPage.class);
+            General.setNimbusLookAndFeel(BookingPage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(() -> new BookingPage().setVisible(true));
@@ -71,7 +71,6 @@ public class BookingPage extends javax.swing.JFrame {
         dateLabel.setFont(General.font(18));
         dateInput.setFont(General.font(18));
         dateInput.setBorder(javax.swing.BorderFactory.createLineBorder(General.BLACK));
-
 
         backButton.setBackground(General.BUTTON_BLUE);
         backButton.setFont(General.font(18));
