@@ -63,7 +63,6 @@ public class DoctorsDB {
         return resultSet.getString("Name");
     }
 
-    // Checks if a doctor exists
     public static boolean doctorExists(String doctorName) throws Exception {
         Info.statement.executeUpdate("use NHS");
         ResultSet resultSet = Info.statement

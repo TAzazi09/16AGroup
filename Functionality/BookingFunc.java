@@ -18,7 +18,6 @@ public class BookingFunc {
             if (time == null || date == null) {
                 JOptionPane.showMessageDialog(null, "Please select a time and date.");
             } else if (BookingCheck.test(time, date, PatientsDB.getDoctorID(Info.userID))) {
-                // get the patient's doctor ID
                 int patientID = Info.userID;
                 int currentDocID = PatientsDB.getDoctorID(patientID);
                 String currentDocName = PatientsDB.getDoctorName(patientID);
