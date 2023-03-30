@@ -3,9 +3,7 @@ package Tests;
 import org.junit.*;
 import static org.junit.Assert.*;
 import org.junit.Tests;
-
 import Checks.BookingCheck;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

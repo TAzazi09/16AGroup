@@ -1,16 +1,12 @@
 package Functionality.*;
 
 import static org.mockito.Mockito.*;
-
 import java.sql.ResultSet;
-
 import javax.swing.JOptionPane;
-
 import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import Checks.LoginCheck;
 import Databases.*;
 import Functionality.ArrangeBookingFunc;

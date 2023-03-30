@@ -2,18 +2,14 @@ package Tests;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import javax.swing.JOptionPane;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-
 import Databases.*;
 import Functionality.*;
 import Session.*;
