@@ -5,8 +5,7 @@ import java.sql.ResultSet;
 
 // imports from the project
 import Databases.DoctorsDB;
-import Session.Info;
-import Session.General;
+import Session.*;
 import Functionality.ChangeDoctorFunc;
 
 /**
@@ -157,26 +156,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
     public static void main(String[] args) {
         /* Set the Nimbus look and feel */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
-                    null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
-                    null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
-                    null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChangeDoctorPage.class.getName()).log(java.util.logging.Level.SEVERE,
-                    null, ex);
-        }
+        General.setLookAndFeel(ChangeDoctorFunc.class);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new ChangeDoctorPage().setVisible(true));

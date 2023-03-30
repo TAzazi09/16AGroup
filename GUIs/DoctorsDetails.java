@@ -7,6 +7,9 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// imports from the project
+import Session.General;
+
 /**
  * @author Tare
  * @code quality by Nikola
@@ -76,27 +79,8 @@ public class DoctorsDetails extends javax.swing.JFrame {
 
             public static void main(String[] args) {
                 DoctorsDetails doctorMenu = new DoctorsDetails();
-                try {
-                    for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager
-                            .getInstalledLookAndFeels()) {
-                        if ("Nimbus".equals(info.getName())) {
-                            javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                            break;
-                        }
-                    }
-                } catch (ClassNotFoundException ex) {
-                    java.util.logging.Logger.getLogger(DoctorsDetails.class.getName())
-                            .log(java.util.logging.Level.SEVERE, null, ex);
-                } catch (InstantiationException ex) {
-                    java.util.logging.Logger.getLogger(DoctorsDetails.class.getName())
-                            .log(java.util.logging.Level.SEVERE, null, ex);
-                } catch (IllegalAccessException ex) {
-                    java.util.logging.Logger.getLogger(DoctorsDetails.class.getName())
-                            .log(java.util.logging.Level.SEVERE, null, ex);
-                } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                    java.util.logging.Logger.getLogger(DoctorsDetails.class.getName())
-                            .log(java.util.logging.Level.SEVERE, null, ex);
-                }
+                
+                General.setLookAndFeel(doctorMenu.getClass());
 
                 java.awt.EventQueue.invokeLater(() -> new DoctorsDetails().setVisible(true));
             }
