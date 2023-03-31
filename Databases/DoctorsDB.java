@@ -32,7 +32,7 @@ public class DoctorsDB {
                     "DoctorID INT NOT NULL auto_increment," +
                     "Name VARCHAR(15) NOT NULL, " +
                     "PhoneNumber VARCHAR(12) NOT NULL," +
-                    "Background VARCHAR(100), " +
+                    "Background VARCHAR(255), " +
                     "Speciality VARCHAR(15) NOT NULL," +
                     "PRIMARY KEY (DoctorID)" +
                     ");");
