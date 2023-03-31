@@ -61,7 +61,7 @@ public class MenuPage extends javax.swing.JFrame {
         try {
             //Selects messages for the patient
             ResultSet message = Info.statement
-                    .executeQuery("select messages from Patients where patientID = '" + Info.userID + "'");
+                    .executeQuery("SELECT messages FROM Patients WHERE patientID = '" + Info.userID + "'");
             while (message.next()) {
                 //Adds the messages to the unmodifiable text area
                 patientMessages.append(" - " + message.getString("messages") + "\n");

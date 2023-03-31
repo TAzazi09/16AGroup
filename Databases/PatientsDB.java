@@ -56,7 +56,7 @@ public class PatientsDB {
     private static void insertPatient(String firstName, String surname, String gender, int age,
             String phoneNumber, int doctorId, String details, String messages) throws Exception {
         Info.statement.executeUpdate(
-                "INSERT into Patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages) "
+                "INSERT INTO Patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages) "
                         + "VALUES (DEFAULT, '" + firstName + "', '" + surname + "', '" + gender + "', '" + age + "', '"
                         + phoneNumber + "', '" + doctorId + "', '" + details + "', '" + messages + "')");
     }

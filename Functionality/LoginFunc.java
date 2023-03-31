@@ -20,7 +20,7 @@ public class LoginFunc {
         try {
             //Returns all tuples where the username matches
             ResultSet resultSet = Info.statement
-                    .executeQuery("select * from Patients WHERE FirstName = '" + username + "'");
+                    .executeQuery("SELECT * FROM Patients WHERE FirstName = '" + username + "'");
 
             if (LoginCheck.test(username, password, resultSet)) {
                 Info.userID = Integer.parseInt(resultSet.getString("patientID"));

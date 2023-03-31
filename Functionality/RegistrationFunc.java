@@ -20,8 +20,8 @@ public class RegistrationFunc {
         int patientID = 0;
         try {
             Info.statement.executeUpdate(
-                    "insert into Patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages )"
-                            + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
+                    "INSERT INTO Patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages) "
+                            + "VALUES (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
                             + PhoneNumber + "','" + DoctorsDB.getDoctorID(DoctorName) + "','" + Details + "','"
                             + FirstName + " " + Surname
                             + " successfully registered with " + DoctorName + " as their doctor')");

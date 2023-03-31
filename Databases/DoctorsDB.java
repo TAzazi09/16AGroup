@@ -43,7 +43,7 @@ public class DoctorsDB {
 
     private static void insertDoctor(String doctorName, String phoneNumber, String specialty)
             throws Exception {
-        Info.statement.executeUpdate("INSERT into Doctors (DoctorID, Name, PhoneNumber, Speciality) " +
+        Info.statement.executeUpdate("INSERT INTO Doctors (DoctorID, Name, PhoneNumber, Speciality) " +
                 "VALUES (DEFAULT, '" + doctorName + "', '" + phoneNumber + "', '" + specialty + "')");
     }
 

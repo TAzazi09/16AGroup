@@ -30,7 +30,7 @@ public class LogsDB {
     }
 
     public static void insertLog(int patientID, String action) throws Exception {
-        Info.statement.executeUpdate("INSERT into Logs (LogID, PatientID, Timestamp, Action) " +
+        Info.statement.executeUpdate("INSERT INTO Logs (LogID, PatientID, Timestamp, Action) " +
                 "VALUES (DEFAULT, '" + patientID + "', CURRENT_TIMESTAMP, '" + action + "')");
     }
 }
