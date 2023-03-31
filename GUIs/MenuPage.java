@@ -61,7 +61,7 @@ public class MenuPage extends javax.swing.JFrame {
         try {
             //Selects messages for the patient
             ResultSet message = Info.statement
-                    .executeQuery("select messages from patients where patientID = '" + Info.userID + "'");
+                    .executeQuery("select messages from Patients where patientID = '" + Info.userID + "'");
             while (message.next()) {
                 //Adds the messages to the unmodifiable text area
                 patientMessages.append(" - " + message.getString("messages") + "\n");
@@ -151,7 +151,7 @@ public class MenuPage extends javax.swing.JFrame {
         try {
             System.out.println("LogChecker.main() called");
         
-            ResultSet allLogs = Info.statement.executeQuery("SELECT * FROM logs;");
+            ResultSet allLogs = Info.statement.executeQuery("SELECT * FROM Logs;");
     
             while (allLogs.next()) {
                 System.out.println(allLogs.getString("LogID") + " " + allLogs.getString("PatientID") + " "

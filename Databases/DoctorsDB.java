@@ -27,8 +27,8 @@ public class DoctorsDB {
     private static void tableInitialization() {
         try {
             Info.statement.executeUpdate("use NHS");
-            Info.statement.executeUpdate("DROP TABLE IF EXISTS doctors;");
-            Info.statement.execute("CREATE TABLE doctors (" +
+            Info.statement.executeUpdate("DROP TABLE IF EXISTS Doctors;");
+            Info.statement.execute("CREATE TABLE Doctors (" +
                     "DoctorID INT NOT NULL auto_increment," +
                     "Name VARCHAR(15) NOT NULL, " +
                     "PhoneNumber VARCHAR(12) NOT NULL," +
@@ -43,14 +43,14 @@ public class DoctorsDB {
 
     private static void insertDoctor(String doctorName, String phoneNumber, String specialty)
             throws Exception {
-        Info.statement.executeUpdate("INSERT into doctors (DoctorID, Name, PhoneNumber, Speciality) " +
+        Info.statement.executeUpdate("INSERT into Doctors (DoctorID, Name, PhoneNumber, Speciality) " +
                 "VALUES (DEFAULT, '" + doctorName + "', '" + phoneNumber + "', '" + specialty + "')");
     }
 
     public static int getDoctorID(String doctorName) throws Exception {
         Info.statement.executeUpdate("use NHS");
         ResultSet resultSet = Info.statement
-                .executeQuery("SELECT DoctorID FROM doctors WHERE Name = '" + doctorName + "';");
+                .executeQuery("SELECT DoctorID FROM Doctors WHERE Name = '" + doctorName + "';");
         resultSet.next();
         return Integer.parseInt(resultSet.getString("DoctorID"));
     }
@@ -58,7 +58,7 @@ public class DoctorsDB {
     public static String getDoctorName(int doctorId) throws Exception {
         Info.statement.executeUpdate("use NHS");
         ResultSet resultSet = Info.statement
-                .executeQuery("SELECT Name FROM doctors WHERE DoctorID = '" + doctorId + "';");
+                .executeQuery("SELECT Name FROM Doctors WHERE DoctorID = '" + doctorId + "';");
         resultSet.next();
         return resultSet.getString("Name");
     }
@@ -66,7 +66,7 @@ public class DoctorsDB {
     public static boolean doctorExists(String doctorName) throws Exception {
         Info.statement.executeUpdate("use NHS");
         ResultSet resultSet = Info.statement
-                .executeQuery("SELECT Name FROM doctors WHERE Name = '" + doctorName + "';");
+                .executeQuery("SELECT Name FROM Doctors WHERE Name = '" + doctorName + "';");
         return resultSet.next();
     }
 }

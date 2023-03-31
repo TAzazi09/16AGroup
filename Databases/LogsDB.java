@@ -15,13 +15,13 @@ public class LogsDB {
     private static void tableInitialization() {
         try {
             Info.statement.executeUpdate("use NHS");
-            Info.statement.executeUpdate("DROP TABLE IF EXISTS logs;");
-            Info.statement.execute("CREATE TABLE logs (" +
+            Info.statement.executeUpdate("DROP TABLE IF EXISTS Logs;");
+            Info.statement.execute("CREATE TABLE Logs (" +
                     "LogID INT NOT NULL auto_increment," +
                     "PatientID INT NOT NULL, " +
                     "Timestamp TIMESTAMP NOT NULL," +
                     "Action VARCHAR(255)," +
-                    "FOREIGN KEY (PatientID) REFERENCES patients (PatientID)," +
+                    "FOREIGN KEY (PatientID) REFERENCES Patients (PatientID)," +
                     "PRIMARY KEY (LogID)" +
                     ");");
         } catch (Exception e) {
@@ -30,7 +30,7 @@ public class LogsDB {
     }
 
     public static void insertLog(int patientID, String action) throws Exception {
-        Info.statement.executeUpdate("INSERT into logs (LogID, PatientID, Timestamp, Action) " +
+        Info.statement.executeUpdate("INSERT into Logs (LogID, PatientID, Timestamp, Action) " +
                 "VALUES (DEFAULT, '" + patientID + "', CURRENT_TIMESTAMP, '" + action + "')");
     }
 }

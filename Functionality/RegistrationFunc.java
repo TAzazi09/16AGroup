@@ -20,12 +20,12 @@ public class RegistrationFunc {
         int patientID = 0;
         try {
             Info.statement.executeUpdate(
-                    "insert into patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages )"
+                    "insert into Patients (PatientID,FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages )"
                             + "values (DEFAULT,'" + FirstName + "','" + Surname + "','" + Gender + "','" + Age + "','"
                             + PhoneNumber + "','" + DoctorsDB.getDoctorID(DoctorName) + "','" + Details + "','"
                             + FirstName + " " + Surname
                             + " successfully registered with " + DoctorName + " as their doctor')");
-            ResultSet resultSet = Info.statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM patients");
+            ResultSet resultSet = Info.statement.executeQuery("SELECT MAX(PatientID) AS PatientID FROM Patients");
 
             if (resultSet.next()) {
                 patientID = resultSet.getInt("PatientID");

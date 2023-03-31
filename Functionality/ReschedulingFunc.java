@@ -19,7 +19,7 @@ public class ReschedulingFunc {
 
             // Connects to the database
             ResultSet D = Info.statement
-                    .executeQuery("SELECT DoctorID FROM patients WHERE PatientID = '" + Info.userID + "'");
+                    .executeQuery("SELECT DoctorID FROM Patients WHERE PatientID = '" + Info.userID + "'");
             D.next();
 
             //Gets the Doctors name associated with the patient
@@ -39,7 +39,7 @@ public class ReschedulingFunc {
             } else {
                 JOptionPane.showMessageDialog(null,
                         "Your booking has successfully been changed to " + newTime + " on the " + newDate + ".");
-                Info.statement.execute("UPDATE patients SET messages = CONCAT(messages,'\n + "
+                Info.statement.execute("UPDATE Patients SET messages = CONCAT(messages,'\n + "
                         + Info.firstname
                         + " " + Info.surname + " has changed their booking from " + oldTime + " " + oldDate
                         + " to "

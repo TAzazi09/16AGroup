@@ -25,8 +25,8 @@ public class BookingsDB {
                     + "Date Date NOT NULL,"
                     + "Detail VARCHAR(250),"
                     + "Prescription VARCHAR(250),"
-                    + "FOREIGN KEY (PatientID) REFERENCES patients (PatientID),"
-                    + "FOREIGN KEY (DoctorID) REFERENCES doctors (DoctorID),"
+                    + "FOREIGN KEY (PatientID) REFERENCES Patients (PatientID),"
+                    + "FOREIGN KEY (DoctorID) REFERENCES Doctors (DoctorID),"
                     + "PRIMARY KEY (BookingID),"
                     + "UNIQUE (PatientID, DoctorID, Time, Date)"
                     + ");");

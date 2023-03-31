@@ -61,7 +61,7 @@ class ArrangeBookingFuncTest {
 
         // Assert
         verify(infoMock.statement, times(1)).executeQuery(
-                "SELECT DoctorID FROM patients WHERE patientID = '" + Info.backgroundID + "';");
+                "SELECT DoctorID FROM Patients WHERE patientID = '" + Info.backgroundID + "';");
         verify(infoMock.statement, times(1)).executeQuery("SELECT * FROM Bookings WHERE DoctorID = '"
                 + Integer.parseInt(resultSetMock.getString("DoctorID")) + "' AND Time = '" + time + "' AND Date = '"
                 + date + "';");

@@ -52,7 +52,7 @@ public class ChangeDoctorFuncTest {
 			//statement = connection.createStatement();
 			//Checking if it can change doctor if all requirements are hit	
 			Info.statement
-					.execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + firstName
+					.execute("UPDATE Patients SET messages = CONCAT(messages,'\n + " + firstName
 							+ " " + surname + " has changed their doctor to " + newDoctorName
 							+ ".') WHERE patientID = '" + Info.backgroundID + "';");
 		} catch (Exception e) {
@@ -77,7 +77,7 @@ public class ChangeDoctorFuncTest {
 			//Checking if it can change doctor if all requirements are hit	
 			Info.statement.executeUpdate("use NHS");
 			ResultSet resultSet = Info.statement
-					.executeQuery("SELECT Name FROM doctors WHERE Name = '" + doctorName + "';");
+					.executeQuery("SELECT Name FROM Doctors WHERE Name = '" + doctorName + "';");
 		} catch (Exception e) {
 			assertEquals(resultSet, "Doctor does not exist!");
 		}

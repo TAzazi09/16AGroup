@@ -36,7 +36,7 @@ public class ReschedulingFuncTest {
 			e.printStackTrace();
 		}
 
-		//ResultSet selectDoc = Info.statement.executeQuery("SELECT DoctorID FROM patients WHERE patientID = '1';");
+		//ResultSet selectDoc = Info.statement.executeQuery("SELECT DoctorID FROM Patients WHERE patientID = '1';");
 	}
 
 	@Test

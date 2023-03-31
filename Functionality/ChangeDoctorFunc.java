@@ -24,7 +24,7 @@ public class ChangeDoctorFunc {
 
                 // add a message to the patient's log
                 Info.statement
-                        .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + Info.firstname
+                        .execute("UPDATE Patients SET messages = CONCAT(messages,'\n + " + Info.firstname
                                 + " " + Info.surname + " has changed their doctor to " + newDoctorName
                                 + ".') WHERE patientID = '" + Info.userID + "';");
 

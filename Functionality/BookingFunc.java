@@ -24,7 +24,7 @@ public class BookingFunc {
 
                 // insert the booking into the database (after ensuring the doctor is available)
                 Info.statement.execute(
-                        "INSERT INTO bookings (PatientID, DoctorID, Time, Date) VALUES ('" + Info.userID
+                        "INSERT INTO Bookings (PatientID, DoctorID, Time, Date) VALUES ('" + Info.userID
                                 + "', '" + currentDocID + "', '" + time + "', '" + date + "');");
 
                 // Add the booking to the log
@@ -36,7 +36,7 @@ public class BookingFunc {
 
                 // add a message to the patient's log
                 Info.statement
-                        .execute("UPDATE patients SET messages = CONCAT(messages,'\n + " + Info.firstname
+                        .execute("UPDATE Patients SET messages = CONCAT(messages,'\n + " + Info.firstname
                                 + " " + Info.surname + " has arranged a booking at "
                                 + time + " on " + date + " with " + currentDocName + ".') WHERE patientID = '"
                                 + Info.userID + "';");
