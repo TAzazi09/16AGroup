@@ -70,7 +70,7 @@ public class BookingCheck {
         try {
             // Returns all tuples where the doctor is available at the time and date
             ResultSet resultSet = Info.statement
-                    .executeQuery("select * from bookings WHERE doctorID = '" + doctorID + "' AND time = '" + time
+                    .executeQuery("select * from Bookings WHERE doctorID = '" + doctorID + "' AND time = '" + time
                             + "' AND date = '" + date + "'");
 
             // If there are no tuples, the doctor is available

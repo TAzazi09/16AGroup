@@ -52,12 +52,12 @@ public class ViewBookingTest {
 		try {
 			//Add booking for time and date
 			ResultSet testDocAvailability = Info.statement
-					.executeQuery("SELECT * FROM bookings WHERE DoctorID = '" + doctorID + "' AND Time = '"
+					.executeQuery("SELECT * FROM Bookings WHERE DoctorID = '" + doctorID + "' AND Time = '"
 							+ time + "' AND Date = '" + date + "';");
 
 			//Query to check if there is a booking made in the same timeframe
 			ResultSet results = statement.executeQuery(
-					"SELECT DoctorID, Date, Time FROM bookings WHERE Date LIKE '%" + yearAndMonth + "%';");
+					"SELECT DoctorID, Date, Time FROM Bookings WHERE Date LIKE '%" + yearAndMonth + "%';");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

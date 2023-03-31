@@ -62,7 +62,7 @@ class ArrangeBookingFuncTest {
         // Assert
         verify(infoMock.statement, times(1)).executeQuery(
                 "SELECT DoctorID FROM patients WHERE patientID = '" + Info.backgroundID + "';");
-        verify(infoMock.statement, times(1)).executeQuery("SELECT * FROM bookings WHERE DoctorID = '"
+        verify(infoMock.statement, times(1)).executeQuery("SELECT * FROM Bookings WHERE DoctorID = '"
                 + Integer.parseInt(resultSetMock.getString("DoctorID")) + "' AND Time = '" + time + "' AND Date = '"
                 + date + "';");
         verify(mockOptionPane, times(1)).showMessageDialog(null, "Doctor is unavailable at that time.");

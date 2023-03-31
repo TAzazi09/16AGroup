@@ -49,7 +49,7 @@ public class ReschedulingFuncTest {
 
 		try {
 			ResultSet results = Info.statement
-					.executeQuery("SELECT * FROM bookings WHERE Time = '" + newTime + "' AND DoctorID = '"
+					.executeQuery("SELECT * FROM Bookings WHERE Time = '" + newTime + "' AND DoctorID = '"
 							+ docID + "' AND Date = '" + newDate + "'");
 
 			//Creating mock object for JOptionPane
@@ -92,11 +92,11 @@ public class ReschedulingFuncTest {
 		try {
 			//Populating table with booking already at desired data and time for reschedule with other patient
 			Info.statement.execute(
-					"INSERT INTO bookings (PatientID, DoctorID, Time, Date) VALUES ('" + otherPatient
+					"INSERT INTO Bookings (PatientID, DoctorID, Time, Date) VALUES ('" + otherPatient
 							+ "', '" + docID + "', '" + time + "', '" + date + "');");
 			//Query to check for availability of Doctor
 			ResultSet results = Info.statement
-					.executeQuery("SELECT * FROM bookings WHERE Time = '" + newTime + "' AND DoctorID = '"
+					.executeQuery("SELECT * FROM Bookings WHERE Time = '" + newTime + "' AND DoctorID = '"
 							+ docID + "' AND Date = '" + newDate + "'");
 
 			//Creating mock object for JOptionPane

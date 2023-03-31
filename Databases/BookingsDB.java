@@ -16,8 +16,8 @@ public class BookingsDB {
     private static void tableInitialization() {
         try {
             Info.statement.executeUpdate("use NHS");
-            Info.statement.execute("DROP TABLE IF EXISTS bookings");
-            Info.statement.execute("CREATE TABLE bookings ("
+            Info.statement.execute("DROP TABLE IF EXISTS Bookings");
+            Info.statement.execute("CREATE TABLE Bookings ("
                     + "BookingID INT NOT NULL auto_increment,"
                     + "PatientID INT NOT NULL, "
                     + "DoctorID INT NOT NULL, "
