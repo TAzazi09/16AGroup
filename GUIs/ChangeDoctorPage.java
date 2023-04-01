@@ -75,6 +75,8 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
         submitButton.setBackground(General.BUTTON_BLUE);
         submitButton.addActionListener(this::submitButtonActionPerformed);
 
+        // Panel layout code section (below)
+        // -----------------------------------------------------------------------------------------------------------------------------------
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(

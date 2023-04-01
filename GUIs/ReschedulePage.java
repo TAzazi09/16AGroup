@@ -15,12 +15,12 @@ public class ReschedulePage extends javax.swing.JFrame {
 
     private void initComponents(String oldDate, String oldTime) {
 
-        dateLabel = new javax.swing.JLabel();
+        javax.swing.JLabel dateLabel = new javax.swing.JLabel();
         timeInput = new javax.swing.JTextField("HH:MM");
         dateInput = new javax.swing.JTextField("YYYY-MM-DD");
-        timeLabel = new javax.swing.JLabel();
-        submit = new javax.swing.JButton();
-        title = new javax.swing.JLabel();
+        javax.swing.JLabel timeLabel = new javax.swing.JLabel();
+        javax.swing.JButton submit = new javax.swing.JButton();
+        javax.swing.JLabel title = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -29,11 +29,7 @@ public class ReschedulePage extends javax.swing.JFrame {
         timeLabel.setText("New Time");
 
         submit.setText("Reschedule");
-        submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButton(evt, oldDate, oldTime);
-            }
-        });
+        submit.addActionListener(evt -> submitButton(evt, oldDate, oldTime));
 
         title.setText("Please enter your new date and time:");
 
@@ -99,21 +95,13 @@ public class ReschedulePage extends javax.swing.JFrame {
             General.setNimbusLookAndFeel(ReschedulePage.class);
 
             /* Create and display the form */
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new ReschedulePage(oldDate, oldTime).setVisible(true);
-                }
-            });
+            java.awt.EventQueue.invokeLater(() -> new ReschedulePage(oldDate, oldTime).setVisible(true));
         } else {
             GeneralPage.main(null);
         }
     }
 
     // Variables declaration
-    private javax.swing.JButton submit;
-    private javax.swing.JLabel timeLabel;
-    private javax.swing.JLabel dateLabel;
-    private javax.swing.JLabel title;
     private javax.swing.JTextField dateInput;
     private javax.swing.JTextField timeInput;
 }
