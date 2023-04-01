@@ -20,7 +20,7 @@ public class LogsDB {
                     "LogID INT NOT NULL auto_increment," +
                     "PatientID INT NOT NULL, " +
                     "Timestamp TIMESTAMP NOT NULL," +
-                    "Action VARCHAR(255)," +
+                    "Action VARCHAR(255) NOT NULL," +
                     "FOREIGN KEY (PatientID) REFERENCES Patients (PatientID)," +
                     "PRIMARY KEY (LogID)" +
                     ");");
