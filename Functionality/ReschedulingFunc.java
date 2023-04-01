@@ -13,7 +13,7 @@ import Session.*;
  * @author Ethan
  */
 public class ReschedulingFunc {
-    public static void resechduleBooking(String oldDate, String oldTime, String newDate, String newTime) {
+    public static void rescheduleBooking(String oldDate, String oldTime, String newDate, String newTime) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
