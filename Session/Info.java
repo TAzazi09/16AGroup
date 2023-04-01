@@ -12,7 +12,6 @@ import Functionality.DatabaseConnectionFunc;
  */
 public class Info {
     public static boolean connected;
-    public static boolean loggedIn;
 
     public static String firstname;
     public static String surname;

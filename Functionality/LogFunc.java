@@ -4,6 +4,9 @@ package Functionality;
 import Databases.LogsDB;
 import Databases.PatientsDB;
 
+/**
+ * @author Nikola
+ */
 public class LogFunc {
     // Logs the registration of a patient
     public static void logRegistration(int patientID) {
