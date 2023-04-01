@@ -39,7 +39,7 @@ public class PatientsDB {
                     "FirstName VARCHAR(20) NOT NULL, " +
                     "Surname VARCHAR(20) NOT NULL," +
                     "Gender VARCHAR(10) NOT NULL," +
-                    "Age INT (3) NOT NULL," +
+                    "Age INT (3) NOT NULL CHECK (Age < 130)," +
                     "PhoneNumber VARCHAR(12) NOT NULL," +
                     "DoctorID INT NOT NULL,  " +
                     "Details VARCHAR(100), " +
