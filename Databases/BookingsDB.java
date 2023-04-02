@@ -30,8 +30,10 @@ public class BookingsDB {
                     + "PRIMARY KEY (BookingID),"
                     + "UNIQUE (PatientID, DoctorID, Time, Date)"
                     + ");");
+                    Info.statement.executeQuery("INSERT INTO Bookings VALUES ")
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 }
