@@ -1,5 +1,8 @@
 package GUIs;
 
+import java.sql.Date;
+import java.sql.ResultSet;
+
 // imports from the project
 import Session.General;
 
@@ -7,12 +10,12 @@ import Session.General;
  * @author Ethan
  */
 public class ViewPastBooking extends javax.swing.JFrame {
-    /**
-     * Creates new form NewJFrame1
-     */
-    public ViewPastBooking() {
-        initComponents();
-    }
+        /**
+         * Creates new form NewJFrame1
+         */
+        public ViewPastBooking() {
+                initComponents();
+        }
 
     private void initComponents() {
         title = new javax.swing.JLabel();
@@ -23,21 +26,36 @@ public class ViewPastBooking extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         prescriptionOuput = new javax.swing.JTextArea();
         back = new javax.swing.JButton();
+        Details = new String();
+        Prescription = new String();
+
+
+        try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                ResultSet results = Info.statement.executeQuery("SELECT Details, Prescription FROM Bookings WHERE DoctorID = '" + DoctorID + "' AND Date = '" + Date + "' AND Time = '" + Time + "'");
+                Details = results.getString("Details");
+                Prescription = results.getString("Messages");
+
+        } catch (Exception e) {               
+                 e.printStackTrace();
+        } 
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        title.setText("Details about booking on  INSERT DATE AND TIME");
+        title.setText("Details about booking on " + Date + " " + Time + "");
 
         detailsLabel.setText("Details");
 
         prescriptionLabel.setText("Prescription");
 
+        detailsOutput.setText(details);
         detailsOutput.setEditable(false);
         detailsOutput.setColumns(20);
         detailsOutput.setLineWrap(true);
         detailsOutput.setRows(5);
         jScrollPane1.setViewportView(detailsOutput);
 
+        prescriptionOuput.setText(presciption);
         prescriptionOuput.setEditable(false);
         prescriptionOuput.setColumns(20);
         prescriptionOuput.setLineWrap(true);
@@ -106,34 +124,39 @@ public class ViewPastBooking extends javax.swing.JFrame {
                                 .addContainerGap(18, Short.MAX_VALUE)));
 
         pack();
-    }// </editor-fold>                        
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {
-        dispose();
-        MenuPage.main(null);
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        General.setNimbusLookAndFeel(ViewPastBooking.class);
+// </editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ViewPastBooking().setVisible(true);
-            }
-        });
-    }
+        private void backActionPerformed(java.awt.event.ActionEvent evt) {
+                dispose();
+                MenuPage.main(null);
+        }
 
-    // Variables declaration                  
-    private javax.swing.JButton back;
-    private javax.swing.JLabel detailsLabel;
-    private javax.swing.JTextArea detailsOutput;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel prescriptionLabel;
-    private javax.swing.JTextArea prescriptionOuput;
-    private javax.swing.JLabel title;
+        /**
+         * @param args the command line arguments
+         */
+        public static void main(String args[]) {
+                General.setNimbusLookAndFeel(ViewPastBooking.class);
+
+                /* Create and display the form */
+                java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                                new ViewPastBooking().setVisible(true);
+                        }
+                });
+        }
+
+        // Variables declaration
+        private javax.swing.JButton back;
+        private javax.swing.JLabel detailsLabel;
+        private javax.swing.JTextArea detailsOutput;
+        private javax.swing.JScrollPane jScrollPane1;
+        private javax.swing.JScrollPane jScrollPane2;
+        private javax.swing.JLabel prescriptionLabel;
+        private javax.swing.JTextArea prescriptionOuput;
+        private javax.swing.JLabel title;
+        private String Details;
+        private String Prescription;
 }
