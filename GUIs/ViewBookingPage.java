@@ -48,12 +48,24 @@ public class ViewBookingPage extends javax.swing.JFrame {
 
         viewPastBooking.setText("View booking details");
         viewPastBooking.setVisible(false);
+        viewPastBooking.addActionListener(evt -> {
+            String[] split = resultBookings.getSelectedItem().toString().split("~");
+            String doctorID = split[2].split(" ")[0];
+            String date = split[1].split(" ")[1];
+            String time = split[2].split(" ")[2];
+            System.out.println(doctorID);
+            System.out.println(date);
+            System.out.println(time);
+            GUIs.ViewPastBooking.main(doctorID, date, time);
+        });
+
         resultBookings.addActionListener(evt -> {
             reschedule.setVisible(true);
             if (resultBookings.getSelectedItem() != null) {
                 String[] split = resultBookings.getSelectedItem().toString().split("~");
-                String dateInput = split[1].split(" ")[1];
-                LocalDate inputDate = LocalDate.parse(dateInput);
+                String date = split[1].split(" ")[1];
+                System.out.println(date);
+                LocalDate inputDate = LocalDate.parse(date);
                 LocalDate currentDate = LocalDate.now();
                 if (inputDate.isBefore(currentDate)) {
                     viewPastBooking.setVisible(true);
