@@ -12,7 +12,7 @@ Nikola: (main thing - Authorization)
     - Databases: LogDB to log all users' activity (as part of the authorization process)
     - Func files: LogFunc as part of the authorization process and RegistrationFunc & LoginFunc (emerged when refactoring RegistrationCheck & LoginCheck)
     - Checks: Create a separate folder and refactor code to separate the checks from the functional files & create the LogCheck file (as part of the authorization process)
-    - Documents: Database Design Document (w/ Ethan)
+    - Documents: Database Design Document (w/ Ethan) && Code Quality Document
     - Other: Code quality review for all pages
 
 _______________________________________________________________________________________________________________________________________
