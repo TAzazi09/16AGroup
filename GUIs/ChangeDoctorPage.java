@@ -157,9 +157,13 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     }
 
     public static void main(String[] args) {
-        General.setNimbusLookAndFeel(ChangeDoctorFunc.class);
+        if (Info.userID != -1) {
+            General.setNimbusLookAndFeel(ChangeDoctorFunc.class);
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new ChangeDoctorPage().setVisible(true));
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(() -> new ChangeDoctorPage().setVisible(true));
+        } else {
+            GeneralPage.main(null);
+        }
     }
 }

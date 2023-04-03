@@ -16,7 +16,7 @@ public class Info {
     public static String firstname;
     public static String surname;
 
-    public static int userID;
+    public static int userID = -1; // -1 means no user is logged in
 
     public static Connection connection;
     public static Statement statement;
