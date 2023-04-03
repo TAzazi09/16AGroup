@@ -16,7 +16,8 @@ public class LoginCheck {
             return false;
         else if (!resultSetCheck(resultSet))
             return false;
-        else return loginInfoCheck(resultSet, username, password);
+        else
+            return loginInfoCheck(resultSet, username, password);
     }
 
     // Checks if the username and password are too long

@@ -34,7 +34,8 @@ public class BookingPage extends javax.swing.JFrame {
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        MenuPage.loadPage();;
+        MenuPage.loadPage();
+        ;
         dispose();
     }
 
