@@ -131,8 +131,14 @@ public class ViewBookingPage extends javax.swing.JFrame {
                             // Sets tempory objects as true
                             resultBookings.setVisible(true);
                             reschedule.setVisible(true);
-                            list.add((DoctorsDB.getDoctorName(results.getInt("DoctorID"))) + " ~ "
-                                    + results.getString("Date") + " ~ " + results.getString("Time"));
+
+                            System.out.println(results.getString("Date"));
+                            System.out.println(results.getString("Time"));
+                            System.out.println(results.getInt("DoctorID"));
+                            System.out.println(DoctorsDB.getDoctorName(results.getInt("DoctorID")));
+
+                            // list.add(DoctorsDB.getDoctorName(results.getInt("DoctorID")) + " ~ "
+                            //         + results.getString("Date") + " ~ " + results.getString("Time"));
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
