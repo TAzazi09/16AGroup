@@ -9,6 +9,10 @@ import Session.Info;
  * @author Ethan
  */
 public class ReschedulePage extends javax.swing.JFrame {
+    // Variables declaration
+    private javax.swing.JTextField dateInput;
+    private javax.swing.JTextField timeInput;
+
     public ReschedulePage(String oldDate, String oldTime) {
         initComponents(oldDate, oldTime);
     }
@@ -100,8 +104,4 @@ public class ReschedulePage extends javax.swing.JFrame {
         // Sends both the new and old date / time
         ReschedulingFunc.rescheduleBooking(oldDate, oldTime, date, time);
     }
-
-    // Variables declaration
-    private javax.swing.JTextField dateInput;
-    private javax.swing.JTextField timeInput;
 }

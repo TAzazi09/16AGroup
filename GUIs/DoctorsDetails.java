@@ -15,6 +15,10 @@ import Session.General;
  * @code quality by Nikola
  */
 public class DoctorsDetails extends javax.swing.JFrame {
+    // Variables declaration
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
+    private javax.swing.JMenuBar jMenuBar1;
     private JComboBox<String> doctorDropdown;
     private JTextArea doctorDetails;
     private String[] doctorInfo;
@@ -86,8 +90,4 @@ public class DoctorsDetails extends javax.swing.JFrame {
             }
         });
     }
-
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
-    private javax.swing.JMenuBar jMenuBar1;
 }

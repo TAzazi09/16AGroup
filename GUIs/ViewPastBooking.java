@@ -9,6 +9,18 @@ import Session.*;
  * @author Ethan
  */
 public class ViewPastBooking extends javax.swing.JFrame {
+    // Variables declaration
+    private javax.swing.JButton back;
+    private javax.swing.JLabel detailsLabel;
+    private javax.swing.JTextArea detailsOutput;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel prescriptionLabel;
+    private javax.swing.JTextArea prescriptionOuput;
+    private javax.swing.JLabel title;
+    private String Details;
+    private String Prescription;
+
     public ViewPastBooking(String DoctorID, String Date, String Time) {
         initComponents(DoctorID, Date, Time);
     }
@@ -143,16 +155,4 @@ public class ViewPastBooking extends javax.swing.JFrame {
         dispose();
         MenuPage.loadPage();
     }
-
-    // Variables declaration
-    private javax.swing.JButton back;
-    private javax.swing.JLabel detailsLabel;
-    private javax.swing.JTextArea detailsOutput;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel prescriptionLabel;
-    private javax.swing.JTextArea prescriptionOuput;
-    private javax.swing.JLabel title;
-    private String Details;
-    private String Prescription;
 }

@@ -16,6 +16,18 @@ import Databases.DoctorsDB;
  * @functionality and GUI improvement by Ethan
  */
 public class ViewBookingPage extends javax.swing.JFrame {
+    // Variables declaration
+    private javax.swing.JButton Confirm_button;
+    private javax.swing.JComboBox<String> Month_Selector;
+    private javax.swing.JLabel Title;
+    private javax.swing.JTextField yearInput;
+    private javax.swing.JLabel date_selected_text;
+    private javax.swing.JLabel logged_user_text;
+    private javax.swing.JButton back;
+    private javax.swing.JComboBox<String> resultBookings;
+    private java.util.ArrayList<String> list;
+    private javax.swing.JButton reschedule;
+    private javax.swing.JButton viewPastBooking;
     public static Connection connection;
     public String userId = Info.firstname;
 
@@ -236,17 +248,4 @@ public class ViewBookingPage extends javax.swing.JFrame {
 
         pack();
     }
-
-    // Variables declaration
-    private javax.swing.JButton Confirm_button;
-    private javax.swing.JComboBox<String> Month_Selector;
-    private javax.swing.JLabel Title;
-    private javax.swing.JTextField yearInput;
-    private javax.swing.JLabel date_selected_text;
-    private javax.swing.JLabel logged_user_text;
-    private javax.swing.JButton back;
-    private javax.swing.JComboBox<String> resultBookings;
-    private java.util.ArrayList<String> list;
-    private javax.swing.JButton reschedule;
-    private javax.swing.JButton viewPastBooking;
 }
