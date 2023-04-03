@@ -1,0 +1,20 @@
+package ...
+
+imports from the java library
+
+imports from the project
+
+author and others documentation
+publi class {
+    test method - combines all the tests and checks if they pass
+
+    check1 - contains checks grouped by some attribute
+
+    check2 - contains checks grouped by some attribute
+
+    check3 - contains checks grouped by some attribute
+
+    .
+    .
+    .
+}
