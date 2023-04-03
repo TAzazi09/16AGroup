@@ -29,7 +29,7 @@ public class ViewBookingTest {
 
 			// Initialize the database
 			if (DatabaseConnectionFunc.connected) {
-				DatabaseDB.main(null);
+				DatabaseDB.initializeDB();
 
 				connection = DatabaseConnectionFunc.getConnection();
 				statement = connection.createStatement();

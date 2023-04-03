@@ -8,8 +8,8 @@ import Session.Info;
  * @file created by Nikola (project structure)
  */
 public class DatabaseDB {
-    // Creates the database
-    public static void main(String[] args) {
+    // Creates the database and the tables
+    public static void initializeDB() {
         try {
             // Connects to the database (if not already connected)
             if (!Info.connected) {
