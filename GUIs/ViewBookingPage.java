@@ -72,7 +72,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
             System.out.println(doctorID);
             System.out.println(date);
             System.out.println(time);
-            GUIs.ViewPastBooking.main(doctorID, date, time);
+            GUIs.ViewPastBooking.loadPage(doctorID, date, time);
         });
 
         resultBookings.addActionListener(evt -> {

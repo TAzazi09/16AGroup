@@ -13,6 +13,22 @@ public class ViewPastBooking extends javax.swing.JFrame {
         initComponents(DoctorID, Date, Time);
     }
 
+    public static void loadPage(String DoctorID, String Date, String Time) {
+        if (Info.userID != -1) {
+            General.setNimbusLookAndFeel(ViewPastBooking.class);
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new ViewPastBooking(DoctorID, Date, Time).setVisible(true);
+                }
+            });
+        } else {
+            General.closeAllWindows();
+            GeneralPage.main(null);
+        }
+    }
+
     private void initComponents(String DoctorID, String Date, String Time) {
         title = new javax.swing.JLabel();
         detailsLabel = new javax.swing.JLabel();
@@ -126,22 +142,6 @@ public class ViewPastBooking extends javax.swing.JFrame {
     private void backActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
         MenuPage.loadPage();
-    }
-
-    public static void main(String DoctorID, String Date, String Time) {
-        if (Info.userID != -1) {
-            General.setNimbusLookAndFeel(ViewPastBooking.class);
-
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new ViewPastBooking(DoctorID, Date, Time).setVisible(true);
-                }
-            });
-        } else {
-            General.closeAllWindows();
-            GeneralPage.main(null);
-        }
     }
 
     // Variables declaration
