@@ -32,9 +32,9 @@ public class ViewPastBooking extends javax.swing.JFrame {
 
         try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                ResultSet results = Info.statement.executeQuery("SELECT Details, Prescription FROM Bookings WHERE DoctorID = '" + DoctorID + "' AND Date = '" + Date + "' AND Time = '" + Time + "'");
-                Details = results.getString("Details");
-                Prescription = results.getString("Messages");
+                ResultSet results = Info.statement.executeQuery("SELECT Detail, Prescription FROM Bookings WHERE DoctorID = '" + DoctorID + "' AND Date = '" + Date + "' AND Time = '" + Time + "'");
+                Details = results.getString("Detail");
+                Prescription = results.getString("Prescription");
 
         } catch (Exception e) {               
                  e.printStackTrace();
