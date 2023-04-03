@@ -10,8 +10,8 @@ import Session.Info;
  * @author Nikola
  */
 public class DoctorsDB {
-    public static void tableInitializationAndInsertDoctors() {
-        tableInitialization();
+    public static void initializeTableWithDoctors() {
+        initializeTable();
 
         try {
             // Inserts the doctors into the table
@@ -24,7 +24,7 @@ public class DoctorsDB {
     }
 
     // Creates the Doctors table
-    public static void tableInitialization() {
+    public static void initializeTable() {
         try {
             Info.statement.executeUpdate("use NHS");
             Info.statement.executeUpdate("DROP TABLE IF EXISTS Doctors;");
