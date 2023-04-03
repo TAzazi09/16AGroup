@@ -37,7 +37,7 @@ public class ChangeDoctorFunc {
 
                 // Close all windows and return to the main menu
                 General.closeAllWindows();
-                MenuPage.main(null);
+                MenuPage.loadPage();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());

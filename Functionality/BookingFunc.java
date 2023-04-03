@@ -43,7 +43,7 @@ public class BookingFunc {
 
                 // Close all windows and return to the main menu
                 General.closeAllWindows();
-                MenuPage.main(null);
+                MenuPage.loadPage();
             }
         } catch (Exception e) {
             e.printStackTrace();

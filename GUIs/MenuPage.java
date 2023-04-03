@@ -144,7 +144,7 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void viewBookingsActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
-        ViewBookingPage.main(null);
+        ViewBookingPage.loadPage();
     }
 
     private void changeDoctorActionPerformed(java.awt.event.ActionEvent evt) {

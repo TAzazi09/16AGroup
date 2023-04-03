@@ -13,6 +13,17 @@ public class ReschedulePage extends javax.swing.JFrame {
         initComponents(oldDate, oldTime);
     }
 
+    public static void loadPage(String oldDate, String oldTime) {
+        if (Info.userID != -1) {
+            General.setNimbusLookAndFeel(ReschedulePage.class);
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(() -> new ReschedulePage(oldDate, oldTime).setVisible(true));
+        } else {
+            GeneralPage.main(null);
+        }
+    }
+
     private void initComponents(String oldDate, String oldTime) {
 
         javax.swing.JLabel dateLabel = new javax.swing.JLabel();
@@ -88,17 +99,6 @@ public class ReschedulePage extends javax.swing.JFrame {
         String date = dateInput.getText();
         // Sends both the new and old date / time
         ReschedulingFunc.rescheduleBooking(oldDate, oldTime, date, time);
-    }
-
-    public static void main(String oldDate, String oldTime) {
-        if (Info.userID != -1) {
-            General.setNimbusLookAndFeel(ReschedulePage.class);
-
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater(() -> new ReschedulePage(oldDate, oldTime).setVisible(true));
-        } else {
-            GeneralPage.main(null);
-        }
     }
 
     // Variables declaration

@@ -38,7 +38,7 @@ public class LoginFunc {
                 LogFunc.logLogin(Info.userID);
 
                 //Returns the user to the main menu
-                MenuPage.main(null);
+                MenuPage.loadPage();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());

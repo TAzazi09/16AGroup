@@ -58,7 +58,7 @@ public class ReschedulingFunc {
                 General.closeAllWindows();
 
                 //Returns the user to the menu
-                MenuPage.main(null);
+                MenuPage.loadPage();
             }
         } catch (Exception e) {
             e.printStackTrace();

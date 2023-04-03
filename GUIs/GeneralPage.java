@@ -50,7 +50,7 @@ public class GeneralPage extends javax.swing.JFrame {
 
         // Registration button - opens the registration page
         regButton.addActionListener(evt -> {
-            RegistrationPage.main(null);
+            RegistrationPage.loadPage();
             dispose(); // Close the current JFrame
         });
 

@@ -25,6 +25,22 @@ public class ViewBookingPage extends javax.swing.JFrame {
         logged_user_text.setText("User: " + userId);
     }
 
+    public static void loadPage() {
+        if (Info.userID != -1) {
+            General.setNimbusLookAndFeel(ViewBookingPage.class);
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new ViewBookingPage().setVisible(true);
+                }
+            });
+        } else {
+            General.closeAllWindows();
+            LoginPage.loadPage();
+        }
+    }
+
     private void initComponents() {
         Title = new javax.swing.JLabel();
         date_selected_text = new javax.swing.JLabel();
@@ -82,7 +98,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
             String[] split = currentSelected.split("~");
             String dateInput = split[1].split(" ")[1];
             String timeInput = split[2].trim();
-            GUIs.ReschedulePage.main(dateInput, timeInput);
+            GUIs.ReschedulePage.loadPage(dateInput, timeInput);
 
         });
 
@@ -134,7 +150,8 @@ public class ViewBookingPage extends javax.swing.JFrame {
 
                 General.closeAllWindows();
 
-                MenuPage.loadPage();;
+                MenuPage.loadPage();
+                ;
             }
         });
 
@@ -217,23 +234,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                 .addContainerGap(86, Short.MAX_VALUE)));
 
         pack();
-    }
-
-    public static void main(String args[]) {
-        if (Info.userID != -1) {
-            General.setNimbusLookAndFeel(ViewBookingPage.class);
-
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new ViewBookingPage().setVisible(true);
-                }
-            });
-        } else {
-            General.closeAllWindows();
-            LoginPage.loadPage();
-        }
-
     }
 
     // Variables declaration
