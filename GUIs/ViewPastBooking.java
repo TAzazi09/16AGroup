@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 
 // imports from the project
-import Session.General;
+import Session.*;
 
 /**
  * @author Ethan
@@ -13,12 +13,12 @@ public class ViewPastBooking extends javax.swing.JFrame {
         /**
          * Creates new form NewJFrame1
          */
-        public ViewPastBooking() {
-                initComponents();
+        public ViewPastBooking(String DoctorID, String Date, String Time) {
+                initComponents(DoctorID, Date, Time);
         }
 
-    private void initComponents() {
-        title = new javax.swing.JLabel();
+        private void initComponents(String DoctorID, String Date, String Time) {
+                title = new javax.swing.JLabel();
         detailsLabel = new javax.swing.JLabel();
         prescriptionLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -48,14 +48,14 @@ public class ViewPastBooking extends javax.swing.JFrame {
 
         prescriptionLabel.setText("Prescription");
 
-        detailsOutput.setText(details);
+        detailsOutput.setText(Details);
         detailsOutput.setEditable(false);
         detailsOutput.setColumns(20);
         detailsOutput.setLineWrap(true);
         detailsOutput.setRows(5);
         jScrollPane1.setViewportView(detailsOutput);
 
-        prescriptionOuput.setText(presciption);
+        prescriptionOuput.setText(Prescription);
         prescriptionOuput.setEditable(false);
         prescriptionOuput.setColumns(20);
         prescriptionOuput.setLineWrap(true);
@@ -137,13 +137,13 @@ public class ViewPastBooking extends javax.swing.JFrame {
         /**
          * @param args the command line arguments
          */
-        public static void main(String args[]) {
+        public static void main(String DoctorID, String Date, String Time) {
                 General.setNimbusLookAndFeel(ViewPastBooking.class);
 
                 /* Create and display the form */
                 java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                                new ViewPastBooking().setVisible(true);
+                                new ViewPastBooking(DoctorID, Date, Time).setVisible(true);
                         }
                 });
         }
