@@ -8,10 +8,6 @@ import Session.Info;
  * @file created by Nikola (project structure)
  */
 public class BookingsDB {
-    public static void main(String[] args) {
-        tableInitialization();
-    }
-
     // Creates the Bookings table
     public static void tableInitialization() {
         try {

@@ -10,19 +10,6 @@ import Session.Info;
  * @author Nikola
  */
 public class DoctorsDB {
-    public static void main(String[] args) {
-        tableInitialization();
-
-        try {
-            // Inserts the doctors into the table
-            insertDoctor("Dr Jason", "12345 123456", "Cardiologist");
-            insertDoctor("Dr Andrew", "56712 09876", "Dentist");
-            insertDoctor("Dr Smith", "55555 666666", "Dermatologist");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void tableInitializationAndInsertDoctors() {
         tableInitialization();
 

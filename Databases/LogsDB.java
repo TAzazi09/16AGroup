@@ -7,10 +7,6 @@ import Session.Info;
  * @author Nikola
  */
 public class LogsDB {
-    public static void main(String[] args) {
-        tableInitialization();
-    }
-
     // Creates the Logs table
     public static void tableInitialization() {
         try {

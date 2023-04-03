@@ -12,12 +12,6 @@ import Session.Info;
  * && quality of life changes (added auto-login for me and Ethan)
  */
 public class PatientsDB {
-    public static void main(String[] args) {
-        tableInitialization();
-
-        
-    }
-
     public static void tableInitializationAndInsertPatients() {
         tableInitialization();
 
