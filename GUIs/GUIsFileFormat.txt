@@ -1,0 +1,32 @@
+package GUIs
+
+imports from the java library
+
+imports from the project
+
+author and other documentation
+public class className {
+    variable declaration
+
+    constructor
+
+    loadPage() {
+        if (userLogged || databaseConnected) { // which 'if' to use depends on the file
+            setNimbusLookAndFeel
+
+            setVisible
+        } else {
+            GeneralPage.main(null) // usually, might riderect to another page as well, though
+        }
+        
+
+        initComponents() {
+            private vars
+
+            panel layout code
+        }
+    }
+}
+
+___________________
+DoctorsDetails.java doesn't follow this file format
