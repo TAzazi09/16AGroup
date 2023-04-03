@@ -9,9 +9,6 @@ import Session.*;
  * @author Ethan
  */
 public class ViewPastBooking extends javax.swing.JFrame {
-    /**
-     * Creates new form NewJFrame1
-     */
     public ViewPastBooking(String DoctorID, String Date, String Time) {
         initComponents(DoctorID, Date, Time);
     }
@@ -124,19 +121,13 @@ public class ViewPastBooking extends javax.swing.JFrame {
                                 .addContainerGap(18, Short.MAX_VALUE)));
 
         pack();
-
     }
-
-    // </editor-fold>
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
         MenuPage.loadPage();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String DoctorID, String Date, String Time) {
         if (Info.userID != -1) {
             General.setNimbusLookAndFeel(ViewPastBooking.class);
