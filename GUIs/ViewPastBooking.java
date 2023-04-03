@@ -1,6 +1,5 @@
 package GUIs;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 
 // imports from the project
@@ -10,15 +9,15 @@ import Session.*;
  * @author Ethan
  */
 public class ViewPastBooking extends javax.swing.JFrame {
-        /**
-         * Creates new form NewJFrame1
-         */
-        public ViewPastBooking(String DoctorID, String Date, String Time) {
-                initComponents(DoctorID, Date, Time);
-        }
+    /**
+     * Creates new form NewJFrame1
+     */
+    public ViewPastBooking(String DoctorID, String Date, String Time) {
+        initComponents(DoctorID, Date, Time);
+    }
 
-        private void initComponents(String DoctorID, String Date, String Time) {
-                title = new javax.swing.JLabel();
+    private void initComponents(String DoctorID, String Date, String Time) {
+        title = new javax.swing.JLabel();
         detailsLabel = new javax.swing.JLabel();
         prescriptionLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -29,16 +28,17 @@ public class ViewPastBooking extends javax.swing.JFrame {
         Details = new String();
         Prescription = new String();
 
-
         try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                ResultSet results = Info.statement.executeQuery("SELECT Details, Prescription FROM Bookings WHERE DoctorID = '" + DoctorID + "' AND Date = '" + Date + "' AND Time = '" + Time + "'");
-                Details = results.getString("Details");
-                Prescription = results.getString("Messages");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            ResultSet results = Info.statement
+                    .executeQuery("SELECT Details, Prescription FROM Bookings WHERE DoctorID = '" + DoctorID
+                            + "' AND Date = '" + Date + "' AND Time = '" + Time + "'");
+            Details = results.getString("Details");
+            Prescription = results.getString("Messages");
 
-        } catch (Exception e) {               
-                 e.printStackTrace();
-        } 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,36 +127,41 @@ public class ViewPastBooking extends javax.swing.JFrame {
 
     }
 
-// </editor-fold>
+    // </editor-fold>
 
-        private void backActionPerformed(java.awt.event.ActionEvent evt) {
-                dispose();
-                MenuPage.main(null);
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {
+        dispose();
+        MenuPage.main(null);
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String DoctorID, String Date, String Time) {
+        if (Info.userID != -1) {
+            General.setNimbusLookAndFeel(ViewPastBooking.class);
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new ViewPastBooking(DoctorID, Date, Time).setVisible(true);
+                }
+            });
+        } else {
+            General.closeAllWindows();
+            GeneralPage.main(null);
         }
+    }
 
-        /**
-         * @param args the command line arguments
-         */
-        public static void main(String DoctorID, String Date, String Time) {
-                General.setNimbusLookAndFeel(ViewPastBooking.class);
-
-                /* Create and display the form */
-                java.awt.EventQueue.invokeLater(new Runnable() {
-                        public void run() {
-                                new ViewPastBooking(DoctorID, Date, Time).setVisible(true);
-                        }
-                });
-        }
-
-        // Variables declaration
-        private javax.swing.JButton back;
-        private javax.swing.JLabel detailsLabel;
-        private javax.swing.JTextArea detailsOutput;
-        private javax.swing.JScrollPane jScrollPane1;
-        private javax.swing.JScrollPane jScrollPane2;
-        private javax.swing.JLabel prescriptionLabel;
-        private javax.swing.JTextArea prescriptionOuput;
-        private javax.swing.JLabel title;
-        private String Details;
-        private String Prescription;
+    // Variables declaration
+    private javax.swing.JButton back;
+    private javax.swing.JLabel detailsLabel;
+    private javax.swing.JTextArea detailsOutput;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel prescriptionLabel;
+    private javax.swing.JTextArea prescriptionOuput;
+    private javax.swing.JLabel title;
+    private String Details;
+    private String Prescription;
 }

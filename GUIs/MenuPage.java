@@ -163,7 +163,7 @@ public class MenuPage extends javax.swing.JFrame {
     }
 
     public static void main(String[] args) {
-        if (DatabaseConnectionFunc.connected) {
+        if (Info.userID != -1) {
             General.setNimbusLookAndFeel(MenuPage.class);
 
             /* Create and display the form */

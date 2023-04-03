@@ -220,14 +220,20 @@ public class ViewBookingPage extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-        General.setNimbusLookAndFeel(ViewBookingPage.class);
+        if (Info.userID != -1) {
+            General.setNimbusLookAndFeel(ViewBookingPage.class);
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ViewBookingPage().setVisible(true);
-            }
-        });
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new ViewBookingPage().setVisible(true);
+                }
+            });
+        } else {
+            General.closeAllWindows();
+            LoginPage.main(null);
+        }
+
     }
 
     // Variables declaration
