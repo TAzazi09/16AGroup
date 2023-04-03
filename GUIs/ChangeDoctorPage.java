@@ -12,6 +12,7 @@ import Functionality.ChangeDoctorFunc;
  * @author Nikola
  */
 public class ChangeDoctorPage extends javax.swing.JFrame {
+    // variable declaration
     private javax.swing.JComboBox<String> newDocBox;
 
     public ChangeDoctorPage() {
