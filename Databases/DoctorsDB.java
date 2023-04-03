@@ -56,8 +56,8 @@ public class DoctorsDB {
     }
 
     public static String getDoctorName(int doctorId) throws Exception {
-        Info.statement.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement
+        Info.statement2.executeUpdate("use NHS");
+        ResultSet resultSet = Info.statement2
                 .executeQuery("SELECT Name FROM Doctors WHERE DoctorID = '" + doctorId + "';");
         resultSet.next();
         return resultSet.getString("Name");

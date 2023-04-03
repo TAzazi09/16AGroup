@@ -20,6 +20,7 @@ public class Info {
 
     public static Connection connection;
     public static Statement statement;
+    public static Statement statement2;
 
     public static void connect() {
         try {
@@ -28,6 +29,7 @@ public class Info {
             // Connects to the database
             connection = DatabaseConnectionFunc.getConnection();
             statement = connection.createStatement();
+            statement2 = connection.createStatement();
 
             // Sets the connected variable to true
             connected = true;
