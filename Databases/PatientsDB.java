@@ -12,8 +12,8 @@ import Session.Info;
  * && quality of life changes (added auto-login for me and Ethan)
  */
 public class PatientsDB {
-    public static void tableInitializationAndInsertPatients() {
-        tableInitialization();
+    public static void initializeTableWithPatients() {
+        initializeTable();
 
         try {
             // Inserts the patients into the table
@@ -29,7 +29,7 @@ public class PatientsDB {
     }
 
     // Creates the Patients table
-    private static void tableInitialization() {
+    private static void initializeTable() {
         try {
             // Creates the Patients table
             Info.statement.executeUpdate("use NHS");

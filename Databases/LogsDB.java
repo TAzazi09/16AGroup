@@ -8,7 +8,7 @@ import Session.Info;
  */
 public class LogsDB {
     // Creates the Logs table
-    public static void tableInitialization() {
+    public static void initializeTable() {
         try {
             Info.statement.executeUpdate("use NHS");
             Info.statement.executeUpdate("DROP TABLE IF EXISTS Logs;");
