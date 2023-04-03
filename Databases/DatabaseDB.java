@@ -20,10 +20,10 @@ public class DatabaseDB {
             Info.statement.executeUpdate("CREATE DATABASE NHS");
 
             // Creates the Doctors, Patients, and Bookings tables
-            DoctorsDB.main(null);
-            PatientsDB.main(null);
-            BookingsDB.main(null);
-            LogsDB.main(null);
+            DoctorsDB.tableInitialization();
+            PatientsDB.tableInitializationAndInsertPatients();
+            BookingsDB.tableInitialization();
+            LogsDB.tableInitialization();
         } catch (Exception e) {
             e.printStackTrace();
         }

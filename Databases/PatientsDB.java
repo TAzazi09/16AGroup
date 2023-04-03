@@ -15,6 +15,12 @@ public class PatientsDB {
     public static void main(String[] args) {
         tableInitialization();
 
+        
+    }
+
+    public static void tableInitializationAndInsertPatients() {
+        tableInitialization();
+
         try {
             // Inserts the patients into the table
             insertPatient("Nikola", "Kolev", "Male", 20, "07856 791314",

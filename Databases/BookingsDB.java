@@ -13,7 +13,7 @@ public class BookingsDB {
     }
 
     // Creates the Bookings table
-    private static void tableInitialization() {
+    public static void tableInitialization() {
         try {
             Info.statement.executeUpdate("use NHS");
             Info.statement.execute("DROP TABLE IF EXISTS Bookings");
