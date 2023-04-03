@@ -2,6 +2,7 @@ package GUIs;
 
 import java.sql.ResultSet;
 
+import Databases.DoctorsDB;
 // imports from the project
 import Session.*;
 
@@ -55,7 +56,9 @@ public class ViewPastBooking extends javax.swing.JFrame {
 
         try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                ResultSet results = Info.statement.executeQuery("SELECT Detail, Prescription FROM Bookings WHERE DoctorID = '" + DoctorID + "' AND Date = '" + Date + "' AND Time = '" + Time + "'");
+                Integer name = DoctorsDB.getDoctorID(DoctorID);
+                ResultSet results = Info.statement.executeQuery("SELECT Detail, Prescription FROM Bookings WHERE DoctorID LIKE '%" + name + "%' AND Date = '" + Date + "' AND Time = '" + Time + "'");
+                results.next();
                 Details = results.getString("Detail");
                 Prescription = results.getString("Prescription");
 
