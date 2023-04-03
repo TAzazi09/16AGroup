@@ -78,13 +78,10 @@ public class ViewBookingPage extends javax.swing.JFrame {
         viewPastBooking.setVisible(false);
         viewPastBooking.addActionListener(evt -> {
             String[] split = resultBookings.getSelectedItem().toString().split("~");
-            String doctorID = split[2].split(" ")[0];
-            String date = split[1].split(" ")[1];
-            String time = split[2].split(" ")[2];
-            System.out.println(doctorID);
-            System.out.println(date);
-            System.out.println(time);
-            GUIs.ViewPastBooking.loadPage(doctorID, date, time);
+            String doctorName = split[0].trim();
+            String date = split[1];
+            String time = split[2];
+            GUIs.ViewPastBooking.loadPage(doctorName, date, time);
         });
 
         resultBookings.addActionListener(evt -> {
@@ -92,7 +89,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
             if (resultBookings.getSelectedItem() != null) {
                 String[] split = resultBookings.getSelectedItem().toString().split("~");
                 String date = split[1].split(" ")[1];
-                System.out.println(date);
                 LocalDate inputDate = LocalDate.parse(date);
                 LocalDate currentDate = LocalDate.now();
                 if (inputDate.isBefore(currentDate)) {
