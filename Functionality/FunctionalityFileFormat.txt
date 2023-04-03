@@ -1,0 +1,17 @@
+package Functionality
+
+imports from the java library
+
+imports from the project
+
+author and other documentation
+public class className {
+    // most Functionality files have one method and it is called sendData
+    mainFuncMethod(){
+        send the data to the appropriate Checks file to be examined
+
+        if (data passes checks) {
+            send the data to the appropriate Databases file to insert into the table
+        }
+    }
+}
