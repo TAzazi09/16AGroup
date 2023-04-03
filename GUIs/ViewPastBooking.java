@@ -154,6 +154,6 @@ public class ViewPastBooking extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
-        MenuPage.loadPage();
+        ViewBookingPage.loadPage();
     }
 }
