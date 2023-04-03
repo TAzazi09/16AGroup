@@ -1,0 +1,44 @@
+package Databases
+
+imports form the java library
+
+imports from the project
+
+author and other documentation
+public class className {
+    if (there is item insertion) {
+        tableInitializationAndInsertItems() {
+            tableInitialization();
+
+            try {
+                insertItem();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        tableInitialization()
+
+        insertItem()
+    } else {
+        tableInitialization()
+    }
+
+    ease-Of-Life-Method1() {
+        executeQuery
+        return result
+    }
+
+    ease-Of-Life-Method2() {
+        executeQuery
+        return result
+    }
+
+    ease-Of-Life-Method3() {
+        executeQuery
+        return result
+    }
+}
+
+________________________________________________
+NB - DatabasesDB doesn't follow this file format
