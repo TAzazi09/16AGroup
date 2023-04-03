@@ -44,7 +44,7 @@ public class GeneralPage extends javax.swing.JFrame {
 
         // Login button - opens the login page
         logButton.addActionListener(evt -> {
-            LoginPage.main(null);
+            LoginPage.loadPage();
             dispose();
         });
 

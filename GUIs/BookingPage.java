@@ -15,7 +15,7 @@ public class BookingPage extends javax.swing.JFrame {
         initComponents();
     }
 
-    public static void main(String[] args) {
+    public static void loadPage() {
         if (DatabaseConnectionFunc.connected) {
             General.setNimbusLookAndFeel(BookingPage.class);
 
@@ -34,7 +34,7 @@ public class BookingPage extends javax.swing.JFrame {
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        MenuPage.main(null);
+        MenuPage.loadPage();;
         dispose();
     }
 

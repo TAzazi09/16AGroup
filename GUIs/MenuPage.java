@@ -4,7 +4,6 @@ package GUIs;
 import java.sql.ResultSet;
 
 // imports from the project
-import Functionality.DatabaseConnectionFunc;
 import Session.*;
 
 /**
@@ -14,6 +13,17 @@ import Session.*;
 public class MenuPage extends javax.swing.JFrame {
     public MenuPage() {
         initComponents();
+    }
+
+    public static void loadPage() {
+        if (Info.userID != -1) {
+            General.setNimbusLookAndFeel(MenuPage.class);
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(() -> new MenuPage().setVisible(true));
+        } else {
+            GeneralPage.main(null);
+        }
     }
 
     private void initComponents() {
@@ -129,7 +139,7 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void createBookingAction(java.awt.event.ActionEvent evt) {
         dispose();
-        BookingPage.main(null);
+        BookingPage.loadPage();
     }
 
     private void viewBookingsActionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +149,7 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void changeDoctorActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
-        ChangeDoctorPage.main(null);
+        ChangeDoctorPage.loadPage();
     }
 
     //     private void viewAllDoctorsActionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,26 +160,15 @@ public class MenuPage extends javax.swing.JFrame {
     private void printAllLogsActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             System.out.println("LogChecker.main() called");
-        
+
             ResultSet allLogs = Info.statement.executeQuery("SELECT * FROM Logs;");
-    
+
             while (allLogs.next()) {
                 System.out.println(allLogs.getString("LogID") + " " + allLogs.getString("PatientID") + " "
                         + allLogs.getString("Timestamp") + " " + allLogs.getString("Action"));
             }
         } catch (Exception e) {
             System.out.println("Error (LogChecker.main())");
-        }
-    }
-
-    public static void main(String[] args) {
-        if (Info.userID != -1) {
-            General.setNimbusLookAndFeel(MenuPage.class);
-
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater(() -> new MenuPage().setVisible(true));
-        } else {
-            GeneralPage.main(null);
         }
     }
 }

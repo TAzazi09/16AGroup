@@ -134,7 +134,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
 
                 General.closeAllWindows();
 
-                MenuPage.main(null);
+                MenuPage.loadPage();;
             }
         });
 
@@ -231,7 +231,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
             });
         } else {
             General.closeAllWindows();
-            LoginPage.main(null);
+            LoginPage.loadPage();
         }
 
     }

@@ -18,6 +18,17 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static void loadPage() {
+        if (Info.userID != -1) {
+            General.setNimbusLookAndFeel(ChangeDoctorFunc.class);
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(() -> new ChangeDoctorPage().setVisible(true));
+        } else {
+            GeneralPage.main(null);
+        }
+    }
+
     private void initComponents() {
         getContentPane().setBackground(General.WHITE);
 
@@ -152,18 +163,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        MenuPage.main(null);
+        MenuPage.loadPage();
         dispose();
-    }
-
-    public static void main(String[] args) {
-        if (Info.userID != -1) {
-            General.setNimbusLookAndFeel(ChangeDoctorFunc.class);
-
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater(() -> new ChangeDoctorPage().setVisible(true));
-        } else {
-            GeneralPage.main(null);
-        }
     }
 }
