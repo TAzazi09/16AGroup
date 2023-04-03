@@ -26,7 +26,7 @@ public class BookingsDB {
                     + "PRIMARY KEY (BookingID),"
                     + "UNIQUE (PatientID, DoctorID, Time, Date)"
                     + ");");
-                    Info.statement.execute("INSERT INTO Bookings (PatientID, DoctorID, Time, Date, Detail, Prescription) VALUES ('2', '1', '12:00', '2023-01-01', 'this is', 'a test')");
+                    Info.statement.execute("INSERT INTO Bookings (PatientID, DoctorID, Time, Date, Detail, Prescription) VALUES ('2', '1', '12:00:00', '2023-01-01', 'this is', 'a test')");
         } catch (Exception e) {
             e.printStackTrace();
         }
