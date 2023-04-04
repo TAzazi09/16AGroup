@@ -51,11 +51,13 @@ public class MenuPage extends javax.swing.JFrame {
         viewBookingDetails.setText("View past booking");
 
         viewDoctorButton.setText("View current doctor");
+        viewDoctorButton.setBackground(new java.awt.Color(255, 255, 255));
 
         changeDoctor.setText("Change your doctor");
         changeDoctor.addActionListener(this::changeDoctorActionPerformed);
 
         viewAllDoctors.setText("View all doctors");
+        viewAllDoctors.setBackground(new java.awt.Color(255, 255, 255));
 
         printAllLogsButton.setText("Print all logs");
         printAllLogsButton.addActionListener(this::printAllLogsActionPerformed);
