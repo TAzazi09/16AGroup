@@ -129,29 +129,31 @@ public class MenuPage extends javax.swing.JFrame {
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
+                                .addGap(150, 150, 150)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(welcomeLabel)
-                                                .addGap(30, 30, 30)
+                                                .addGap(60, 60, 60)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(createBooking)
                                                         .addComponent(viewBookings))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGap(20, 20, 20)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(viewDoctorButton)
                                                         .addComponent(changeDoctor))
+                                                .addGap(20, 20, 20)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(viewAllDoctors)
                                                         .addComponent(printAllLogsButton))
+                                                .addGap(20, 20, 20)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(viewDoctorButton)))
-                                .addContainerGap(30, Short.MAX_VALUE)));
+                                .addContainerGap(150, Short.MAX_VALUE)));
         pack();
     }
 
