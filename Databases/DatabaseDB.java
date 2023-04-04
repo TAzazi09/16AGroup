@@ -22,7 +22,7 @@ public class DatabaseDB {
             // Creates the Doctors, Patients, and Bookings tables
             DoctorsDB.initializeTableWithDoctors();;
             PatientsDB.initializeTableWithPatients();
-            BookingsDB.initializeTable();
+            BookingsDB.initializeTableWithBookings();
             LogsDB.initializeTable();
         } catch (Exception e) {
             e.printStackTrace();

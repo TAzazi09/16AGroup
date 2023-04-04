@@ -8,8 +8,20 @@ import Session.Info;
  * @file created by Nikola (project structure)
  */
 public class BookingsDB {
+    public static void initializeTableWithBookings() {
+        initializeTable();
+
+        try {
+            // Inserts the patients into the table
+            insertBooking(1, 1, "12:00:00", "2021-01-01", "this is", "a test");
+            insertBooking(2, 1, "12:00:00", "2023-01-01", "this is", "a test");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // Creates the Bookings table
-    public static void initializeTable() {
+    private static void initializeTable() {
         try {
             Info.statement.executeUpdate("use NHS");
             Info.statement.execute("DROP TABLE IF EXISTS Bookings");
@@ -26,10 +38,12 @@ public class BookingsDB {
                     + "PRIMARY KEY (BookingID),"
                     + "UNIQUE (PatientID, DoctorID, Time, Date)"
                     + ");");
-                    Info.statement.execute("INSERT INTO Bookings (PatientID, DoctorID, Time, Date, Detail, Prescription) VALUES ('2', '1', '12:00:00', '2023-01-01', 'this is', 'a test')");
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    private static void insertBooking(int patientID, int doctorID, String time, String date, String detail, String prescription) throws Exception {
+        Info.statement.executeUpdate("INSERT INTO Bookings (PatientID, DoctorID, Time, Date, Detail, Prescription) VALUES ('" + patientID + "', '" + doctorID + "', '" + time + "', '" + date + "', '" + detail + "', '" + prescription + "')");
     }
 }
