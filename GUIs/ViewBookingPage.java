@@ -54,6 +54,8 @@ public class ViewBookingPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
+        getContentPane().setBackground(General.WHITE);
+
         Title = new javax.swing.JLabel();
         date_selected_text = new javax.swing.JLabel();
         Confirm_button = new javax.swing.JButton();
@@ -111,6 +113,8 @@ public class ViewBookingPage extends javax.swing.JFrame {
         });
 
         Confirm_button.setText("Confirm");
+        Confirm_button.setFont(General.font(12));
+        Confirm_button.setBackground(General.BUTTON_BLUE);
         Confirm_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 resultBookings.setVisible(false);
@@ -154,6 +158,8 @@ public class ViewBookingPage extends javax.swing.JFrame {
         });
 
         back.setText("Back");
+        back.setFont(General.font(12));
+        back.setBackground(General.BUTTON_BLUE);
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
 
@@ -175,20 +181,20 @@ public class ViewBookingPage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(173, 173, 173)
+                                .addGap(175, 175, 175)
                                 .addComponent(Title, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
+                                .addGap(20, 20, 20)
                                 .addComponent(logged_user_text, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(68, 68, 68))
+                                .addGap(50, 50, 50))
                         .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(250, 250, 250)
+                                                .addGap(220, 220, 220)
                                                 .addComponent(Confirm_button)
                                                 .addComponent(back))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(211, 211, 211)
+                                                .addGap(210, 210, 210)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(layout.createSequentialGroup()
@@ -196,7 +202,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                         javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(54, 54, 54)
+                                                                .addGap(50, 50, 50)
                                                                 .addComponent(yearInput,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE, 50,
                                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -219,9 +225,9 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(Title)
                                         .addComponent(logged_user_text))
-                                .addGap(18, 18, 18)
+                                .addGap(20, 20, 20)
                                 .addComponent(date_selected_text)
-                                .addGap(18, 18, 18)
+                                .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(Month_Selector, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
@@ -241,7 +247,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
                                         .addComponent(viewPastBooking))
 
                                 .addContainerGap(86, Short.MAX_VALUE)));
-
         pack();
     }
 }
