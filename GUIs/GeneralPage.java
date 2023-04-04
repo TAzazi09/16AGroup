@@ -19,7 +19,7 @@ public class GeneralPage extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             DatabaseConnectionFunc.main(null);
-
+            
             // Initialize the database
             if (DatabaseConnectionFunc.connected) {
                 DatabaseDB.initializeDB();
@@ -31,7 +31,7 @@ public class GeneralPage extends javax.swing.JFrame {
         if (DatabaseConnectionFunc.connected) {
             General.setNimbusLookAndFeel(GeneralPage.class);
 
-            /* Create and display the form */
+            //Create and display the form 
             java.awt.EventQueue.invokeLater(() -> new GeneralPage().setVisible(true));
         }
     }
