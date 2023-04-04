@@ -27,6 +27,8 @@ public class MenuPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
+
+        // Initialises the components
         javax.swing.JLabel welcomeLabel = new javax.swing.JLabel();
         javax.swing.JButton createBooking = new javax.swing.JButton();
         javax.swing.JButton changeDoctor = new javax.swing.JButton();
@@ -44,23 +46,30 @@ public class MenuPage extends javax.swing.JFrame {
 
         createBooking.setText("Create a booking");
         createBooking.addActionListener(this::createBookingAction);
+        createBooking.setFont(General.font(18));
 
         viewBookings.setText("View bookings");
         viewBookings.addActionListener(this::viewBookingsActionPerformed);
+        viewBookings.setFont(General.font(18));
 
         viewBookingDetails.setText("View past booking");
+        viewBookingDetails.setFont(General.font(18));
 
         viewDoctorButton.setText("View current doctor");
         viewDoctorButton.setBackground(new java.awt.Color(255, 255, 255));
+        viewDoctorButton.setFont(General.font(18));
 
         changeDoctor.setText("Change your doctor");
         changeDoctor.addActionListener(this::changeDoctorActionPerformed);
+        changeDoctor.setFont(General.font(18));
 
         viewAllDoctors.setText("View all doctors");
         viewAllDoctors.setBackground(new java.awt.Color(255, 255, 255));
+        viewAllDoctors.setFont(General.font(18));
 
         printAllLogsButton.setText("Print all logs");
         printAllLogsButton.addActionListener(this::printAllLogsActionPerformed);
+        printAllLogsButton.setFont(General.font(18));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
