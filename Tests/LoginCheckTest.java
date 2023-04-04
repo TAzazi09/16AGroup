@@ -2,6 +2,7 @@
 import static org.junit.Assert.*;
 import java.sql.ResultSet;
 import org.junit.Test;
+import Checks.LoginCheck;
 
 public class TestLogin {
 
