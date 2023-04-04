@@ -46,7 +46,7 @@ public class MenuPage extends javax.swing.JFrame {
         welcomeLabel.setText("Welcome " + Info.firstname + " " + Info.surname + "!");
         welcomeLabel.setFont(General.font(24));
 
-        createBooking.setText("Create a booking");
+        createBooking.setText("Create booking");
         createBooking.addActionListener(this::createBookingAction);
         createBooking.setFont(General.font(18));
         createBooking.setBackground(General.BUTTON_BLUE);
@@ -59,20 +59,20 @@ public class MenuPage extends javax.swing.JFrame {
         viewBookingDetails.setText("View past booking");
         viewBookingDetails.setFont(General.font(18));
 
-        viewDoctorButton.setText("View current doctor");
+        viewDoctorButton.setText("View my doctor");
         viewDoctorButton.setBackground(General.WHITE);
         viewDoctorButton.setFont(General.font(18));
 
-        changeDoctor.setText("Change your doctor");
+        changeDoctor.setText("Change doctor");
         changeDoctor.addActionListener(this::changeDoctorActionPerformed);
         changeDoctor.setFont(General.font(18));
         changeDoctor.setBackground(General.BUTTON_BLUE);
 
-        viewAllDoctors.setText("View all doctors");
+        viewAllDoctors.setText("See all doctors");
         viewAllDoctors.setBackground(General.WHITE);
         viewAllDoctors.setFont(General.font(18));
 
-        printAllLogsButton.setText("Print all logs");
+        printAllLogsButton.setText("Print logs");
         printAllLogsButton.addActionListener(this::printAllLogsActionPerformed);
         printAllLogsButton.setFont(General.font(18));
         printAllLogsButton.setBackground(General.BUTTON_BLUE);
@@ -105,7 +105,7 @@ public class MenuPage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
+                                .addGap(80, 80, 80)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(createBooking)
