@@ -27,6 +27,7 @@ public class MenuPage extends javax.swing.JFrame {
     }
 
     private void initComponents() {
+        getContentPane().setBackground(General.WHITE);
 
         // Initialises the components
         javax.swing.JLabel welcomeLabel = new javax.swing.JLabel();
@@ -43,33 +44,38 @@ public class MenuPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         welcomeLabel.setText("Welcome " + Info.firstname + " " + Info.surname + "!");
+        welcomeLabel.setFont(General.font(24));
 
         createBooking.setText("Create a booking");
         createBooking.addActionListener(this::createBookingAction);
         createBooking.setFont(General.font(18));
+        createBooking.setBackground(General.BUTTON_BLUE);
 
         viewBookings.setText("View bookings");
         viewBookings.addActionListener(this::viewBookingsActionPerformed);
         viewBookings.setFont(General.font(18));
+        viewBookings.setBackground(General.BUTTON_BLUE);
 
         viewBookingDetails.setText("View past booking");
         viewBookingDetails.setFont(General.font(18));
 
         viewDoctorButton.setText("View current doctor");
-        viewDoctorButton.setBackground(new java.awt.Color(255, 255, 255));
+        viewDoctorButton.setBackground(General.WHITE);
         viewDoctorButton.setFont(General.font(18));
 
         changeDoctor.setText("Change your doctor");
         changeDoctor.addActionListener(this::changeDoctorActionPerformed);
         changeDoctor.setFont(General.font(18));
+        changeDoctor.setBackground(General.BUTTON_BLUE);
 
         viewAllDoctors.setText("View all doctors");
-        viewAllDoctors.setBackground(new java.awt.Color(255, 255, 255));
+        viewAllDoctors.setBackground(General.WHITE);
         viewAllDoctors.setFont(General.font(18));
 
         printAllLogsButton.setText("Print all logs");
         printAllLogsButton.addActionListener(this::printAllLogsActionPerformed);
         printAllLogsButton.setFont(General.font(18));
+        printAllLogsButton.setBackground(General.BUTTON_BLUE);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -78,6 +84,7 @@ public class MenuPage extends javax.swing.JFrame {
         patientMessages.setEditable(false);
         patientMessages.setLineWrap(true);
         patientMessages.setWrapStyleWord(true);
+        patientMessages.setFont(General.font(14));
 
         try {
             //Selects messages for the patient
