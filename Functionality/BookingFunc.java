@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 
 // imports from the project
 import Checks.BookingCheck;
+import Databases.BookingsDB;
 import GUIs.MenuPage;
 import Session.*;
 import Databases.PatientsDB;
@@ -23,9 +24,7 @@ public class BookingFunc {
                 String currentDocName = PatientsDB.getDoctorName(patientID);
 
                 // insert the booking into the database (after ensuring the doctor is available)
-                Info.statement.execute(
-                        "INSERT INTO Bookings (PatientID, DoctorID, Time, Date) VALUES ('" + Info.userID
-                                + "', '" + currentDocID + "', '" + time + "', '" + date + "');");
+                BookingsDB.insertBooking(patientID, currentDocID, time, date, null, null);
 
                 // Add the booking to the log
                 LogFunc.logBooking(patientID, time, date, currentDocName);
