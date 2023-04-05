@@ -3,8 +3,7 @@ package GUIs;
 import java.sql.ResultSet;
 
 import Databases.DoctorsDB;
-// imports from the project
-import Session.*;
+import Info.*;
 
 /**
  * @author Ethan
@@ -27,7 +26,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
     }
 
     public static void loadPage(String DoctorID, String Date, String Time) {
-        if (Info.userID != -1) {
+        if (Session.userID != -1) {
             General.setNimbusLookAndFeel(PastBookingsPage.class);
 
             /* Create and display the form */
@@ -57,7 +56,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Integer name = DoctorsDB.getDoctorID(DoctorID);
-            ResultSet results = Info.statement
+            ResultSet results = Session.statement
                     .executeQuery("SELECT Detail, Prescription FROM Bookings WHERE DoctorID LIKE '%" + name
                             + "%' AND Date = '" + Date + "' AND Time = '" + Time + "'");
             results.next();

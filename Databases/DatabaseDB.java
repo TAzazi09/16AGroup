@@ -1,7 +1,6 @@
 package Databases;
 
-// imports from the project
-import Session.Info;
+import Info.Session;
 
 /**
  * @written by Ethan
@@ -12,12 +11,12 @@ public class DatabaseDB {
     public static void initDB() {
         try {
             // Connects to the database (if not already connected)
-            if (!Info.connected) {
-                Info.connect();
+            if (!Session.connected) {
+                Session.connect();
             }
 
-            Info.statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
-            Info.statement.executeUpdate("CREATE DATABASE NHS");
+            Session.statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
+            Session.statement.executeUpdate("CREATE DATABASE NHS");
 
             // Creates the Doctors, Patients, and Bookings tables
             DoctorsDB.initTableWithDoctors();

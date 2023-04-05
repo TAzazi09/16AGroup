@@ -2,8 +2,8 @@ package GUIs;
 
 // imports from the project
 import Functionality.ReschedulingFunc;
-import Session.General;
-import Session.Info;
+import Info.General;
+import Info.Session;
 
 /**
  * @author Ethan
@@ -18,7 +18,7 @@ public class ReschedulePage extends javax.swing.JFrame {
     }
 
     public static void loadPage(String oldDate, String oldTime) {
-        if (Info.userID != -1) {
+        if (Session.userID != -1) {
             General.setNimbusLookAndFeel(ReschedulePage.class);
 
             /* Create and display the form */

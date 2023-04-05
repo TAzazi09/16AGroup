@@ -3,8 +3,7 @@ package Databases;
 // imports from the java library
 import java.sql.ResultSet;
 
-// imports from the project
-import Session.Info;
+import Info.Session;
 
 /**
  * @written by Ethan
@@ -32,9 +31,9 @@ public class PatientsDB {
     private static void initTable() {
         try {
             // Creates the Patients table
-            Info.useNHS();
-            Info.statement.executeUpdate("DROP TABLE IF EXISTS Patients;");
-            Info.statement.execute("CREATE TABLE Patients (" +
+            Session.useNHS();
+            Session.statement.executeUpdate("DROP TABLE IF EXISTS Patients;");
+            Session.statement.execute("CREATE TABLE Patients (" +
                     "PatientID INT NOT NULL auto_increment," +
                     "FirstName VARCHAR(20) NOT NULL, " +
                     "Surname VARCHAR(20) NOT NULL," +
@@ -55,7 +54,7 @@ public class PatientsDB {
     // Inserts a patient into the table
     private static void addPatient(String firstName, String surname, String gender, int age,
             String phoneNumber, int doctorId, String details, String messages) throws Exception {
-        Info.statement.executeUpdate(
+        Session.statement.executeUpdate(
                 "INSERT INTO Patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages) "
                         + "VALUES (DEFAULT, '" + firstName + "', '" + surname + "', '" + gender + "', '" + age + "', '"
                         + phoneNumber + "', '" + doctorId + "', '" + details + "', '" + messages + "')");
@@ -63,13 +62,13 @@ public class PatientsDB {
 
     // Change doctor for a patient
     public static void changeDoctor(int patientID, int doctorID) throws Exception {
-        Info.statement.executeUpdate(
+        Session.statement.executeUpdate(
                 "UPDATE Patients SET DoctorID = '" + doctorID + "' WHERE PatientID = '" + patientID + "'");
     }
 
     // Get patient's doctor's name
     public static String getDoctorName(int patientID) throws Exception {
-        ResultSet resultSet = Info.statement
+        ResultSet resultSet = Session.statement
                 .executeQuery("SELECT DoctorID FROM Patients WHERE PatientID = '" + patientID + "'");
         resultSet.next();
         int doctorID = Integer.parseInt(resultSet.getString("DoctorID"));
@@ -79,7 +78,7 @@ public class PatientsDB {
 
     // Get patient's doctor's ID
     public static int getDoctorID(int patientID) throws Exception {
-        ResultSet resultSet = Info.statement
+        ResultSet resultSet = Session.statement
                 .executeQuery("SELECT DoctorID FROM Patients WHERE PatientID = '" + patientID + "'");
         resultSet.next();
         return Integer.parseInt(resultSet.getString("DoctorID"));

@@ -3,8 +3,7 @@ package GUIs;
 // imports from the java library
 import java.sql.ResultSet;
 
-// imports from the project
-import Session.*;
+import Info.*;
 
 /**
  * @author Ethan
@@ -16,7 +15,7 @@ public class MenuPage extends javax.swing.JFrame {
     }
 
     public static void loadPage() {
-        if (Info.userID != -1) {
+        if (Session.userID != -1) {
             General.setNimbusLookAndFeel(MenuPage.class);
 
             /* Create and display the form */
@@ -43,7 +42,7 @@ public class MenuPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        welcomeLabel.setText("Welcome " + Info.firstname + " " + Info.surname + "!");
+        welcomeLabel.setText("Welcome " + Session.firstname + " " + Session.surname + "!");
         welcomeLabel.setFont(General.font(24));
 
         createBooking.setText("Create booking");
@@ -88,8 +87,8 @@ public class MenuPage extends javax.swing.JFrame {
 
         try {
             //Selects messages for the patient
-            ResultSet message = Info.statement
-                    .executeQuery("SELECT messages FROM Patients WHERE patientID = '" + Info.userID + "'");
+            ResultSet message = Session.statement
+                    .executeQuery("SELECT messages FROM Patients WHERE patientID = '" + Session.userID + "'");
             while (message.next()) {
                 //Adds the messages to the unmodifiable text area
                 patientMessages.append(" - " + message.getString("messages") + "\n");
@@ -181,7 +180,7 @@ public class MenuPage extends javax.swing.JFrame {
         try {
             System.out.println("LogChecker.main() called");
 
-            ResultSet allLogs = Info.statement.executeQuery("SELECT * FROM Logs;");
+            ResultSet allLogs = Session.statement.executeQuery("SELECT * FROM Logs;");
 
             while (allLogs.next()) {
                 System.out.println(allLogs.getString("LogID") + " " + allLogs.getString("PatientID") + " "

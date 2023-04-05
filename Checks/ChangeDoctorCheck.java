@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 // imports from the project
 import Databases.DoctorsDB;
 import Databases.PatientsDB;
-import Session.Info;
+import Info.Session;
 
 /**
  * @author Nikola
@@ -27,7 +27,7 @@ public class ChangeDoctorCheck {
                 JOptionPane.showMessageDialog(null, "Doctor does not exist!");
                 return false;
             } else if (newDoctorName
-                    .equals(PatientsDB.getDoctorName(Info.userID))) {
+                    .equals(PatientsDB.getDoctorName(Session.userID))) {
                 JOptionPane.showMessageDialog(null, "You are already assigned to this doctor!");
                 return false;
             } else {

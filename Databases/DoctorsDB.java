@@ -3,8 +3,7 @@ package Databases;
 // imports from the java library
 import java.sql.ResultSet;
 
-// imports from the project
-import Session.Info;
+import Info.Session;
 
 /**
  * @author Nikola
@@ -26,9 +25,9 @@ public class DoctorsDB {
     // Creates the Doctors table
     public static void initTable() {
         try {
-            Info.useNHS();
-            Info.statement.executeUpdate("DROP TABLE IF EXISTS Doctors;");
-            Info.statement.execute("CREATE TABLE Doctors (" +
+            Session.useNHS();
+            Session.statement.executeUpdate("DROP TABLE IF EXISTS Doctors;");
+            Session.statement.execute("CREATE TABLE Doctors (" +
                     "DoctorID INT NOT NULL auto_increment," +
                     "Name VARCHAR(15) NOT NULL, " +
                     "PhoneNumber VARCHAR(12) NOT NULL," +
@@ -43,29 +42,29 @@ public class DoctorsDB {
 
     private static void addDoctor(String doctorName, String phoneNumber, String specialty)
             throws Exception {
-        Info.statement.executeUpdate("INSERT INTO Doctors (DoctorID, Name, PhoneNumber, Speciality) " +
+        Session.statement.executeUpdate("INSERT INTO Doctors (DoctorID, Name, PhoneNumber, Speciality) " +
                 "VALUES (DEFAULT, '" + doctorName + "', '" + phoneNumber + "', '" + specialty + "')");
     }
 
     public static int getDoctorID(String doctorName) throws Exception {
-        Info.statement.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement
+        Session.statement.executeUpdate("use NHS");
+        ResultSet resultSet = Session.statement
                 .executeQuery("SELECT DoctorID FROM Doctors WHERE Name = '" + doctorName + "';");
         resultSet.next();
         return Integer.parseInt(resultSet.getString("DoctorID"));
     }
 
     public static String getDoctorName(int doctorId) throws Exception {
-        Info.statement2.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement2
+        Session.statement2.executeUpdate("use NHS");
+        ResultSet resultSet = Session.statement2
                 .executeQuery("SELECT Name FROM Doctors WHERE DoctorID = '" + doctorId + "';");
         resultSet.next();
         return resultSet.getString("Name");
     }
 
     public static boolean doctorExists(String doctorName) throws Exception {
-        Info.statement.executeUpdate("use NHS");
-        ResultSet resultSet = Info.statement
+        Session.statement.executeUpdate("use NHS");
+        ResultSet resultSet = Session.statement
                 .executeQuery("SELECT Name FROM Doctors WHERE Name = '" + doctorName + "';");
         return resultSet.next();
     }

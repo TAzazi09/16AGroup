@@ -7,8 +7,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import Functionality.*;
+import Info.*;
 import Databases.*;
-import Session.*;
 
 /**
  * @author Callum
@@ -47,14 +47,14 @@ public class ChangeDoctorFuncTest {
 		String expectedMessage = "Your doctor has successfully been changed to " + newDoctorName + ".";
 
 		// Call the method
-		Info.backgroundID = backgroundID;
+		Session.backgroundID = backgroundID;
 		try {
 			//statement = connection.createStatement();
 			//Checking if it can change doctor if all requirements are hit	
-			Info.statement
+			Session.statement
 					.execute("UPDATE Patients SET messages = CONCAT(messages,'\n + " + firstName
 							+ " " + surname + " has changed their doctor to " + newDoctorName
-							+ ".') WHERE patientID = '" + Info.backgroundID + "';");
+							+ ".') WHERE patientID = '" + Session.backgroundID + "';");
 		} catch (Exception e) {
 			assertEquals(expectedMessage, "Your doctor has successfully been changed to " + newDoctorName + ".");
 		}
@@ -71,12 +71,12 @@ public class ChangeDoctorFuncTest {
 		String expectedMessage = "Doctor does not exist!";
 
 		// Call the method
-		Info.backgroundID = backgroundID;
+		Session.backgroundID = backgroundID;
 		try {
 			//statement = connection.createStatement();
 			//Checking if it can change doctor if all requirements are hit	
-			Info.statement.executeUpdate("use NHS");
-			ResultSet resultSet = Info.statement
+			Session.statement.executeUpdate("use NHS");
+			ResultSet resultSet = Session.statement
 					.executeQuery("SELECT Name FROM Doctors WHERE Name = '" + doctorName + "';");
 		} catch (Exception e) {
 			assertEquals(resultSet, "Doctor does not exist!");

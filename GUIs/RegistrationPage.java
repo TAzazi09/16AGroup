@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 // imports from the project
 import Checks.RegistrationCheck;
 import Functionality.RegistrationFunc;
+import Info.General;
 import Functionality.DBConnectionFunc;
-import Session.General;
 
 /**
  * @author Kristian

@@ -2,10 +2,10 @@ package Checks;
 
 // imports from the java library
 import javax.swing.JOptionPane;
-import java.sql.ResultSet;
 
-// imports from the project
-import Session.Info;
+import Info.Session;
+
+import java.sql.ResultSet;
 
 /**
  * @author Nikola
@@ -69,7 +69,7 @@ public class BookingCheck {
     public static boolean doctorCheck(String time, String date, int doctorID) {
         try {
             // Returns all tuples where the doctor is available at the time and date
-            ResultSet resultSet = Info.statement
+            ResultSet resultSet = Session.statement
                     .executeQuery("SELECT * FROM Bookings WHERE doctorID = '" + doctorID + "' AND time = '" + time
                             + "' AND date = '" + date + "'");
 

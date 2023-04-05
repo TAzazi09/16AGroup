@@ -2,8 +2,8 @@ package GUIs;
 
 // imports from the project
 import Functionality.DBConnectionFunc;
+import Info.General;
 import Databases.DatabaseDB;
-import Session.General;
 
 /**
  * @author Nikola

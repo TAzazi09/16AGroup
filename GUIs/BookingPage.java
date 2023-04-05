@@ -3,7 +3,7 @@ package GUIs;
 // imports from the project
 import Functionality.BookingFunc;
 import Functionality.DBConnectionFunc;
-import Session.General;
+import Info.General;
 
 /**
  * @author Nikola

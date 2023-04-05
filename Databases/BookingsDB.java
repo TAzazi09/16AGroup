@@ -1,7 +1,6 @@
 package Databases;
 
-// imports from the project
-import Session.Info;
+import Info.Session;
 
 /**
  * @written by Ethan
@@ -23,9 +22,9 @@ public class BookingsDB {
     // Creates the Bookings table
     private static void initTable() {
         try {
-            Info.useNHS();
-            Info.statement.execute("DROP TABLE IF EXISTS Bookings");
-            Info.statement.execute("CREATE TABLE Bookings ("
+            Session.useNHS();
+            Session.statement.execute("DROP TABLE IF EXISTS Bookings");
+            Session.statement.execute("CREATE TABLE Bookings ("
                     + "BookingID INT NOT NULL auto_increment,"
                     + "PatientID INT NOT NULL, "
                     + "DoctorID INT NOT NULL, "
@@ -45,7 +44,7 @@ public class BookingsDB {
 
     public static void addBooking(int patientID, int doctorID, String time, String date, String detail,
             String prescription) throws Exception {
-        Info.statement
+        Session.statement
                 .executeUpdate("INSERT INTO Bookings (PatientID, DoctorID, Time, Date, Detail, Prescription) VALUES ('"
                         + patientID + "', '" + doctorID + "', '" + time + "', '" + date + "', '" + detail + "', '"
                         + prescription + "')");

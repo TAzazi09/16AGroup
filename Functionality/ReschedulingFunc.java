@@ -6,8 +6,8 @@ import javax.swing.JOptionPane;
 
 // imports from the project
 import GUIs.MenuPage;
+import Info.*;
 import Databases.DoctorsDB;
-import Session.*;
 
 /**
  * @author Ethan
@@ -18,8 +18,8 @@ public class ReschedulingFunc {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Connects to the database
-            ResultSet D = Info.statement
-                    .executeQuery("SELECT DoctorID FROM Patients WHERE PatientID = '" + Info.userID + "'");
+            ResultSet D = Session.statement
+                    .executeQuery("SELECT DoctorID FROM Patients WHERE PatientID = '" + Session.userID + "'");
             D.next();
 
             //Gets the Doctors name associated with the patient
@@ -29,7 +29,7 @@ public class ReschedulingFunc {
             int currentDoctorID = Integer.parseInt(D.getString("DoctorID"));
 
             // Checks if there are any bookings that could clash
-            ResultSet results = Info.statement
+            ResultSet results = Session.statement
                     .executeQuery("SELECT * FROM bookings WHERE Time = '" + newTime + "' AND DoctorID = '"
                             + currentDoctorID + "' AND Date = '" + newDate + "'");
 
@@ -39,18 +39,18 @@ public class ReschedulingFunc {
             } else {
                 JOptionPane.showMessageDialog(null,
                         "Your booking has successfully been changed to " + newTime + " on the " + newDate + ".");
-                Info.statement.execute("UPDATE Patients SET messages = CONCAT(messages,'\n + "
-                        + Info.firstname
-                        + " " + Info.surname + " has changed their booking from " + oldTime + " " + oldDate
+                Session.statement.execute("UPDATE Patients SET messages = CONCAT(messages,'\n + "
+                        + Session.firstname
+                        + " " + Session.surname + " has changed their booking from " + oldTime + " " + oldDate
                         + " to "
-                        + newTime + " " + newDate + ".') WHERE patientID = '" + Info.userID + "';");
+                        + newTime + " " + newDate + ".') WHERE patientID = '" + Session.userID + "';");
 
                 // Add the rescheduling to the log
-                LogFunc.logReschedule(Info.userID, oldTime, oldDate, newTime, newDate,
+                LogFunc.logReschedule(Session.userID, oldTime, oldDate, newTime, newDate,
                         currentDoctor);
 
                 // Updates the booking DB
-                Info.statement.executeUpdate(
+                Session.statement.executeUpdate(
                         "UPDATE bookings SET Date = '" + newDate + "', Time = '" + newTime + "' WHERE Time = '"
                                 + oldTime + "' AND DoctorID = '" + currentDoctorID + "' AND Date = '" + oldDate + "'");
 

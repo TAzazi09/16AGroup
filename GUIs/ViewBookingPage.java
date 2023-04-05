@@ -7,9 +7,8 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
-// imports from the project
-import Session.*;
 import Databases.DoctorsDB;
+import Info.*;
 
 /**
  * @author ks818
@@ -29,7 +28,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
     private javax.swing.JButton reschedule;
     private javax.swing.JButton viewPastBooking;
     public static Connection connection;
-    public String userId = Info.firstname;
+    public String userId = Session.firstname;
 
     public ViewBookingPage() {
         super("View Bookings");
@@ -38,7 +37,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
     }
 
     public static void loadPage() {
-        if (Info.userID != -1) {
+        if (Session.userID != -1) {
             General.setNimbusLookAndFeel(ViewBookingPage.class);
 
             /* Create and display the form */
@@ -128,7 +127,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                     try {
                         // Gets the required information about the booking where the date contains the
                         // year and month
-                        ResultSet results = Info.statement.executeQuery(
+                        ResultSet results = Session.statement.executeQuery(
                                 "SELECT DoctorID, Date, Time FROM Bookings WHERE Date LIKE '%" + combination + "%';");
 
                         // Clears the dropdown and the array of bookings.

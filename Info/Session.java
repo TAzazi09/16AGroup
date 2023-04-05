@@ -1,4 +1,4 @@
-package Session;
+package Info;
 
 // imports from the java library
 import java.sql.Connection;
@@ -10,7 +10,7 @@ import Functionality.DBConnectionFunc;
 /**
  * @author Nikola
  */
-public class Info {
+public class Session {
     // Authentication variables
     public static boolean connected;
     public static int userID = -1; // -1 means no user is logged in
@@ -42,7 +42,7 @@ public class Info {
 
     public static void useNHS() {
         try {
-            Info.statement.executeUpdate("use NHS");
+            Session.statement.executeUpdate("use NHS");
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }

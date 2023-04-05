@@ -12,7 +12,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 import Databases.*;
 import Functionality.*;
-import Session.*;
+import Info.*;
 
 /**
  * @author Callum
@@ -48,7 +48,7 @@ public class ReschedulingFuncTest {
 		int docID = 1;
 
 		try {
-			ResultSet results = Info.statement
+			ResultSet results = Session.statement
 					.executeQuery("SELECT * FROM Bookings WHERE Time = '" + newTime + "' AND DoctorID = '"
 							+ docID + "' AND Date = '" + newDate + "'");
 
@@ -91,11 +91,11 @@ public class ReschedulingFuncTest {
 
 		try {
 			//Populating table with booking already at desired data and time for reschedule with other patient
-			Info.statement.execute(
+			Session.statement.execute(
 					"INSERT INTO Bookings (PatientID, DoctorID, Time, Date) VALUES ('" + otherPatient
 							+ "', '" + docID + "', '" + time + "', '" + date + "');");
 			//Query to check for availability of Doctor
-			ResultSet results = Info.statement
+			ResultSet results = Session.statement
 					.executeQuery("SELECT * FROM Bookings WHERE Time = '" + newTime + "' AND DoctorID = '"
 							+ docID + "' AND Date = '" + newDate + "'");
 

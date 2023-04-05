@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 // imports from the project
 import Checks.LoginCheck;
 import GUIs.MenuPage;
-import Session.*;
+import Info.*;
 
 /**
  * @author Nikola
@@ -19,13 +19,13 @@ public class LoginFunc {
     public static void sendData(String username, String password) {
         try {
             //Returns all tuples where the username matches
-            ResultSet resultSet = Info.statement
+            ResultSet resultSet = Session.statement
                     .executeQuery("SELECT * FROM Patients WHERE FirstName = '" + username + "'");
 
             if (LoginCheck.test(username, password, resultSet)) {
-                Info.userID = Integer.parseInt(resultSet.getString("patientID"));
-                Info.firstname = resultSet.getString("FirstName");
-                Info.surname = resultSet.getString("Surname");
+                Session.userID = Integer.parseInt(resultSet.getString("patientID"));
+                Session.firstname = resultSet.getString("FirstName");
+                Session.surname = resultSet.getString("Surname");
 
                 doctorName = resultSet.getInt("doctorID");
                 JOptionPane.showMessageDialog(null, "Welcome to the NHS!");
@@ -35,7 +35,7 @@ public class LoginFunc {
                 userFound = true;
 
                 // Add the login to the log
-                LogFunc.logLogin(Info.userID);
+                LogFunc.logLogin(Session.userID);
 
                 //Returns the user to the main menu
                 MenuPage.loadPage();

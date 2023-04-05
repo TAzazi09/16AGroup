@@ -5,8 +5,8 @@ import java.sql.ResultSet;
 
 // imports from the project
 import Databases.DoctorsDB;
-import Session.*;
 import Functionality.ChangeDoctorFunc;
+import Info.*;
 
 /**
  * @author Nikola
@@ -20,7 +20,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     }
 
     public static void loadPage() {
-        if (Info.userID != -1) {
+        if (Session.userID != -1) {
             General.setNimbusLookAndFeel(ChangeDoctorFunc.class);
 
             /* Create and display the form */
@@ -62,14 +62,14 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
         String curDoc = "";
         try {
             // Get the patient's doctor
-            ResultSet currentDoctor = Info.statement
-                    .executeQuery("SELECT DoctorID FROM Patients WHERE patientID = '" + Info.userID + "';");
+            ResultSet currentDoctor = Session.statement
+                    .executeQuery("SELECT DoctorID FROM Patients WHERE patientID = '" + Session.userID + "';");
             currentDoctor.next();
             curDocID = Integer.parseInt(currentDoctor.getString("DoctorID"));
             curDoc = DoctorsDB.getDoctorName(curDocID);
 
             // Get the list of doctors without the current patient's doctor (for the drop-down menu)
-            ResultSet doctors = Info.statement
+            ResultSet doctors = Session.statement
                     .executeQuery("SELECT * FROM Doctors WHERE DoctorID != '" + curDocID + "';");
             while (doctors.next()) {
                 newDocBox.addItem(doctors.getString("Name"));

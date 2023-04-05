@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import Checks.LoginCheck;
 import Databases.*;
 import Functionality.ArrangeBookingFunc;
-import Session.*;
+import Info.*;
 
 class ArrangeBookingFuncTest {
 
@@ -49,7 +49,7 @@ class ArrangeBookingFuncTest {
         when(resultSetMock.next()).thenReturn(true);
 
         // Mock Info.statement.executeQuery method to return the mocked ResultSet
-        Info infoMock = mock(Info.class);
+        Session infoMock = mock(Session.class);
         when(infoMock.statement.executeQuery(anyString())).thenReturn(resultSetMock);
 
         // Mock JOptionPane.showMessageDialog method to capture the message shown to the user
@@ -61,7 +61,7 @@ class ArrangeBookingFuncTest {
 
         // Assert
         verify(infoMock.statement, times(1)).executeQuery(
-                "SELECT DoctorID FROM Patients WHERE patientID = '" + Info.backgroundID + "';");
+                "SELECT DoctorID FROM Patients WHERE patientID = '" + Session.backgroundID + "';");
         verify(infoMock.statement, times(1)).executeQuery("SELECT * FROM Bookings WHERE DoctorID = '"
                 + Integer.parseInt(resultSetMock.getString("DoctorID")) + "' AND Time = '" + time + "' AND Date = '"
                 + date + "';");
@@ -78,7 +78,7 @@ class ArrangeBookingFuncTest {
         when(resultSetMock.next()).thenReturn(false);
 
         // Mock Info.statement.executeQuery method to return the mocked ResultSets
-        Info infoMock = mock(Info.class);
+        Session infoMock = mock(Session.class);
         when(infoMock.statement.executeQuery(anyString())).thenReturn(resultSetMock);
 
         // Mock Info.statement.execute method to return 1 (successful execution)

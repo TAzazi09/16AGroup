@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 import Checks.ChangeDoctorCheck;
 import Databases.PatientsDB;
 import Databases.DoctorsDB;
-import Session.*;
 import GUIs.MenuPage;
+import Info.*;
 
 /**
  * @author Nikola
@@ -20,16 +20,16 @@ public class ChangeDoctorFunc {
                 int newDoctorID = DoctorsDB.getDoctorID(newDoctorName);
 
                 // Change the doctor in the database
-                PatientsDB.changeDoctor(Info.userID, newDoctorID);
+                PatientsDB.changeDoctor(Session.userID, newDoctorID);
 
                 // add a message to the patient's log
-                Info.statement
-                        .execute("UPDATE Patients SET messages = CONCAT(messages,'\n + " + Info.firstname
-                                + " " + Info.surname + " has changed their doctor to " + newDoctorName
-                                + ".') WHERE patientID = '" + Info.userID + "';");
+                Session.statement
+                        .execute("UPDATE Patients SET messages = CONCAT(messages,'\n + " + Session.firstname
+                                + " " + Session.surname + " has changed their doctor to " + newDoctorName
+                                + ".') WHERE patientID = '" + Session.userID + "';");
 
                 // Adds the change of doctor to the log
-                LogFunc.logChangeDoctor(Info.userID, newDoctorName);
+                LogFunc.logChangeDoctor(Session.userID, newDoctorName);
 
                 // display a message to the user
                 JOptionPane.showMessageDialog(null,

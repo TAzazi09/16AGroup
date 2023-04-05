@@ -1,4 +1,4 @@
-package Session;
+package Info;
 
 // imports from the java library
 import java.awt.Font;

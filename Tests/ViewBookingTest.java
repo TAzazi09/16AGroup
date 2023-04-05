@@ -7,8 +7,8 @@ import java.sql.Statement;
 import org.junit.Before;
 import org.junit.Test;
 import Functionality.*;
+import Info.*;
 import Databases.*;
-import Session.*;
 
 // import kent.comp5590.Info;
 
@@ -34,7 +34,7 @@ public class ViewBookingTest {
 				connection = DBConnectionFunc.getConnection();
 				statement = connection.createStatement();
 
-				Info.connect();
+				Session.connect();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -51,7 +51,7 @@ public class ViewBookingTest {
 
 		try {
 			//Add booking for time and date
-			ResultSet testDocAvailability = Info.statement
+			ResultSet testDocAvailability = Session.statement
 					.executeQuery("SELECT * FROM Bookings WHERE DoctorID = '" + doctorID + "' AND Time = '"
 							+ time + "' AND Date = '" + date + "';");
 
