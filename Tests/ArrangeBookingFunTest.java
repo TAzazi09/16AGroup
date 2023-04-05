@@ -33,7 +33,7 @@ class ArrangeBookingFuncTest {
         doNothing().when(mockOptionPane).showMessageDialog(null, "Please select a time and date.");
 
         // Act
-        ArrangeBookingFunc.arrangeBooking(time, date);
+        ArrangeBookingFunc.book(time, date);
 
         // Assert
         verify(mockOptionPane, times(1)).showMessageDialog(null, "Please select a time and date.");
@@ -57,7 +57,7 @@ class ArrangeBookingFuncTest {
         doNothing().when(mockOptionPane).showMessageDialog(null, "Doctor is unavailable at that time.");
 
         // Act
-        ArrangeBookingFunc.arrangeBooking(time, date);
+        ArrangeBookingFunc.book(time, date);
 
         // Assert
         verify(infoMock.statement, times(1)).executeQuery(

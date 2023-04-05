@@ -14,7 +14,7 @@ import Databases.PatientsDB;
  * @author Nikola
  */
 public class BookingFunc {
-    public static void arrangeBooking(String time, String date) {
+    public static void book(String time, String date) {
         try {
             if (time == null || date == null) {
                 JOptionPane.showMessageDialog(null, "Please select a time and date.");
@@ -24,7 +24,7 @@ public class BookingFunc {
                 String currentDocName = PatientsDB.getDoctorName(patientID);
 
                 // insert the booking into the database (after ensuring the doctor is available)
-                BookingsDB.insertBooking(patientID, currentDocID, time, date, null, null);
+                BookingsDB.addBooking(patientID, currentDocID, time, date, null, null);
 
                 // Add the booking to the log
                 LogFunc.logBooking(patientID, time, date, currentDocName);

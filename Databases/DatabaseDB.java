@@ -9,7 +9,7 @@ import Session.Info;
  */
 public class DatabaseDB {
     // Creates the database and the tables
-    public static void initializeDB() {
+    public static void initDB() {
         try {
             // Connects to the database (if not already connected)
             if (!Info.connected) {
@@ -20,10 +20,10 @@ public class DatabaseDB {
             Info.statement.executeUpdate("CREATE DATABASE NHS");
 
             // Creates the Doctors, Patients, and Bookings tables
-            DoctorsDB.initializeTableWithDoctors();;
-            PatientsDB.initializeTableWithPatients();
-            BookingsDB.initializeTableWithBookings();
-            LogsDB.initializeTable();
+            DoctorsDB.initTableWithDoctors();;
+            PatientsDB.initTableWithPatients();
+            BookingsDB.initTableWithBookings();
+            LogsDB.initTable();
         } catch (Exception e) {
             e.printStackTrace();
         }

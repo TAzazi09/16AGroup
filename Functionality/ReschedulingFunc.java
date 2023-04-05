@@ -13,7 +13,7 @@ import Session.*;
  * @author Ethan
  */
 public class ReschedulingFunc {
-    public static void rescheduleBooking(String oldDate, String oldTime, String newDate, String newTime) {
+    public static void reschedule(String oldDate, String oldTime, String newDate, String newTime) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -46,7 +46,7 @@ public class ReschedulingFunc {
                         + newTime + " " + newDate + ".') WHERE patientID = '" + Info.userID + "';");
 
                 // Add the rescheduling to the log
-                LogFunc.logRescheduleBooking(Info.userID, oldTime, oldDate, newTime, newDate,
+                LogFunc.logReschedule(Info.userID, oldTime, oldDate, newTime, newDate,
                         currentDoctor);
 
                 // Updates the booking DB

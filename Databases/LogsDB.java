@@ -8,7 +8,7 @@ import Session.Info;
  */
 public class LogsDB {
     // Creates the Logs table
-    public static void initializeTable() {
+    public static void initTable() {
         try {
             Info.useNHS();
             Info.statement.executeUpdate("DROP TABLE IF EXISTS Logs;");
@@ -25,7 +25,7 @@ public class LogsDB {
         }
     }
 
-    public static void insertLog(int patientID, String action) throws Exception {
+    public static void addLog(int patientID, String action) throws Exception {
         Info.statement.executeUpdate("INSERT INTO Logs (LogID, PatientID, Timestamp, Action) " +
                 "VALUES (DEFAULT, '" + patientID + "', CURRENT_TIMESTAMP, '" + action + "')");
     }

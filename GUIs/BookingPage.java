@@ -27,15 +27,14 @@ public class BookingPage extends javax.swing.JFrame {
     }
 
     // Button actions
-    private void arrangeButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void bookButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String time = timeInput.getText();
         String date = dateInput.getText();
-        BookingFunc.arrangeBooking(time, date);
+        BookingFunc.book(time, date);
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
         MenuPage.loadPage();
-        ;
         dispose();
     }
 
@@ -78,10 +77,11 @@ public class BookingPage extends javax.swing.JFrame {
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
         backButton.addActionListener(this::backButtonActionPerformed);
 
+        // TODO:  Change the name of the button to "Book"
         arrangeButton.setBackground(General.BUTTON_BLUE);
         arrangeButton.setFont(General.font(18));
         arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
-        arrangeButton.addActionListener(this::arrangeButtonActionPerformed);
+        arrangeButton.addActionListener(this::bookButtonActionPerformed);
 
         // Panel layout code section (below)
         // -----------------------------------------------------------------------------------------------------------------------------------

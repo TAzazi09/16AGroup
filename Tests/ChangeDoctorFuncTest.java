@@ -27,7 +27,7 @@ public class ChangeDoctorFuncTest {
 
 			// Initialize the database
 			if (DatabaseConnectionFunc.connected) {
-				DatabaseDB.initializeDB();
+				DatabaseDB.initDB();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

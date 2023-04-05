@@ -14,11 +14,11 @@ import Session.Info;
 public class ChangeDoctorCheck {
     // Performs the new doctor name check
     public static boolean test(String newDoctorName) {
-        return newDoctorNameCheck(newDoctorName);
+        return doctorNameCheck(newDoctorName);
     }
 
     // Checks if the new doctor name is valid
-    private static boolean newDoctorNameCheck(String newDoctorName) {
+    private static boolean doctorNameCheck(String newDoctorName) {
         try {
             if (newDoctorName.equals("Choose a doctor")) {
                 JOptionPane.showMessageDialog(null, "Please choose a doctor!");

@@ -12,15 +12,15 @@ import Session.Info;
  * && quality of life changes (added auto-login for me and Ethan)
  */
 public class PatientsDB {
-    public static void initializeTableWithPatients() {
-        initializeTable();
+    public static void initTableWithPatients() {
+        initTable();
 
         try {
             // Inserts the patients into the table
-            insertPatient("Nikola", "Kolev", "Male", 20, "07856 791314",
+            addPatient("Nikola", "Kolev", "Male", 20, "07856 791314",
                     DoctorsDB.getDoctorID("Dr Jason"), "no details",
                     "Nikola Kolev successfully registered with Dr Jason as their doctor");
-            insertPatient("Ethan", "Teather", "Male", 19, "00000 000000",
+            addPatient("Ethan", "Teather", "Male", 19, "00000 000000",
                     DoctorsDB.getDoctorID("Dr Andrew"), "",
                     "Ethan Teather successfully registered with Dr Andrew as their doctor");
         } catch (Exception e) {
@@ -29,7 +29,7 @@ public class PatientsDB {
     }
 
     // Creates the Patients table
-    private static void initializeTable() {
+    private static void initTable() {
         try {
             // Creates the Patients table
             Info.useNHS();
@@ -53,7 +53,7 @@ public class PatientsDB {
     }
 
     // Inserts a patient into the table
-    private static void insertPatient(String firstName, String surname, String gender, int age,
+    private static void addPatient(String firstName, String surname, String gender, int age,
             String phoneNumber, int doctorId, String details, String messages) throws Exception {
         Info.statement.executeUpdate(
                 "INSERT INTO Patients (PatientID, FirstName, Surname, Gender, Age, PhoneNumber, DoctorID, Details, messages) "
