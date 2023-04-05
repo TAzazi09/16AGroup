@@ -44,7 +44,7 @@ public class BookingPage extends javax.swing.JFrame {
         // initialise the components
         javax.swing.JPanel panel = new javax.swing.JPanel();
         javax.swing.JButton backButton = new javax.swing.JButton("Back");
-        javax.swing.JButton arrangeButton = new javax.swing.JButton("Arrange");
+        javax.swing.JButton bookButton = new javax.swing.JButton("Book");
         javax.swing.JLabel timeLabel = new javax.swing.JLabel("Time");
         timeInput = new javax.swing.JTextField("HH:MM");
         javax.swing.JLabel dateLabel = new javax.swing.JLabel("Date");
@@ -78,10 +78,10 @@ public class BookingPage extends javax.swing.JFrame {
         backButton.addActionListener(this::backButtonActionPerformed);
 
         // TODO:  Change the name of the button to "Book"
-        arrangeButton.setBackground(General.BUTTON_BLUE);
-        arrangeButton.setFont(General.font(18));
-        arrangeButton.setPreferredSize(new java.awt.Dimension(68, 27));
-        arrangeButton.addActionListener(this::bookButtonActionPerformed);
+        bookButton.setBackground(General.BUTTON_BLUE);
+        bookButton.setFont(General.font(18));
+        bookButton.setPreferredSize(new java.awt.Dimension(68, 27));
+        bookButton.addActionListener(this::bookButtonActionPerformed);
 
         // Panel layout code section (below)
         // -----------------------------------------------------------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ public class BookingPage extends javax.swing.JFrame {
                                                 .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(20, 20, 20)
-                                                .addComponent(arrangeButton, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                .addComponent(bookButton, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                         135, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(panelLayout.createSequentialGroup()
                                                 .addGap(45, 45, 45)
@@ -147,7 +147,7 @@ public class BookingPage extends javax.swing.JFrame {
                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(arrangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46,
+                                        .addComponent(bookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
