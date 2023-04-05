@@ -19,7 +19,7 @@ public class GeneralPage extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             DatabaseConnectionFunc.main(null);
-            
+
             // Initialize the database
             if (DatabaseConnectionFunc.connected) {
                 DatabaseDB.initDB();

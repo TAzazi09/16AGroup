@@ -43,7 +43,11 @@ public class BookingsDB {
         }
     }
 
-    public static void addBooking(int patientID, int doctorID, String time, String date, String detail, String prescription) throws Exception {
-        Info.statement.executeUpdate("INSERT INTO Bookings (PatientID, DoctorID, Time, Date, Detail, Prescription) VALUES ('" + patientID + "', '" + doctorID + "', '" + time + "', '" + date + "', '" + detail + "', '" + prescription + "')");
+    public static void addBooking(int patientID, int doctorID, String time, String date, String detail,
+            String prescription) throws Exception {
+        Info.statement
+                .executeUpdate("INSERT INTO Bookings (PatientID, DoctorID, Time, Date, Detail, Prescription) VALUES ('"
+                        + patientID + "', '" + doctorID + "', '" + time + "', '" + date + "', '" + detail + "', '"
+                        + prescription + "')");
     }
 }

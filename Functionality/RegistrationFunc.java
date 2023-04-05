@@ -11,7 +11,7 @@ import GUIs.GeneralPage;
 
 /**
  * @author Nikola
- * @some code wirten by Ethan
+ * @some code written by Ethan
  */
 public class RegistrationFunc {
     // Sends the data to the database

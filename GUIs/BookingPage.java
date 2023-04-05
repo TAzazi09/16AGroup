@@ -55,8 +55,6 @@ public class BookingPage extends javax.swing.JFrame {
         // set the properties of the frame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(General.WHITE);
-        setForeground(General.WHITE);
-
         panel.setBackground(General.WHITE);
 
         // set font for all labels and buttons
@@ -77,7 +75,6 @@ public class BookingPage extends javax.swing.JFrame {
         backButton.setPreferredSize(new java.awt.Dimension(68, 27));
         backButton.addActionListener(this::backButtonActionPerformed);
 
-        // TODO:  Change the name of the button to "Book"
         bookButton.setBackground(General.BUTTON_BLUE);
         bookButton.setFont(General.font(18));
         bookButton.setPreferredSize(new java.awt.Dimension(68, 27));

@@ -33,7 +33,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
     private void initComponents() {
         getContentPane().setBackground(General.WHITE);
 
-        javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
+        javax.swing.JPanel panel = new javax.swing.JPanel();
         javax.swing.JLabel changeDocLabel = new javax.swing.JLabel("Change your doctor");
         newDocBox = new javax.swing.JComboBox<>();
         javax.swing.JLabel curDocLabel = new javax.swing.JLabel("Current doctor: ");
@@ -44,7 +44,7 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(General.WHITE);
+        panel.setBackground(General.WHITE);
 
         changeDocLabel.setFont(General.font(36));
 
@@ -89,8 +89,8 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
 
         // Panel layout code section (below)
         // -----------------------------------------------------------------------------------------------------------------------------------
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -142,14 +142,14 @@ public class ChangeDoctorPage extends javax.swing.JFrame {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(200, 200, 200)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(200, 200, 200)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(250, 250, 250)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(310, Short.MAX_VALUE)));
 
