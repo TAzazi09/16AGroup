@@ -9,10 +9,12 @@ import java.awt.Window;
  * @author Nikola
  */
 public class General {
+    // Colour palette
     public static Color WHITE = new Color(255, 255, 255);
     public static Color BLACK = new Color(0, 0, 0);
     public static Color BUTTON_BLUE = new Color(65, 175, 255, 1);
 
+    // Monospaced font declaration (size)
     public static Font font(int size) {
         return new Font("Monospaced", Font.PLAIN, size);
     }

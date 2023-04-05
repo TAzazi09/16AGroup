@@ -23,7 +23,7 @@ public class BookingsDB {
     // Creates the Bookings table
     private static void initializeTable() {
         try {
-            Info.statement.executeUpdate("use NHS");
+            Info.useNHS();
             Info.statement.execute("DROP TABLE IF EXISTS Bookings");
             Info.statement.execute("CREATE TABLE Bookings ("
                     + "BookingID INT NOT NULL auto_increment,"

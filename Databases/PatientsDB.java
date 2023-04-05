@@ -32,7 +32,7 @@ public class PatientsDB {
     private static void initializeTable() {
         try {
             // Creates the Patients table
-            Info.statement.executeUpdate("use NHS");
+            Info.useNHS();
             Info.statement.executeUpdate("DROP TABLE IF EXISTS Patients;");
             Info.statement.execute("CREATE TABLE Patients (" +
                     "PatientID INT NOT NULL auto_increment," +

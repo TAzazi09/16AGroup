@@ -37,4 +37,12 @@ public class Info {
             connected = false;
         }
     }
+
+    public static void useNHS() {
+        try {
+            Info.statement.executeUpdate("use NHS");
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
 }

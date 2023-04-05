@@ -10,7 +10,7 @@ public class LogsDB {
     // Creates the Logs table
     public static void initializeTable() {
         try {
-            Info.statement.executeUpdate("use NHS");
+            Info.useNHS();
             Info.statement.executeUpdate("DROP TABLE IF EXISTS Logs;");
             Info.statement.execute("CREATE TABLE Logs (" +
                     "LogID INT NOT NULL auto_increment," +

@@ -26,7 +26,7 @@ public class DoctorsDB {
     // Creates the Doctors table
     public static void initializeTable() {
         try {
-            Info.statement.executeUpdate("use NHS");
+            Info.useNHS();
             Info.statement.executeUpdate("DROP TABLE IF EXISTS Doctors;");
             Info.statement.execute("CREATE TABLE Doctors (" +
                     "DoctorID INT NOT NULL auto_increment," +
