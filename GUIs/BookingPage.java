@@ -30,7 +30,7 @@ public class BookingPage extends javax.swing.JFrame {
     private void bookButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String time = timeInput.getText();
         String date = dateInput.getText();
-        BookingFunc.book(time, date);
+        BookingFunc.sendData(time, date);
     }
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {

@@ -14,7 +14,7 @@ import Databases.PatientsDB;
  * @author Nikola
  */
 public class BookingFunc {
-    public static void book(String time, String date) {
+    public static void sendData(String time, String date) {
         try {
             if (time == null || date == null) {
                 JOptionPane.showMessageDialog(null, "Please select a time and date.");

@@ -102,6 +102,6 @@ public class ReschedulePage extends javax.swing.JFrame {
         String time = timeInput.getText();
         String date = dateInput.getText();
         // Sends both the new and old date / time
-        ReschedulingFunc.reschedule(oldDate, oldTime, date, time);
+        ReschedulingFunc.sendData(oldDate, oldTime, date, time);
     }
 }

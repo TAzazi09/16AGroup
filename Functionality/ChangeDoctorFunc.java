@@ -14,7 +14,7 @@ import GUIs.MenuPage;
  * @author Nikola
  */
 public class ChangeDoctorFunc {
-    public static void changeDoctor(String newDoctorName) {
+    public static void sendData(String newDoctorName) {
         try {
             if (ChangeDoctorCheck.test(newDoctorName)) {
                 int newDoctorID = DoctorsDB.getDoctorID(newDoctorName);

@@ -60,7 +60,7 @@ public class ReschedulingFuncTest {
 
 			//Calling resechduleBooking with date and time
 
-			kent.comp5590.ReschedulingFunc.reschedule(oldDate, oldTime, newDate, newTime);
+			kent.comp5590.ReschedulingFunc.sendData(oldDate, oldTime, newDate, newTime);
 
 			Mockito.verify(mockOptionPane);
 			//Checking to see if same message was output once method was called with values
@@ -107,7 +107,7 @@ public class ReschedulingFuncTest {
 
 			//Calling resechduleBooking with date and time
 
-			kent.comp5590.ReschedulingFunc.reschedule(oldDate, oldTime, newDate, newTime);
+			kent.comp5590.ReschedulingFunc.sendData(oldDate, oldTime, newDate, newTime);
 
 			Mockito.verify(mockOptionPane);
 			//Checking to see if same message was output once method was called with values
