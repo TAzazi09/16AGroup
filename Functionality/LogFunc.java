@@ -17,6 +17,7 @@ public class LogFunc {
         }
     }
 
+    // Logs the change of a patient's doctor
     public static void logChangeDoctor(int patientID, String newDoctorName) {
         try {
             LogsDB.addLog(patientID, "Changed doctor to " + newDoctorName);
@@ -25,6 +26,7 @@ public class LogFunc {
         }
     }
 
+    // Logs when a user logs in
     public static void logLogin(int patientID) {
         try {
             LogsDB.addLog(patientID, "Logged in");
@@ -33,6 +35,7 @@ public class LogFunc {
         }
     }
 
+    // Logs when a user arranges a booking
     public static void logBooking(int patientID, String time, String date, String doctorName) {
         try {
             LogsDB.addLog(patientID, "Arranged a booking at " + time + " on " + date + " with " + doctorName);
@@ -41,6 +44,7 @@ public class LogFunc {
         }
     }
 
+    // Logs when a user changes the time of a booking
     public static void logReschedule(int patientID, String oldTime, String oldDate, String newTime,
             String newDate, String doctorName) {
         try {
