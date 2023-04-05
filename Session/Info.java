@@ -11,13 +11,15 @@ import Functionality.DatabaseConnectionFunc;
  * @author Nikola
  */
 public class Info {
+    // Authentication variables
     public static boolean connected;
+    public static int userID = -1; // -1 means no user is logged in
 
+    // User variables
     public static String firstname;
     public static String surname;
 
-    public static int userID = -1; // -1 means no user is logged in
-
+    // SQL variables
     public static Connection connection;
     public static Statement statement;
     public static Statement statement2;
