@@ -121,7 +121,7 @@ public class RegistrationPage extends javax.swing.JFrame {
                 RegistrationPage.totalGroup = group;
 
                 phoneLabel.setFont(General.font(18));
-
+                tempDoctorNames = new ArrayList<>();
                 try {
                         ResultSet DoctorNameResults = Session.statement.executeQuery("SELECT Name FROM Doctors");
                         while (DoctorNameResults.next()) {
