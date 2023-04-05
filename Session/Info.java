@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 // imports from the project
-import Functionality.DatabaseConnectionFunc;
+import Functionality.DBConnectionFunc;
 
 /**
  * @author Nikola
@@ -29,7 +29,7 @@ public class Info {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Connects to the database
-            connection = DatabaseConnectionFunc.getConnection();
+            connection = DBConnectionFunc.getConnection();
             statement = connection.createStatement();
             statement2 = connection.createStatement();
 

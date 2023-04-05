@@ -9,7 +9,7 @@ import Session.*;
 /**
  * @author Ethan
  */
-public class ViewPastBooking extends javax.swing.JFrame {
+public class PastBookingsPage extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JButton back;
     private javax.swing.JLabel detailsLabel;
@@ -22,18 +22,18 @@ public class ViewPastBooking extends javax.swing.JFrame {
     private String Details;
     private String Prescription;
 
-    public ViewPastBooking(String DoctorID, String Date, String Time) {
+    public PastBookingsPage(String DoctorID, String Date, String Time) {
         initComponents(DoctorID, Date, Time);
     }
 
     public static void loadPage(String DoctorID, String Date, String Time) {
         if (Info.userID != -1) {
-            General.setNimbusLookAndFeel(ViewPastBooking.class);
+            General.setNimbusLookAndFeel(PastBookingsPage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new ViewPastBooking(DoctorID, Date, Time).setVisible(true);
+                    new PastBookingsPage(DoctorID, Date, Time).setVisible(true);
                 }
             });
         } else {

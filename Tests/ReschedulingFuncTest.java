@@ -26,10 +26,10 @@ public class ReschedulingFuncTest {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			DatabaseConnectionFunc.main(null);
+			DBConnectionFunc.main(null);
 
 			// Initialize the database
-			if (DatabaseConnectionFunc.connected) {
+			if (DBConnectionFunc.connected) {
 				DatabaseDB.initDB();
 			}
 		} catch (Exception e) {

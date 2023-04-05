@@ -25,13 +25,13 @@ public class ViewBookingTest {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			DatabaseConnectionFunc.main(null);
+			DBConnectionFunc.main(null);
 
 			// Initialize the database
-			if (DatabaseConnectionFunc.connected) {
+			if (DBConnectionFunc.connected) {
 				DatabaseDB.initDB();
 
-				connection = DatabaseConnectionFunc.getConnection();
+				connection = DBConnectionFunc.getConnection();
 				statement = connection.createStatement();
 
 				Info.connect();

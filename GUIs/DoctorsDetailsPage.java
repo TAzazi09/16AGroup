@@ -14,7 +14,7 @@ import Session.General;
  * @author Tare
  * @code quality by Nikola
  */
-public class DoctorsDetails extends javax.swing.JFrame {
+public class DoctorsDetailsPage extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
@@ -23,7 +23,7 @@ public class DoctorsDetails extends javax.swing.JFrame {
     private JTextArea doctorDetails;
     private String[] doctorInfo;
 
-    public DoctorsDetails() {
+    public DoctorsDetailsPage() {
         super("Doctor Details");
 
         // Initialize doctor names and info
@@ -82,11 +82,11 @@ public class DoctorsDetails extends javax.swing.JFrame {
             }
 
             public static void main(String[] args) {
-                DoctorsDetails doctorMenu = new DoctorsDetails();
+                DoctorsDetailsPage doctorMenu = new DoctorsDetailsPage();
 
                 General.setNimbusLookAndFeel(doctorMenu.getClass());
 
-                java.awt.EventQueue.invokeLater(() -> new DoctorsDetails().setVisible(true));
+                java.awt.EventQueue.invokeLater(() -> new DoctorsDetailsPage().setVisible(true));
             }
         });
     }

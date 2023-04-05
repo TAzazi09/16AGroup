@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 // imports from the project
 import Checks.RegistrationCheck;
 import Functionality.RegistrationFunc;
-import Functionality.DatabaseConnectionFunc;
+import Functionality.DBConnectionFunc;
 import Session.General;
 
 /**
@@ -30,7 +30,7 @@ public class RegistrationPage extends javax.swing.JFrame {
     }
 
     public static void loadPage() {
-        if (DatabaseConnectionFunc.connected) {
+        if (DBConnectionFunc.connected) {
             General.setNimbusLookAndFeel(RegistrationPage.class);
 
             /* Create and display the form */

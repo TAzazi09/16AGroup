@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Ethan
  * @code quality by Nikola
  */
-public class DatabaseConnectionFunc {
+public class DBConnectionFunc {
     public static Connection connection;
     public static boolean connected = false;
 
@@ -23,7 +23,7 @@ public class DatabaseConnectionFunc {
             // if (PasswordForDB.testing) {
             //     DatabaseConnectionFunc.connectForTests(PasswordForDB.password);
             // } else {
-            DatabaseConnectionFunc.connect();
+            DBConnectionFunc.connect();
             // }
         }
     }

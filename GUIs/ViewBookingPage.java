@@ -83,7 +83,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
             String doctorName = split[0].trim();
             String date = split[1];
             String time = split[2];
-            GUIs.ViewPastBooking.loadPage(doctorName, date, time);
+            GUIs.PastBookingsPage.loadPage(doctorName, date, time);
         });
 
         resultBookings.addActionListener(evt -> {

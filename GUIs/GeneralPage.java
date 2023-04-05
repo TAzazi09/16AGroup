@@ -1,7 +1,7 @@
 package GUIs;
 
 // imports from the project
-import Functionality.DatabaseConnectionFunc;
+import Functionality.DBConnectionFunc;
 import Databases.DatabaseDB;
 import Session.General;
 
@@ -18,17 +18,17 @@ public class GeneralPage extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            DatabaseConnectionFunc.main(null);
+            DBConnectionFunc.main(null);
 
             // Initialize the database
-            if (DatabaseConnectionFunc.connected) {
+            if (DBConnectionFunc.connected) {
                 DatabaseDB.initDB();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        if (DatabaseConnectionFunc.connected) {
+        if (DBConnectionFunc.connected) {
             General.setNimbusLookAndFeel(GeneralPage.class);
 
             //Create and display the form 

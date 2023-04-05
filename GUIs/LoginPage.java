@@ -2,7 +2,7 @@ package GUIs;
 
 // imports from the project
 import Functionality.LoginFunc;
-import Functionality.DatabaseConnectionFunc;
+import Functionality.DBConnectionFunc;
 import Session.General;
 
 /**
@@ -18,7 +18,7 @@ public class LoginPage extends javax.swing.JFrame {
     }
 
     public static void loadPage() {
-        if (DatabaseConnectionFunc.connected) {
+        if (DBConnectionFunc.connected) {
             General.setNimbusLookAndFeel(LoginPage.class);
 
             /* Create and display the form */
