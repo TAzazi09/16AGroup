@@ -1,9 +1,11 @@
 Group 16A - Sprint 3 Plan
 
 Ethan:
-    - GUIs: ViewPastBooking
-    - Functionality: ViewPastBooking
-    - Documents: Database Design Document (w/ Nikola)
+    - GUIs: ViewPastBooking (implemented into view bookings to allow for seamless access) that allows patients to view details a doctor provides about a past booking.
+    - Functionality: ViewPastBooking to get detials and prescriptions a doctor would provide about a past booking.
+    - Database: General optimisation and modifiying data types to better reflect the true data stored
+    - Documents: Database Design Document (w/ Nikola), as well video script creation.
+    - Other: General comment checks and code quality checks.
 
 _______________________________________________________________________________________________________________________________________
 
