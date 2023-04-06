@@ -125,6 +125,8 @@ public class ViewBookingPage extends javax.swing.JFrame {
                 } else {
                     String combination = Year + "-" + Month;
                     try {
+                        // TODO: Only show the bookings that are in the future
+                        // TODO: Only show the bookings that are by the user
                         // Gets the required information about the booking where the date contains the
                         // year and month
                         ResultSet results = Session.statement.executeQuery(
