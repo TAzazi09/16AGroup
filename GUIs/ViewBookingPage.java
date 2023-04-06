@@ -86,7 +86,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
         });
 
         resultBookings.addActionListener(evt -> {
-            reschedule.setVisible(true);
             if (resultBookings.getSelectedItem() != null) {
                 String[] split = resultBookings.getSelectedItem().toString().split("~");
                 String date = split[1].split(" ")[1];
@@ -94,8 +93,10 @@ public class ViewBookingPage extends javax.swing.JFrame {
                 LocalDate currentDate = LocalDate.now();
                 if (inputDate.isBefore(currentDate)) {
                     viewPastBooking.setVisible(true);
+                    reschedule.setVisible(false);
                 } else {
                     viewPastBooking.setVisible(false);
+                    reschedule.setVisible(true);
                 }
             }
         });
@@ -125,8 +126,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
                 } else {
                     String combination = Year + "-" + Month;
                     try {
-                        // TODO: Only show the bookings that are in the future
-                        // TODO: Only show the bookings that are by the user
                         // Gets the required information about the booking where the date contains the
                         // year and month
                         ResultSet results = Session.statement.executeQuery(
@@ -143,7 +142,6 @@ public class ViewBookingPage extends javax.swing.JFrame {
                         while (results.next()) {
                             // Sets tempory objects as true
                             resultBookings.setVisible(true);
-                            reschedule.setVisible(true);
 
                             list.add(DoctorsDB.getDoctorName(results.getInt("DoctorID")) + " ~ "
                                     + results.getString("Date") + " ~ " + results.getString("Time"));
