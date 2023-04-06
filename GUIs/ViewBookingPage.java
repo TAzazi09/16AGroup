@@ -130,7 +130,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
                         // Gets the required information about the booking where the date contains the
                         // year and month
                         ResultSet results = Session.statement.executeQuery(
-                                "SELECT DoctorID, Date, Time FROM Bookings WHERE Date LIKE '%" + combination + "%';");
+                                "SELECT DoctorID, Date, Time FROM Bookings WHERE PatientID = '" + Session.userID + "' AND  Date LIKE '%" + combination + "%';");
 
                         // Clears the dropdown and the array of bookings.
                         // Also sets all tempory objects as invisible.
