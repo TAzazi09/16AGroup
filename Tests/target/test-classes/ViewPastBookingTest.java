@@ -24,35 +24,16 @@ public class ViewPastBookingTest {
         String DoctorID = "Dr Jason";
         String Date = "2001 05 01";
         String Time = "13:00";
-
         PastBookingsPage PastBookingsPage = new PastBookingsPage(DoctorID,Date,Time);
-
-       assertNull(PastBookingsPage);
-
-        //ViewPastBooking("Dr Jason", "2024-05-01", "13:00");
-
-
-
-        
-
+        assertNull(PastBookingsPage); 
     }
 
     public void dateFormatIncorrect(){
-
         String DoctorID = "Dr Jason";
         String Date = "05.01.2024";
         String Time = "13:00";
-
         PastBookingsPage PastBookingsPage = new PastBookingsPage(DoctorID,Date,Time);
-
-       assertNull(PastBookingsPage);
-
-        //ViewPastBooking("Dr Jason", "2024-05-01", "13:00");
-
-
-
-        
-
+        assertNull(PastBookingsPage);
     }
 
 
@@ -62,15 +43,9 @@ public class ViewPastBookingTest {
         String DoctorID = "1";
         String Date = null;
         String Time = null;
-        
-        // Act
-        
         PastBookingsPage p = new PastBookingsPage(DoctorID,Date,Time);
-        
         // Assert
         assertNull( PastBookingsPage.loadPage(DoctorID, Date, Time));
-
-        
     }
 
     @Test
@@ -80,15 +55,10 @@ public class ViewPastBookingTest {
         String DoctorID = "1";
         String Date = "2024-05-01";
         String Time = "12:00";
-        
         // Act
-        
         PastBookingsPage p = new PastBookingsPage(DoctorID,Date,Time);
-        
         // Assert
         assertNotNull( PastBookingsPage.loadPage(DoctorID, Date, Time));
-
-        
     }
     
 }
