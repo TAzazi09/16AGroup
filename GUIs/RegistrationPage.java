@@ -2,12 +2,8 @@ package GUIs;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
-// imports from the java library
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
-
-// imports from the project
 import Checks.RegistrationCheck;
 import Functionality.RegistrationFunc;
 import Info.General;

@@ -1,10 +1,7 @@
 package GUIs;
 
-// imports from the java library
 import javax.swing.*;
-
 import Info.General;
-
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;

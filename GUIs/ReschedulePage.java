@@ -2,10 +2,7 @@ package GUIs;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 import javax.swing.JOptionPane;
-
-// imports from the project
 import Functionality.ReschedulingFunc;
 import Info.General;
 import Info.Session;

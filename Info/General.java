@@ -1,6 +1,5 @@
 package Info;
 
-// imports from the java library
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Window;

@@ -1,11 +1,9 @@
 package Functionality;
 
-// imports from the java library
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Scanner;
 
-// imports from the project
 // Commented out because tests broke after sprint 2
 // import Tests.PasswordForDB;
 

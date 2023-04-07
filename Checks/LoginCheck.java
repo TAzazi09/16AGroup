@@ -1,6 +1,5 @@
 package Checks;
 
-// imports from the java library
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 

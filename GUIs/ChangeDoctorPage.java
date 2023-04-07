@@ -1,9 +1,6 @@
 package GUIs;
 
-// imports from the java library
 import java.sql.ResultSet;
-
-// imports from the project
 import Databases.DoctorsDB;
 import Functionality.ChangeDoctorFunc;
 import Info.*;

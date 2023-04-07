@@ -1,12 +1,10 @@
 package GUIs;
 
-// imports from the java library
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
-
 import Databases.DoctorsDB;
 import Info.*;
 
