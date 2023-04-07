@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * @author Ethan
- * @code quality by Nikola
+ * @code quality review by Nikola
  */
 public class DBConnectionFunc {
     public static Connection connection;

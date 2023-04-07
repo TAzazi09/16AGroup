@@ -5,7 +5,7 @@ import Info.*;
 
 /**
  * @author Ethan
- * @minor code quality changes by Nikola
+ * @code quality review by Nikola
  */
 public class MenuPage extends javax.swing.JFrame {
     public MenuPage() {
