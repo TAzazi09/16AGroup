@@ -1,12 +1,10 @@
 package GUIs;
 
-// imports from the java library
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
-
 import Databases.DoctorsDB;
 import Info.*;
 
@@ -14,7 +12,7 @@ import Info.*;
  * @author ks818
  * @functionality and GUI improvement by Ethan
  */
-public class ViewBookingPage extends javax.swing.JFrame {
+public class ViewBookingsPage extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JButton Confirm_button;
     private javax.swing.JComboBox<String> Month_Selector;
@@ -30,7 +28,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
     public static Connection connection;
     public String userId = Session.firstname;
 
-    public ViewBookingPage() {
+    public ViewBookingsPage() {
         super("View Bookings");
         initComponents();
         logged_user_text.setText("User: " + userId);
@@ -38,12 +36,12 @@ public class ViewBookingPage extends javax.swing.JFrame {
 
     public static void loadPage() {
         if (Session.userID != -1) {
-            General.setNimbusLookAndFeel(ViewBookingPage.class);
+            General.setNimbusLookAndFeel(ViewBookingsPage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new ViewBookingPage().setVisible(true);
+                    new ViewBookingsPage().setVisible(true);
                 }
             });
         } else {
@@ -129,7 +127,8 @@ public class ViewBookingPage extends javax.swing.JFrame {
                         // Gets the required information about the booking where the date contains the
                         // year and month
                         ResultSet results = Session.statement.executeQuery(
-                                "SELECT DoctorID, Date, Time FROM Bookings WHERE PatientID = '" + Session.userID + "' AND  Date LIKE '%" + combination + "%';");
+                                "SELECT DoctorID, Date, Time FROM Bookings WHERE PatientID = '" + Session.userID
+                                        + "' AND  Date LIKE '%" + combination + "%';");
 
                         // Clears the dropdown and the array of bookings.
                         // Also sets all tempory objects as invisible.

@@ -1,6 +1,5 @@
 package Functionality;
 
-// imports from the project
 import Databases.LogsDB;
 import Databases.PatientsDB;
 

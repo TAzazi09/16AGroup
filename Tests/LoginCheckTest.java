@@ -1,11 +1,12 @@
-
 import static org.junit.Assert.*;
 import java.sql.ResultSet;
 import org.junit.Test;
 import Checks.LoginCheck;
 
+/**
+ * @author Callum
+ */
 public class TestLogin {
-
     @Test
     public void testValidCredentials() {
         // Test valid username, password

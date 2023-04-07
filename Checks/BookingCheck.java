@@ -1,11 +1,8 @@
 package Checks;
 
-// imports from the java library
 import javax.swing.JOptionPane;
-
-import Info.Session;
-
 import java.sql.ResultSet;
+import Info.Session;
 
 /**
  * @author Nikola

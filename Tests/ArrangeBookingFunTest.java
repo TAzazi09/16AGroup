@@ -11,8 +11,10 @@ import Databases.*;
 import Functionality.ArrangeBookingFunc;
 import Info.*;
 
+/**
+ * @author Callum
+ */
 class ArrangeBookingFuncTest {
-
     private ResultSet resultSetMock;
     private ArrangeBookingFunc arrangeBookingFunc;
 

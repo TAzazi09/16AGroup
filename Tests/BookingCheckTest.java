@@ -7,8 +7,10 @@ import Checks.BookingCheck;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Callum
+ */
 public class BookingCheckTest {
-
     @Test
     public void testBookingCheck() {
         //test for false date

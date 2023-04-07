@@ -1,6 +1,5 @@
 package GUIs;
 
-// imports from the project
 import Functionality.LoginFunc;
 import Info.General;
 import Functionality.DBConnectionFunc;

@@ -1,8 +1,6 @@
 package Databases;
 
-// imports from the java library
 import java.sql.ResultSet;
-
 import Info.Session;
 
 /**

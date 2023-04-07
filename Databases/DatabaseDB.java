@@ -5,6 +5,7 @@ import Info.Session;
 /**
  * @written by Ethan
  * @file created by Nikola (project structure)
+ * @code quality review by Nikola
  */
 public class DatabaseDB {
     // Creates the database and the tables

@@ -1,10 +1,7 @@
 package Functionality;
 
-// imports from the java library
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-
-// imports from the project
 import GUIs.MenuPage;
 import Info.*;
 import Databases.DoctorsDB;

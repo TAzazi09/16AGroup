@@ -1,13 +1,11 @@
 package GUIs;
 
-// imports from the java library
 import java.sql.ResultSet;
-
 import Info.*;
 
 /**
  * @author Ethan
- * @minor code quality changes by Nikola
+ * @code quality review by Nikola
  */
 public class MenuPage extends javax.swing.JFrame {
     public MenuPage() {
@@ -173,7 +171,7 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void viewBookingsActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
-        ViewBookingPage.loadPage();
+        ViewBookingsPage.loadPage();
     }
 
     private void changeDoctorActionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,6 +179,8 @@ public class MenuPage extends javax.swing.JFrame {
         ChangeDoctorPage.loadPage();
     }
 
+    // This is the code for the "View all doctors" button which is currently not
+    // working as it is not yet implemented (Tare hasn't provided the code for it yet)
     // private void viewAllDoctorsActionPerformed(java.awt.event.ActionEvent evt) {
     // dispose();
     // DoctorsDetails.main(null);

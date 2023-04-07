@@ -1,9 +1,6 @@
 package Functionality;
 
-// imports from the java library
 import javax.swing.JOptionPane;
-
-// imports from the project
 import Checks.BookingCheck;
 import Databases.BookingsDB;
 import GUIs.MenuPage;

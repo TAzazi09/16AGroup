@@ -1,6 +1,5 @@
 package GUIs;
 
-// imports from the project
 import Functionality.BookingFunc;
 import Functionality.DBConnectionFunc;
 import Info.General;
