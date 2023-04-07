@@ -14,7 +14,6 @@ import Databases.*;
  * @author Callum
  */
 public class ViewBookingTest {
-
     public static Connection connection;
     public static Statement statement;
 

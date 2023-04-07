@@ -18,7 +18,6 @@ import Info.*;
  * @author Callum
  */
 public class ReschedulingFuncTest {
-
     @Before
     public void setUp() throws Exception {
         //ArrangeBookingFunc a = new ArrangeBookingFunc();

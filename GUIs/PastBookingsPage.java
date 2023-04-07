@@ -8,7 +8,7 @@ import Info.*;
 
 /**
  * @author Ethan
- * @code-quality by Nikola
+ * @code quality review by Nikola
  */
 public class PastBookingsPage extends javax.swing.JFrame {
     public PastBookingsPage(String DoctorID, String Date, String Time) {
@@ -28,6 +28,8 @@ public class PastBookingsPage extends javax.swing.JFrame {
     }
 
     private void initComponents(String DoctorID, String Date, String Time) {
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         javax.swing.JLabel titleLabel = new javax.swing.JLabel();
         javax.swing.JLabel detailsLabel = new javax.swing.JLabel();
         javax.swing.JLabel prescriptionLabel = new javax.swing.JLabel();
@@ -54,8 +56,6 @@ public class PastBookingsPage extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         titleLabel.setText("Details about booking on " + Date + " " + Time + "");
 
@@ -149,7 +149,6 @@ public class PastBookingsPage extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(back)
                                 .addContainerGap(18, Short.MAX_VALUE)));
-
         pack();
     }
 
