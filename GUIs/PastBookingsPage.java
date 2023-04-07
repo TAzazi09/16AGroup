@@ -1,6 +1,8 @@
 package GUIs;
 
 import java.sql.ResultSet;
+import java.util.Objects;
+
 import Databases.DoctorsDB;
 import Info.*;
 
@@ -60,7 +62,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
         detailsLabel.setText("Details");
 
         prescriptionLabel.setText("Prescription");
-        if (details == "null") {
+        if (Objects.equals(details, "null")) {
             detailsOutput.setText(details);
         }
         detailsOutput.setEditable(false);
@@ -69,7 +71,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
         detailsOutput.setRows(5);
         prescriptionScroll.setViewportView(detailsOutput);
 
-        if (prescription == "null") {
+        if (Objects.equals(prescription, "null")) {
             prescriptionOuput.setText(prescription);
         }
         prescriptionOuput.setEditable(false);
