@@ -37,6 +37,8 @@ public class MenuPage extends javax.swing.JFrame {
         javax.swing.JButton viewAllDoctors = new javax.swing.JButton();
         javax.swing.JButton viewDoctorButton = new javax.swing.JButton();
         javax.swing.JButton printAllLogsButton = new javax.swing.JButton();
+        javax.swing.JButton logout = new javax.swing.JButton();
+
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         javax.swing.JTextArea patientMessages = new javax.swing.JTextArea();
 
@@ -76,6 +78,11 @@ public class MenuPage extends javax.swing.JFrame {
         printAllLogsButton.setFont(General.font(18));
         printAllLogsButton.setBackground(General.BUTTON_BLUE);
 
+        logout.setText("Log out");
+        logout.addActionListener(this::logoutActionPerformed);
+        logout.setFont(General.font(18));
+        logout.setBackground(General.BUTTON_BLUE);
+
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         patientMessages.setColumns(20);
@@ -86,11 +93,11 @@ public class MenuPage extends javax.swing.JFrame {
         patientMessages.setFont(General.font(14));
 
         try {
-            //Selects messages for the patient
+            // Selects messages for the patient
             ResultSet message = Session.statement
                     .executeQuery("SELECT messages FROM Patients WHERE patientID = '" + Session.userID + "'");
             while (message.next()) {
-                //Adds the messages to the unmodifiable text area
+                // Adds the messages to the unmodifiable text area
                 patientMessages.append(" - " + message.getString("messages") + "\n");
             }
         } catch (Exception e) {
@@ -119,7 +126,9 @@ public class MenuPage extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(viewAllDoctors)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(printAllLogsButton)))
+                                                .addComponent(printAllLogsButton))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(logout)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70,
                                         Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250,
@@ -150,8 +159,9 @@ public class MenuPage extends javax.swing.JFrame {
                                                         .addComponent(viewAllDoctors)
                                                         .addComponent(printAllLogsButton))
                                                 .addGap(20, 20, 20)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(viewDoctorButton)))
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(logout))))
                                 .addContainerGap(150, Short.MAX_VALUE)));
         pack();
     }
@@ -171,10 +181,10 @@ public class MenuPage extends javax.swing.JFrame {
         ChangeDoctorPage.loadPage();
     }
 
-    //     private void viewAllDoctorsActionPerformed(java.awt.event.ActionEvent evt) {
-    //         dispose();
-    //         DoctorsDetails.main(null);
-    //     }
+    // private void viewAllDoctorsActionPerformed(java.awt.event.ActionEvent evt) {
+    // dispose();
+    // DoctorsDetails.main(null);
+    // }
 
     private void printAllLogsActionPerformed(java.awt.event.ActionEvent evt) {
         try {
@@ -189,5 +199,11 @@ public class MenuPage extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println("Error (LogChecker.main())");
         }
+    }
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {
+        Session.userID = -1;
+        dispose();
+        GeneralPage.main(null);
     }
 }
