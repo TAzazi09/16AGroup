@@ -13,16 +13,17 @@ public class DatabaseDB {
             // Connects to the database (if not already connected)
             if (!Session.connected) {
                 Session.connect();
+
+                Session.statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
+                Session.statement.executeUpdate("CREATE DATABASE NHS");
+
+                // Creates the Doctors, Patients, and Bookings tables
+                DoctorsDB.initTableWithDoctors();
+                PatientsDB.initTableWithPatients();
+                BookingsDB.initTableWithBookings();
+                LogsDB.initTable();
             }
 
-            Session.statement.executeUpdate("DROP DATABASE IF EXISTS NHS;");
-            Session.statement.executeUpdate("CREATE DATABASE NHS");
-
-            // Creates the Doctors, Patients, and Bookings tables
-            DoctorsDB.initTableWithDoctors();
-            PatientsDB.initTableWithPatients();
-            BookingsDB.initTableWithBookings();
-            LogsDB.initTable();
         } catch (Exception e) {
             e.printStackTrace();
         }
