@@ -1,7 +1,6 @@
 package Functionality
 
 imports from the java library
-
 imports from the project
 
 author and other documentation
