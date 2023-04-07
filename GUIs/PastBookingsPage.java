@@ -18,11 +18,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
             General.setNimbusLookAndFeel(PastBookingsPage.class);
 
             /* Create and display the form */
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new PastBookingsPage(DoctorID, Date, Time).setVisible(true);
-                }
-            });
+            java.awt.EventQueue.invokeLater(() -> new PastBookingsPage(DoctorID, Date, Time).setVisible(true));
         } else {
             General.closeAllWindows();
             GeneralPage.main(null);
@@ -43,7 +39,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Integer docName = DoctorsDB.getDoctorID(DoctorID);
+            int docName = DoctorsDB.getDoctorID(DoctorID);
             
             ResultSet results = Session.statement
                     .executeQuery("SELECT Detail, Prescription FROM Bookings WHERE DoctorID LIKE '%"
@@ -83,11 +79,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
         detailsScroll.setViewportView(prescriptionOuput);
 
         back.setText("Back");
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
-            }
-        });
+        back.addActionListener(this::backActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
