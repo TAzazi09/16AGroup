@@ -6,20 +6,9 @@ import Info.*;
 
 /**
  * @author Ethan
+ * @code-quality by Nikola
  */
 public class PastBookingsPage extends javax.swing.JFrame {
-    // Variables declaration
-    private javax.swing.JButton back;
-    private javax.swing.JLabel detailsLabel;
-    private javax.swing.JTextArea detailsOutput;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel prescriptionLabel;
-    private javax.swing.JTextArea prescriptionOuput;
-    private javax.swing.JLabel title;
-    private String Details;
-    private String Prescription;
-
     public PastBookingsPage(String DoctorID, String Date, String Time) {
         initComponents(DoctorID, Date, Time);
     }
@@ -41,16 +30,16 @@ public class PastBookingsPage extends javax.swing.JFrame {
     }
 
     private void initComponents(String DoctorID, String Date, String Time) {
-        title = new javax.swing.JLabel();
-        detailsLabel = new javax.swing.JLabel();
-        prescriptionLabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        detailsOutput = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        prescriptionOuput = new javax.swing.JTextArea();
-        back = new javax.swing.JButton();
-        Details = new String();
-        Prescription = new String();
+        javax.swing.JLabel title = new javax.swing.JLabel();
+        javax.swing.JLabel detailsLabel = new javax.swing.JLabel();
+        javax.swing.JLabel prescriptionLabel = new javax.swing.JLabel();
+        javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
+        javax.swing.JTextArea detailsOutput = new javax.swing.JTextArea();
+        javax.swing.JScrollPane jScrollPane2 = new javax.swing.JScrollPane();
+        javax.swing.JTextArea prescriptionOuput = new javax.swing.JTextArea();
+        javax.swing.JButton back = new javax.swing.JButton();
+        String Details = new String();
+        String Prescription = new String();
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
