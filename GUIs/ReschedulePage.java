@@ -31,7 +31,6 @@ public class ReschedulePage extends javax.swing.JFrame {
     }
 
     private void initComponents(String oldDate, String oldTime) {
-
         javax.swing.JLabel dateLabel = new javax.swing.JLabel();
         timeInput = new javax.swing.JTextField("HH:MM");
         dateInput = new javax.swing.JTextField("YYYY-MM-DD");

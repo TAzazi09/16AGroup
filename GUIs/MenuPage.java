@@ -179,6 +179,8 @@ public class MenuPage extends javax.swing.JFrame {
         ChangeDoctorPage.loadPage();
     }
 
+    // This is the code for the "View all doctors" button which is currently not
+    // working as it is not yet implemented (Tare hasn't provided the code for it yet)
     // private void viewAllDoctorsActionPerformed(java.awt.event.ActionEvent evt) {
     // dispose();
     // DoctorsDetails.main(null);
