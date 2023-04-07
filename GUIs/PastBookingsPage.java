@@ -30,56 +30,57 @@ public class PastBookingsPage extends javax.swing.JFrame {
     }
 
     private void initComponents(String DoctorID, String Date, String Time) {
-        javax.swing.JLabel title = new javax.swing.JLabel();
+        javax.swing.JLabel titleLabel = new javax.swing.JLabel();
         javax.swing.JLabel detailsLabel = new javax.swing.JLabel();
         javax.swing.JLabel prescriptionLabel = new javax.swing.JLabel();
-        javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
+        javax.swing.JScrollPane prescriptionScroll = new javax.swing.JScrollPane();
         javax.swing.JTextArea detailsOutput = new javax.swing.JTextArea();
-        javax.swing.JScrollPane jScrollPane2 = new javax.swing.JScrollPane();
+        javax.swing.JScrollPane detailsScroll = new javax.swing.JScrollPane();
         javax.swing.JTextArea prescriptionOuput = new javax.swing.JTextArea();
         javax.swing.JButton back = new javax.swing.JButton();
-        String Details = "";
-        String Prescription = "";
+        String details = "";
+        String prescription = "";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Integer name = DoctorsDB.getDoctorID(DoctorID);
+            Integer docName = DoctorsDB.getDoctorID(DoctorID);
+            
             ResultSet results = Session.statement
                     .executeQuery("SELECT Detail, Prescription FROM Bookings WHERE DoctorID LIKE '%"
-                            + name
+                            + docName
                             + "%' AND Date = '" + Date + "' AND Time = '" + Time + "'");
             results.next();
-            Details = results.getString("Detail");
-            Prescription = results.getString("Prescription");
-
+            
+            details = results.getString("Detail");
+            prescription = results.getString("Prescription");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        title.setText("Details about booking on " + Date + " " + Time + "");
+        titleLabel.setText("Details about booking on " + Date + " " + Time + "");
 
         detailsLabel.setText("Details");
 
         prescriptionLabel.setText("Prescription");
-        if (Details == "null") {
-            detailsOutput.setText(Details);
+        if (details == "null") {
+            detailsOutput.setText(details);
         }
         detailsOutput.setEditable(false);
         detailsOutput.setColumns(20);
         detailsOutput.setLineWrap(true);
         detailsOutput.setRows(5);
-        jScrollPane1.setViewportView(detailsOutput);
+        prescriptionScroll.setViewportView(detailsOutput);
 
-        if (Prescription == "null") {
-            prescriptionOuput.setText(Prescription);
+        if (prescription == "null") {
+            prescriptionOuput.setText(prescription);
         }
         prescriptionOuput.setEditable(false);
         prescriptionOuput.setColumns(20);
         prescriptionOuput.setLineWrap(true);
         prescriptionOuput.setRows(5);
-        jScrollPane2.setViewportView(prescriptionOuput);
+        detailsScroll.setViewportView(prescriptionOuput);
 
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +98,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(
                                         javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(back)
-                                        .addComponent(title,
+                                        .addComponent(titleLabel,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 295,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -117,11 +118,11 @@ public class PastBookingsPage extends javax.swing.JFrame {
                                                 .addGroup(layout
                                                         .createParallelGroup(
                                                                 javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jScrollPane1,
+                                                        .addComponent(prescriptionScroll,
                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jScrollPane2,
+                                                        .addComponent(detailsScroll,
                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                 javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -130,7 +131,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(title,
+                                .addComponent(titleLabel,
                                         javax.swing.GroupLayout.PREFERRED_SIZE,
                                         39,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,7 +140,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(
                                         javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(detailsLabel)
-                                        .addComponent(jScrollPane1,
+                                        .addComponent(prescriptionScroll,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -147,7 +148,7 @@ public class PastBookingsPage extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(
                                         javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(prescriptionLabel)
-                                        .addComponent(jScrollPane2,
+                                        .addComponent(detailsScroll,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
