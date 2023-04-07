@@ -29,7 +29,7 @@ Features
 Usage
 -----
 
-To run the application, you need to import the project into a standard IDE such as Eclipse and run the main class. Once the application starts, you can log in with your username and password or register as a new patient.
+To run the application, you need to import the project into a standard IDE such as Eclipse and run the GUIs.GeneralPage main class. Once the application starts, you can register as a new patient and then log in with your username and password.
 
 To create a booking, select your doctor, enter the date and time, and click the "Book" button. If the booking is successful, you will receive a confirmation message, and the booking will appear on your bookings list.
 
@@ -41,6 +41,8 @@ To view visit details for a past booking, select the booking from your bookings 
 
 To view doctor details and availability, click the "Doctors" button, and a list of all doctors will appear on the screen. Select a doctor to see their details and availability for the selected month and year.
 
+To change your doctor, click on the "Select a doctor" dropdown and then on your doctor of choice.
+
 Testing
 -------
 
@@ -49,4 +51,4 @@ We have included JUnit test classes and results, along with a brief two-page tes
 Organisation
 ------------
 
-We have included a brief one-page group organisation plan describing who does what (e.g., leads for each feature, DB design, and tests) and our plan for
+We have included a brief one-page group organisation plan describing who does what (e.g., leads for each feature, DB design, and tests)
