@@ -38,8 +38,8 @@ public class PastBookingsPage extends javax.swing.JFrame {
         javax.swing.JScrollPane jScrollPane2 = new javax.swing.JScrollPane();
         javax.swing.JTextArea prescriptionOuput = new javax.swing.JTextArea();
         javax.swing.JButton back = new javax.swing.JButton();
-        String Details = new String();
-        String Prescription = new String();
+        String Details = "";
+        String Prescription = "";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -65,7 +65,6 @@ public class PastBookingsPage extends javax.swing.JFrame {
         prescriptionLabel.setText("Prescription");
         if (Details == "null") {
             detailsOutput.setText(Details);
-        } else {
         }
         detailsOutput.setEditable(false);
         detailsOutput.setColumns(20);
@@ -75,7 +74,6 @@ public class PastBookingsPage extends javax.swing.JFrame {
 
         if (Prescription == "null") {
             prescriptionOuput.setText(Prescription);
-        } else {
         }
         prescriptionOuput.setEditable(false);
         prescriptionOuput.setColumns(20);
