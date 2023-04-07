@@ -12,7 +12,7 @@ import Info.*;
  * @author ks818
  * @functionality and GUI improvement by Ethan
  */
-public class ViewBookingPage extends javax.swing.JFrame {
+public class ViewBookingsPage extends javax.swing.JFrame {
     // Variables declaration
     private javax.swing.JButton Confirm_button;
     private javax.swing.JComboBox<String> Month_Selector;
@@ -28,7 +28,7 @@ public class ViewBookingPage extends javax.swing.JFrame {
     public static Connection connection;
     public String userId = Session.firstname;
 
-    public ViewBookingPage() {
+    public ViewBookingsPage() {
         super("View Bookings");
         initComponents();
         logged_user_text.setText("User: " + userId);
@@ -36,12 +36,12 @@ public class ViewBookingPage extends javax.swing.JFrame {
 
     public static void loadPage() {
         if (Session.userID != -1) {
-            General.setNimbusLookAndFeel(ViewBookingPage.class);
+            General.setNimbusLookAndFeel(ViewBookingsPage.class);
 
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new ViewBookingPage().setVisible(true);
+                    new ViewBookingsPage().setVisible(true);
                 }
             });
         } else {
